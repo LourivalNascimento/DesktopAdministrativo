@@ -28,19 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureLogoMorangolandia = new System.Windows.Forms.PictureBox();
             this.btnEsc = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.btnEstoque = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnConsultas = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnEstoque);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnCompras);
+            this.panel1.Controls.Add(this.btnConsultas);
+            this.panel1.Location = new System.Drawing.Point(173, 127);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(911, 558);
+            this.panel1.TabIndex = 8;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
+            this.pictureBox2.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.foto_perfil;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(1152, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(53, 49);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureLogoMorangolandia
             // 
@@ -80,19 +107,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(1295, 63);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btnEstoque);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnCompras);
-            this.panel1.Controls.Add(this.btnConsultas);
-            this.panel1.Location = new System.Drawing.Point(173, 127);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(911, 558);
-            this.panel1.TabIndex = 8;
             // 
             // button2
             // 
@@ -153,6 +167,7 @@
             this.btnCompras.Size = new System.Drawing.Size(216, 182);
             this.btnCompras.TabIndex = 3;
             this.btnCompras.UseVisualStyleBackColor = false;
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
             // btnConsultas
             // 
@@ -176,6 +191,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureLogoMorangolandia);
             this.Controls.Add(this.btnEsc);
             this.Controls.Add(this.pictureBox1);
@@ -189,9 +205,10 @@
             this.Text = "TelaPaginaInicial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaginaInicial_KeyDown);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -207,5 +224,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

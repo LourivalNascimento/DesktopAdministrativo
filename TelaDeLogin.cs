@@ -38,7 +38,6 @@ namespace DesktopAdministrativo
             else
             {
                 TelaPaginaInicial paginaInicial = new TelaPaginaInicial();
-                //paginaInicial.MdiParent = this;
                 paginaInicial.Show();
             }
         }

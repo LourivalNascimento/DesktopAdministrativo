@@ -16,7 +16,17 @@ namespace DesktopAdministrativo
         {
             InitializeComponent();
         }
-
+        private Form FormJaAberto(Type formType)
+        {
+            foreach (Form openForm in Application.OpenForms)
+            {
+                if (openForm.GetType() == formType)
+                {
+                    return openForm;
+                }
+            }
+            return null;
+        }
         private void PaginaInicial_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Escape)
@@ -28,6 +38,21 @@ namespace DesktopAdministrativo
         private void btnEsc_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            Form openForm1 = FormJaAberto(typeof(TelaComprasAcompanhamento));
+
+            if (openForm1 != null)
+            {
+                openForm1.Focus();
+            }
+            else
+            {
+                TelaComprasAcompanhamento telaComprasAcompanhamento = new TelaComprasAcompanhamento();
+                telaComprasAcompanhamento.Show();
+            }
         }
     }
 }
