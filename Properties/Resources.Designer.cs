@@ -123,6 +123,16 @@ namespace DesktopAdministrativo.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap botao_entrar_normal {
+            get {
+                object obj = ResourceManager.GetObject("botao entrar normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap botão_exluir {
             get {
                 object obj = ResourceManager.GetObject("botão exluir", resourceCulture);
@@ -513,9 +523,29 @@ namespace DesktopAdministrativo.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_m_branco {
+            get {
+                object obj = ResourceManager.GetObject("logo m branco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maça {
             get {
                 object obj = ResourceManager.GetObject("maça", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap morango {
+            get {
+                object obj = ResourceManager.GetObject("morango", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -546,6 +576,36 @@ namespace DesktopAdministrativo.Properties {
         internal static System.Drawing.Bitmap porcentagem {
             get {
                 object obj = ResourceManager.GetObject("porcentagem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rectangle_2 {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rectangle_3 {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle 3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rectangle_4 {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle 4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

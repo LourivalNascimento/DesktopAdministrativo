@@ -251,5 +251,23 @@
   <ItemGroup>
     <None Include="Desktop ADM\PAGINA INICIAL %28botões%29.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\morango.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\logo m branco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\Rectangle 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\Rectangle 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\Rectangle 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botao entrar normal.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
