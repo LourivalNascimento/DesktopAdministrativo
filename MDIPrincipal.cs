@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace DesktopAdministrativo
 {
-    public partial class TelaDeLogin : Form
+    public partial class MDIPrincipal : Form
     {
-        public TelaDeLogin()
+        public MDIPrincipal()
         {
             InitializeComponent();
         }
+
         private Form FormJaAberto(Type formType)
         {
             foreach (Form openForm in Application.OpenForms)
@@ -27,20 +28,26 @@ namespace DesktopAdministrativo
             }
             return null;
         }
-        private void btnEntrar_Click(object sender, EventArgs e)
-        {
-            Form openForm1 = FormJaAberto(typeof(TelaPaginaInicial));
 
-            if (openForm1 != null)
-            {
-                openForm1.Focus();
-            }
-            else
-            {
-                TelaPaginaInicial paginaInicial = new TelaPaginaInicial();
-                //paginaInicial.MdiParent = this;
-                paginaInicial.Show();
-            }
+        private void MDIPrincipal_Load(object sender, EventArgs e)
+        {
+            //Form openForm1 = FormJaAberto(typeof(TelaPaginaInicial));
+
+            //if (openForm1 != null)
+            //{
+            //    openForm1.Focus();
+            //}
+            //else
+            //{
+            //    TelaPaginaInicial paginaInicial = new TelaPaginaInicial();
+            //    paginaInicial.MdiParent = this;
+            //    paginaInicial.Show();
+            //}
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

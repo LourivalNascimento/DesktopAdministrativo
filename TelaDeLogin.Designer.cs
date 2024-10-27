@@ -206,6 +206,7 @@
             this.btnEntrar.TabIndex = 19;
             this.btnEntrar.Text = "E N T R A R";
             this.btnEntrar.UseVisualStyleBackColor = true;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // pictureCaixaTextPassw
             // 
@@ -277,6 +278,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(139)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1366, 745);
             this.Controls.Add(this.pictureCerejaEsquerda);
             this.Controls.Add(this.pictureAbacaxi);
@@ -289,6 +291,7 @@
             this.Controls.Add(this.pictureCenouraBottom);
             this.Controls.Add(this.pictureCenouraTop);
             this.Controls.Add(this.pictureMaca);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(139)))), ((int)(((byte)(248)))));
             this.Name = "TelaDeLogin";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureCaixaTextCod)).EndInit();

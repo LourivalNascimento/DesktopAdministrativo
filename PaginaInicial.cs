@@ -10,11 +10,24 @@ using System.Windows.Forms;
 
 namespace DesktopAdministrativo
 {
-    public partial class PaginaInicial : Form
+    public partial class TelaPaginaInicial : Form
     {
-        public PaginaInicial()
+        public TelaPaginaInicial()
         {
             InitializeComponent();
+        }
+
+        private void PaginaInicial_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+            {
+                Close();
+            }
+        }
+
+        private void btnEsc_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

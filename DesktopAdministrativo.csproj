@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MDIPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIPrincipal.Designer.cs">
+      <DependentUpon>MDIPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="PaginaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MDIPrincipal.resx">
+      <DependentUpon>MDIPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaInicial.resx">
+      <DependentUpon>PaginaInicial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaDeLogin.resx">
       <DependentUpon>TelaDeLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,6 +97,159 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\abacaxi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\beterraba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão cancelar vermelho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão consultar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão exluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão filtrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão limpar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão novo cadastro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão novo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão pesquisar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão relatorio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\botão voltar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\cenoura 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\cenoura 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\cereja 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\cereja 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\checkbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\codigo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\emissão.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\esc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fornecedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\foto perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo abacaxi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo anexos obs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo beterraba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo branco %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo branco 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo branco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo cenoura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo cereja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo maça.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo morango.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\icon compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\icon consultas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\icon estoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\icon op.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\icon pessoas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\logo branca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\maça.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\n nota.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\porcentagem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\status.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\valor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\PAGINA INICIAL %28botões%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
