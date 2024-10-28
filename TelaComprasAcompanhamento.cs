@@ -62,11 +62,21 @@ namespace DesktopAdministrativo
                 pictureLogoMorangolandia.Location = new Point(309, 3);
                 btnMenu.BackColor = Color.FromArgb(221, 139, 249);
                 panelMenu.Visible = true;
+                btnMenuCompras.Visible = true;
+                btnMenuConsultas.Visible = true;
+                btnMenuEstoque.Visible = true;
+                btnMenuOrdemDeProducao.Visible = true;
+                btnMenuPessoasECredores.Visible = true;
             }else
             {
                 pictureLogoMorangolandia.Location = new Point(118, 3);
                 btnMenu.BackColor = Color.FromArgb(162, 66, 195);
                 panelMenu.Visible = false;
+                btnMenuCompras.Visible = false;
+                btnMenuConsultas.Visible = false;
+                btnMenuEstoque.Visible = false;
+                btnMenuOrdemDeProducao.Visible= false;
+                btnMenuPessoasECredores.Visible= false;
             }
         }
     }
