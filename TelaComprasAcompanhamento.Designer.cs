@@ -142,7 +142,6 @@
             this.btnMenuCompras.Text = "Compras";
             this.btnMenuCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuCompras.UseVisualStyleBackColor = true;
-            this.btnMenuCompras.Visible = false;
             // 
             // btnMenuConsultas
             // 
@@ -158,7 +157,6 @@
             this.btnMenuConsultas.Text = "Consultas";
             this.btnMenuConsultas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuConsultas.UseVisualStyleBackColor = true;
-            this.btnMenuConsultas.Visible = false;
             // 
             // btnMenuEstoque
             // 
@@ -174,7 +172,6 @@
             this.btnMenuEstoque.Text = "Estoque";
             this.btnMenuEstoque.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuEstoque.UseVisualStyleBackColor = true;
-            this.btnMenuEstoque.Visible = false;
             // 
             // btnMenuOrdemDeProducao
             // 
@@ -190,7 +187,6 @@
             this.btnMenuOrdemDeProducao.Text = "Ordem de Produção";
             this.btnMenuOrdemDeProducao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuOrdemDeProducao.UseVisualStyleBackColor = true;
-            this.btnMenuOrdemDeProducao.Visible = false;
             // 
             // btnMenuPessoasECredores
             // 
@@ -206,7 +202,6 @@
             this.btnMenuPessoasECredores.Text = "Pessoas e Credores";
             this.btnMenuPessoasECredores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuPessoasECredores.UseVisualStyleBackColor = true;
-            this.btnMenuPessoasECredores.Visible = false;
             // 
             // TelaComprasAcompanhamento
             // 

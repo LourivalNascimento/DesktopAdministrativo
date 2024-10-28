@@ -59,6 +59,14 @@ namespace DesktopAdministrativo
             clickMouse ++;
             if(clickMouse % 2 != 0)
             {
+                //Panel panelMenus = new Panel();
+                //Controls.Add(panelMenus);
+                //panelMenus.Show();
+                //panelMenus.Visible = true;
+                //panelMenus.BackColor = Color.FromArgb(221, 139, 249);
+                //panelMenus.Location = new Point(30 - 2);
+                //panelMenus.Size = new Size(284, 800);
+
                 pictureLogoMorangolandia.Location = new Point(309, 3);
                 btnMenu.BackColor = Color.FromArgb(221, 139, 249);
                 panelMenu.Visible = true;
