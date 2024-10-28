@@ -323,6 +323,16 @@ namespace DesktopAdministrativo.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap frutas {
+            get {
+                object obj = ResourceManager.GetObject("frutas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fundo {
             get {
                 object obj = ResourceManager.GetObject("fundo", resourceCulture);
@@ -576,6 +586,16 @@ namespace DesktopAdministrativo.Properties {
         internal static System.Drawing.Bitmap PAGINA_INICIAL__botões_ {
             get {
                 object obj = ResourceManager.GetObject("PAGINA INICIAL (botões)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PAGINA_INICIAL__botões_1 {
+            get {
+                object obj = ResourceManager.GetObject("PAGINA INICIAL (botões)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

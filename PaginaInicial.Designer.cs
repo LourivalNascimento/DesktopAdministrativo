@@ -28,34 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureLogoMorangolandia = new System.Windows.Forms.PictureBox();
             this.btnEsc = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.btnEstoque = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnConsultas = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btnEstoque);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnCompras);
-            this.panel1.Controls.Add(this.btnConsultas);
-            this.panel1.Location = new System.Drawing.Point(173, 127);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(911, 558);
-            this.panel1.TabIndex = 8;
             // 
             // pictureBox2
             // 
@@ -108,6 +95,24 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.frutas;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnEstoque);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnCompras);
+            this.panel1.Controls.Add(this.btnConsultas);
+            this.panel1.Location = new System.Drawing.Point(31, 63);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1198, 658);
+            this.panel1.TabIndex = 8;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
@@ -117,7 +122,7 @@
             this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(484, 336);
+            this.button2.Location = new System.Drawing.Point(672, 377);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(364, 198);
             this.button2.TabIndex = 7;
@@ -132,7 +137,7 @@
             this.btnEstoque.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstoque.ForeColor = System.Drawing.Color.Transparent;
-            this.btnEstoque.Location = new System.Drawing.Point(660, 63);
+            this.btnEstoque.Location = new System.Drawing.Point(848, 104);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(216, 182);
             this.btnEstoque.TabIndex = 5;
@@ -147,7 +152,7 @@
             this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(57, 336);
+            this.button1.Location = new System.Drawing.Point(245, 377);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(364, 198);
             this.button1.TabIndex = 6;
@@ -162,7 +167,7 @@
             this.btnCompras.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompras.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCompras.Location = new System.Drawing.Point(14, 63);
+            this.btnCompras.Location = new System.Drawing.Point(202, 104);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Size = new System.Drawing.Size(216, 182);
             this.btnCompras.TabIndex = 3;
@@ -178,7 +183,7 @@
             this.btnConsultas.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnConsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultas.ForeColor = System.Drawing.Color.Transparent;
-            this.btnConsultas.Location = new System.Drawing.Point(342, 63);
+            this.btnConsultas.Location = new System.Drawing.Point(530, 104);
             this.btnConsultas.Name = "btnConsultas";
             this.btnConsultas.Size = new System.Drawing.Size(216, 182);
             this.btnConsultas.TabIndex = 4;
@@ -205,10 +210,10 @@
             this.Text = "TelaPaginaInicial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaginaInicial_KeyDown);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
