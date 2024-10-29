@@ -59,20 +59,24 @@ namespace DesktopAdministrativo
         {
             Controls.Add(panelMenus);
             panelMenus.Show();
+            pictureTop.SendToBack();
+            pictureTop.Width = int.MaxValue;
+            panelMenus.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             panelMenus.Visible = true;
             panelMenus.BackColor = Color.FromArgb(221, 139, 249);
             panelMenus.Location = new Point(0 - 2);
-            panelMenus.Size = new Size(284, 800);
+            //panelMenus.Size = new Size(2, 500);
+            panelMenus.Width = 284;
+            panelMenus.Height = int.MaxValue;
+            panelMenus.AutoSize = true;
         }
         private void OcultarMenu()
         {
             Controls.Add(panelMenus);
             panelMenus.Hide();
             panelMenus.Visible = false;
-            panelMenus.BackColor = Color.FromArgb(221, 139, 249);
-            panelMenus.Location = new Point(0 - 2);
-            panelMenus.Size = new Size(284, 800);
         }
+        //MANIPULAÇÃO DO MENU
         private void btnMenu_MouseClick(object sender, MouseEventArgs e)
         {
             clickMouse ++;
@@ -100,5 +104,55 @@ namespace DesktopAdministrativo
                 btnMenuPessoasECredores.Visible= false;
             }
         }
+        //----------------------------------------------------------------------------------------------
+        //CONFIRMAÇÃO DE BOTÕES DO MENU
+        private void btnMenuCompras_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnMenuCompras.Font = new Font("Franklin Gothic Heavy", (float)15.75, FontStyle.Underline);
+        }
+
+        private void btnMenuCompras_MouseLeave(object sender, EventArgs e)
+        {
+            btnMenuCompras.Font = new Font("Franklin Gothic Heavy", (float)15.75);
+        }
+        private void btnMenuConsultas_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnMenuConsultas.Font = new Font("Franklin Gothic Heavy", (float)15.75, FontStyle.Underline);
+        }
+
+        private void btnMenuConsultas_MouseLeave(object sender, EventArgs e)
+        {
+            btnMenuConsultas.Font = new Font("Franklin Gothic Heavy", (float)15.75);
+        }
+        private void btnMenuEstoque_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnMenuEstoque.Font = new Font("Franklin Gothic Heavy", (float)15.75, FontStyle.Underline);
+        }
+
+        private void btnMenuEstoque_MouseLeave(object sender, EventArgs e)
+        {
+            btnMenuEstoque.Font = new Font("Franklin Gothic Heavy", (float)15.75);
+        }
+
+        private void btnMenuOrdemDeProducao_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnMenuOrdemDeProducao.Font = new Font("Franklin Gothic Heavy", (float)15.75, FontStyle.Underline);
+        }
+
+        private void btnMenuOrdemDeProducao_MouseLeave(object sender, EventArgs e)
+        {
+            btnMenuOrdemDeProducao.Font = new Font("Franklin Gothic Heavy", (float)15.75);
+        }
+
+        private void btnMenuPessoasECredores_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnMenuPessoasECredores.Font = new Font("Franklin Gothic Heavy", (float)15.75, FontStyle.Underline);
+        }
+
+        private void btnMenuPessoasECredores_MouseLeave(object sender, EventArgs e)
+        {
+            btnMenuPessoasECredores.Font = new Font("Franklin Gothic Heavy", (float)15.75);
+        }
+        //------------------------------------------------------------------------------------- 
     }
 }
