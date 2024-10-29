@@ -12,6 +12,7 @@ namespace DesktopAdministrativo
 {
     public partial class TelaComprasAcompanhamento : Form
     {
+        Panel panelMenus = new Panel();
         private int clickMouse = 0;
         public TelaComprasAcompanhamento()
         {
@@ -54,22 +55,33 @@ namespace DesktopAdministrativo
             AbrirFormAnterior();
         }
 
+        private void ExibirMenu()
+        {
+            Controls.Add(panelMenus);
+            panelMenus.Show();
+            panelMenus.Visible = true;
+            panelMenus.BackColor = Color.FromArgb(221, 139, 249);
+            panelMenus.Location = new Point(0 - 2);
+            panelMenus.Size = new Size(284, 800);
+        }
+        private void OcultarMenu()
+        {
+            Controls.Add(panelMenus);
+            panelMenus.Hide();
+            panelMenus.Visible = false;
+            panelMenus.BackColor = Color.FromArgb(221, 139, 249);
+            panelMenus.Location = new Point(0 - 2);
+            panelMenus.Size = new Size(284, 800);
+        }
         private void btnMenu_MouseClick(object sender, MouseEventArgs e)
         {
             clickMouse ++;
             if(clickMouse % 2 != 0)
             {
-                //Panel panelMenus = new Panel();
-                //Controls.Add(panelMenus);
-                //panelMenus.Show();
-                //panelMenus.Visible = true;
-                //panelMenus.BackColor = Color.FromArgb(221, 139, 249);
-                //panelMenus.Location = new Point(30 - 2);
-                //panelMenus.Size = new Size(284, 800);
-
+                ExibirMenu();
                 pictureLogoMorangolandia.Location = new Point(309, 3);
                 btnMenu.BackColor = Color.FromArgb(221, 139, 249);
-                panelMenu.Visible = true;
+                //panelMenu.Visible = true;
                 btnMenuCompras.Visible = true;
                 btnMenuConsultas.Visible = true;
                 btnMenuEstoque.Visible = true;
@@ -77,9 +89,10 @@ namespace DesktopAdministrativo
                 btnMenuPessoasECredores.Visible = true;
             }else
             {
+                OcultarMenu();
                 pictureLogoMorangolandia.Location = new Point(118, 3);
                 btnMenu.BackColor = Color.FromArgb(162, 66, 195);
-                panelMenu.Visible = false;
+                //panelMenu.Visible = false;
                 btnMenuCompras.Visible = false;
                 btnMenuConsultas.Visible = false;
                 btnMenuEstoque.Visible = false;
