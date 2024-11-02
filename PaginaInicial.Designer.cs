@@ -97,9 +97,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.frutas;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -108,7 +106,7 @@
             this.panel1.Controls.Add(this.btnOrdemDeProducao);
             this.panel1.Controls.Add(this.btnCompras);
             this.panel1.Controls.Add(this.btnConsultas);
-            this.panel1.Location = new System.Drawing.Point(95, 63);
+            this.panel1.Location = new System.Drawing.Point(19, 63);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1198, 658);
             this.panel1.TabIndex = 8;
@@ -118,6 +116,7 @@
             this.btnPessoasECredores.BackColor = System.Drawing.Color.Transparent;
             this.btnPessoasECredores.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.icon_pessoas;
             this.btnPessoasECredores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPessoasECredores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPessoasECredores.FlatAppearance.BorderSize = 0;
             this.btnPessoasECredores.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnPessoasECredores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -127,12 +126,14 @@
             this.btnPessoasECredores.Size = new System.Drawing.Size(364, 198);
             this.btnPessoasECredores.TabIndex = 7;
             this.btnPessoasECredores.UseVisualStyleBackColor = false;
+            this.btnPessoasECredores.Click += new System.EventHandler(this.btnPessoasECredores_Click);
             // 
             // btnEstoque
             // 
             this.btnEstoque.BackColor = System.Drawing.Color.Transparent;
             this.btnEstoque.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.icon_estoque;
             this.btnEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEstoque.FlatAppearance.BorderSize = 0;
             this.btnEstoque.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -142,12 +143,14 @@
             this.btnEstoque.Size = new System.Drawing.Size(216, 182);
             this.btnEstoque.TabIndex = 5;
             this.btnEstoque.UseVisualStyleBackColor = false;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             // 
             // btnOrdemDeProducao
             // 
             this.btnOrdemDeProducao.BackColor = System.Drawing.Color.Transparent;
             this.btnOrdemDeProducao.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.icon_op;
             this.btnOrdemDeProducao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOrdemDeProducao.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOrdemDeProducao.FlatAppearance.BorderSize = 0;
             this.btnOrdemDeProducao.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnOrdemDeProducao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -157,12 +160,14 @@
             this.btnOrdemDeProducao.Size = new System.Drawing.Size(364, 198);
             this.btnOrdemDeProducao.TabIndex = 6;
             this.btnOrdemDeProducao.UseVisualStyleBackColor = false;
+            this.btnOrdemDeProducao.Click += new System.EventHandler(this.btnOrdemDeProducao_Click);
             // 
             // btnCompras
             // 
             this.btnCompras.BackColor = System.Drawing.Color.Transparent;
             this.btnCompras.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.icon_compras;
             this.btnCompras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCompras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCompras.FlatAppearance.BorderSize = 0;
             this.btnCompras.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -179,6 +184,7 @@
             this.btnConsultas.BackColor = System.Drawing.Color.Transparent;
             this.btnConsultas.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.icon_consultas;
             this.btnConsultas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsultas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultas.FlatAppearance.BorderSize = 0;
             this.btnConsultas.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnConsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -188,6 +194,7 @@
             this.btnConsultas.Size = new System.Drawing.Size(216, 182);
             this.btnConsultas.TabIndex = 4;
             this.btnConsultas.UseVisualStyleBackColor = false;
+            this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
             // 
             // TelaPaginaInicial
             // 

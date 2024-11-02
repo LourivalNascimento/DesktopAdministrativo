@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DesktopAdministrativo
 {
-    public partial class TelaComprasAcompanhamento : Form
+    public partial class TelaPessoasECredoresCadastros : Form
     {
         //Instancia os objetos dos controle
         Panel panelMenus = new Panel();
@@ -20,9 +20,8 @@ namespace DesktopAdministrativo
         Button btnMenuOrdemDeProducao = new Button();
         Button btnMenuPessoasECredores = new Button();
 
-        private float vezesBtnMenuClicado = 0;
-
-        public TelaComprasAcompanhamento()
+        private int vezesBtnMenuClicado = 0;
+        public TelaPessoasECredoresCadastros()
         {
             InitializeComponent();
             pictureTop.Width = int.MaxValue;
@@ -40,7 +39,6 @@ namespace DesktopAdministrativo
             }
             return null;
         }
-
         //Método usado para abrir o form anterior dando impressão de "voltar", fechando o form atual
         private void AbrirFormAnterior()
         {
@@ -203,15 +201,15 @@ namespace DesktopAdministrativo
             btnMenuOrdemDeProducao.Visible = false;
             btnMenuPessoasECredores.Visible = false;
         }
-        //Evento de click no botão "MENU"
-        private void btnMenu_MouseClick(object sender, MouseEventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e)
         {
             //Se a quantidade de click for par, abre o menu
             //Se a quantidade de click for impar, fecha o menu
-            if(vezesBtnMenuClicado % 2 == 0)
+            if (vezesBtnMenuClicado % 2 == 0)
             {
                 ExibirMenu();
-            }else
+            }
+            else
             {
                 OcultarMenu();
             }
@@ -284,6 +282,10 @@ namespace DesktopAdministrativo
         }
         private void btnMenuConsultas_Click(object sender, EventArgs e)
         {
+            //Oculta o menu lateral e seta o valor 0 a variável "vezesBtnMenuClicado"
+            //Fazendo com que a contagem reinicie e o menu possa ser aberto novamente
+            OcultarMenu();
+            vezesBtnMenuClicado = 0;
             //Abre tela "Consultas" e fecha a atual
             Form openForm1 = FormJaAberto(typeof(TelaConsultas));
 
@@ -300,6 +302,10 @@ namespace DesktopAdministrativo
         }
         private void btnMenuEstoque_Click(object sender, EventArgs e)
         {
+            //Oculta o menu lateral e seta o valor 0 a variável "vezesBtnMenuClicado"
+            //Fazendo com que a contagem reinicie e o menu possa ser aberto novamente
+            OcultarMenu();
+            vezesBtnMenuClicado = 0;
             //Abre tela "Estoque de Insumos" e fecha a atual
             Form openForm1 = FormJaAberto(typeof(TelaEstoqueInsumos));
 
@@ -316,6 +322,10 @@ namespace DesktopAdministrativo
         }
         private void btnMenuOrdemDeProducao_Click(object sender, EventArgs e)
         {
+            //Oculta o menu lateral e seta o valor 0 a variável "vezesBtnMenuClicado"
+            //Fazendo com que a contagem reinicie e o menu possa ser aberto novamente
+            OcultarMenu();
+            vezesBtnMenuClicado = 0;
             //Abre tela "Ordem de Produção" e fecha a atual
             Form openForm1 = FormJaAberto(typeof(TelaOrdemDeProducaoEmFila));
 
@@ -332,6 +342,10 @@ namespace DesktopAdministrativo
         }
         private void btnMenuPessoasECredores_Click(object sender, EventArgs e)
         {
+            //Oculta o menu lateral e seta o valor 0 a variável "vezesBtnMenuClicado"
+            //Fazendo com que a contagem reinicie e o menu possa ser aberto novamente
+            OcultarMenu();
+            vezesBtnMenuClicado = 0;
             //Abre tela "Pessoas e Credores" e fecha a atual
             Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresCadastros));
 
@@ -354,8 +368,7 @@ namespace DesktopAdministrativo
             //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
             AbrirFormAnterior();
         }
-        //Evento que ativa a interação do teclado com a tela
-        private void TelaComprasAcompanhamento_KeyDown(object sender, KeyEventArgs e)
+        private void TelaPessoasECredoresCadastros_KeyDown(object sender, KeyEventArgs e)
         {
             //Se a tecla "Esc" for pertada, chama o método "AbrirFormAnterior()"
             //Responsável por fechar tela atual e abrir a anterior
@@ -364,8 +377,7 @@ namespace DesktopAdministrativo
                 AbrirFormAnterior();
             }
         }
-        //Ao clicar na tela com o Menu aberto, fecha o menu
-        private void TelaComprasAcompanhamento_MouseClick(object sender, MouseEventArgs e)
+        private void TelaPessoasECredoresCadastros_MouseClick(object sender, MouseEventArgs e)
         {
             if (vezesBtnMenuClicado % 2 != 0)
             {

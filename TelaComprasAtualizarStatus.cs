@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace DesktopAdministrativo
 {
-    public partial class TelaDeLogin : Form
+    public partial class TelaComprasAtualizarStatus : Form
     {
-        public TelaDeLogin()
+        public TelaComprasAtualizarStatus()
         {
             InitializeComponent();
         }
+
+        //Métódo usado para saber que um form foi aberto
         private Form FormJaAberto(Type formType)
         {
             foreach (Form openForm in Application.OpenForms)
@@ -28,7 +30,8 @@ namespace DesktopAdministrativo
             return null;
         }
 
-        private void AbrirPaginaInicial()
+        //Método usado para abrir o form anterior dando impressão de "voltar", fechando o form atual
+        private void AbrirFormAnterior()
         {
             Form openForm1 = FormJaAberto(typeof(TelaPaginaInicial));
 
@@ -41,25 +44,13 @@ namespace DesktopAdministrativo
                 TelaPaginaInicial paginaInicial = new TelaPaginaInicial();
                 paginaInicial.Show();
             }
-        }
-        private void btnEntrar_Click(object sender, EventArgs e)
-        {
-            AbrirPaginaInicial();
+            Close();
         }
 
-        private void TelaDeLogin_KeyDown(object sender, KeyEventArgs e)
+        private void btnEsc_Click(object sender, EventArgs e)
         {
-            //Se a tecla "Esc" for pertada, chama o método "AbrirFormAnterior()"
-            //Responsável por fechar tela atual e abrir a anterior
-            if (e.KeyData == Keys.Escape)
-            {
-                Close();
-            }
-            //Se a tecla "Enter" for pertada, chama o método "AbrirPaginaInicial()"
-            if (e.KeyData == Keys.Enter)
-            {
-                AbrirPaginaInicial();
-            }
+            //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
+            AbrirFormAnterior();
         }
     }
 }

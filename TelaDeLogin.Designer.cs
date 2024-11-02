@@ -63,7 +63,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,7 +136,8 @@
             // 
             // panelFundoLogin
             // 
-            this.panelFundoLogin.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelFundoLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelFundoLogin.AutoSize = true;
             this.panelFundoLogin.BackColor = System.Drawing.Color.Transparent;
             this.panelFundoLogin.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.Rectangle_4;
             this.panelFundoLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -147,6 +148,7 @@
             this.panelFundoLogin.Controls.Add(this.textBoxCodUser);
             this.panelFundoLogin.Controls.Add(this.pictureCaixaTextPassw);
             this.panelFundoLogin.Controls.Add(this.pictureCaixaTextCod);
+            this.panelFundoLogin.ForeColor = System.Drawing.Color.Transparent;
             this.panelFundoLogin.Location = new System.Drawing.Point(530, 385);
             this.panelFundoLogin.Name = "panelFundoLogin";
             this.panelFundoLogin.Size = new System.Drawing.Size(270, 279);
@@ -154,7 +156,7 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnEntrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEntrar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botao_entrar_normal;
             this.btnEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -308,9 +310,11 @@
             this.Controls.Add(this.pictureMaca);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(139)))), ((int)(((byte)(248)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "TelaDeLogin";
             this.Text = "m o r a n g o l a n d i a";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TelaDeLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureCerejaEsquerda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAbacaxi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBeterraba)).EndInit();

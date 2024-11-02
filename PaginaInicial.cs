@@ -47,7 +47,7 @@ namespace DesktopAdministrativo
             Close();
         }
 
-        //Abre o form "Compras" principal
+        //Abre o form "Compras" principal e fecha a atual
         private void btnCompras_Click(object sender, EventArgs e)
         {
             Form openForm1 = FormJaAberto(typeof(TelaComprasAcompanhamento));
@@ -60,6 +60,66 @@ namespace DesktopAdministrativo
             {
                 TelaComprasAcompanhamento telaComprasAcompanhamento = new TelaComprasAcompanhamento();
                 telaComprasAcompanhamento.Show();
+            }
+        }
+        //Abre tela "Consultas"
+        private void btnConsultas_Click(object sender, EventArgs e)
+        {
+            Form openForm1 = FormJaAberto(typeof(TelaConsultas));
+
+            if (openForm1 != null)
+            {
+                openForm1.Focus();
+            }
+            else
+            {
+                TelaConsultas telaConsultas = new TelaConsultas();
+                telaConsultas.Show();
+            }
+        }
+        //Abre tela "Estoque"
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            Form openForm1 = FormJaAberto(typeof(TelaEstoqueInsumos));
+
+            if (openForm1 != null)
+            {
+                openForm1.Focus();
+            }
+            else
+            {
+                TelaEstoqueInsumos telaEstoqueInsumos = new TelaEstoqueInsumos();
+                telaEstoqueInsumos.Show();
+            }
+        }
+        //Abre tela "Ordem de Produção"
+        private void btnOrdemDeProducao_Click(object sender, EventArgs e)
+        {
+            Form openForm1 = FormJaAberto(typeof(TelaOrdemDeProducaoEmFila));
+
+            if (openForm1 != null)
+            {
+                openForm1.Focus();
+            }
+            else
+            {
+                TelaOrdemDeProducaoEmFila telaOrdemDeProducaoEmFila = new TelaOrdemDeProducaoEmFila();
+                telaOrdemDeProducaoEmFila.Show();
+            }
+        }
+        //Abre tela "Pessoas e Credores"
+        private void btnPessoasECredores_Click(object sender, EventArgs e)
+        {
+            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresCadastros));
+
+            if (openForm1 != null)
+            {
+                openForm1.Focus();
+            }
+            else
+            {
+                TelaPessoasECredoresCadastros telaPessoasECredoresCadastros = new TelaPessoasECredoresCadastros();
+                telaPessoasECredoresCadastros.Show();
             }
         }
     }

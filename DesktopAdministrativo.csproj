@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TelaPessoasECredoresCadastros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaPessoasECredoresCadastros.Designer.cs">
+      <DependentUpon>TelaPessoasECredoresCadastros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaConsultas.Designer.cs">
+      <DependentUpon>TelaConsultas.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +76,18 @@
     <Compile Include="TelaComprasAcompanhamento.Designer.cs">
       <DependentUpon>TelaComprasAcompanhamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaComprasAtualizarStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaComprasAtualizarStatus.Designer.cs">
+      <DependentUpon>TelaComprasAtualizarStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaComprasNovaCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaComprasNovaCompra.Designer.cs">
+      <DependentUpon>TelaComprasNovaCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaDeLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +96,48 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TelaEstoqueInsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaEstoqueInsumos.Designer.cs">
+      <DependentUpon>TelaEstoqueInsumos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaEstoqueNovoCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaEstoqueNovoCadastro.Designer.cs">
+      <DependentUpon>TelaEstoqueNovoCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaEstoqueProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaEstoqueProdutos.Designer.cs">
+      <DependentUpon>TelaEstoqueProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaOrdemDeProducaoEmFila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaOrdemDeProducaoEmFila.Designer.cs">
+      <DependentUpon>TelaOrdemDeProducaoEmFila.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaOrdemDeProducaoEmProducao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaOrdemDeProducaoEmProducao.Designer.cs">
+      <DependentUpon>TelaOrdemDeProducaoEmProducao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaPessoasECredoresNovoCadastroFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaPessoasECredoresNovoCadastroFornecedor.Designer.cs">
+      <DependentUpon>TelaPessoasECredoresNovoCadastroFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaPessoasECredoresNovoCadastroFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaPessoasECredoresNovoCadastroFuncionario.Designer.cs">
+      <DependentUpon>TelaPessoasECredoresNovoCadastroFuncionario.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MDIPrincipal.resx">
       <DependentUpon>MDIPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,6 +146,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaComprasAcompanhamento.resx">
       <DependentUpon>TelaComprasAcompanhamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaComprasAtualizarStatus.resx">
+      <DependentUpon>TelaComprasAtualizarStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaConsultas.resx">
+      <DependentUpon>TelaConsultas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaDeLogin.resx">
       <DependentUpon>TelaDeLogin.cs</DependentUpon>
@@ -94,6 +166,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TelaEstoqueInsumos.resx">
+      <DependentUpon>TelaEstoqueInsumos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaOrdemDeProducaoEmFila.resx">
+      <DependentUpon>TelaOrdemDeProducaoEmFila.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaPessoasECredoresCadastros.resx">
+      <DependentUpon>TelaPessoasECredoresCadastros.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
