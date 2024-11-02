@@ -38,6 +38,7 @@
             this.btnOrdemDeProducao = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnConsultas = new System.Windows.Forms.Button();
+            this.labelNomeFuncionario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -196,6 +197,20 @@
             this.btnConsultas.UseVisualStyleBackColor = false;
             this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
             // 
+            // labelNomeFuncionario
+            // 
+            this.labelNomeFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelNomeFuncionario.AutoEllipsis = true;
+            this.labelNomeFuncionario.AutoSize = true;
+            this.labelNomeFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
+            this.labelNomeFuncionario.Font = new System.Drawing.Font("Tw Cen MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNomeFuncionario.ForeColor = System.Drawing.Color.White;
+            this.labelNomeFuncionario.Location = new System.Drawing.Point(1003, 19);
+            this.labelNomeFuncionario.Name = "labelNomeFuncionario";
+            this.labelNomeFuncionario.Size = new System.Drawing.Size(120, 24);
+            this.labelNomeFuncionario.TabIndex = 16;
+            this.labelNomeFuncionario.Text = "Olá, Beatriz!";
+            // 
             // TelaPaginaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,6 +218,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.Controls.Add(this.labelNomeFuncionario);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureLogoMorangolandia);
             this.Controls.Add(this.btnEsc);
@@ -222,6 +238,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -237,5 +254,6 @@
         private System.Windows.Forms.Button btnPessoasECredores;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label labelNomeFuncionario;
     }
 }

@@ -33,6 +33,9 @@
             this.pictureLogoMorangolandia = new System.Windows.Forms.PictureBox();
             this.btnEsc = new System.Windows.Forms.Button();
             this.pictureTop = new System.Windows.Forms.PictureBox();
+            this.labelNomeFuncionario = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
@@ -104,12 +107,55 @@
             this.pictureTop.TabIndex = 11;
             this.pictureTop.TabStop = false;
             // 
+            // labelNomeFuncionario
+            // 
+            this.labelNomeFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelNomeFuncionario.AutoEllipsis = true;
+            this.labelNomeFuncionario.AutoSize = true;
+            this.labelNomeFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
+            this.labelNomeFuncionario.Font = new System.Drawing.Font("Tw Cen MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNomeFuncionario.ForeColor = System.Drawing.Color.White;
+            this.labelNomeFuncionario.Location = new System.Drawing.Point(990, 19);
+            this.labelNomeFuncionario.Name = "labelNomeFuncionario";
+            this.labelNomeFuncionario.Size = new System.Drawing.Size(120, 24);
+            this.labelNomeFuncionario.TabIndex = 15;
+            this.labelNomeFuncionario.Text = "Olá, Beatriz!";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
+            this.label1.Location = new System.Drawing.Point(35, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(437, 41);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "ACOMPANHAMENTO DE COMPRAS";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Image = global::DesktopAdministrativo.Properties.Resources.botão_editar;
+            this.btnEditar.Location = new System.Drawing.Point(1195, 170);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(40, 44);
+            this.btnEditar.TabIndex = 17;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // TelaComprasAcompanhamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelNomeFuncionario);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureLogoMorangolandia);
@@ -126,6 +172,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -136,5 +183,8 @@
         private System.Windows.Forms.Button btnEsc;
         private System.Windows.Forms.PictureBox pictureTop;
         private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Label labelNomeFuncionario;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

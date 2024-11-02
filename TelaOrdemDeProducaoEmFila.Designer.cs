@@ -33,6 +33,7 @@
             this.pictureLogoMorangolandia = new System.Windows.Forms.PictureBox();
             this.btnEsc = new System.Windows.Forms.Button();
             this.pictureTop = new System.Windows.Forms.PictureBox();
+            this.labelNomeFuncionario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
@@ -60,7 +61,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
             this.pictureBox2.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.foto_perfil;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(1102, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(1136, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(53, 49);
             this.pictureBox2.TabIndex = 35;
@@ -88,7 +89,7 @@
             this.btnEsc.FlatAppearance.BorderSize = 0;
             this.btnEsc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEsc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
-            this.btnEsc.Location = new System.Drawing.Point(1161, 13);
+            this.btnEsc.Location = new System.Drawing.Point(1195, 13);
             this.btnEsc.Name = "btnEsc";
             this.btnEsc.Size = new System.Drawing.Size(36, 32);
             this.btnEsc.TabIndex = 33;
@@ -104,12 +105,27 @@
             this.pictureTop.TabIndex = 32;
             this.pictureTop.TabStop = false;
             // 
+            // labelNomeFuncionario
+            // 
+            this.labelNomeFuncionario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelNomeFuncionario.AutoEllipsis = true;
+            this.labelNomeFuncionario.AutoSize = true;
+            this.labelNomeFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
+            this.labelNomeFuncionario.Font = new System.Drawing.Font("Tw Cen MT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNomeFuncionario.ForeColor = System.Drawing.Color.White;
+            this.labelNomeFuncionario.Location = new System.Drawing.Point(990, 19);
+            this.labelNomeFuncionario.Name = "labelNomeFuncionario";
+            this.labelNomeFuncionario.Size = new System.Drawing.Size(120, 24);
+            this.labelNomeFuncionario.TabIndex = 37;
+            this.labelNomeFuncionario.Text = "Olá, Beatriz!";
+            // 
             // TelaOrdemDeProducaoEmFila
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(1232, 603);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.labelNomeFuncionario);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureLogoMorangolandia);
@@ -126,6 +142,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -136,5 +153,6 @@
         private System.Windows.Forms.PictureBox pictureLogoMorangolandia;
         private System.Windows.Forms.Button btnEsc;
         private System.Windows.Forms.PictureBox pictureTop;
+        private System.Windows.Forms.Label labelNomeFuncionario;
     }
 }

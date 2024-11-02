@@ -372,5 +372,22 @@ namespace DesktopAdministrativo
                 OcultarMenu();
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            //Abre tela "Pessoas e Credores" e fecha a atual
+            Form openForm1 = FormJaAberto(typeof(TelaComprasAtualizarStatus));
+
+            if (openForm1 != null)
+            {
+                openForm1.Focus();
+            }
+            else
+            {
+                TelaComprasAtualizarStatus telaComprasAtualizarStatus = new TelaComprasAtualizarStatus();
+                telaComprasAtualizarStatus.Show();
+                Close();
+            }
+        }
     }
 }
