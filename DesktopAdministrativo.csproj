@@ -150,6 +150,9 @@
     <EmbeddedResource Include="TelaComprasAtualizarStatus.resx">
       <DependentUpon>TelaComprasAtualizarStatus.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TelaComprasNovaCompra.resx">
+      <DependentUpon>TelaComprasNovaCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaConsultas.resx">
       <DependentUpon>TelaConsultas.cs</DependentUpon>
     </EmbeddedResource>

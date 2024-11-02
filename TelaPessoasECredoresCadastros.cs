@@ -74,9 +74,10 @@ namespace DesktopAdministrativo
             panelMenus.Width = 284;
             panelMenus.Height = int.MaxValue;
             panelMenus.AutoSize = true;
+            panelMenus.BringToFront();
             pictureLogoMorangolandia.Location = new Point(309, 3);
             btnMenu.BackColor = Color.FromArgb(221, 139, 249);
-
+            btnMenu.BringToFront();
 
             //Adiciona o controle botão
             Controls.Add(btnMenuCompras);
@@ -84,6 +85,12 @@ namespace DesktopAdministrativo
             Controls.Add(btnMenuEstoque);
             Controls.Add(btnMenuOrdemDeProducao);
             Controls.Add(btnMenuPessoasECredores);
+            //Coloca os botões e panel para a frente
+            btnMenuCompras.BringToFront();
+            btnMenuConsultas.BringToFront();
+            btnMenuEstoque.BringToFront();
+            btnMenuOrdemDeProducao.BringToFront();
+            btnMenuPessoasECredores.BringToFront();
             //Escolhe cursor "Hand" para interação com o mouse
             btnMenuCompras.Cursor = System.Windows.Forms.Cursors.Hand;
             btnMenuConsultas.Cursor = System.Windows.Forms.Cursors.Hand;

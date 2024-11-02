@@ -76,9 +76,10 @@ namespace DesktopAdministrativo
             panelMenus.Width = 284;
             panelMenus.Height = int.MaxValue;
             panelMenus.AutoSize = true;
+            panelMenus.BringToFront();
             pictureLogoMorangolandia.Location = new Point(309, 3);
             btnMenu.BackColor = Color.FromArgb(221, 139, 249);
-
+            btnMenu.BringToFront();
 
             //Adiciona o controle botão
             Controls.Add(btnMenuCompras);
@@ -86,6 +87,12 @@ namespace DesktopAdministrativo
             Controls.Add(btnMenuEstoque);
             Controls.Add(btnMenuOrdemDeProducao);
             Controls.Add(btnMenuPessoasECredores);
+            //Coloca os botões e panel para a frente
+            btnMenuCompras.BringToFront();
+            btnMenuConsultas.BringToFront();
+            btnMenuEstoque.BringToFront();
+            btnMenuOrdemDeProducao.BringToFront();
+            btnMenuPessoasECredores.BringToFront();
             //Escolhe cursor "Hand" para interação com o mouse
             btnMenuCompras.Cursor = System.Windows.Forms.Cursors.Hand;
             btnMenuConsultas.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -375,7 +382,6 @@ namespace DesktopAdministrativo
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //Abre tela "Pessoas e Credores" e fecha a atual
             Form openForm1 = FormJaAberto(typeof(TelaComprasAtualizarStatus));
 
             if (openForm1 != null)
@@ -386,6 +392,22 @@ namespace DesktopAdministrativo
             {
                 TelaComprasAtualizarStatus telaComprasAtualizarStatus = new TelaComprasAtualizarStatus();
                 telaComprasAtualizarStatus.Show();
+                Close();
+            }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            Form openForm1 = FormJaAberto(typeof(TelaComprasNovaCompra));
+
+            if (openForm1 != null)
+            {
+                openForm1.Focus();
+            }
+            else
+            {
+                TelaComprasNovaCompra telaComprasNovaCompra = new TelaComprasNovaCompra();
+                telaComprasNovaCompra.Show();
                 Close();
             }
         }
