@@ -108,7 +108,7 @@
             this.panel1.Controls.Add(this.btnOrdemDeProducao);
             this.panel1.Controls.Add(this.btnCompras);
             this.panel1.Controls.Add(this.btnConsultas);
-            this.panel1.Location = new System.Drawing.Point(31, 63);
+            this.panel1.Location = new System.Drawing.Point(95, 63);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1198, 658);
             this.panel1.TabIndex = 8;

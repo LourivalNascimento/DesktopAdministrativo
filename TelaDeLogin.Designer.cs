@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaDeLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.pictureCerejaEsquerda = new System.Windows.Forms.PictureBox();
             this.pictureAbacaxi = new System.Windows.Forms.PictureBox();
@@ -62,6 +63,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,8 +307,10 @@
             this.Controls.Add(this.pictureCenouraTop);
             this.Controls.Add(this.pictureMaca);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(139)))), ((int)(((byte)(248)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaDeLogin";
-            this.Text = "Form1";
+            this.Text = "m o r a n g o l a n d i a";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureCerejaEsquerda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAbacaxi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBeterraba)).EndInit();
