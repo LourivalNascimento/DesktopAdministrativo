@@ -330,11 +330,11 @@
             // 
             this.labelCpfCnpj.AutoSize = true;
             this.labelCpfCnpj.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelCpfCnpj.Location = new System.Drawing.Point(73, 44);
+            this.labelCpfCnpj.Location = new System.Drawing.Point(82, 44);
             this.labelCpfCnpj.Name = "labelCpfCnpj";
-            this.labelCpfCnpj.Size = new System.Drawing.Size(48, 19);
+            this.labelCpfCnpj.Size = new System.Drawing.Size(38, 19);
             this.labelCpfCnpj.TabIndex = 26;
-            this.labelCpfCnpj.Text = "CNPJ:";
+            this.labelCpfCnpj.Text = "CPF:";
             // 
             // labelNovaCadastro
             // 
@@ -375,6 +375,7 @@
             this.btnMenu.Size = new System.Drawing.Size(51, 32);
             this.btnMenu.TabIndex = 29;
             this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click_1);
             // 
             // pictureBox2
             // 
@@ -415,6 +416,7 @@
             this.btnEsc.Size = new System.Drawing.Size(36, 32);
             this.btnEsc.TabIndex = 25;
             this.btnEsc.UseVisualStyleBackColor = false;
+            this.btnEsc.Click += new System.EventHandler(this.btnEsc_Click_1);
             // 
             // pictureTop
             // 

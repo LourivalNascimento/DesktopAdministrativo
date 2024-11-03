@@ -207,7 +207,7 @@ namespace DesktopAdministrativo
             btnMenuOrdemDeProducao.Visible = false;
             btnMenuPessoasECredores.Visible = false;
         }
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void btnMenu_Click_1(object sender, EventArgs e)
         {
             //Se a quantidade de click for par, abre o menu
             //Se a quantidade de click for impar, fecha o menu
@@ -369,7 +369,7 @@ namespace DesktopAdministrativo
         //----------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------
         //Evento de click do mouse em botão "Esc"
-        private void btnEsc_Click(object sender, EventArgs e)
+        private void btnEsc_Click_1(object sender, EventArgs e)
         {
             //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
             AbrirFormAnterior();
@@ -394,12 +394,15 @@ namespace DesktopAdministrativo
         {
             labelCpfCnpj.Text = " CPF:";
             labelNomeNomeFantasia.Text = "         Nome:";
+            labelFuncao.Visible = true;
+            pictureFuncao.Visible = true;
+            textBoxFuncao.Visible = true;
         }
 
         private void radioBtnFornecedor_CheckedChanged(object sender, EventArgs e)
         {
-            labelCpfCnpj.Text = "CNPJ:";
-            labelNomeNomeFantasia.Text = "Nome Fantasia:";
+            labelCpfCnpj.Text = "CNPJ:  ";
+            labelNomeNomeFantasia.Text = "Nome Fantasia:   ";
             labelFuncao.Visible = false;
             pictureFuncao.Visible = false;
             textBoxFuncao.Visible = false;
