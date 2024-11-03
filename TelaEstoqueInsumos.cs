@@ -392,6 +392,21 @@ namespace DesktopAdministrativo
             {
                 OcultarMenu();
             }
-        }   
+        }
+
+        private void btnNovoCadastro_Click(object sender, EventArgs e)
+        {
+            Form openForm1 = FormJaAberto(typeof(TelaEstoqueNovoCadastro));
+
+            if (openForm1 != null)
+            {
+                openForm1.Focus();
+            }
+            else
+            {
+                TelaEstoqueNovoCadastro telaEstoqueNovoCadastro = new TelaEstoqueNovoCadastro();
+                telaEstoqueNovoCadastro.Show();
+            }
+        }
     }
 }

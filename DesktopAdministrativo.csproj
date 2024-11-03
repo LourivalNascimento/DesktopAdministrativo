@@ -172,6 +172,9 @@
     <EmbeddedResource Include="TelaEstoqueInsumos.resx">
       <DependentUpon>TelaEstoqueInsumos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TelaEstoqueNovoCadastro.resx">
+      <DependentUpon>TelaEstoqueNovoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaOrdemDeProducaoEmFila.resx">
       <DependentUpon>TelaOrdemDeProducaoEmFila.cs</DependentUpon>
     </EmbeddedResource>

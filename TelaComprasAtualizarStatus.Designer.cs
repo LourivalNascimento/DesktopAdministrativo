@@ -71,11 +71,11 @@
             this.labelFornecedor = new System.Windows.Forms.Label();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.panelCadastroDadosCompra = new System.Windows.Forms.Panel();
+            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.labelAtualizarStatus = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelCadastroDeInsumos = new System.Windows.Forms.Panel();
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
@@ -213,7 +213,7 @@
             this.groupBoxRadioBtnStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBoxRadioBtnStatus.Location = new System.Drawing.Point(122, 188);
             this.groupBoxRadioBtnStatus.Name = "groupBoxRadioBtnStatus";
-            this.groupBoxRadioBtnStatus.Size = new System.Drawing.Size(636, 75);
+            this.groupBoxRadioBtnStatus.Size = new System.Drawing.Size(636, 50);
             this.groupBoxRadioBtnStatus.TabIndex = 45;
             this.groupBoxRadioBtnStatus.TabStop = false;
             // 
@@ -597,8 +597,34 @@
             this.panelCadastroDadosCompra.Controls.Add(this.labelFornecedor);
             this.panelCadastroDadosCompra.Location = new System.Drawing.Point(55, 140);
             this.panelCadastroDadosCompra.Name = "panelCadastroDadosCompra";
-            this.panelCadastroDadosCompra.Size = new System.Drawing.Size(1193, 266);
+            this.panelCadastroDadosCompra.Size = new System.Drawing.Size(1193, 241);
             this.panelCadastroDadosCompra.TabIndex = 26;
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_add;
+            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdicionar.FlatAppearance.BorderSize = 0;
+            this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdicionar.Location = new System.Drawing.Point(1154, 35);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(31, 30);
+            this.btnAdicionar.TabIndex = 41;
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_exluir;
+            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Location = new System.Drawing.Point(1115, 35);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(31, 30);
+            this.btnExcluir.TabIndex = 40;
+            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // labelAtualizarStatus
             // 
@@ -647,32 +673,6 @@
             this.panelCadastroDeInsumos.Name = "panelCadastroDeInsumos";
             this.panelCadastroDeInsumos.Size = new System.Drawing.Size(1193, 282);
             this.panelCadastroDeInsumos.TabIndex = 27;
-            // 
-            // btnAdicionar
-            // 
-            this.btnAdicionar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_add;
-            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionar.FlatAppearance.BorderSize = 0;
-            this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionar.Location = new System.Drawing.Point(1154, 35);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(31, 30);
-            this.btnAdicionar.TabIndex = 41;
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_exluir;
-            this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.FlatAppearance.BorderSize = 0;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(1115, 35);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(31, 30);
-            this.btnExcluir.TabIndex = 40;
-            this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // TelaComprasAtualizarStatus
             // 

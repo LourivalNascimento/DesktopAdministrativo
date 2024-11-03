@@ -46,48 +46,49 @@
             this.labelRegistro = new System.Windows.Forms.Label();
             this.labelNumTitulo = new System.Windows.Forms.Label();
             this.panelCadastroDadosCompra = new System.Windows.Forms.Panel();
-            this.labelRazaoSocial = new System.Windows.Forms.Label();
-            this.labelNovaConsulta = new System.Windows.Forms.Label();
-            this.labelTitulo = new System.Windows.Forms.Label();
-            this.panelCadastroDeInsumos = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelNome = new System.Windows.Forms.Label();
-            this.btnPesquisarNome = new System.Windows.Forms.Button();
-            this.textBoxNome = new System.Windows.Forms.TextBox();
-            this.pictureNome = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnPesquisarCnpjCpf = new System.Windows.Forms.Button();
-            this.textBoxCnpjCpf = new System.Windows.Forms.TextBox();
-            this.pictureCnpjCpf = new System.Windows.Forms.PictureBox();
-            this.textBoxNumDocumento = new System.Windows.Forms.TextBox();
-            this.pictureNumDocumento = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxValorMinimo = new System.Windows.Forms.TextBox();
-            this.pictureValorMinimo = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxValorMaximo = new System.Windows.Forms.TextBox();
-            this.pictureValorMaximo = new System.Windows.Forms.PictureBox();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.textBoxVencimentoMaximo = new System.Windows.Forms.TextBox();
+            this.btnLimpar = new System.Windows.Forms.Button();
+            this.pictureVencimentoMaximo = new System.Windows.Forms.PictureBox();
+            this.textBoxVencimentoMinimo = new System.Windows.Forms.TextBox();
+            this.pictureVencimentoMinimo = new System.Windows.Forms.PictureBox();
+            this.labelVencimento = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBoxEmissaoMaximo = new System.Windows.Forms.TextBox();
             this.pictureEmissaoMaximo = new System.Windows.Forms.PictureBox();
             this.textBoxEmissaoMinimo = new System.Windows.Forms.TextBox();
             this.pictureEmissaoMinimo = new System.Windows.Forms.PictureBox();
             this.labelEmissao = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBoxVencimentoMaximo = new System.Windows.Forms.TextBox();
-            this.textBoxVencimentoMinimo = new System.Windows.Forms.TextBox();
-            this.pictureVencimentoMinimo = new System.Windows.Forms.PictureBox();
-            this.labelVencimento = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.pictureVencimentoMaximo = new System.Windows.Forms.PictureBox();
-            this.btnPesquisarResultado = new System.Windows.Forms.Button();
-            this.btnEditarResultado = new System.Windows.Forms.Button();
+            this.textBoxValorMaximo = new System.Windows.Forms.TextBox();
+            this.pictureValorMaximo = new System.Windows.Forms.PictureBox();
+            this.textBoxValorMinimo = new System.Windows.Forms.TextBox();
+            this.pictureValorMinimo = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxNumDocumento = new System.Windows.Forms.TextBox();
+            this.pictureNumDocumento = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnPesquisarCnpjCpf = new System.Windows.Forms.Button();
+            this.textBoxCnpjCpf = new System.Windows.Forms.TextBox();
+            this.pictureCnpjCpf = new System.Windows.Forms.PictureBox();
+            this.labelNome = new System.Windows.Forms.Label();
+            this.btnPesquisarNome = new System.Windows.Forms.Button();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.pictureNome = new System.Windows.Forms.PictureBox();
+            this.labelRazaoSocial = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelNovaConsulta = new System.Windows.Forms.Label();
+            this.labelTitulo = new System.Windows.Forms.Label();
+            this.panelCadastroDeInsumos = new System.Windows.Forms.Panel();
             this.btnRelatorio = new System.Windows.Forms.Button();
-            this.labelExibirTitulo = new System.Windows.Forms.Label();
-            this.labelExibirRegistro = new System.Windows.Forms.Label();
             this.labelExibirValor = new System.Windows.Forms.Label();
+            this.labelExibirRegistro = new System.Windows.Forms.Label();
+            this.labelExibirTitulo = new System.Windows.Forms.Label();
+            this.btnEditarResultado = new System.Windows.Forms.Button();
+            this.btnPesquisarResultado = new System.Windows.Forms.Button();
+            this.labelParametros = new System.Windows.Forms.Label();
+            this.labelResultados = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
@@ -97,16 +98,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureNumTitulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirRegistro)).BeginInit();
             this.panelCadastroDadosCompra.SuspendLayout();
-            this.panelCadastroDeInsumos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureNome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCnpjCpf)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureNumDocumento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureValorMinimo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureValorMaximo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureVencimentoMaximo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureVencimentoMinimo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEmissaoMaximo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEmissaoMinimo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureVencimentoMinimo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureVencimentoMaximo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureValorMaximo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureValorMinimo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNumDocumento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCnpjCpf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNome)).BeginInit();
+            this.panelCadastroDeInsumos.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMenu
@@ -193,7 +194,7 @@
             // 
             this.pictureExibirValor.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.emissão;
             this.pictureExibirValor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureExibirValor.Location = new System.Drawing.Point(1020, 32);
+            this.pictureExibirValor.Location = new System.Drawing.Point(1020, 65);
             this.pictureExibirValor.Name = "pictureExibirValor";
             this.pictureExibirValor.Size = new System.Drawing.Size(79, 25);
             this.pictureExibirValor.TabIndex = 29;
@@ -203,7 +204,7 @@
             // 
             this.pictureExibirTitulo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.codigo;
             this.pictureExibirTitulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureExibirTitulo.Location = new System.Drawing.Point(3, 32);
+            this.pictureExibirTitulo.Location = new System.Drawing.Point(3, 65);
             this.pictureExibirTitulo.Name = "pictureExibirTitulo";
             this.pictureExibirTitulo.Size = new System.Drawing.Size(96, 25);
             this.pictureExibirTitulo.TabIndex = 27;
@@ -269,7 +270,7 @@
             // 
             this.pictureExibirRegistro.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
             this.pictureExibirRegistro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureExibirRegistro.Location = new System.Drawing.Point(105, 32);
+            this.pictureExibirRegistro.Location = new System.Drawing.Point(105, 65);
             this.pictureExibirRegistro.Name = "pictureExibirRegistro";
             this.pictureExibirRegistro.Size = new System.Drawing.Size(909, 25);
             this.pictureExibirRegistro.TabIndex = 30;
@@ -279,7 +280,7 @@
             // 
             this.labelValor.AutoSize = true;
             this.labelValor.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelValor.Location = new System.Drawing.Point(1021, 10);
+            this.labelValor.Location = new System.Drawing.Point(1021, 43);
             this.labelValor.Name = "labelValor";
             this.labelValor.Size = new System.Drawing.Size(41, 17);
             this.labelValor.TabIndex = 32;
@@ -289,7 +290,7 @@
             // 
             this.labelRegistro.AutoSize = true;
             this.labelRegistro.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRegistro.Location = new System.Drawing.Point(101, 11);
+            this.labelRegistro.Location = new System.Drawing.Point(101, 44);
             this.labelRegistro.Name = "labelRegistro";
             this.labelRegistro.Size = new System.Drawing.Size(57, 17);
             this.labelRegistro.TabIndex = 31;
@@ -353,113 +354,240 @@
             this.panelCadastroDadosCompra.Size = new System.Drawing.Size(1194, 241);
             this.panelCadastroDadosCompra.TabIndex = 27;
             // 
-            // labelRazaoSocial
+            // btnConsultar
             // 
-            this.labelRazaoSocial.AutoSize = true;
-            this.labelRazaoSocial.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelRazaoSocial.Location = new System.Drawing.Point(27, 40);
-            this.labelRazaoSocial.Name = "labelRazaoSocial";
-            this.labelRazaoSocial.Size = new System.Drawing.Size(95, 19);
-            this.labelRazaoSocial.TabIndex = 42;
-            this.labelRazaoSocial.Text = "Razão Social:";
+            this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnConsultar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_consultar;
+            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Location = new System.Drawing.Point(1065, 204);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(126, 27);
+            this.btnConsultar.TabIndex = 26;
+            this.btnConsultar.UseVisualStyleBackColor = true;
             // 
-            // labelNovaConsulta
+            // textBoxVencimentoMaximo
             // 
-            this.labelNovaConsulta.AutoSize = true;
-            this.labelNovaConsulta.Font = new System.Drawing.Font("Tw Cen MT Condensed", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNovaConsulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
-            this.labelNovaConsulta.Location = new System.Drawing.Point(35, 96);
-            this.labelNovaConsulta.Name = "labelNovaConsulta";
-            this.labelNovaConsulta.Size = new System.Drawing.Size(228, 41);
-            this.labelNovaConsulta.TabIndex = 26;
-            this.labelNovaConsulta.Text = "NOVA CONSULTA";
+            this.textBoxVencimentoMaximo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxVencimentoMaximo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxVencimentoMaximo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxVencimentoMaximo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxVencimentoMaximo.Location = new System.Drawing.Point(987, 173);
+            this.textBoxVencimentoMaximo.Name = "textBoxVencimentoMaximo";
+            this.textBoxVencimentoMaximo.Size = new System.Drawing.Size(197, 17);
+            this.textBoxVencimentoMaximo.TabIndex = 73;
             // 
-            // labelTitulo
+            // btnLimpar
             // 
-            this.labelTitulo.AutoSize = true;
-            this.labelTitulo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitulo.Location = new System.Drawing.Point(2, 10);
-            this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(40, 17);
-            this.labelTitulo.TabIndex = 28;
-            this.labelTitulo.Text = "Título";
+            this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLimpar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_limpar;
+            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.FlatAppearance.BorderSize = 0;
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.Location = new System.Drawing.Point(932, 204);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(126, 27);
+            this.btnLimpar.TabIndex = 25;
+            this.btnLimpar.UseVisualStyleBackColor = true;
             // 
-            // panelCadastroDeInsumos
+            // pictureVencimentoMaximo
             // 
-            this.panelCadastroDeInsumos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelCadastroDeInsumos.Controls.Add(this.labelExibirValor);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelExibirRegistro);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelExibirTitulo);
-            this.panelCadastroDeInsumos.Controls.Add(this.btnEditarResultado);
-            this.panelCadastroDeInsumos.Controls.Add(this.btnPesquisarResultado);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelValor);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelRegistro);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelTitulo);
-            this.panelCadastroDeInsumos.Controls.Add(this.pictureExibirValor);
-            this.panelCadastroDeInsumos.Controls.Add(this.pictureExibirRegistro);
-            this.panelCadastroDeInsumos.Controls.Add(this.pictureExibirTitulo);
-            this.panelCadastroDeInsumos.Location = new System.Drawing.Point(55, 418);
-            this.panelCadastroDeInsumos.Name = "panelCadastroDeInsumos";
-            this.panelCadastroDeInsumos.Size = new System.Drawing.Size(1193, 220);
-            this.panelCadastroDeInsumos.TabIndex = 28;
+            this.pictureVencimentoMaximo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
+            this.pictureVencimentoMaximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureVencimentoMaximo.Location = new System.Drawing.Point(982, 169);
+            this.pictureVencimentoMaximo.Name = "pictureVencimentoMaximo";
+            this.pictureVencimentoMaximo.Size = new System.Drawing.Size(206, 24);
+            this.pictureVencimentoMaximo.TabIndex = 72;
+            this.pictureVencimentoMaximo.TabStop = false;
             // 
-            // label1
+            // textBoxVencimentoMinimo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
-            this.label1.Location = new System.Drawing.Point(37, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 28);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Parâmetros";
+            this.textBoxVencimentoMinimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxVencimentoMinimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxVencimentoMinimo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxVencimentoMinimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxVencimentoMinimo.Location = new System.Drawing.Point(731, 173);
+            this.textBoxVencimentoMinimo.Name = "textBoxVencimentoMinimo";
+            this.textBoxVencimentoMinimo.Size = new System.Drawing.Size(197, 17);
+            this.textBoxVencimentoMinimo.TabIndex = 70;
             // 
-            // labelNome
+            // pictureVencimentoMinimo
             // 
-            this.labelNome.AutoSize = true;
-            this.labelNome.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelNome.Location = new System.Drawing.Point(71, 71);
-            this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(51, 19);
-            this.labelNome.TabIndex = 48;
-            this.labelNome.Text = "Nome:";
+            this.pictureVencimentoMinimo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
+            this.pictureVencimentoMinimo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureVencimentoMinimo.Location = new System.Drawing.Point(726, 169);
+            this.pictureVencimentoMinimo.Name = "pictureVencimentoMinimo";
+            this.pictureVencimentoMinimo.Size = new System.Drawing.Size(206, 24);
+            this.pictureVencimentoMinimo.TabIndex = 69;
+            this.pictureVencimentoMinimo.TabStop = false;
             // 
-            // btnPesquisarNome
+            // labelVencimento
             // 
-            this.btnPesquisarNome.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_pesquisar;
-            this.btnPesquisarNome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisarNome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPesquisarNome.FlatAppearance.BorderSize = 0;
-            this.btnPesquisarNome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisarNome.Location = new System.Drawing.Point(1160, 66);
-            this.btnPesquisarNome.Name = "btnPesquisarNome";
-            this.btnPesquisarNome.Size = new System.Drawing.Size(31, 30);
-            this.btnPesquisarNome.TabIndex = 47;
-            this.btnPesquisarNome.UseVisualStyleBackColor = true;
+            this.labelVencimento.AutoSize = true;
+            this.labelVencimento.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelVencimento.Location = new System.Drawing.Point(635, 170);
+            this.labelVencimento.Name = "labelVencimento";
+            this.labelVencimento.Size = new System.Drawing.Size(85, 19);
+            this.labelVencimento.TabIndex = 68;
+            this.labelVencimento.Text = "Vencimento:";
             // 
-            // textBoxNome
+            // label10
             // 
-            this.textBoxNome.AllowDrop = true;
-            this.textBoxNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNome.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxNome.Location = new System.Drawing.Point(133, 74);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(1015, 17);
-            this.textBoxNome.TabIndex = 46;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.label10.Location = new System.Drawing.Point(948, 170);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(18, 19);
+            this.label10.TabIndex = 71;
+            this.label10.Text = "a";
             // 
-            // pictureNome
+            // textBoxEmissaoMaximo
             // 
-            this.pictureNome.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
-            this.pictureNome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureNome.Location = new System.Drawing.Point(128, 70);
-            this.pictureNome.Name = "pictureNome";
-            this.pictureNome.Size = new System.Drawing.Size(1024, 24);
-            this.pictureNome.TabIndex = 45;
-            this.pictureNome.TabStop = false;
+            this.textBoxEmissaoMaximo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxEmissaoMaximo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxEmissaoMaximo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxEmissaoMaximo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxEmissaoMaximo.Location = new System.Drawing.Point(987, 139);
+            this.textBoxEmissaoMaximo.Name = "textBoxEmissaoMaximo";
+            this.textBoxEmissaoMaximo.Size = new System.Drawing.Size(197, 17);
+            this.textBoxEmissaoMaximo.TabIndex = 67;
+            // 
+            // pictureEmissaoMaximo
+            // 
+            this.pictureEmissaoMaximo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
+            this.pictureEmissaoMaximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureEmissaoMaximo.Location = new System.Drawing.Point(982, 135);
+            this.pictureEmissaoMaximo.Name = "pictureEmissaoMaximo";
+            this.pictureEmissaoMaximo.Size = new System.Drawing.Size(206, 24);
+            this.pictureEmissaoMaximo.TabIndex = 66;
+            this.pictureEmissaoMaximo.TabStop = false;
+            // 
+            // textBoxEmissaoMinimo
+            // 
+            this.textBoxEmissaoMinimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxEmissaoMinimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxEmissaoMinimo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxEmissaoMinimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxEmissaoMinimo.Location = new System.Drawing.Point(731, 139);
+            this.textBoxEmissaoMinimo.Name = "textBoxEmissaoMinimo";
+            this.textBoxEmissaoMinimo.Size = new System.Drawing.Size(197, 17);
+            this.textBoxEmissaoMinimo.TabIndex = 64;
+            // 
+            // pictureEmissaoMinimo
+            // 
+            this.pictureEmissaoMinimo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
+            this.pictureEmissaoMinimo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureEmissaoMinimo.Location = new System.Drawing.Point(726, 135);
+            this.pictureEmissaoMinimo.Name = "pictureEmissaoMinimo";
+            this.pictureEmissaoMinimo.Size = new System.Drawing.Size(206, 24);
+            this.pictureEmissaoMinimo.TabIndex = 63;
+            this.pictureEmissaoMinimo.TabStop = false;
+            // 
+            // labelEmissao
+            // 
+            this.labelEmissao.AutoSize = true;
+            this.labelEmissao.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelEmissao.Location = new System.Drawing.Point(659, 136);
+            this.labelEmissao.Name = "labelEmissao";
+            this.labelEmissao.Size = new System.Drawing.Size(61, 19);
+            this.labelEmissao.TabIndex = 62;
+            this.labelEmissao.Text = "Emissão:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.label8.Location = new System.Drawing.Point(948, 136);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(18, 19);
+            this.label8.TabIndex = 65;
+            this.label8.Text = "a";
+            // 
+            // textBoxValorMaximo
+            // 
+            this.textBoxValorMaximo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxValorMaximo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxValorMaximo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxValorMaximo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxValorMaximo.Location = new System.Drawing.Point(389, 170);
+            this.textBoxValorMaximo.Name = "textBoxValorMaximo";
+            this.textBoxValorMaximo.Size = new System.Drawing.Size(197, 17);
+            this.textBoxValorMaximo.TabIndex = 61;
+            // 
+            // pictureValorMaximo
+            // 
+            this.pictureValorMaximo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
+            this.pictureValorMaximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureValorMaximo.Location = new System.Drawing.Point(384, 166);
+            this.pictureValorMaximo.Name = "pictureValorMaximo";
+            this.pictureValorMaximo.Size = new System.Drawing.Size(206, 24);
+            this.pictureValorMaximo.TabIndex = 60;
+            this.pictureValorMaximo.TabStop = false;
+            // 
+            // textBoxValorMinimo
+            // 
+            this.textBoxValorMinimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxValorMinimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxValorMinimo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxValorMinimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxValorMinimo.Location = new System.Drawing.Point(133, 170);
+            this.textBoxValorMinimo.Name = "textBoxValorMinimo";
+            this.textBoxValorMinimo.Size = new System.Drawing.Size(197, 17);
+            this.textBoxValorMinimo.TabIndex = 58;
+            // 
+            // pictureValorMinimo
+            // 
+            this.pictureValorMinimo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
+            this.pictureValorMinimo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureValorMinimo.Location = new System.Drawing.Point(128, 166);
+            this.pictureValorMinimo.Name = "pictureValorMinimo";
+            this.pictureValorMinimo.Size = new System.Drawing.Size(206, 24);
+            this.pictureValorMinimo.TabIndex = 57;
+            this.pictureValorMinimo.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.label5.Location = new System.Drawing.Point(74, 168);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 19);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "Valor:";
+            // 
+            // textBoxNumDocumento
+            // 
+            this.textBoxNumDocumento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxNumDocumento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNumDocumento.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxNumDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxNumDocumento.Location = new System.Drawing.Point(133, 139);
+            this.textBoxNumDocumento.Name = "textBoxNumDocumento";
+            this.textBoxNumDocumento.Size = new System.Drawing.Size(453, 17);
+            this.textBoxNumDocumento.TabIndex = 55;
+            // 
+            // pictureNumDocumento
+            // 
+            this.pictureNumDocumento.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
+            this.pictureNumDocumento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureNumDocumento.Location = new System.Drawing.Point(128, 135);
+            this.pictureNumDocumento.Name = "pictureNumDocumento";
+            this.pictureNumDocumento.Size = new System.Drawing.Size(462, 24);
+            this.pictureNumDocumento.TabIndex = 54;
+            this.pictureNumDocumento.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.label3.Location = new System.Drawing.Point(-1, 138);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 19);
+            this.label3.TabIndex = 53;
+            this.label3.Text = "Nº do Documento:";
             // 
             // label4
             // 
@@ -506,67 +634,60 @@
             this.pictureCnpjCpf.TabIndex = 49;
             this.pictureCnpjCpf.TabStop = false;
             // 
-            // textBoxNumDocumento
+            // labelNome
             // 
-            this.textBoxNumDocumento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxNumDocumento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNumDocumento.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxNumDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxNumDocumento.Location = new System.Drawing.Point(133, 139);
-            this.textBoxNumDocumento.Name = "textBoxNumDocumento";
-            this.textBoxNumDocumento.Size = new System.Drawing.Size(453, 17);
-            this.textBoxNumDocumento.TabIndex = 55;
+            this.labelNome.AutoSize = true;
+            this.labelNome.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelNome.Location = new System.Drawing.Point(71, 71);
+            this.labelNome.Name = "labelNome";
+            this.labelNome.Size = new System.Drawing.Size(51, 19);
+            this.labelNome.TabIndex = 48;
+            this.labelNome.Text = "Nome:";
             // 
-            // pictureNumDocumento
+            // btnPesquisarNome
             // 
-            this.pictureNumDocumento.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
-            this.pictureNumDocumento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureNumDocumento.Location = new System.Drawing.Point(128, 135);
-            this.pictureNumDocumento.Name = "pictureNumDocumento";
-            this.pictureNumDocumento.Size = new System.Drawing.Size(462, 24);
-            this.pictureNumDocumento.TabIndex = 54;
-            this.pictureNumDocumento.TabStop = false;
+            this.btnPesquisarNome.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_pesquisar;
+            this.btnPesquisarNome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisarNome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisarNome.FlatAppearance.BorderSize = 0;
+            this.btnPesquisarNome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisarNome.Location = new System.Drawing.Point(1160, 66);
+            this.btnPesquisarNome.Name = "btnPesquisarNome";
+            this.btnPesquisarNome.Size = new System.Drawing.Size(31, 30);
+            this.btnPesquisarNome.TabIndex = 47;
+            this.btnPesquisarNome.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // textBoxNome
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.label3.Location = new System.Drawing.Point(-1, 138);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 19);
-            this.label3.TabIndex = 53;
-            this.label3.Text = "Nº do Documento:";
+            this.textBoxNome.AllowDrop = true;
+            this.textBoxNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNome.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxNome.Location = new System.Drawing.Point(133, 74);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(1015, 17);
+            this.textBoxNome.TabIndex = 46;
             // 
-            // textBoxValorMinimo
+            // pictureNome
             // 
-            this.textBoxValorMinimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxValorMinimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxValorMinimo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxValorMinimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxValorMinimo.Location = new System.Drawing.Point(133, 170);
-            this.textBoxValorMinimo.Name = "textBoxValorMinimo";
-            this.textBoxValorMinimo.Size = new System.Drawing.Size(197, 17);
-            this.textBoxValorMinimo.TabIndex = 58;
+            this.pictureNome.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureNome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureNome.Location = new System.Drawing.Point(128, 70);
+            this.pictureNome.Name = "pictureNome";
+            this.pictureNome.Size = new System.Drawing.Size(1024, 24);
+            this.pictureNome.TabIndex = 45;
+            this.pictureNome.TabStop = false;
             // 
-            // pictureValorMinimo
+            // labelRazaoSocial
             // 
-            this.pictureValorMinimo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
-            this.pictureValorMinimo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureValorMinimo.Location = new System.Drawing.Point(128, 166);
-            this.pictureValorMinimo.Name = "pictureValorMinimo";
-            this.pictureValorMinimo.Size = new System.Drawing.Size(206, 24);
-            this.pictureValorMinimo.TabIndex = 57;
-            this.pictureValorMinimo.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.label5.Location = new System.Drawing.Point(74, 168);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 19);
-            this.label5.TabIndex = 56;
-            this.label5.Text = "Valor:";
+            this.labelRazaoSocial.AutoSize = true;
+            this.labelRazaoSocial.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelRazaoSocial.Location = new System.Drawing.Point(27, 40);
+            this.labelRazaoSocial.Name = "labelRazaoSocial";
+            this.labelRazaoSocial.Size = new System.Drawing.Size(95, 19);
+            this.labelRazaoSocial.TabIndex = 42;
+            this.labelRazaoSocial.Text = "Razão Social:";
             // 
             // label6
             // 
@@ -578,191 +699,99 @@
             this.label6.TabIndex = 59;
             this.label6.Text = "a";
             // 
-            // textBoxValorMaximo
+            // labelNovaConsulta
             // 
-            this.textBoxValorMaximo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxValorMaximo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxValorMaximo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxValorMaximo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxValorMaximo.Location = new System.Drawing.Point(389, 170);
-            this.textBoxValorMaximo.Name = "textBoxValorMaximo";
-            this.textBoxValorMaximo.Size = new System.Drawing.Size(197, 17);
-            this.textBoxValorMaximo.TabIndex = 61;
+            this.labelNovaConsulta.AutoSize = true;
+            this.labelNovaConsulta.Font = new System.Drawing.Font("Tw Cen MT Condensed", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNovaConsulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
+            this.labelNovaConsulta.Location = new System.Drawing.Point(56, 96);
+            this.labelNovaConsulta.Name = "labelNovaConsulta";
+            this.labelNovaConsulta.Size = new System.Drawing.Size(228, 41);
+            this.labelNovaConsulta.TabIndex = 26;
+            this.labelNovaConsulta.Text = "NOVA CONSULTA";
             // 
-            // pictureValorMaximo
+            // labelTitulo
             // 
-            this.pictureValorMaximo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
-            this.pictureValorMaximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureValorMaximo.Location = new System.Drawing.Point(384, 166);
-            this.pictureValorMaximo.Name = "pictureValorMaximo";
-            this.pictureValorMaximo.Size = new System.Drawing.Size(206, 24);
-            this.pictureValorMaximo.TabIndex = 60;
-            this.pictureValorMaximo.TabStop = false;
+            this.labelTitulo.AutoSize = true;
+            this.labelTitulo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.Location = new System.Drawing.Point(2, 43);
+            this.labelTitulo.Name = "labelTitulo";
+            this.labelTitulo.Size = new System.Drawing.Size(40, 17);
+            this.labelTitulo.TabIndex = 28;
+            this.labelTitulo.Text = "Título";
             // 
-            // textBoxEmissaoMaximo
+            // panelCadastroDeInsumos
             // 
-            this.textBoxEmissaoMaximo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxEmissaoMaximo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxEmissaoMaximo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxEmissaoMaximo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxEmissaoMaximo.Location = new System.Drawing.Point(951, 139);
-            this.textBoxEmissaoMaximo.Name = "textBoxEmissaoMaximo";
-            this.textBoxEmissaoMaximo.Size = new System.Drawing.Size(197, 17);
-            this.textBoxEmissaoMaximo.TabIndex = 67;
+            this.panelCadastroDeInsumos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCadastroDeInsumos.Controls.Add(this.labelResultados);
+            this.panelCadastroDeInsumos.Controls.Add(this.btnRelatorio);
+            this.panelCadastroDeInsumos.Controls.Add(this.labelExibirValor);
+            this.panelCadastroDeInsumos.Controls.Add(this.labelExibirRegistro);
+            this.panelCadastroDeInsumos.Controls.Add(this.labelExibirTitulo);
+            this.panelCadastroDeInsumos.Controls.Add(this.btnEditarResultado);
+            this.panelCadastroDeInsumos.Controls.Add(this.btnPesquisarResultado);
+            this.panelCadastroDeInsumos.Controls.Add(this.labelValor);
+            this.panelCadastroDeInsumos.Controls.Add(this.labelRegistro);
+            this.panelCadastroDeInsumos.Controls.Add(this.labelTitulo);
+            this.panelCadastroDeInsumos.Controls.Add(this.pictureExibirValor);
+            this.panelCadastroDeInsumos.Controls.Add(this.pictureExibirRegistro);
+            this.panelCadastroDeInsumos.Controls.Add(this.pictureExibirTitulo);
+            this.panelCadastroDeInsumos.Location = new System.Drawing.Point(55, 418);
+            this.panelCadastroDeInsumos.Name = "panelCadastroDeInsumos";
+            this.panelCadastroDeInsumos.Size = new System.Drawing.Size(1193, 251);
+            this.panelCadastroDeInsumos.TabIndex = 28;
             // 
-            // pictureEmissaoMaximo
+            // btnRelatorio
             // 
-            this.pictureEmissaoMaximo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
-            this.pictureEmissaoMaximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureEmissaoMaximo.Location = new System.Drawing.Point(946, 135);
-            this.pictureEmissaoMaximo.Name = "pictureEmissaoMaximo";
-            this.pictureEmissaoMaximo.Size = new System.Drawing.Size(206, 24);
-            this.pictureEmissaoMaximo.TabIndex = 66;
-            this.pictureEmissaoMaximo.TabStop = false;
+            this.btnRelatorio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRelatorio.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_relatorio;
+            this.btnRelatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRelatorio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRelatorio.FlatAppearance.BorderSize = 0;
+            this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatorio.Location = new System.Drawing.Point(1054, 212);
+            this.btnRelatorio.Name = "btnRelatorio";
+            this.btnRelatorio.Size = new System.Drawing.Size(136, 33);
+            this.btnRelatorio.TabIndex = 74;
+            this.btnRelatorio.UseVisualStyleBackColor = true;
             // 
-            // textBoxEmissaoMinimo
+            // labelExibirValor
             // 
-            this.textBoxEmissaoMinimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxEmissaoMinimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxEmissaoMinimo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxEmissaoMinimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxEmissaoMinimo.Location = new System.Drawing.Point(695, 139);
-            this.textBoxEmissaoMinimo.Name = "textBoxEmissaoMinimo";
-            this.textBoxEmissaoMinimo.Size = new System.Drawing.Size(197, 17);
-            this.textBoxEmissaoMinimo.TabIndex = 64;
+            this.labelExibirValor.AutoSize = true;
+            this.labelExibirValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelExibirValor.Font = new System.Drawing.Font("Tw Cen MT", 10F);
+            this.labelExibirValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelExibirValor.Location = new System.Drawing.Point(1023, 68);
+            this.labelExibirValor.Name = "labelExibirValor";
+            this.labelExibirValor.Size = new System.Drawing.Size(69, 16);
+            this.labelExibirValor.TabIndex = 77;
+            this.labelExibirValor.Text = "R$ 666,66";
             // 
-            // pictureEmissaoMinimo
+            // labelExibirRegistro
             // 
-            this.pictureEmissaoMinimo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
-            this.pictureEmissaoMinimo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureEmissaoMinimo.Location = new System.Drawing.Point(690, 135);
-            this.pictureEmissaoMinimo.Name = "pictureEmissaoMinimo";
-            this.pictureEmissaoMinimo.Size = new System.Drawing.Size(206, 24);
-            this.pictureEmissaoMinimo.TabIndex = 63;
-            this.pictureEmissaoMinimo.TabStop = false;
+            this.labelExibirRegistro.AutoSize = true;
+            this.labelExibirRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelExibirRegistro.Font = new System.Drawing.Font("Tw Cen MT", 10F);
+            this.labelExibirRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelExibirRegistro.Location = new System.Drawing.Point(111, 69);
+            this.labelExibirRegistro.Name = "labelExibirRegistro";
+            this.labelExibirRegistro.Size = new System.Drawing.Size(106, 16);
+            this.labelExibirRegistro.TabIndex = 76;
+            this.labelExibirRegistro.Text = "Morangolandia :)";
             // 
-            // labelEmissao
+            // labelExibirTitulo
             // 
-            this.labelEmissao.AutoSize = true;
-            this.labelEmissao.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelEmissao.Location = new System.Drawing.Point(623, 136);
-            this.labelEmissao.Name = "labelEmissao";
-            this.labelEmissao.Size = new System.Drawing.Size(61, 19);
-            this.labelEmissao.TabIndex = 62;
-            this.labelEmissao.Text = "Emissão:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.label8.Location = new System.Drawing.Point(912, 136);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(18, 19);
-            this.label8.TabIndex = 65;
-            this.label8.Text = "a";
-            // 
-            // textBoxVencimentoMaximo
-            // 
-            this.textBoxVencimentoMaximo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxVencimentoMaximo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxVencimentoMaximo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxVencimentoMaximo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxVencimentoMaximo.Location = new System.Drawing.Point(951, 173);
-            this.textBoxVencimentoMaximo.Name = "textBoxVencimentoMaximo";
-            this.textBoxVencimentoMaximo.Size = new System.Drawing.Size(197, 17);
-            this.textBoxVencimentoMaximo.TabIndex = 73;
-            // 
-            // textBoxVencimentoMinimo
-            // 
-            this.textBoxVencimentoMinimo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxVencimentoMinimo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxVencimentoMinimo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxVencimentoMinimo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxVencimentoMinimo.Location = new System.Drawing.Point(695, 173);
-            this.textBoxVencimentoMinimo.Name = "textBoxVencimentoMinimo";
-            this.textBoxVencimentoMinimo.Size = new System.Drawing.Size(197, 17);
-            this.textBoxVencimentoMinimo.TabIndex = 70;
-            // 
-            // pictureVencimentoMinimo
-            // 
-            this.pictureVencimentoMinimo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
-            this.pictureVencimentoMinimo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureVencimentoMinimo.Location = new System.Drawing.Point(690, 169);
-            this.pictureVencimentoMinimo.Name = "pictureVencimentoMinimo";
-            this.pictureVencimentoMinimo.Size = new System.Drawing.Size(206, 24);
-            this.pictureVencimentoMinimo.TabIndex = 69;
-            this.pictureVencimentoMinimo.TabStop = false;
-            // 
-            // labelVencimento
-            // 
-            this.labelVencimento.AutoSize = true;
-            this.labelVencimento.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelVencimento.Location = new System.Drawing.Point(599, 170);
-            this.labelVencimento.Name = "labelVencimento";
-            this.labelVencimento.Size = new System.Drawing.Size(85, 19);
-            this.labelVencimento.TabIndex = 68;
-            this.labelVencimento.Text = "Vencimento:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.label10.Location = new System.Drawing.Point(912, 170);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(18, 19);
-            this.label10.TabIndex = 71;
-            this.label10.Text = "a";
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_limpar;
-            this.btnLimpar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpar.FlatAppearance.BorderSize = 0;
-            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Location = new System.Drawing.Point(893, 204);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(126, 27);
-            this.btnLimpar.TabIndex = 25;
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConsultar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_consultar;
-            this.btnConsultar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultar.FlatAppearance.BorderSize = 0;
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Location = new System.Drawing.Point(1026, 204);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(126, 27);
-            this.btnConsultar.TabIndex = 26;
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            // 
-            // pictureVencimentoMaximo
-            // 
-            this.pictureVencimentoMaximo.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
-            this.pictureVencimentoMaximo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureVencimentoMaximo.Location = new System.Drawing.Point(946, 169);
-            this.pictureVencimentoMaximo.Name = "pictureVencimentoMaximo";
-            this.pictureVencimentoMaximo.Size = new System.Drawing.Size(206, 24);
-            this.pictureVencimentoMaximo.TabIndex = 72;
-            this.pictureVencimentoMaximo.TabStop = false;
-            // 
-            // btnPesquisarResultado
-            // 
-            this.btnPesquisarResultado.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_pesquisar;
-            this.btnPesquisarResultado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisarResultado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPesquisarResultado.FlatAppearance.BorderSize = 0;
-            this.btnPesquisarResultado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisarResultado.Location = new System.Drawing.Point(1109, 28);
-            this.btnPesquisarResultado.Name = "btnPesquisarResultado";
-            this.btnPesquisarResultado.Size = new System.Drawing.Size(31, 30);
-            this.btnPesquisarResultado.TabIndex = 74;
-            this.btnPesquisarResultado.UseVisualStyleBackColor = true;
+            this.labelExibirTitulo.AutoSize = true;
+            this.labelExibirTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelExibirTitulo.Font = new System.Drawing.Font("Tw Cen MT", 10F);
+            this.labelExibirTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelExibirTitulo.Location = new System.Drawing.Point(29, 68);
+            this.labelExibirTitulo.Name = "labelExibirTitulo";
+            this.labelExibirTitulo.Size = new System.Drawing.Size(39, 16);
+            this.labelExibirTitulo.TabIndex = 75;
+            this.labelExibirTitulo.Text = "4321";
             // 
             // btnEditarResultado
             // 
@@ -771,61 +800,46 @@
             this.btnEditarResultado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditarResultado.FlatAppearance.BorderSize = 0;
             this.btnEditarResultado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarResultado.Location = new System.Drawing.Point(1149, 28);
+            this.btnEditarResultado.Location = new System.Drawing.Point(1149, 61);
             this.btnEditarResultado.Name = "btnEditarResultado";
             this.btnEditarResultado.Size = new System.Drawing.Size(31, 30);
             this.btnEditarResultado.TabIndex = 75;
             this.btnEditarResultado.UseVisualStyleBackColor = true;
             // 
-            // btnRelatorio
+            // btnPesquisarResultado
             // 
-            this.btnRelatorio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRelatorio.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_relatorio;
-            this.btnRelatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRelatorio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRelatorio.FlatAppearance.BorderSize = 0;
-            this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelatorio.Location = new System.Drawing.Point(1120, 644);
-            this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(126, 27);
-            this.btnRelatorio.TabIndex = 74;
-            this.btnRelatorio.UseVisualStyleBackColor = true;
+            this.btnPesquisarResultado.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_pesquisar;
+            this.btnPesquisarResultado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisarResultado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisarResultado.FlatAppearance.BorderSize = 0;
+            this.btnPesquisarResultado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisarResultado.Location = new System.Drawing.Point(1109, 61);
+            this.btnPesquisarResultado.Name = "btnPesquisarResultado";
+            this.btnPesquisarResultado.Size = new System.Drawing.Size(31, 30);
+            this.btnPesquisarResultado.TabIndex = 74;
+            this.btnPesquisarResultado.UseVisualStyleBackColor = true;
             // 
-            // labelExibirTitulo
+            // labelParametros
             // 
-            this.labelExibirTitulo.AutoSize = true;
-            this.labelExibirTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirTitulo.Font = new System.Drawing.Font("Tw Cen MT", 10F);
-            this.labelExibirTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirTitulo.Location = new System.Drawing.Point(29, 35);
-            this.labelExibirTitulo.Name = "labelExibirTitulo";
-            this.labelExibirTitulo.Size = new System.Drawing.Size(39, 16);
-            this.labelExibirTitulo.TabIndex = 75;
-            this.labelExibirTitulo.Text = "4321";
+            this.labelParametros.AutoSize = true;
+            this.labelParametros.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelParametros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
+            this.labelParametros.Location = new System.Drawing.Point(58, 137);
+            this.labelParametros.Name = "labelParametros";
+            this.labelParametros.Size = new System.Drawing.Size(111, 28);
+            this.labelParametros.TabIndex = 29;
+            this.labelParametros.Text = "Parâmetros";
             // 
-            // labelExibirRegistro
+            // labelResultados
             // 
-            this.labelExibirRegistro.AutoSize = true;
-            this.labelExibirRegistro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirRegistro.Font = new System.Drawing.Font("Tw Cen MT", 10F);
-            this.labelExibirRegistro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirRegistro.Location = new System.Drawing.Point(111, 36);
-            this.labelExibirRegistro.Name = "labelExibirRegistro";
-            this.labelExibirRegistro.Size = new System.Drawing.Size(106, 16);
-            this.labelExibirRegistro.TabIndex = 76;
-            this.labelExibirRegistro.Text = "Morangolandia :)";
-            // 
-            // labelExibirValor
-            // 
-            this.labelExibirValor.AutoSize = true;
-            this.labelExibirValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirValor.Font = new System.Drawing.Font("Tw Cen MT", 10F);
-            this.labelExibirValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirValor.Location = new System.Drawing.Point(1023, 35);
-            this.labelExibirValor.Name = "labelExibirValor";
-            this.labelExibirValor.Size = new System.Drawing.Size(69, 16);
-            this.labelExibirValor.TabIndex = 77;
-            this.labelExibirValor.Text = "R$ 666,66";
+            this.labelResultados.AutoSize = true;
+            this.labelResultados.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResultados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
+            this.labelResultados.Location = new System.Drawing.Point(3, 7);
+            this.labelResultados.Name = "labelResultados";
+            this.labelResultados.Size = new System.Drawing.Size(104, 28);
+            this.labelResultados.TabIndex = 30;
+            this.labelResultados.Text = "Resultados";
             // 
             // TelaConsultas
             // 
@@ -833,8 +847,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.btnRelatorio);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelParametros);
             this.Controls.Add(this.panelCadastroDadosCompra);
             this.Controls.Add(this.labelNovaConsulta);
             this.Controls.Add(this.panelCadastroDeInsumos);
@@ -861,17 +874,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirRegistro)).EndInit();
             this.panelCadastroDadosCompra.ResumeLayout(false);
             this.panelCadastroDadosCompra.PerformLayout();
-            this.panelCadastroDeInsumos.ResumeLayout(false);
-            this.panelCadastroDeInsumos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureNome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCnpjCpf)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureNumDocumento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureValorMinimo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureValorMaximo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureVencimentoMaximo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureVencimentoMinimo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEmissaoMaximo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEmissaoMinimo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureVencimentoMinimo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureVencimentoMaximo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureValorMaximo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureValorMinimo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNumDocumento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCnpjCpf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNome)).EndInit();
+            this.panelCadastroDeInsumos.ResumeLayout(false);
+            this.panelCadastroDeInsumos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -900,7 +913,7 @@
         private System.Windows.Forms.Label labelNovaConsulta;
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Panel panelCadastroDeInsumos;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelParametros;
         private System.Windows.Forms.Label labelRazaoSocial;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnPesquisarCnpjCpf;
@@ -939,5 +952,6 @@
         private System.Windows.Forms.Label labelExibirTitulo;
         private System.Windows.Forms.Label labelExibirValor;
         private System.Windows.Forms.Label labelExibirRegistro;
+        private System.Windows.Forms.Label labelResultados;
     }
 }

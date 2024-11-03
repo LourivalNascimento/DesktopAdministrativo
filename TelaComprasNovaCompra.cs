@@ -42,7 +42,7 @@ namespace DesktopAdministrativo
         //Método usado para abrir o form anterior dando impressão de "voltar", fechando o form atual
         private void AbrirFormAnterior()
         {
-            Form openForm1 = FormJaAberto(typeof(TelaPaginaInicial));
+            Form openForm1 = FormJaAberto(typeof(TelaComprasAcompanhamento));
 
             if (openForm1 != null)
             {
@@ -50,8 +50,8 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaPaginaInicial paginaInicial = new TelaPaginaInicial();
-                paginaInicial.Show();
+                TelaComprasAcompanhamento telaComprasAcompanhamento = new TelaComprasAcompanhamento();
+                telaComprasAcompanhamento.Show();
             }
             Close();
         }
