@@ -38,6 +38,12 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.panelAcompanhamentoCompras = new System.Windows.Forms.Panel();
+            this.labelExibirStatus = new System.Windows.Forms.Label();
+            this.labelExibirValor = new System.Windows.Forms.Label();
+            this.labelExibirFornecedor = new System.Windows.Forms.Label();
+            this.labelExibirEmissao = new System.Windows.Forms.Label();
+            this.labelExibirNumNota = new System.Windows.Forms.Label();
+            this.labelExibirCodigo = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
             this.labelValor = new System.Windows.Forms.Label();
             this.labelFornecedor = new System.Windows.Forms.Label();
@@ -50,12 +56,6 @@
             this.pictureEmissao = new System.Windows.Forms.PictureBox();
             this.pictureNumNota = new System.Windows.Forms.PictureBox();
             this.pictureCodigo = new System.Windows.Forms.PictureBox();
-            this.labelExibirCodigo = new System.Windows.Forms.Label();
-            this.labelExibirNumNota = new System.Windows.Forms.Label();
-            this.labelExibirEmissao = new System.Windows.Forms.Label();
-            this.labelExibirFornecedor = new System.Windows.Forms.Label();
-            this.labelExibirValor = new System.Windows.Forms.Label();
-            this.labelExibirStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
@@ -161,14 +161,14 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_editar;
             this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Image = global::DesktopAdministrativo.Properties.Resources.botão_editar;
-            this.btnEditar.Location = new System.Drawing.Point(1150, 23);
+            this.btnEditar.Location = new System.Drawing.Point(1153, 31);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(40, 44);
+            this.btnEditar.Size = new System.Drawing.Size(34, 34);
             this.btnEditar.TabIndex = 17;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -218,6 +218,78 @@
             this.panelAcompanhamentoCompras.Name = "panelAcompanhamentoCompras";
             this.panelAcompanhamentoCompras.Size = new System.Drawing.Size(1193, 70);
             this.panelAcompanhamentoCompras.TabIndex = 19;
+            // 
+            // labelExibirStatus
+            // 
+            this.labelExibirStatus.AutoSize = true;
+            this.labelExibirStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelExibirStatus.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExibirStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelExibirStatus.Location = new System.Drawing.Point(1060, 39);
+            this.labelExibirStatus.Name = "labelExibirStatus";
+            this.labelExibirStatus.Size = new System.Drawing.Size(57, 19);
+            this.labelExibirStatus.TabIndex = 31;
+            this.labelExibirStatus.Text = "TA INO";
+            // 
+            // labelExibirValor
+            // 
+            this.labelExibirValor.AutoSize = true;
+            this.labelExibirValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelExibirValor.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExibirValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelExibirValor.Location = new System.Drawing.Point(939, 39);
+            this.labelExibirValor.Name = "labelExibirValor";
+            this.labelExibirValor.Size = new System.Drawing.Size(79, 19);
+            this.labelExibirValor.TabIndex = 30;
+            this.labelExibirValor.Text = "R$ 666,66";
+            // 
+            // labelExibirFornecedor
+            // 
+            this.labelExibirFornecedor.AutoSize = true;
+            this.labelExibirFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelExibirFornecedor.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExibirFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelExibirFornecedor.Location = new System.Drawing.Point(317, 39);
+            this.labelExibirFornecedor.Name = "labelExibirFornecedor";
+            this.labelExibirFornecedor.Size = new System.Drawing.Size(104, 19);
+            this.labelExibirFornecedor.TabIndex = 30;
+            this.labelExibirFornecedor.Text = "Morangofontes";
+            // 
+            // labelExibirEmissao
+            // 
+            this.labelExibirEmissao.AutoSize = true;
+            this.labelExibirEmissao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelExibirEmissao.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExibirEmissao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelExibirEmissao.Location = new System.Drawing.Point(207, 39);
+            this.labelExibirEmissao.Name = "labelExibirEmissao";
+            this.labelExibirEmissao.Size = new System.Drawing.Size(97, 19);
+            this.labelExibirEmissao.TabIndex = 29;
+            this.labelExibirEmissao.Text = "03/11/2024";
+            // 
+            // labelExibirNumNota
+            // 
+            this.labelExibirNumNota.AutoSize = true;
+            this.labelExibirNumNota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelExibirNumNota.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExibirNumNota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelExibirNumNota.Location = new System.Drawing.Point(126, 39);
+            this.labelExibirNumNota.Name = "labelExibirNumNota";
+            this.labelExibirNumNota.Size = new System.Drawing.Size(45, 19);
+            this.labelExibirNumNota.TabIndex = 28;
+            this.labelExibirNumNota.Text = "1234";
+            // 
+            // labelExibirCodigo
+            // 
+            this.labelExibirCodigo.AutoSize = true;
+            this.labelExibirCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelExibirCodigo.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExibirCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelExibirCodigo.Location = new System.Drawing.Point(22, 39);
+            this.labelExibirCodigo.Name = "labelExibirCodigo";
+            this.labelExibirCodigo.Size = new System.Drawing.Size(45, 19);
+            this.labelExibirCodigo.TabIndex = 27;
+            this.labelExibirCodigo.Text = "4321";
             // 
             // labelStatus
             // 
@@ -338,78 +410,6 @@
             this.pictureCodigo.Size = new System.Drawing.Size(96, 31);
             this.pictureCodigo.TabIndex = 18;
             this.pictureCodigo.TabStop = false;
-            // 
-            // labelExibirCodigo
-            // 
-            this.labelExibirCodigo.AutoSize = true;
-            this.labelExibirCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirCodigo.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExibirCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirCodigo.Location = new System.Drawing.Point(22, 39);
-            this.labelExibirCodigo.Name = "labelExibirCodigo";
-            this.labelExibirCodigo.Size = new System.Drawing.Size(45, 19);
-            this.labelExibirCodigo.TabIndex = 27;
-            this.labelExibirCodigo.Text = "4321";
-            // 
-            // labelExibirNumNota
-            // 
-            this.labelExibirNumNota.AutoSize = true;
-            this.labelExibirNumNota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirNumNota.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExibirNumNota.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirNumNota.Location = new System.Drawing.Point(126, 39);
-            this.labelExibirNumNota.Name = "labelExibirNumNota";
-            this.labelExibirNumNota.Size = new System.Drawing.Size(45, 19);
-            this.labelExibirNumNota.TabIndex = 28;
-            this.labelExibirNumNota.Text = "1234";
-            // 
-            // labelExibirEmissao
-            // 
-            this.labelExibirEmissao.AutoSize = true;
-            this.labelExibirEmissao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirEmissao.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExibirEmissao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirEmissao.Location = new System.Drawing.Point(207, 39);
-            this.labelExibirEmissao.Name = "labelExibirEmissao";
-            this.labelExibirEmissao.Size = new System.Drawing.Size(97, 19);
-            this.labelExibirEmissao.TabIndex = 29;
-            this.labelExibirEmissao.Text = "03/11/2024";
-            // 
-            // labelExibirFornecedor
-            // 
-            this.labelExibirFornecedor.AutoSize = true;
-            this.labelExibirFornecedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirFornecedor.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExibirFornecedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirFornecedor.Location = new System.Drawing.Point(317, 39);
-            this.labelExibirFornecedor.Name = "labelExibirFornecedor";
-            this.labelExibirFornecedor.Size = new System.Drawing.Size(104, 19);
-            this.labelExibirFornecedor.TabIndex = 30;
-            this.labelExibirFornecedor.Text = "Morangofontes";
-            // 
-            // labelExibirValor
-            // 
-            this.labelExibirValor.AutoSize = true;
-            this.labelExibirValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirValor.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExibirValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirValor.Location = new System.Drawing.Point(939, 39);
-            this.labelExibirValor.Name = "labelExibirValor";
-            this.labelExibirValor.Size = new System.Drawing.Size(79, 19);
-            this.labelExibirValor.TabIndex = 30;
-            this.labelExibirValor.Text = "R$ 666,66";
-            // 
-            // labelExibirStatus
-            // 
-            this.labelExibirStatus.AutoSize = true;
-            this.labelExibirStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirStatus.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExibirStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirStatus.Location = new System.Drawing.Point(1060, 39);
-            this.labelExibirStatus.Name = "labelExibirStatus";
-            this.labelExibirStatus.Size = new System.Drawing.Size(57, 19);
-            this.labelExibirStatus.TabIndex = 31;
-            this.labelExibirStatus.Text = "TA INO";
             // 
             // TelaComprasAcompanhamento
             // 

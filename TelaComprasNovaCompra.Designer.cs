@@ -59,23 +59,23 @@
             this.labelNumNota = new System.Windows.Forms.Label();
             this.labelFornecedor = new System.Windows.Forms.Label();
             this.panelCadastroDeInsumos = new System.Windows.Forms.Panel();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.labelExibirValorTotal = new System.Windows.Forms.Label();
+            this.labelValorTotal = new System.Windows.Forms.Label();
+            this.pictureBoxValorTotal = new System.Windows.Forms.PictureBox();
+            this.textBoxValor = new System.Windows.Forms.TextBox();
+            this.textBoxQuantidade = new System.Windows.Forms.TextBox();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
+            this.textBoxNomeDoProduto = new System.Windows.Forms.TextBox();
+            this.labelQuantidade = new System.Windows.Forms.Label();
+            this.pictureQuantidade = new System.Windows.Forms.PictureBox();
             this.labelValor = new System.Windows.Forms.Label();
             this.labelNomeProduto = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureValor = new System.Windows.Forms.PictureBox();
             this.pictureProduto = new System.Windows.Forms.PictureBox();
             this.pictureCodigo = new System.Windows.Forms.PictureBox();
-            this.labelQuantidade = new System.Windows.Forms.Label();
-            this.pictureQuantidade = new System.Windows.Forms.PictureBox();
-            this.textBoxNomeDoProduto = new System.Windows.Forms.TextBox();
-            this.textBoxCodigo = new System.Windows.Forms.TextBox();
-            this.textBoxQuantidade = new System.Windows.Forms.TextBox();
-            this.textBoxValor = new System.Windows.Forms.TextBox();
-            this.labelValorTotal = new System.Windows.Forms.Label();
-            this.pictureBoxValorTotal = new System.Windows.Forms.PictureBox();
-            this.labelExibirValorTotal = new System.Windows.Forms.Label();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
@@ -87,11 +87,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureNumNota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFornecedor)).BeginInit();
             this.panelCadastroDeInsumos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValorTotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCodigo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureQuantidade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValorTotal)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNomeFuncionario
@@ -312,27 +312,27 @@
             // 
             // btnAdicionar
             // 
+            this.btnAdicionar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_add;
             this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionar.Image = global::DesktopAdministrativo.Properties.Resources.botão_add;
-            this.btnAdicionar.Location = new System.Drawing.Point(1148, 30);
+            this.btnAdicionar.Location = new System.Drawing.Point(1153, 34);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(40, 38);
+            this.btnAdicionar.Size = new System.Drawing.Size(31, 30);
             this.btnAdicionar.TabIndex = 39;
             this.btnAdicionar.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
             // 
+            this.btnExcluir.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_exluir;
             this.btnExcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Image = global::DesktopAdministrativo.Properties.Resources.botão_exluir;
-            this.btnExcluir.Location = new System.Drawing.Point(1109, 30);
+            this.btnExcluir.Location = new System.Drawing.Point(1114, 34);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(40, 38);
+            this.btnExcluir.Size = new System.Drawing.Size(31, 30);
             this.btnExcluir.TabIndex = 38;
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
@@ -487,6 +487,133 @@
             this.panelCadastroDeInsumos.Size = new System.Drawing.Size(1193, 282);
             this.panelCadastroDeInsumos.TabIndex = 24;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_cancelar_vermelho;
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Location = new System.Drawing.Point(998, 247);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(96, 32);
+            this.btnCancelar.TabIndex = 26;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_salvar;
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.FlatAppearance.BorderSize = 0;
+            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalvar.Location = new System.Drawing.Point(1097, 247);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(96, 32);
+            this.btnSalvar.TabIndex = 25;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // labelExibirValorTotal
+            // 
+            this.labelExibirValorTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelExibirValorTotal.AutoSize = true;
+            this.labelExibirValorTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelExibirValorTotal.Font = new System.Drawing.Font("Tw Cen MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelExibirValorTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelExibirValorTotal.Location = new System.Drawing.Point(1115, 207);
+            this.labelExibirValorTotal.Name = "labelExibirValorTotal";
+            this.labelExibirValorTotal.Size = new System.Drawing.Size(63, 15);
+            this.labelExibirValorTotal.TabIndex = 51;
+            this.labelExibirValorTotal.Text = "R$ 666,66";
+            // 
+            // labelValorTotal
+            // 
+            this.labelValorTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelValorTotal.AutoSize = true;
+            this.labelValorTotal.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelValorTotal.Location = new System.Drawing.Point(1030, 205);
+            this.labelValorTotal.Name = "labelValorTotal";
+            this.labelValorTotal.Size = new System.Drawing.Size(78, 17);
+            this.labelValorTotal.TabIndex = 50;
+            this.labelValorTotal.Text = "Valor Total:";
+            // 
+            // pictureBoxValorTotal
+            // 
+            this.pictureBoxValorTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBoxValorTotal.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.emissão;
+            this.pictureBoxValorTotal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxValorTotal.Location = new System.Drawing.Point(1109, 202);
+            this.pictureBoxValorTotal.Name = "pictureBoxValorTotal";
+            this.pictureBoxValorTotal.Size = new System.Drawing.Size(76, 25);
+            this.pictureBoxValorTotal.TabIndex = 49;
+            this.pictureBoxValorTotal.TabStop = false;
+            // 
+            // textBoxValor
+            // 
+            this.textBoxValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxValor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxValor.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxValor.Location = new System.Drawing.Point(1109, 36);
+            this.textBoxValor.Name = "textBoxValor";
+            this.textBoxValor.Size = new System.Drawing.Size(64, 17);
+            this.textBoxValor.TabIndex = 48;
+            // 
+            // textBoxQuantidade
+            // 
+            this.textBoxQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxQuantidade.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxQuantidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxQuantidade.Location = new System.Drawing.Point(1019, 36);
+            this.textBoxQuantidade.Name = "textBoxQuantidade";
+            this.textBoxQuantidade.Size = new System.Drawing.Size(75, 17);
+            this.textBoxQuantidade.TabIndex = 47;
+            // 
+            // textBoxCodigo
+            // 
+            this.textBoxCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCodigo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxCodigo.Location = new System.Drawing.Point(5, 36);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(93, 17);
+            this.textBoxCodigo.TabIndex = 46;
+            // 
+            // textBoxNomeDoProduto
+            // 
+            this.textBoxNomeDoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxNomeDoProduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNomeDoProduto.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxNomeDoProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxNomeDoProduto.Location = new System.Drawing.Point(107, 36);
+            this.textBoxNomeDoProduto.Name = "textBoxNomeDoProduto";
+            this.textBoxNomeDoProduto.Size = new System.Drawing.Size(900, 17);
+            this.textBoxNomeDoProduto.TabIndex = 46;
+            // 
+            // labelQuantidade
+            // 
+            this.labelQuantidade.AutoSize = true;
+            this.labelQuantidade.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuantidade.Location = new System.Drawing.Point(1013, 10);
+            this.labelQuantidade.Name = "labelQuantidade";
+            this.labelQuantidade.Size = new System.Drawing.Size(89, 17);
+            this.labelQuantidade.TabIndex = 34;
+            this.labelQuantidade.Text = "Quantiadade";
+            // 
+            // pictureQuantidade
+            // 
+            this.pictureQuantidade.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.emissão;
+            this.pictureQuantidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureQuantidade.Location = new System.Drawing.Point(1017, 32);
+            this.pictureQuantidade.Name = "pictureQuantidade";
+            this.pictureQuantidade.Size = new System.Drawing.Size(83, 25);
+            this.pictureQuantidade.TabIndex = 33;
+            this.pictureQuantidade.TabStop = false;
+            // 
             // labelValor
             // 
             this.labelValor.AutoSize = true;
@@ -547,133 +674,6 @@
             this.pictureCodigo.TabIndex = 27;
             this.pictureCodigo.TabStop = false;
             // 
-            // labelQuantidade
-            // 
-            this.labelQuantidade.AutoSize = true;
-            this.labelQuantidade.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuantidade.Location = new System.Drawing.Point(1013, 10);
-            this.labelQuantidade.Name = "labelQuantidade";
-            this.labelQuantidade.Size = new System.Drawing.Size(89, 17);
-            this.labelQuantidade.TabIndex = 34;
-            this.labelQuantidade.Text = "Quantiadade";
-            // 
-            // pictureQuantidade
-            // 
-            this.pictureQuantidade.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.emissão;
-            this.pictureQuantidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureQuantidade.Location = new System.Drawing.Point(1017, 32);
-            this.pictureQuantidade.Name = "pictureQuantidade";
-            this.pictureQuantidade.Size = new System.Drawing.Size(83, 25);
-            this.pictureQuantidade.TabIndex = 33;
-            this.pictureQuantidade.TabStop = false;
-            // 
-            // textBoxNomeDoProduto
-            // 
-            this.textBoxNomeDoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxNomeDoProduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNomeDoProduto.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxNomeDoProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxNomeDoProduto.Location = new System.Drawing.Point(107, 36);
-            this.textBoxNomeDoProduto.Name = "textBoxNomeDoProduto";
-            this.textBoxNomeDoProduto.Size = new System.Drawing.Size(900, 17);
-            this.textBoxNomeDoProduto.TabIndex = 46;
-            // 
-            // textBoxCodigo
-            // 
-            this.textBoxCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCodigo.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxCodigo.Location = new System.Drawing.Point(5, 36);
-            this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(93, 17);
-            this.textBoxCodigo.TabIndex = 46;
-            // 
-            // textBoxQuantidade
-            // 
-            this.textBoxQuantidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxQuantidade.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxQuantidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxQuantidade.Location = new System.Drawing.Point(1019, 36);
-            this.textBoxQuantidade.Name = "textBoxQuantidade";
-            this.textBoxQuantidade.Size = new System.Drawing.Size(75, 17);
-            this.textBoxQuantidade.TabIndex = 47;
-            // 
-            // textBoxValor
-            // 
-            this.textBoxValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxValor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxValor.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxValor.Location = new System.Drawing.Point(1109, 36);
-            this.textBoxValor.Name = "textBoxValor";
-            this.textBoxValor.Size = new System.Drawing.Size(64, 17);
-            this.textBoxValor.TabIndex = 48;
-            // 
-            // labelValorTotal
-            // 
-            this.labelValorTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelValorTotal.AutoSize = true;
-            this.labelValorTotal.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelValorTotal.Location = new System.Drawing.Point(1030, 205);
-            this.labelValorTotal.Name = "labelValorTotal";
-            this.labelValorTotal.Size = new System.Drawing.Size(78, 17);
-            this.labelValorTotal.TabIndex = 50;
-            this.labelValorTotal.Text = "Valor Total:";
-            // 
-            // pictureBoxValorTotal
-            // 
-            this.pictureBoxValorTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBoxValorTotal.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.emissão;
-            this.pictureBoxValorTotal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxValorTotal.Location = new System.Drawing.Point(1109, 202);
-            this.pictureBoxValorTotal.Name = "pictureBoxValorTotal";
-            this.pictureBoxValorTotal.Size = new System.Drawing.Size(76, 25);
-            this.pictureBoxValorTotal.TabIndex = 49;
-            this.pictureBoxValorTotal.TabStop = false;
-            // 
-            // labelExibirValorTotal
-            // 
-            this.labelExibirValorTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelExibirValorTotal.AutoSize = true;
-            this.labelExibirValorTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirValorTotal.Font = new System.Drawing.Font("Tw Cen MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExibirValorTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirValorTotal.Location = new System.Drawing.Point(1115, 207);
-            this.labelExibirValorTotal.Name = "labelExibirValorTotal";
-            this.labelExibirValorTotal.Size = new System.Drawing.Size(63, 15);
-            this.labelExibirValorTotal.TabIndex = 51;
-            this.labelExibirValorTotal.Text = "R$ 666,66";
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_salvar;
-            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.FlatAppearance.BorderSize = 0;
-            this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(1097, 247);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(96, 32);
-            this.btnSalvar.TabIndex = 25;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_cancelar_vermelho;
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(998, 247);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(96, 32);
-            this.btnCancelar.TabIndex = 26;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // TelaComprasNovaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -710,11 +710,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureFornecedor)).EndInit();
             this.panelCadastroDeInsumos.ResumeLayout(false);
             this.panelCadastroDeInsumos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValorTotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCodigo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureQuantidade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValorTotal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
