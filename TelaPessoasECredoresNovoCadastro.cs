@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DesktopAdministrativo
 {
-    public partial class TelaPessoasECredoresCadastros : Form
+    public partial class TelaPessoasECredoresNovoCadastro : Form
     {
         //Instancia os objetos dos controle
         Panel panelMenus = new Panel();
@@ -21,12 +21,11 @@ namespace DesktopAdministrativo
         Button btnMenuPessoasECredores = new Button();
 
         private int vezesBtnMenuClicado = 0;
-        public TelaPessoasECredoresCadastros()
+        public TelaPessoasECredoresNovoCadastro()
         {
             InitializeComponent();
             pictureTop.Width = int.MaxValue;
         }
-
         //Métódo usado para saber que um form foi aberto
         private Form FormJaAberto(Type formType)
         {
@@ -42,7 +41,7 @@ namespace DesktopAdministrativo
         //Método usado para abrir o form anterior dando impressão de "voltar", fechando o form atual
         private void AbrirFormAnterior()
         {
-            Form openForm1 = FormJaAberto(typeof(TelaPaginaInicial));
+            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresConsulta));
 
             if (openForm1 != null)
             {
@@ -50,8 +49,8 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaPaginaInicial paginaInicial = new TelaPaginaInicial();
-                paginaInicial.Show();
+                TelaPessoasECredoresConsulta telaPessoasECredoresConsulta = new TelaPessoasECredoresConsulta();
+                telaPessoasECredoresConsulta.Show();
             }
             Close();
         }
@@ -354,7 +353,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Pessoas e Credores" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresCadastros));
+            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresConsulta));
 
             if (openForm1 != null)
             {
@@ -362,7 +361,7 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaPessoasECredoresCadastros telaPessoasECredoresCadastros = new TelaPessoasECredoresCadastros();
+                TelaPessoasECredoresConsulta telaPessoasECredoresCadastros = new TelaPessoasECredoresConsulta();
                 telaPessoasECredoresCadastros.Show();
                 Close();
             }
@@ -375,7 +374,7 @@ namespace DesktopAdministrativo
             //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
             AbrirFormAnterior();
         }
-        private void TelaPessoasECredoresCadastros_KeyDown(object sender, KeyEventArgs e)
+        private void TelaPessoasECredoresNovoCadastro_KeyDown(object sender, KeyEventArgs e)
         {
             //Se a tecla "Esc" for pertada, chama o método "AbrirFormAnterior()"
             //Responsável por fechar tela atual e abrir a anterior
@@ -384,12 +383,32 @@ namespace DesktopAdministrativo
                 AbrirFormAnterior();
             }
         }
-        private void TelaPessoasECredoresCadastros_MouseClick(object sender, MouseEventArgs e)
+        private void TelaPessoasECredoresNovoCadastro_MouseClick(object sender, MouseEventArgs e)
         {
             if (vezesBtnMenuClicado % 2 != 0)
             {
                 OcultarMenu();
             }
+        }
+        private void radioBtnFuncionario_CheckedChanged(object sender, EventArgs e)
+        {
+            labelCpfCnpj.Text = " CPF:";
+            labelNomeNomeFantasia.Text = "         Nome:";
+        }
+
+        private void radioBtnFornecedor_CheckedChanged(object sender, EventArgs e)
+        {
+            labelCpfCnpj.Text = "CNPJ:";
+            labelNomeNomeFantasia.Text = "Nome Fantasia:";
+            labelFuncao.Visible = false;
+            pictureFuncao.Visible = false;
+            textBoxFuncao.Visible = false;
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
+            AbrirFormAnterior();
         }
     }
 }

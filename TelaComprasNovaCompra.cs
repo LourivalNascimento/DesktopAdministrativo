@@ -307,7 +307,7 @@ namespace DesktopAdministrativo
         private void btnMenuEstoque_Click(object sender, EventArgs e)
         {
             //Abre tela "Estoque de Insumos" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaEstoqueInsumos));
+            Form openForm1 = FormJaAberto(typeof(TelaEstoque));
 
             if (openForm1 != null)
             {
@@ -315,7 +315,7 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaEstoqueInsumos telaEstoqueInsumos = new TelaEstoqueInsumos();
+                TelaEstoque telaEstoqueInsumos = new TelaEstoque();
                 telaEstoqueInsumos.Show();
                 Close();
             }
@@ -323,7 +323,7 @@ namespace DesktopAdministrativo
         private void btnMenuOrdemDeProducao_Click(object sender, EventArgs e)
         {
             //Abre tela "Ordem de Produção" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaOrdemDeProducaoEmFila));
+            Form openForm1 = FormJaAberto(typeof(TelaOrdemDeProducao));
 
             if (openForm1 != null)
             {
@@ -331,7 +331,7 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaOrdemDeProducaoEmFila telaOrdemDeProducaoEmFila = new TelaOrdemDeProducaoEmFila();
+                TelaOrdemDeProducao telaOrdemDeProducaoEmFila = new TelaOrdemDeProducao();
                 telaOrdemDeProducaoEmFila.Show();
                 Close();
             }
@@ -339,7 +339,7 @@ namespace DesktopAdministrativo
         private void btnMenuPessoasECredores_Click(object sender, EventArgs e)
         {
             //Abre tela "Pessoas e Credores" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresCadastros));
+            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresConsulta));
 
             if (openForm1 != null)
             {
@@ -347,7 +347,7 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaPessoasECredoresCadastros telaPessoasECredoresCadastros = new TelaPessoasECredoresCadastros();
+                TelaPessoasECredoresConsulta telaPessoasECredoresCadastros = new TelaPessoasECredoresConsulta();
                 telaPessoasECredoresCadastros.Show();
                 Close();
             }
@@ -377,6 +377,12 @@ namespace DesktopAdministrativo
             {
                 OcultarMenu();
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
+            AbrirFormAnterior();
         }
     }
 }

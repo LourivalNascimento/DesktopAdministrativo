@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DesktopAdministrativo
 {
-    public partial class TelaPessoasECredoresCadastros : Form
+    public partial class TelaPessoasECredoresConsulta : Form
     {
         //Instancia os objetos dos controle
         Panel panelMenus = new Panel();
@@ -21,7 +21,7 @@ namespace DesktopAdministrativo
         Button btnMenuPessoasECredores = new Button();
 
         private int vezesBtnMenuClicado = 0;
-        public TelaPessoasECredoresCadastros()
+        public TelaPessoasECredoresConsulta()
         {
             InitializeComponent();
             pictureTop.Width = int.MaxValue;
@@ -354,7 +354,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Pessoas e Credores" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresCadastros));
+            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresConsulta));
 
             if (openForm1 != null)
             {
@@ -362,7 +362,7 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaPessoasECredoresCadastros telaPessoasECredoresCadastros = new TelaPessoasECredoresCadastros();
+                TelaPessoasECredoresConsulta telaPessoasECredoresCadastros = new TelaPessoasECredoresConsulta();
                 telaPessoasECredoresCadastros.Show();
                 Close();
             }
@@ -390,6 +390,33 @@ namespace DesktopAdministrativo
             {
                 OcultarMenu();
             }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresNovoCadastro));
+
+            if (openForm1 != null)
+            {
+                openForm1.Focus();
+            }
+            else
+            {
+                TelaPessoasECredoresNovoCadastro telaPessoasECredoresNovoCadastro = new TelaPessoasECredoresNovoCadastro();
+                telaPessoasECredoresNovoCadastro.Show();
+            }
+            Close();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
+            AbrirFormAnterior();
+        }
+
+        private void btnConcluir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

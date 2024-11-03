@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DesktopAdministrativo
 {
-    public partial class TelaOrdemDeProducaoEmFila : Form
+    public partial class TelaEstoque : Form
     {
         //Instancia os objetos dos controle
         Panel panelMenus = new Panel();
@@ -21,7 +21,7 @@ namespace DesktopAdministrativo
         Button btnMenuPessoasECredores = new Button();
 
         private int vezesBtnMenuClicado = 0;
-        public TelaOrdemDeProducaoEmFila()
+        public TelaEstoque()
         {
             InitializeComponent();
             pictureTop.Width = int.MaxValue;
@@ -207,6 +207,7 @@ namespace DesktopAdministrativo
             btnMenuOrdemDeProducao.Visible = false;
             btnMenuPessoasECredores.Visible = false;
         }
+        //Evento de click no botão "MENU"
         private void btnMenu_Click(object sender, EventArgs e)
         {
             //Se a quantidade de click for par, abre o menu
@@ -313,7 +314,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Estoque de Insumos" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaEstoqueInsumos));
+            Form openForm1 = FormJaAberto(typeof(TelaEstoque));
 
             if (openForm1 != null)
             {
@@ -321,7 +322,7 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaEstoqueInsumos telaEstoqueInsumos = new TelaEstoqueInsumos();
+                TelaEstoque telaEstoqueInsumos = new TelaEstoque();
                 telaEstoqueInsumos.Show();
                 Close();
             }
@@ -333,7 +334,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Ordem de Produção" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaOrdemDeProducaoEmFila));
+            Form openForm1 = FormJaAberto(typeof(TelaOrdemDeProducao));
 
             if (openForm1 != null)
             {
@@ -341,7 +342,7 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaOrdemDeProducaoEmFila telaOrdemDeProducaoEmFila = new TelaOrdemDeProducaoEmFila();
+                TelaOrdemDeProducao telaOrdemDeProducaoEmFila = new TelaOrdemDeProducao();
                 telaOrdemDeProducaoEmFila.Show();
                 Close();
             }
@@ -353,7 +354,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Pessoas e Credores" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresCadastros));
+            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresConsulta));
 
             if (openForm1 != null)
             {
@@ -361,7 +362,7 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaPessoasECredoresCadastros telaPessoasECredoresCadastros = new TelaPessoasECredoresCadastros();
+                TelaPessoasECredoresConsulta telaPessoasECredoresCadastros = new TelaPessoasECredoresConsulta();
                 telaPessoasECredoresCadastros.Show();
                 Close();
             }
@@ -374,7 +375,8 @@ namespace DesktopAdministrativo
             //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
             AbrirFormAnterior();
         }
-        private void TelaOrdemDeProducaoEmFila_KeyDown(object sender, KeyEventArgs e)
+        //Evento que ativa a interação do teclado com a tela
+        private void TelaEstoqueInsumos_KeyDown(object sender, KeyEventArgs e)
         {
             //Se a tecla "Esc" for pertada, chama o método "AbrirFormAnterior()"
             //Responsável por fechar tela atual e abrir a anterior
@@ -383,11 +385,27 @@ namespace DesktopAdministrativo
                 AbrirFormAnterior();
             }
         }
-        private void TelaOrdemDeProducaoEmFila_MouseClick(object sender, MouseEventArgs e)
+        //Ao clicar na tela com o Menu aberto, fecha o menu
+        private void TelaEstoqueInsumos_MouseClick(object sender, MouseEventArgs e)
         {
             if (vezesBtnMenuClicado % 2 != 0)
             {
                 OcultarMenu();
+            }
+        }
+
+        private void btnNovoCadastro_Click(object sender, EventArgs e)
+        {
+            Form openForm1 = FormJaAberto(typeof(TelaEstoqueNovoCadastro));
+
+            if (openForm1 != null)
+            {
+                openForm1.Focus();
+            }
+            else
+            {
+                TelaEstoqueNovoCadastro telaEstoqueNovoCadastro = new TelaEstoqueNovoCadastro();
+                telaEstoqueNovoCadastro.Show();
             }
         }
     }

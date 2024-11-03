@@ -433,6 +433,16 @@ namespace DesktopAdministrativo.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fundo_Estoque {
+            get {
+                object obj = ResourceManager.GetObject("fundo Estoque", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fundo_maça {
             get {
                 object obj = ResourceManager.GetObject("fundo maça", resourceCulture);
@@ -466,6 +476,16 @@ namespace DesktopAdministrativo.Properties {
         internal static System.Drawing.Bitmap fundo3 {
             get {
                 object obj = ResourceManager.GetObject("fundo3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fundo31 {
+            get {
+                object obj = ResourceManager.GetObject("fundo31", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

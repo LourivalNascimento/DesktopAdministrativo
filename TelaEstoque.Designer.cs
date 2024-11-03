@@ -1,6 +1,6 @@
 ﻿namespace DesktopAdministrativo
 {
-    partial class TelaEstoqueInsumos
+    partial class TelaEstoque
     {
         /// <summary>
         /// Required designer variable.
@@ -42,12 +42,10 @@
             this.labelQuantidade = new System.Windows.Forms.Label();
             this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.panelCadastroDeInsumos = new System.Windows.Forms.Panel();
-            this.labelDescricao = new System.Windows.Forms.Label();
-            this.labelCodigo = new System.Windows.Forms.Label();
-            this.panelCadastroDadosCompra = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelNovaConsulta = new System.Windows.Forms.Label();
-            this.labelTipo = new System.Windows.Forms.Label();
+            this.btnEditarResultado = new System.Windows.Forms.Button();
+            this.btnPesquisarResultado = new System.Windows.Forms.Button();
+            this.btnNovoCadastro = new System.Windows.Forms.Button();
+            this.labelResultados = new System.Windows.Forms.Label();
             this.labelExibirQuantidade = new System.Windows.Forms.Label();
             this.labelExibirDescricao = new System.Windows.Forms.Label();
             this.labelExibirCodigo = new System.Windows.Forms.Label();
@@ -57,33 +55,35 @@
             this.pictureExibirQuantidade = new System.Windows.Forms.PictureBox();
             this.pictureExibirDescricao = new System.Windows.Forms.PictureBox();
             this.pictureExibirCodigo = new System.Windows.Forms.PictureBox();
-            this.btnPesquisarDescricaoEstoque = new System.Windows.Forms.Button();
-            this.pictureDescricao = new System.Windows.Forms.PictureBox();
-            this.radioBtnProdutos = new System.Windows.Forms.RadioButton();
-            this.radioBtnInsumos = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelDescricao = new System.Windows.Forms.Label();
+            this.labelCodigo = new System.Windows.Forms.Label();
+            this.panelCadastroDadosCompra = new System.Windows.Forms.Panel();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.groupBoxOrdemAlfabetica = new System.Windows.Forms.GroupBox();
             this.radioBtnNao = new System.Windows.Forms.RadioButton();
             this.radioBtnSim = new System.Windows.Forms.RadioButton();
             this.labelOrdemAlfabetica = new System.Windows.Forms.Label();
-            this.btnFiltrar = new System.Windows.Forms.Button();
-            this.labelResultados = new System.Windows.Forms.Label();
-            this.btnNovoCadastro = new System.Windows.Forms.Button();
-            this.btnEditarResultado = new System.Windows.Forms.Button();
-            this.btnPesquisarResultado = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioBtnProdutos = new System.Windows.Forms.RadioButton();
+            this.radioBtnInsumos = new System.Windows.Forms.RadioButton();
+            this.btnPesquisarDescricaoEstoque = new System.Windows.Forms.Button();
+            this.labelTipo = new System.Windows.Forms.Label();
+            this.pictureDescricao = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelEstoque = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             this.groupBoxRadioBtnQuantidade.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCodigo)).BeginInit();
             this.panelCadastroDeInsumos.SuspendLayout();
-            this.panelCadastroDadosCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirDescricao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirCodigo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureDescricao)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.panelCadastroDadosCompra.SuspendLayout();
             this.groupBoxOrdemAlfabetica.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDescricao)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureTop
@@ -186,13 +186,13 @@
             this.radioBtnMenorParaMaior.Name = "radioBtnMenorParaMaior";
             this.radioBtnMenorParaMaior.Size = new System.Drawing.Size(144, 23);
             this.radioBtnMenorParaMaior.TabIndex = 1;
-            this.radioBtnMenorParaMaior.TabStop = true;
             this.radioBtnMenorParaMaior.Text = "Menor para Maior";
             this.radioBtnMenorParaMaior.UseVisualStyleBackColor = true;
             // 
             // radioBtnMaiorParaMenor
             // 
             this.radioBtnMaiorParaMenor.AutoSize = true;
+            this.radioBtnMaiorParaMenor.Checked = true;
             this.radioBtnMaiorParaMenor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioBtnMaiorParaMenor.Font = new System.Drawing.Font("Tw Cen MT", 12F);
             this.radioBtnMaiorParaMenor.Location = new System.Drawing.Point(6, 7);
@@ -268,81 +268,57 @@
             this.panelCadastroDeInsumos.Size = new System.Drawing.Size(1193, 269);
             this.panelCadastroDeInsumos.TabIndex = 35;
             // 
-            // labelDescricao
+            // btnEditarResultado
             // 
-            this.labelDescricao.AutoSize = true;
-            this.labelDescricao.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelDescricao.Location = new System.Drawing.Point(46, 77);
-            this.labelDescricao.Name = "labelDescricao";
-            this.labelDescricao.Size = new System.Drawing.Size(73, 19);
-            this.labelDescricao.TabIndex = 28;
-            this.labelDescricao.Text = "Descrição:";
+            this.btnEditarResultado.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_editar;
+            this.btnEditarResultado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditarResultado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarResultado.FlatAppearance.BorderSize = 0;
+            this.btnEditarResultado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarResultado.Location = new System.Drawing.Point(1156, 59);
+            this.btnEditarResultado.Name = "btnEditarResultado";
+            this.btnEditarResultado.Size = new System.Drawing.Size(31, 30);
+            this.btnEditarResultado.TabIndex = 90;
+            this.btnEditarResultado.UseVisualStyleBackColor = true;
             // 
-            // labelCodigo
+            // btnPesquisarResultado
             // 
-            this.labelCodigo.AutoSize = true;
-            this.labelCodigo.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelCodigo.Location = new System.Drawing.Point(59, 41);
-            this.labelCodigo.Name = "labelCodigo";
-            this.labelCodigo.Size = new System.Drawing.Size(60, 19);
-            this.labelCodigo.TabIndex = 27;
-            this.labelCodigo.Text = "Código:";
+            this.btnPesquisarResultado.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_pesquisar;
+            this.btnPesquisarResultado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisarResultado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisarResultado.FlatAppearance.BorderSize = 0;
+            this.btnPesquisarResultado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisarResultado.Location = new System.Drawing.Point(1120, 59);
+            this.btnPesquisarResultado.Name = "btnPesquisarResultado";
+            this.btnPesquisarResultado.Size = new System.Drawing.Size(31, 30);
+            this.btnPesquisarResultado.TabIndex = 89;
+            this.btnPesquisarResultado.UseVisualStyleBackColor = true;
             // 
-            // panelCadastroDadosCompra
+            // btnNovoCadastro
             // 
-            this.panelCadastroDadosCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelCadastroDadosCompra.AutoSize = true;
-            this.panelCadastroDadosCompra.Controls.Add(this.btnFiltrar);
-            this.panelCadastroDadosCompra.Controls.Add(this.groupBoxOrdemAlfabetica);
-            this.panelCadastroDadosCompra.Controls.Add(this.labelOrdemAlfabetica);
-            this.panelCadastroDadosCompra.Controls.Add(this.groupBox1);
-            this.panelCadastroDadosCompra.Controls.Add(this.btnPesquisarDescricaoEstoque);
-            this.panelCadastroDadosCompra.Controls.Add(this.labelTipo);
-            this.panelCadastroDadosCompra.Controls.Add(this.groupBoxRadioBtnQuantidade);
-            this.panelCadastroDadosCompra.Controls.Add(this.textBoxDescricao);
-            this.panelCadastroDadosCompra.Controls.Add(this.pictureDescricao);
-            this.panelCadastroDadosCompra.Controls.Add(this.textBoxCodigo);
-            this.panelCadastroDadosCompra.Controls.Add(this.pictureCodigo);
-            this.panelCadastroDadosCompra.Controls.Add(this.labelQuantidade);
-            this.panelCadastroDadosCompra.Controls.Add(this.labelDescricao);
-            this.panelCadastroDadosCompra.Controls.Add(this.labelCodigo);
-            this.panelCadastroDadosCompra.Location = new System.Drawing.Point(55, 175);
-            this.panelCadastroDadosCompra.Name = "panelCadastroDadosCompra";
-            this.panelCadastroDadosCompra.Size = new System.Drawing.Size(1193, 204);
-            this.panelCadastroDadosCompra.TabIndex = 34;
+            this.btnNovoCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovoCadastro.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_novo_cadastro;
+            this.btnNovoCadastro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNovoCadastro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovoCadastro.FlatAppearance.BorderSize = 0;
+            this.btnNovoCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoCadastro.Location = new System.Drawing.Point(1032, 234);
+            this.btnNovoCadastro.Name = "btnNovoCadastro";
+            this.btnNovoCadastro.Size = new System.Drawing.Size(156, 32);
+            this.btnNovoCadastro.TabIndex = 88;
+            this.btnNovoCadastro.UseVisualStyleBackColor = true;
+            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
             // 
-            // label1
+            // labelResultados
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
-            this.label1.Location = new System.Drawing.Point(61, 137);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 28);
-            this.label1.TabIndex = 53;
-            this.label1.Text = "Parâmetros";
-            // 
-            // labelNovaConsulta
-            // 
-            this.labelNovaConsulta.AutoSize = true;
-            this.labelNovaConsulta.Font = new System.Drawing.Font("Tw Cen MT Condensed", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNovaConsulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
-            this.labelNovaConsulta.Location = new System.Drawing.Point(61, 96);
-            this.labelNovaConsulta.Name = "labelNovaConsulta";
-            this.labelNovaConsulta.Size = new System.Drawing.Size(128, 41);
-            this.labelNovaConsulta.TabIndex = 52;
-            this.labelNovaConsulta.Text = "ESTOQUE";
-            // 
-            // labelTipo
-            // 
-            this.labelTipo.AutoSize = true;
-            this.labelTipo.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelTipo.Location = new System.Drawing.Point(79, 12);
-            this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(40, 19);
-            this.labelTipo.TabIndex = 46;
-            this.labelTipo.Text = "Tipo:";
+            this.labelResultados.AutoSize = true;
+            this.labelResultados.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResultados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
+            this.labelResultados.Location = new System.Drawing.Point(8, 12);
+            this.labelResultados.Name = "labelResultados";
+            this.labelResultados.Size = new System.Drawing.Size(104, 28);
+            this.labelResultados.TabIndex = 87;
+            this.labelResultados.Text = "Resultados";
             // 
             // labelExibirQuantidade
             // 
@@ -440,65 +416,63 @@
             this.pictureExibirCodigo.TabIndex = 78;
             this.pictureExibirCodigo.TabStop = false;
             // 
-            // btnPesquisarDescricaoEstoque
+            // labelDescricao
             // 
-            this.btnPesquisarDescricaoEstoque.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_pesquisar;
-            this.btnPesquisarDescricaoEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisarDescricaoEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPesquisarDescricaoEstoque.FlatAppearance.BorderSize = 0;
-            this.btnPesquisarDescricaoEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisarDescricaoEstoque.Location = new System.Drawing.Point(1157, 69);
-            this.btnPesquisarDescricaoEstoque.Name = "btnPesquisarDescricaoEstoque";
-            this.btnPesquisarDescricaoEstoque.Size = new System.Drawing.Size(31, 30);
-            this.btnPesquisarDescricaoEstoque.TabIndex = 47;
-            this.btnPesquisarDescricaoEstoque.UseVisualStyleBackColor = true;
+            this.labelDescricao.AutoSize = true;
+            this.labelDescricao.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelDescricao.Location = new System.Drawing.Point(46, 77);
+            this.labelDescricao.Name = "labelDescricao";
+            this.labelDescricao.Size = new System.Drawing.Size(73, 19);
+            this.labelDescricao.TabIndex = 28;
+            this.labelDescricao.Text = "Descrição:";
             // 
-            // pictureDescricao
+            // labelCodigo
             // 
-            this.pictureDescricao.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
-            this.pictureDescricao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureDescricao.Location = new System.Drawing.Point(122, 74);
-            this.pictureDescricao.Name = "pictureDescricao";
-            this.pictureDescricao.Size = new System.Drawing.Size(1031, 24);
-            this.pictureDescricao.TabIndex = 40;
-            this.pictureDescricao.TabStop = false;
+            this.labelCodigo.AutoSize = true;
+            this.labelCodigo.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelCodigo.Location = new System.Drawing.Point(59, 41);
+            this.labelCodigo.Name = "labelCodigo";
+            this.labelCodigo.Size = new System.Drawing.Size(60, 19);
+            this.labelCodigo.TabIndex = 27;
+            this.labelCodigo.Text = "Código:";
             // 
-            // radioBtnProdutos
+            // panelCadastroDadosCompra
             // 
-            this.radioBtnProdutos.AutoSize = true;
-            this.radioBtnProdutos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioBtnProdutos.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.radioBtnProdutos.Location = new System.Drawing.Point(105, 8);
-            this.radioBtnProdutos.Name = "radioBtnProdutos";
-            this.radioBtnProdutos.Size = new System.Drawing.Size(81, 23);
-            this.radioBtnProdutos.TabIndex = 1;
-            this.radioBtnProdutos.TabStop = true;
-            this.radioBtnProdutos.Text = "Produtos";
-            this.radioBtnProdutos.UseVisualStyleBackColor = true;
+            this.panelCadastroDadosCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCadastroDadosCompra.AutoSize = true;
+            this.panelCadastroDadosCompra.Controls.Add(this.btnFiltrar);
+            this.panelCadastroDadosCompra.Controls.Add(this.groupBoxOrdemAlfabetica);
+            this.panelCadastroDadosCompra.Controls.Add(this.labelOrdemAlfabetica);
+            this.panelCadastroDadosCompra.Controls.Add(this.groupBox1);
+            this.panelCadastroDadosCompra.Controls.Add(this.btnPesquisarDescricaoEstoque);
+            this.panelCadastroDadosCompra.Controls.Add(this.labelTipo);
+            this.panelCadastroDadosCompra.Controls.Add(this.groupBoxRadioBtnQuantidade);
+            this.panelCadastroDadosCompra.Controls.Add(this.textBoxDescricao);
+            this.panelCadastroDadosCompra.Controls.Add(this.pictureDescricao);
+            this.panelCadastroDadosCompra.Controls.Add(this.textBoxCodigo);
+            this.panelCadastroDadosCompra.Controls.Add(this.pictureCodigo);
+            this.panelCadastroDadosCompra.Controls.Add(this.labelQuantidade);
+            this.panelCadastroDadosCompra.Controls.Add(this.labelDescricao);
+            this.panelCadastroDadosCompra.Controls.Add(this.labelCodigo);
+            this.panelCadastroDadosCompra.Location = new System.Drawing.Point(55, 175);
+            this.panelCadastroDadosCompra.Name = "panelCadastroDadosCompra";
+            this.panelCadastroDadosCompra.Size = new System.Drawing.Size(1193, 204);
+            this.panelCadastroDadosCompra.TabIndex = 34;
             // 
-            // radioBtnInsumos
+            // btnFiltrar
             // 
-            this.radioBtnInsumos.AutoSize = true;
-            this.radioBtnInsumos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioBtnInsumos.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.radioBtnInsumos.Location = new System.Drawing.Point(6, 7);
-            this.radioBtnInsumos.Name = "radioBtnInsumos";
-            this.radioBtnInsumos.Size = new System.Drawing.Size(74, 23);
-            this.radioBtnInsumos.TabIndex = 0;
-            this.radioBtnInsumos.TabStop = true;
-            this.radioBtnInsumos.Text = "Insumos";
-            this.radioBtnInsumos.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioBtnProdutos);
-            this.groupBox1.Controls.Add(this.radioBtnInsumos);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(125, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(427, 32);
-            this.groupBox1.TabIndex = 46;
-            this.groupBox1.TabStop = false;
+            this.btnFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFiltrar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_filtrar;
+            this.btnFiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFiltrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltrar.FlatAppearance.BorderSize = 0;
+            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltrar.Location = new System.Drawing.Point(1058, 113);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(130, 32);
+            this.btnFiltrar.TabIndex = 87;
+            this.btnFiltrar.UseVisualStyleBackColor = true;
             // 
             // groupBoxOrdemAlfabetica
             // 
@@ -520,13 +494,13 @@
             this.radioBtnNao.Name = "radioBtnNao";
             this.radioBtnNao.Size = new System.Drawing.Size(55, 23);
             this.radioBtnNao.TabIndex = 1;
-            this.radioBtnNao.TabStop = true;
             this.radioBtnNao.Text = "Não";
             this.radioBtnNao.UseVisualStyleBackColor = true;
             // 
             // radioBtnSim
             // 
             this.radioBtnSim.AutoSize = true;
+            this.radioBtnSim.Checked = true;
             this.radioBtnSim.Cursor = System.Windows.Forms.Cursors.Hand;
             this.radioBtnSim.Font = new System.Drawing.Font("Tw Cen MT", 12F);
             this.radioBtnSim.Location = new System.Drawing.Point(6, 7);
@@ -547,73 +521,99 @@
             this.labelOrdemAlfabetica.TabIndex = 46;
             this.labelOrdemAlfabetica.Text = "Ordem Alfabética:";
             // 
-            // btnFiltrar
+            // groupBox1
             // 
-            this.btnFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltrar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_filtrar;
-            this.btnFiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFiltrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltrar.FlatAppearance.BorderSize = 0;
-            this.btnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltrar.Location = new System.Drawing.Point(1058, 113);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(130, 32);
-            this.btnFiltrar.TabIndex = 87;
-            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.radioBtnProdutos);
+            this.groupBox1.Controls.Add(this.radioBtnInsumos);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.Location = new System.Drawing.Point(125, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(427, 32);
+            this.groupBox1.TabIndex = 46;
+            this.groupBox1.TabStop = false;
             // 
-            // labelResultados
+            // radioBtnProdutos
             // 
-            this.labelResultados.AutoSize = true;
-            this.labelResultados.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResultados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
-            this.labelResultados.Location = new System.Drawing.Point(8, 12);
-            this.labelResultados.Name = "labelResultados";
-            this.labelResultados.Size = new System.Drawing.Size(104, 28);
-            this.labelResultados.TabIndex = 87;
-            this.labelResultados.Text = "Resultados";
+            this.radioBtnProdutos.AutoSize = true;
+            this.radioBtnProdutos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioBtnProdutos.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.radioBtnProdutos.Location = new System.Drawing.Point(105, 8);
+            this.radioBtnProdutos.Name = "radioBtnProdutos";
+            this.radioBtnProdutos.Size = new System.Drawing.Size(81, 23);
+            this.radioBtnProdutos.TabIndex = 1;
+            this.radioBtnProdutos.Text = "Produtos";
+            this.radioBtnProdutos.UseVisualStyleBackColor = true;
             // 
-            // btnNovoCadastro
+            // radioBtnInsumos
             // 
-            this.btnNovoCadastro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNovoCadastro.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_novo_cadastro;
-            this.btnNovoCadastro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNovoCadastro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovoCadastro.FlatAppearance.BorderSize = 0;
-            this.btnNovoCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovoCadastro.Location = new System.Drawing.Point(1032, 234);
-            this.btnNovoCadastro.Name = "btnNovoCadastro";
-            this.btnNovoCadastro.Size = new System.Drawing.Size(156, 32);
-            this.btnNovoCadastro.TabIndex = 88;
-            this.btnNovoCadastro.UseVisualStyleBackColor = true;
-            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
+            this.radioBtnInsumos.AutoSize = true;
+            this.radioBtnInsumos.Checked = true;
+            this.radioBtnInsumos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioBtnInsumos.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.radioBtnInsumos.Location = new System.Drawing.Point(6, 7);
+            this.radioBtnInsumos.Name = "radioBtnInsumos";
+            this.radioBtnInsumos.Size = new System.Drawing.Size(74, 23);
+            this.radioBtnInsumos.TabIndex = 0;
+            this.radioBtnInsumos.TabStop = true;
+            this.radioBtnInsumos.Text = "Insumos";
+            this.radioBtnInsumos.UseVisualStyleBackColor = true;
             // 
-            // btnEditarResultado
+            // btnPesquisarDescricaoEstoque
             // 
-            this.btnEditarResultado.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_editar;
-            this.btnEditarResultado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditarResultado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditarResultado.FlatAppearance.BorderSize = 0;
-            this.btnEditarResultado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarResultado.Location = new System.Drawing.Point(1156, 59);
-            this.btnEditarResultado.Name = "btnEditarResultado";
-            this.btnEditarResultado.Size = new System.Drawing.Size(31, 30);
-            this.btnEditarResultado.TabIndex = 90;
-            this.btnEditarResultado.UseVisualStyleBackColor = true;
+            this.btnPesquisarDescricaoEstoque.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_pesquisar;
+            this.btnPesquisarDescricaoEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPesquisarDescricaoEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPesquisarDescricaoEstoque.FlatAppearance.BorderSize = 0;
+            this.btnPesquisarDescricaoEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPesquisarDescricaoEstoque.Location = new System.Drawing.Point(1157, 69);
+            this.btnPesquisarDescricaoEstoque.Name = "btnPesquisarDescricaoEstoque";
+            this.btnPesquisarDescricaoEstoque.Size = new System.Drawing.Size(31, 30);
+            this.btnPesquisarDescricaoEstoque.TabIndex = 47;
+            this.btnPesquisarDescricaoEstoque.UseVisualStyleBackColor = true;
             // 
-            // btnPesquisarResultado
+            // labelTipo
             // 
-            this.btnPesquisarResultado.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_pesquisar;
-            this.btnPesquisarResultado.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPesquisarResultado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPesquisarResultado.FlatAppearance.BorderSize = 0;
-            this.btnPesquisarResultado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPesquisarResultado.Location = new System.Drawing.Point(1120, 59);
-            this.btnPesquisarResultado.Name = "btnPesquisarResultado";
-            this.btnPesquisarResultado.Size = new System.Drawing.Size(31, 30);
-            this.btnPesquisarResultado.TabIndex = 89;
-            this.btnPesquisarResultado.UseVisualStyleBackColor = true;
+            this.labelTipo.AutoSize = true;
+            this.labelTipo.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelTipo.Location = new System.Drawing.Point(79, 12);
+            this.labelTipo.Name = "labelTipo";
+            this.labelTipo.Size = new System.Drawing.Size(40, 19);
+            this.labelTipo.TabIndex = 46;
+            this.labelTipo.Text = "Tipo:";
             // 
-            // TelaEstoqueInsumos
+            // pictureDescricao
+            // 
+            this.pictureDescricao.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureDescricao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureDescricao.Location = new System.Drawing.Point(122, 74);
+            this.pictureDescricao.Name = "pictureDescricao";
+            this.pictureDescricao.Size = new System.Drawing.Size(1031, 24);
+            this.pictureDescricao.TabIndex = 40;
+            this.pictureDescricao.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
+            this.label1.Location = new System.Drawing.Point(61, 137);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 28);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Parâmetros";
+            // 
+            // labelEstoque
+            // 
+            this.labelEstoque.AutoSize = true;
+            this.labelEstoque.Font = new System.Drawing.Font("Tw Cen MT Condensed", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEstoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
+            this.labelEstoque.Location = new System.Drawing.Point(61, 96);
+            this.labelEstoque.Name = "labelEstoque";
+            this.labelEstoque.Size = new System.Drawing.Size(128, 41);
+            this.labelEstoque.TabIndex = 52;
+            this.labelEstoque.Text = "ESTOQUE";
+            // 
+            // TelaEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -621,7 +621,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelCadastroDeInsumos);
-            this.Controls.Add(this.labelNovaConsulta);
+            this.Controls.Add(this.labelEstoque);
             this.Controls.Add(this.panelCadastroDadosCompra);
             this.Controls.Add(this.labelNomeFuncionario);
             this.Controls.Add(this.btnMenu);
@@ -631,7 +631,7 @@
             this.Controls.Add(this.pictureTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Name = "TelaEstoqueInsumos";
+            this.Name = "TelaEstoque";
             this.Text = "TelaEstoqueInsumos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TelaEstoqueInsumos_KeyDown);
@@ -644,16 +644,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureCodigo)).EndInit();
             this.panelCadastroDeInsumos.ResumeLayout(false);
             this.panelCadastroDeInsumos.PerformLayout();
-            this.panelCadastroDadosCompra.ResumeLayout(false);
-            this.panelCadastroDadosCompra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirDescricao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirCodigo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureDescricao)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.panelCadastroDadosCompra.ResumeLayout(false);
+            this.panelCadastroDadosCompra.PerformLayout();
             this.groupBoxOrdemAlfabetica.ResumeLayout(false);
             this.groupBoxOrdemAlfabetica.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDescricao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -679,7 +679,7 @@
         private System.Windows.Forms.Label labelCodigo;
         private System.Windows.Forms.Panel panelCadastroDadosCompra;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelNovaConsulta;
+        private System.Windows.Forms.Label labelEstoque;
         private System.Windows.Forms.Label labelTipo;
         private System.Windows.Forms.Label labelExibirQuantidade;
         private System.Windows.Forms.Label labelExibirDescricao;

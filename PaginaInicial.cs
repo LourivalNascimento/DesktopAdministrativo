@@ -80,7 +80,7 @@ namespace DesktopAdministrativo
         //Abre tela "Estoque"
         private void btnEstoque_Click(object sender, EventArgs e)
         {
-            Form openForm1 = FormJaAberto(typeof(TelaEstoqueInsumos));
+            Form openForm1 = FormJaAberto(typeof(TelaEstoque));
 
             if (openForm1 != null)
             {
@@ -88,14 +88,14 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaEstoqueInsumos telaEstoqueInsumos = new TelaEstoqueInsumos();
+                TelaEstoque telaEstoqueInsumos = new TelaEstoque();
                 telaEstoqueInsumos.Show();
             }
         }
         //Abre tela "Ordem de Produção"
         private void btnOrdemDeProducao_Click(object sender, EventArgs e)
         {
-            Form openForm1 = FormJaAberto(typeof(TelaOrdemDeProducaoEmFila));
+            Form openForm1 = FormJaAberto(typeof(TelaOrdemDeProducao));
 
             if (openForm1 != null)
             {
@@ -103,14 +103,14 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaOrdemDeProducaoEmFila telaOrdemDeProducaoEmFila = new TelaOrdemDeProducaoEmFila();
+                TelaOrdemDeProducao telaOrdemDeProducaoEmFila = new TelaOrdemDeProducao();
                 telaOrdemDeProducaoEmFila.Show();
             }
         }
         //Abre tela "Pessoas e Credores"
         private void btnPessoasECredores_Click(object sender, EventArgs e)
         {
-            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresCadastros));
+            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresConsulta));
 
             if (openForm1 != null)
             {
@@ -118,7 +118,7 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaPessoasECredoresCadastros telaPessoasECredoresCadastros = new TelaPessoasECredoresCadastros();
+                TelaPessoasECredoresConsulta telaPessoasECredoresCadastros = new TelaPessoasECredoresConsulta();
                 telaPessoasECredoresCadastros.Show();
             }
         }

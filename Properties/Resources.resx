@@ -124,6 +124,9 @@
   <data name="botão relatorio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Desktop ADM\botão relatorio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fundo branco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Desktop ADM\fundo branco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Desktop ADM\fundo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,11 +142,11 @@
   <data name="fundo cereja" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Desktop ADM\fundo cereja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="beterraba" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Desktop ADM\beterraba.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="PAGINA INICIAL (botões)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Desktop ADM\PAGINA INICIAL (botões).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="morango" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Desktop ADM\morango.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fundo abacaxi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Desktop ADM\fundo abacaxi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,14 +184,14 @@
   <data name="esc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Desktop ADM\esc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="morango" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Desktop ADM\morango.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fundo Estoque" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Desktop ADM\fundo Estoque.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beterraba" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Desktop ADM\beterraba.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="botão editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Desktop ADM\botão editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="botão limpar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Desktop ADM\botão limpar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fundo morango" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Desktop ADM\fundo morango.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,8 +268,8 @@
   <data name="botão consultar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Desktop ADM\botão consultar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fundo branco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Desktop ADM\fundo branco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="botão limpar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Desktop ADM\botão limpar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="botão pesquisar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Desktop ADM\botão pesquisar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -297,5 +300,8 @@
   </data>
   <data name="frutas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Desktop ADM\frutas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fundo31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Desktop ADM\fundo3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

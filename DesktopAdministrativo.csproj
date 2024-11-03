@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,23 +55,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TelaPessoasECredoresCadastros.cs">
+    <Compile Include="TelaPessoasECredoresConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaPessoasECredoresCadastros.Designer.cs">
-      <DependentUpon>TelaPessoasECredoresCadastros.cs</DependentUpon>
+    <Compile Include="TelaPessoasECredoresConsulta.Designer.cs">
+      <DependentUpon>TelaPessoasECredoresConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="TelaConsultas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TelaConsultas.Designer.cs">
       <DependentUpon>TelaConsultas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MDIPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MDIPrincipal.Designer.cs">
-      <DependentUpon>MDIPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="PaginaInicial.cs">
       <SubType>Form</SubType>
@@ -96,11 +99,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TelaEstoqueInsumos.cs">
+    <Compile Include="TelaEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaEstoqueInsumos.Designer.cs">
-      <DependentUpon>TelaEstoqueInsumos.cs</DependentUpon>
+    <Compile Include="TelaEstoque.Designer.cs">
+      <DependentUpon>TelaEstoque.cs</DependentUpon>
     </Compile>
     <Compile Include="TelaEstoqueNovoCadastro.cs">
       <SubType>Form</SubType>
@@ -108,39 +111,18 @@
     <Compile Include="TelaEstoqueNovoCadastro.Designer.cs">
       <DependentUpon>TelaEstoqueNovoCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaEstoqueProdutos.cs">
+    <Compile Include="TelaOrdemDeProducao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaEstoqueProdutos.Designer.cs">
-      <DependentUpon>TelaEstoqueProdutos.cs</DependentUpon>
+    <Compile Include="TelaOrdemDeProducao.Designer.cs">
+      <DependentUpon>TelaOrdemDeProducao.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaOrdemDeProducaoEmFila.cs">
+    <Compile Include="TelaPessoasECredoresNovoCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TelaOrdemDeProducaoEmFila.Designer.cs">
-      <DependentUpon>TelaOrdemDeProducaoEmFila.cs</DependentUpon>
+    <Compile Include="TelaPessoasECredoresNovoCadastro.Designer.cs">
+      <DependentUpon>TelaPessoasECredoresNovoCadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="TelaOrdemDeProducaoEmProducao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TelaOrdemDeProducaoEmProducao.Designer.cs">
-      <DependentUpon>TelaOrdemDeProducaoEmProducao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TelaPessoasECredoresNovoCadastroFornecedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TelaPessoasECredoresNovoCadastroFornecedor.Designer.cs">
-      <DependentUpon>TelaPessoasECredoresNovoCadastroFornecedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TelaPessoasECredoresNovoCadastroFuncionario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TelaPessoasECredoresNovoCadastroFuncionario.Designer.cs">
-      <DependentUpon>TelaPessoasECredoresNovoCadastroFuncionario.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="MDIPrincipal.resx">
-      <DependentUpon>MDIPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial.resx">
       <DependentUpon>PaginaInicial.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,18 +151,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TelaEstoqueInsumos.resx">
-      <DependentUpon>TelaEstoqueInsumos.cs</DependentUpon>
+    <EmbeddedResource Include="TelaEstoque.resx">
+      <DependentUpon>TelaEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaEstoqueNovoCadastro.resx">
       <DependentUpon>TelaEstoqueNovoCadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaOrdemDeProducaoEmFila.resx">
-      <DependentUpon>TelaOrdemDeProducaoEmFila.cs</DependentUpon>
+    <EmbeddedResource Include="TelaOrdemDeProducao.resx">
+      <DependentUpon>TelaOrdemDeProducao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TelaPessoasECredoresCadastros.resx">
-      <DependentUpon>TelaPessoasECredoresCadastros.cs</DependentUpon>
+    <EmbeddedResource Include="TelaPessoasECredoresConsulta.resx">
+      <DependentUpon>TelaPessoasECredoresConsulta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TelaPessoasECredoresNovoCadastro.resx">
+      <DependentUpon>TelaPessoasECredoresNovoCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -370,6 +356,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Desktop ADM\frutas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\fundo Estoque.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
