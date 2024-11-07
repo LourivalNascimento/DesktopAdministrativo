@@ -81,6 +81,7 @@
             this.labelNovaConsulta = new System.Windows.Forms.Label();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.panelCadastroDeInsumos = new System.Windows.Forms.Panel();
+            this.labelResultados = new System.Windows.Forms.Label();
             this.btnRelatorio = new System.Windows.Forms.Button();
             this.labelExibirValor = new System.Windows.Forms.Label();
             this.labelExibirRegistro = new System.Windows.Forms.Label();
@@ -88,7 +89,6 @@
             this.btnEditarResultado = new System.Windows.Forms.Button();
             this.btnPesquisarResultado = new System.Windows.Forms.Button();
             this.labelParametros = new System.Windows.Forms.Label();
-            this.labelResultados = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
@@ -743,6 +743,17 @@
             this.panelCadastroDeInsumos.Size = new System.Drawing.Size(1193, 251);
             this.panelCadastroDeInsumos.TabIndex = 28;
             // 
+            // labelResultados
+            // 
+            this.labelResultados.AutoSize = true;
+            this.labelResultados.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResultados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
+            this.labelResultados.Location = new System.Drawing.Point(3, 7);
+            this.labelResultados.Name = "labelResultados";
+            this.labelResultados.Size = new System.Drawing.Size(104, 28);
+            this.labelResultados.TabIndex = 30;
+            this.labelResultados.Text = "Resultados";
+            // 
             // btnRelatorio
             // 
             this.btnRelatorio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -751,9 +762,9 @@
             this.btnRelatorio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRelatorio.FlatAppearance.BorderSize = 0;
             this.btnRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelatorio.Location = new System.Drawing.Point(1054, 212);
+            this.btnRelatorio.Location = new System.Drawing.Point(1050, 210);
             this.btnRelatorio.Name = "btnRelatorio";
-            this.btnRelatorio.Size = new System.Drawing.Size(136, 33);
+            this.btnRelatorio.Size = new System.Drawing.Size(140, 40);
             this.btnRelatorio.TabIndex = 74;
             this.btnRelatorio.UseVisualStyleBackColor = true;
             // 
@@ -829,17 +840,6 @@
             this.labelParametros.Size = new System.Drawing.Size(111, 28);
             this.labelParametros.TabIndex = 29;
             this.labelParametros.Text = "Parâmetros";
-            // 
-            // labelResultados
-            // 
-            this.labelResultados.AutoSize = true;
-            this.labelResultados.Font = new System.Drawing.Font("Tw Cen MT Condensed", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResultados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
-            this.labelResultados.Location = new System.Drawing.Point(3, 7);
-            this.labelResultados.Name = "labelResultados";
-            this.labelResultados.Size = new System.Drawing.Size(104, 28);
-            this.labelResultados.TabIndex = 30;
-            this.labelResultados.Text = "Resultados";
             // 
             // TelaConsultas
             // 

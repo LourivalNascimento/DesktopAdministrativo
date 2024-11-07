@@ -21,5 +21,12 @@ namespace DesktopAdministrativo
         {
             Close();
         }
+
+        private void TelaEstoqueNovoCadastro_Deactivate_1(object sender, EventArgs e)
+        {
+            TelaEstoque telaEstoque = new TelaEstoque();
+            telaEstoque.Activate();
+            this.Close();
+        }
     }
 }

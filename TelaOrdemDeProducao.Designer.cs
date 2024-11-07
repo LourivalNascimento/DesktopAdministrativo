@@ -361,7 +361,6 @@
             this.metroProgressBarStatusProducao.Style = MetroFramework.MetroColorStyle.Purple;
             this.metroProgressBarStatusProducao.TabIndex = 104;
             this.metroProgressBarStatusProducao.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroProgressBarStatusProducao.Value = 25;
             // 
             // labelExibirStatus
             // 
@@ -479,9 +478,9 @@
             this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNovo.FlatAppearance.BorderSize = 0;
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Location = new System.Drawing.Point(1072, 365);
+            this.btnNovo.Location = new System.Drawing.Point(1053, 353);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(116, 28);
+            this.btnNovo.Size = new System.Drawing.Size(140, 40);
             this.btnNovo.TabIndex = 88;
             this.btnNovo.UseVisualStyleBackColor = true;
             // 

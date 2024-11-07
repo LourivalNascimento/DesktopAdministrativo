@@ -495,9 +495,9 @@
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(998, 247);
+            this.btnCancelar.Location = new System.Drawing.Point(901, 239);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(96, 32);
+            this.btnCancelar.Size = new System.Drawing.Size(140, 40);
             this.btnCancelar.TabIndex = 26;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -510,9 +510,9 @@
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(1097, 247);
+            this.btnSalvar.Location = new System.Drawing.Point(1049, 239);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(96, 32);
+            this.btnSalvar.Size = new System.Drawing.Size(140, 40);
             this.btnSalvar.TabIndex = 25;
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 

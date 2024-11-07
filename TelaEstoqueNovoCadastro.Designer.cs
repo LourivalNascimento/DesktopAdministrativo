@@ -234,8 +234,11 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TelaEstoqueNovoCadastro";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TelaEstoqueNovoCadastro";
+            this.Deactivate += new System.EventHandler(this.TelaEstoqueNovoCadastro_Deactivate_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNomeProduto)).EndInit();

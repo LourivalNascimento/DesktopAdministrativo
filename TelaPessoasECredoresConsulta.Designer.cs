@@ -375,9 +375,9 @@
             this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNovo.FlatAppearance.BorderSize = 0;
             this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovo.Location = new System.Drawing.Point(1067, 291);
+            this.btnNovo.Location = new System.Drawing.Point(1053, 283);
             this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(121, 32);
+            this.btnNovo.Size = new System.Drawing.Size(140, 40);
             this.btnNovo.TabIndex = 88;
             this.btnNovo.UseVisualStyleBackColor = true;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
