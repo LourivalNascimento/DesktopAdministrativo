@@ -39,8 +39,6 @@
             this.textBoxFuncao = new System.Windows.Forms.TextBox();
             this.pictureFuncao = new System.Windows.Forms.PictureBox();
             this.labelFuncao = new System.Windows.Forms.Label();
-            this.textBoxAnexos = new System.Windows.Forms.TextBox();
-            this.pictureAnexos = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.pictureEmail = new System.Windows.Forms.PictureBox();
@@ -87,10 +85,10 @@
             this.btnEsc = new System.Windows.Forms.Button();
             this.pictureTop = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.listBoxDocumentosPdf = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureObservacoes)).BeginInit();
             this.panelCadastroDadosCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFuncao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAnexos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTelefone)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUf)).BeginInit();
@@ -138,11 +136,12 @@
             this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionar.Location = new System.Drawing.Point(1163, 388);
+            this.btnAdicionar.Location = new System.Drawing.Point(1163, 385);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(23, 21);
             this.btnAdicionar.TabIndex = 39;
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnExcluir
             // 
@@ -151,11 +150,12 @@
             this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(1136, 388);
+            this.btnExcluir.Location = new System.Drawing.Point(1136, 385);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(23, 21);
             this.btnExcluir.TabIndex = 38;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // textBoxCpfCnpj
             // 
@@ -173,14 +173,13 @@
             this.panelCadastroDadosCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCadastroDadosCompra.AutoSize = true;
+            this.panelCadastroDadosCompra.Controls.Add(this.listBoxDocumentosPdf);
             this.panelCadastroDadosCompra.Controls.Add(this.btnVoltar);
             this.panelCadastroDadosCompra.Controls.Add(this.btnConcluir);
             this.panelCadastroDadosCompra.Controls.Add(this.textBoxFuncao);
             this.panelCadastroDadosCompra.Controls.Add(this.pictureFuncao);
             this.panelCadastroDadosCompra.Controls.Add(this.labelFuncao);
-            this.panelCadastroDadosCompra.Controls.Add(this.textBoxAnexos);
             this.panelCadastroDadosCompra.Controls.Add(this.btnAdicionar);
-            this.panelCadastroDadosCompra.Controls.Add(this.pictureAnexos);
             this.panelCadastroDadosCompra.Controls.Add(this.btnExcluir);
             this.panelCadastroDadosCompra.Controls.Add(this.label6);
             this.panelCadastroDadosCompra.Controls.Add(this.textBoxEmail);
@@ -285,29 +284,6 @@
             this.labelFuncao.Size = new System.Drawing.Size(57, 19);
             this.labelFuncao.TabIndex = 81;
             this.labelFuncao.Text = "Função:";
-            // 
-            // textBoxAnexos
-            // 
-            this.textBoxAnexos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxAnexos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAnexos.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxAnexos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxAnexos.Location = new System.Drawing.Point(127, 314);
-            this.textBoxAnexos.Multiline = true;
-            this.textBoxAnexos.Name = "textBoxAnexos";
-            this.textBoxAnexos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxAnexos.Size = new System.Drawing.Size(1058, 70);
-            this.textBoxAnexos.TabIndex = 80;
-            // 
-            // pictureAnexos
-            // 
-            this.pictureAnexos.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fundo_anexos_obs;
-            this.pictureAnexos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureAnexos.Location = new System.Drawing.Point(122, 310);
-            this.pictureAnexos.Name = "pictureAnexos";
-            this.pictureAnexos.Size = new System.Drawing.Size(1067, 76);
-            this.pictureAnexos.TabIndex = 79;
-            this.pictureAnexos.TabStop = false;
             // 
             // label6
             // 
@@ -810,6 +786,19 @@
             this.label1.TabIndex = 58;
             this.label1.Text = "Parâmetros";
             // 
+            // listBoxDocumentosPdf
+            // 
+            this.listBoxDocumentosPdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.listBoxDocumentosPdf.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxDocumentosPdf.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.listBoxDocumentosPdf.FormattingEnabled = true;
+            this.listBoxDocumentosPdf.ItemHeight = 17;
+            this.listBoxDocumentosPdf.Location = new System.Drawing.Point(121, 310);
+            this.listBoxDocumentosPdf.Name = "listBoxDocumentosPdf";
+            this.listBoxDocumentosPdf.ScrollAlwaysVisible = true;
+            this.listBoxDocumentosPdf.Size = new System.Drawing.Size(1066, 68);
+            this.listBoxDocumentosPdf.TabIndex = 95;
+            // 
             // TelaPessoasECredoresNovoCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -836,7 +825,6 @@
             this.panelCadastroDadosCompra.ResumeLayout(false);
             this.panelCadastroDadosCompra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFuncao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAnexos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTelefone)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUf)).EndInit();
@@ -913,10 +901,9 @@
         private System.Windows.Forms.TextBox textBoxFuncao;
         private System.Windows.Forms.PictureBox pictureFuncao;
         private System.Windows.Forms.Label labelFuncao;
-        private System.Windows.Forms.TextBox textBoxAnexos;
-        private System.Windows.Forms.PictureBox pictureAnexos;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnConcluir;
+        private System.Windows.Forms.ListBox listBoxDocumentosPdf;
     }
 }
