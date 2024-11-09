@@ -26,6 +26,17 @@ namespace DesktopAdministrativo
             InitializeComponent();
             pictureTop.Width = int.MaxValue;
         }
+        //Método que mostra um MessageBox perguntando se deseja fechar ou não o programa
+        public void FecharPrograma()
+        {
+            DialogResult result = MessageBox.Show("Deseja fechar o programa Morangolandia?", "s a i r", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                //Desloga da conta e fecha o programa
+                Close();
+            }
+        }
         //Métódo usado para saber que um form foi aberto
         private Form FormJaAberto(Type formType)
         {
@@ -38,10 +49,12 @@ namespace DesktopAdministrativo
             }
             return null;
         }
-        //Método usado para abrir o form anterior dando impressão de "voltar", fechando o form atual
-        private void AbrirFormAnterior()
+        //Método usado para abrir um form qualquer
+        private void AbrirForm<ClasseQualquer>(bool fecharFormAtual = true) where ClasseQualquer : Form, new()
         {
-            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresConsulta));
+            // Cria uma nova instância da classe genérica
+            ClasseQualquer objetoDaClasseQualquer = new ClasseQualquer();
+            Form openForm1 = FormJaAberto(typeof(ClasseQualquer));
 
             if (openForm1 != null)
             {
@@ -49,10 +62,12 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaPessoasECredoresConsulta telaPessoasECredoresConsulta = new TelaPessoasECredoresConsulta();
-                telaPessoasECredoresConsulta.Show();
+                objetoDaClasseQualquer.Show();
+                if (fecharFormAtual)
+                {
+                    Close();
+                }
             }
-            Close();
         }
         //----------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------
@@ -207,6 +222,7 @@ namespace DesktopAdministrativo
             btnMenuOrdemDeProducao.Visible = false;
             btnMenuPessoasECredores.Visible = false;
         }
+        //Evento de click no botão "MENU"
         private void btnMenu_Click_1(object sender, EventArgs e)
         {
             //Se a quantidade de click for par, abre o menu
@@ -273,18 +289,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Compras" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaComprasAcompanhamento));
-
-            if (openForm1 != null)
-            {
-                openForm1.Focus();
-            }
-            else
-            {
-                TelaComprasAcompanhamento telaComprasAcompanhamento = new TelaComprasAcompanhamento();
-                telaComprasAcompanhamento.Show();
-                Close();
-            }
+            AbrirForm<TelaComprasAcompanhamento>();
         }
         private void btnMenuConsultas_Click(object sender, EventArgs e)
         {
@@ -293,18 +298,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Consultas" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaConsultas));
-
-            if (openForm1 != null)
-            {
-                openForm1.Focus();
-            }
-            else
-            {
-                TelaConsultas telaConsultas = new TelaConsultas();
-                telaConsultas.Show();
-                Close();
-            }
+            AbrirForm<TelaConsultas>();
         }
         private void btnMenuEstoque_Click(object sender, EventArgs e)
         {
@@ -313,18 +307,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Estoque de Insumos" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaEstoque));
-
-            if (openForm1 != null)
-            {
-                openForm1.Focus();
-            }
-            else
-            {
-                TelaEstoque telaEstoqueInsumos = new TelaEstoque();
-                telaEstoqueInsumos.Show();
-                Close();
-            }
+            AbrirForm<TelaEstoque>();
         }
         private void btnMenuOrdemDeProducao_Click(object sender, EventArgs e)
         {
@@ -333,18 +316,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Ordem de Produção" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaOrdemDeProducao));
-
-            if (openForm1 != null)
-            {
-                openForm1.Focus();
-            }
-            else
-            {
-                TelaOrdemDeProducao telaOrdemDeProducaoEmFila = new TelaOrdemDeProducao();
-                telaOrdemDeProducaoEmFila.Show();
-                Close();
-            }
+            AbrirForm<TelaOrdemDeProducao>();
         }
         private void btnMenuPessoasECredores_Click(object sender, EventArgs e)
         {
@@ -353,34 +325,20 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Pessoas e Credores" e fecha a atual
-            Form openForm1 = FormJaAberto(typeof(TelaPessoasECredoresConsulta));
-
-            if (openForm1 != null)
-            {
-                openForm1.Focus();
-            }
-            else
-            {
-                TelaPessoasECredoresConsulta telaPessoasECredoresCadastros = new TelaPessoasECredoresConsulta();
-                telaPessoasECredoresCadastros.Show();
-                Close();
-            }
+            AbrirForm<TelaPessoasECredoresConsulta>();
         }
         //----------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------
         //Evento de click do mouse em botão "Esc"
         private void btnEsc_Click_1(object sender, EventArgs e)
         {
-            //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
-            AbrirFormAnterior();
+            FecharPrograma();
         }
         private void TelaPessoasECredoresNovoCadastro_KeyDown(object sender, KeyEventArgs e)
         {
-            //Se a tecla "Esc" for pertada, chama o método "AbrirFormAnterior()"
-            //Responsável por fechar tela atual e abrir a anterior
             if (e.KeyData == Keys.Escape)
             {
-                AbrirFormAnterior();
+                FecharPrograma();
             }
         }
         private void TelaPessoasECredoresNovoCadastro_MouseClick(object sender, MouseEventArgs e)
@@ -392,8 +350,10 @@ namespace DesktopAdministrativo
         }
         private void radioBtnFuncionario_CheckedChanged(object sender, EventArgs e)
         {
-            labelCpfCnpj.Text = " CPF:";
-            labelNomeNomeFantasia.Text = "         Nome:";
+            labelCpfCnpj.Location = new Point(82, 44);
+            labelCpfCnpj.Text = "CPF:";
+            labelNomeNomeFantasia.Location = new Point(70, 76);
+            labelNomeNomeFantasia.Text = "Nome:";
             labelFuncao.Visible = true;
             pictureFuncao.Visible = true;
             textBoxFuncao.Visible = true;
@@ -401,8 +361,10 @@ namespace DesktopAdministrativo
 
         private void radioBtnFornecedor_CheckedChanged(object sender, EventArgs e)
         {
-            labelCpfCnpj.Text = "CNPJ:  ";
-            labelNomeNomeFantasia.Text = "Nome Fantasia:   ";
+            labelCpfCnpj.Location = new Point(72, 44);
+            labelCpfCnpj.Text = "CNPJ:";
+            labelNomeNomeFantasia.Location = new Point(13, 76);
+            labelNomeNomeFantasia.Text = "Nome Fantasia:";
             labelFuncao.Visible = false;
             pictureFuncao.Visible = false;
             textBoxFuncao.Visible = false;
@@ -410,8 +372,7 @@ namespace DesktopAdministrativo
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
-            AbrirFormAnterior();
+            AbrirForm<TelaPessoasECredoresConsulta>();
         }
     }
 }

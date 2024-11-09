@@ -302,12 +302,14 @@
             this.btnNovoCadastro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNovoCadastro.FlatAppearance.BorderSize = 0;
             this.btnNovoCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoCadastro.ForeColor = System.Drawing.Color.Transparent;
             this.btnNovoCadastro.Location = new System.Drawing.Point(995, 225);
             this.btnNovoCadastro.Name = "btnNovoCadastro";
             this.btnNovoCadastro.Size = new System.Drawing.Size(195, 41);
             this.btnNovoCadastro.TabIndex = 88;
             this.btnNovoCadastro.UseVisualStyleBackColor = true;
             this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
+            this.btnNovoCadastro.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnNovoCadastro_MouseUp);
             // 
             // labelResultados
             // 

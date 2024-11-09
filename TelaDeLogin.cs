@@ -16,6 +16,7 @@ namespace DesktopAdministrativo
         {
             InitializeComponent();
         }
+        //Métódo usado para saber que um form foi aberto
         private Form FormJaAberto(Type formType)
         {
             foreach (Form openForm in Application.OpenForms)
@@ -27,10 +28,12 @@ namespace DesktopAdministrativo
             }
             return null;
         }
-
-        private void AbrirPaginaInicial()
+        //Método usado para abrir um form qualquer
+        private void AbrirForm<ClasseQualquer>() where ClasseQualquer : Form, new()
         {
-            Form openForm1 = FormJaAberto(typeof(TelaPaginaInicial));
+            // Cria uma nova instância da classe genérica
+            ClasseQualquer objetoDaClasseQualquer = new ClasseQualquer();
+            Form openForm1 = FormJaAberto(typeof(ClasseQualquer));
 
             if (openForm1 != null)
             {
@@ -38,13 +41,12 @@ namespace DesktopAdministrativo
             }
             else
             {
-                TelaPaginaInicial paginaInicial = new TelaPaginaInicial();
-                paginaInicial.Show();
+                objetoDaClasseQualquer.Show();
             }
         }
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            AbrirPaginaInicial();
+            AbrirForm<TelaPaginaInicial>();
         }
 
         private void TelaDeLogin_KeyDown(object sender, KeyEventArgs e)
@@ -58,7 +60,7 @@ namespace DesktopAdministrativo
             //Se a tecla "Enter" for pertada, chama o método "AbrirPaginaInicial()"
             if (e.KeyData == Keys.Enter)
             {
-                AbrirPaginaInicial();
+                AbrirForm<TelaPaginaInicial>();
             }
         }
     }

@@ -36,7 +36,6 @@
             this.labelNomeFuncionario = new System.Windows.Forms.Label();
             this.panelCadastroDadosCompra = new System.Windows.Forms.Panel();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnVoltar = new System.Windows.Forms.Button();
             this.btnPesquisarRazaoSocial = new System.Windows.Forms.Button();
             this.textBoxRazaoSocial = new System.Windows.Forms.TextBox();
             this.pictureRazaoSocial = new System.Windows.Forms.PictureBox();
@@ -160,7 +159,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCadastroDadosCompra.AutoSize = true;
             this.panelCadastroDadosCompra.Controls.Add(this.btnLimpar);
-            this.panelCadastroDadosCompra.Controls.Add(this.btnVoltar);
             this.panelCadastroDadosCompra.Controls.Add(this.btnPesquisarRazaoSocial);
             this.panelCadastroDadosCompra.Controls.Add(this.textBoxRazaoSocial);
             this.panelCadastroDadosCompra.Controls.Add(this.pictureRazaoSocial);
@@ -186,26 +184,11 @@
             this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpar.FlatAppearance.BorderSize = 0;
             this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpar.Location = new System.Drawing.Point(819, 118);
+            this.btnLimpar.Location = new System.Drawing.Point(945, 118);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(122, 31);
             this.btnLimpar.TabIndex = 93;
             this.btnLimpar.UseVisualStyleBackColor = true;
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnVoltar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_voltar;
-            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVoltar.FlatAppearance.BorderSize = 0;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(943, 118);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(122, 31);
-            this.btnVoltar.TabIndex = 92;
-            this.btnVoltar.UseVisualStyleBackColor = true;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnPesquisarRazaoSocial
             // 
@@ -574,6 +557,5 @@
         private System.Windows.Forms.PictureBox pictureRazaoSocial;
         private System.Windows.Forms.Label labelRazaoSocial;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.Button btnVoltar;
     }
 }

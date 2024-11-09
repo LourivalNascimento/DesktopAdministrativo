@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TelaOrdemDeProducaoNovaOrdem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaOrdemDeProducaoNovaOrdem.Designer.cs">
+      <DependentUpon>TelaOrdemDeProducaoNovaOrdem.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaPessoasECredoresConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaOrdemDeProducao.resx">
       <DependentUpon>TelaOrdemDeProducao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaOrdemDeProducaoNovaOrdem.resx">
+      <DependentUpon>TelaOrdemDeProducaoNovaOrdem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaPessoasECredoresConsulta.resx">
       <DependentUpon>TelaPessoasECredoresConsulta.cs</DependentUpon>

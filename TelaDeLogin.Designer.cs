@@ -295,6 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(139)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(1366, 745);
             this.Controls.Add(this.pictureCerejaDireita);

@@ -34,6 +34,41 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.textBoxCpfCnpj = new System.Windows.Forms.TextBox();
             this.panelCadastroDadosCompra = new System.Windows.Forms.Panel();
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnConcluir = new System.Windows.Forms.Button();
+            this.textBoxFuncao = new System.Windows.Forms.TextBox();
+            this.pictureFuncao = new System.Windows.Forms.PictureBox();
+            this.labelFuncao = new System.Windows.Forms.Label();
+            this.textBoxAnexos = new System.Windows.Forms.TextBox();
+            this.pictureAnexos = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.pictureEmail = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxTelefone = new System.Windows.Forms.TextBox();
+            this.pictureTelefone = new System.Windows.Forms.PictureBox();
+            this.labelTelefone = new System.Windows.Forms.Label();
+            this.textBoxUf = new System.Windows.Forms.TextBox();
+            this.pictureUf = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxCidade = new System.Windows.Forms.TextBox();
+            this.pictureCidade = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxBairro = new System.Windows.Forms.TextBox();
+            this.pictureBairro = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxComplemento = new System.Windows.Forms.TextBox();
+            this.pictureComplemento = new System.Windows.Forms.PictureBox();
+            this.labelComplemento = new System.Windows.Forms.Label();
+            this.textBoxNumero = new System.Windows.Forms.TextBox();
+            this.pictureNumero = new System.Windows.Forms.PictureBox();
+            this.labelNumero = new System.Windows.Forms.Label();
+            this.textBoxEndereco = new System.Windows.Forms.TextBox();
+            this.pictureEndereco = new System.Windows.Forms.PictureBox();
+            this.labelEndereco = new System.Windows.Forms.Label();
+            this.textBoxCep = new System.Windows.Forms.TextBox();
+            this.pictureCep = new System.Windows.Forms.PictureBox();
+            this.labelCep = new System.Windows.Forms.Label();
             this.textBoxNomeNomeFantasia = new System.Windows.Forms.TextBox();
             this.pictureNomeNomeFantasia = new System.Windows.Forms.PictureBox();
             this.labelNomeNomeFantasia = new System.Windows.Forms.Label();
@@ -52,60 +87,25 @@
             this.btnEsc = new System.Windows.Forms.Button();
             this.pictureTop = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxCep = new System.Windows.Forms.TextBox();
-            this.pictureCep = new System.Windows.Forms.PictureBox();
-            this.labelCep = new System.Windows.Forms.Label();
-            this.textBoxEndereco = new System.Windows.Forms.TextBox();
-            this.pictureEndereco = new System.Windows.Forms.PictureBox();
-            this.labelEndereco = new System.Windows.Forms.Label();
-            this.textBoxNumero = new System.Windows.Forms.TextBox();
-            this.pictureNumero = new System.Windows.Forms.PictureBox();
-            this.labelNumero = new System.Windows.Forms.Label();
-            this.textBoxComplemento = new System.Windows.Forms.TextBox();
-            this.pictureComplemento = new System.Windows.Forms.PictureBox();
-            this.labelComplemento = new System.Windows.Forms.Label();
-            this.textBoxBairro = new System.Windows.Forms.TextBox();
-            this.pictureBairro = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxCidade = new System.Windows.Forms.TextBox();
-            this.pictureCidade = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxUf = new System.Windows.Forms.TextBox();
-            this.pictureUf = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxTelefone = new System.Windows.Forms.TextBox();
-            this.pictureTelefone = new System.Windows.Forms.PictureBox();
-            this.labelTelefone = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.pictureEmail = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxAnexos = new System.Windows.Forms.TextBox();
-            this.pictureAnexos = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxFuncao = new System.Windows.Forms.TextBox();
-            this.pictureFuncao = new System.Windows.Forms.PictureBox();
-            this.labelFuncao = new System.Windows.Forms.Label();
-            this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnConcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureObservacoes)).BeginInit();
             this.panelCadastroDadosCompra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFuncao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAnexos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTelefone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBairro)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureComplemento)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNumero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEndereco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCep)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNomeNomeFantasia)).BeginInit();
             this.groupBoxRadioBtnStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCpfCnpj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCep)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEndereco)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureNumero)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureComplemento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBairro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCidade)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUf)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureTelefone)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEmail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAnexos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFuncao)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxObservacoes
@@ -226,6 +226,378 @@
             this.panelCadastroDadosCompra.Size = new System.Drawing.Size(1196, 489);
             this.panelCadastroDadosCompra.TabIndex = 32;
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnVoltar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_voltar;
+            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVoltar.FlatAppearance.BorderSize = 0;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Location = new System.Drawing.Point(942, 448);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(122, 31);
+            this.btnVoltar.TabIndex = 94;
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // btnConcluir
+            // 
+            this.btnConcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnConcluir.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_salvar;
+            this.btnConcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConcluir.FlatAppearance.BorderSize = 0;
+            this.btnConcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConcluir.Location = new System.Drawing.Point(1066, 448);
+            this.btnConcluir.Name = "btnConcluir";
+            this.btnConcluir.Size = new System.Drawing.Size(122, 31);
+            this.btnConcluir.TabIndex = 93;
+            this.btnConcluir.UseVisualStyleBackColor = true;
+            // 
+            // textBoxFuncao
+            // 
+            this.textBoxFuncao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxFuncao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxFuncao.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxFuncao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxFuncao.Location = new System.Drawing.Point(128, 415);
+            this.textBoxFuncao.Name = "textBoxFuncao";
+            this.textBoxFuncao.Size = new System.Drawing.Size(1058, 17);
+            this.textBoxFuncao.TabIndex = 83;
+            // 
+            // pictureFuncao
+            // 
+            this.pictureFuncao.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureFuncao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureFuncao.Location = new System.Drawing.Point(123, 411);
+            this.pictureFuncao.Name = "pictureFuncao";
+            this.pictureFuncao.Size = new System.Drawing.Size(1067, 24);
+            this.pictureFuncao.TabIndex = 82;
+            this.pictureFuncao.TabStop = false;
+            // 
+            // labelFuncao
+            // 
+            this.labelFuncao.AutoSize = true;
+            this.labelFuncao.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelFuncao.Location = new System.Drawing.Point(63, 411);
+            this.labelFuncao.Name = "labelFuncao";
+            this.labelFuncao.Size = new System.Drawing.Size(57, 19);
+            this.labelFuncao.TabIndex = 81;
+            this.labelFuncao.Text = "Função:";
+            // 
+            // textBoxAnexos
+            // 
+            this.textBoxAnexos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxAnexos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxAnexos.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxAnexos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxAnexos.Location = new System.Drawing.Point(127, 314);
+            this.textBoxAnexos.Multiline = true;
+            this.textBoxAnexos.Name = "textBoxAnexos";
+            this.textBoxAnexos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxAnexos.Size = new System.Drawing.Size(1058, 70);
+            this.textBoxAnexos.TabIndex = 80;
+            // 
+            // pictureAnexos
+            // 
+            this.pictureAnexos.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fundo_anexos_obs;
+            this.pictureAnexos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureAnexos.Location = new System.Drawing.Point(122, 310);
+            this.pictureAnexos.Name = "pictureAnexos";
+            this.pictureAnexos.Size = new System.Drawing.Size(1067, 76);
+            this.pictureAnexos.TabIndex = 79;
+            this.pictureAnexos.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.label6.Location = new System.Drawing.Point(60, 310);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 19);
+            this.label6.TabIndex = 78;
+            this.label6.Text = "Anexos:";
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxEmail.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxEmail.Location = new System.Drawing.Point(570, 198);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(613, 17);
+            this.textBoxEmail.TabIndex = 77;
+            // 
+            // pictureEmail
+            // 
+            this.pictureEmail.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureEmail.Location = new System.Drawing.Point(565, 194);
+            this.pictureEmail.Name = "pictureEmail";
+            this.pictureEmail.Size = new System.Drawing.Size(622, 24);
+            this.pictureEmail.TabIndex = 76;
+            this.pictureEmail.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.label5.Location = new System.Drawing.Point(509, 196);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 19);
+            this.label5.TabIndex = 75;
+            this.label5.Text = " E-mail:";
+            // 
+            // textBoxTelefone
+            // 
+            this.textBoxTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTelefone.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxTelefone.Location = new System.Drawing.Point(126, 200);
+            this.textBoxTelefone.Name = "textBoxTelefone";
+            this.textBoxTelefone.Size = new System.Drawing.Size(365, 17);
+            this.textBoxTelefone.TabIndex = 74;
+            // 
+            // pictureTelefone
+            // 
+            this.pictureTelefone.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureTelefone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureTelefone.Location = new System.Drawing.Point(121, 196);
+            this.pictureTelefone.Name = "pictureTelefone";
+            this.pictureTelefone.Size = new System.Drawing.Size(374, 24);
+            this.pictureTelefone.TabIndex = 73;
+            this.pictureTelefone.TabStop = false;
+            // 
+            // labelTelefone
+            // 
+            this.labelTelefone.AutoSize = true;
+            this.labelTelefone.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelTelefone.Location = new System.Drawing.Point(50, 198);
+            this.labelTelefone.Name = "labelTelefone";
+            this.labelTelefone.Size = new System.Drawing.Size(71, 19);
+            this.labelTelefone.TabIndex = 72;
+            this.labelTelefone.Text = " Telefone:";
+            // 
+            // textBoxUf
+            // 
+            this.textBoxUf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxUf.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUf.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxUf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxUf.Location = new System.Drawing.Point(996, 169);
+            this.textBoxUf.Name = "textBoxUf";
+            this.textBoxUf.Size = new System.Drawing.Size(189, 17);
+            this.textBoxUf.TabIndex = 71;
+            // 
+            // pictureUf
+            // 
+            this.pictureUf.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureUf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureUf.Location = new System.Drawing.Point(991, 165);
+            this.pictureUf.Name = "pictureUf";
+            this.pictureUf.Size = new System.Drawing.Size(198, 24);
+            this.pictureUf.TabIndex = 70;
+            this.pictureUf.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.label4.Location = new System.Drawing.Point(954, 167);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 19);
+            this.label4.TabIndex = 69;
+            this.label4.Text = " UF:";
+            // 
+            // textBoxCidade
+            // 
+            this.textBoxCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxCidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCidade.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxCidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxCidade.Location = new System.Drawing.Point(570, 169);
+            this.textBoxCidade.Name = "textBoxCidade";
+            this.textBoxCidade.Size = new System.Drawing.Size(357, 17);
+            this.textBoxCidade.TabIndex = 68;
+            // 
+            // pictureCidade
+            // 
+            this.pictureCidade.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureCidade.Location = new System.Drawing.Point(565, 165);
+            this.pictureCidade.Name = "pictureCidade";
+            this.pictureCidade.Size = new System.Drawing.Size(366, 24);
+            this.pictureCidade.TabIndex = 67;
+            this.pictureCidade.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.label3.Location = new System.Drawing.Point(500, 167);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 19);
+            this.label3.TabIndex = 66;
+            this.label3.Text = " Cidade:";
+            // 
+            // textBoxBairro
+            // 
+            this.textBoxBairro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxBairro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxBairro.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxBairro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxBairro.Location = new System.Drawing.Point(126, 170);
+            this.textBoxBairro.Name = "textBoxBairro";
+            this.textBoxBairro.Size = new System.Drawing.Size(365, 17);
+            this.textBoxBairro.TabIndex = 65;
+            // 
+            // pictureBairro
+            // 
+            this.pictureBairro.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureBairro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBairro.Location = new System.Drawing.Point(121, 166);
+            this.pictureBairro.Name = "pictureBairro";
+            this.pictureBairro.Size = new System.Drawing.Size(374, 24);
+            this.pictureBairro.TabIndex = 64;
+            this.pictureBairro.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.label2.Location = new System.Drawing.Point(65, 168);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 19);
+            this.label2.TabIndex = 63;
+            this.label2.Text = " Bairro:";
+            // 
+            // textBoxComplemento
+            // 
+            this.textBoxComplemento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxComplemento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxComplemento.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxComplemento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxComplemento.Location = new System.Drawing.Point(404, 138);
+            this.textBoxComplemento.Name = "textBoxComplemento";
+            this.textBoxComplemento.Size = new System.Drawing.Size(781, 17);
+            this.textBoxComplemento.TabIndex = 62;
+            // 
+            // pictureComplemento
+            // 
+            this.pictureComplemento.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureComplemento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureComplemento.Location = new System.Drawing.Point(399, 134);
+            this.pictureComplemento.Name = "pictureComplemento";
+            this.pictureComplemento.Size = new System.Drawing.Size(790, 24);
+            this.pictureComplemento.TabIndex = 61;
+            this.pictureComplemento.TabStop = false;
+            // 
+            // labelComplemento
+            // 
+            this.labelComplemento.AutoSize = true;
+            this.labelComplemento.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelComplemento.Location = new System.Drawing.Point(298, 135);
+            this.labelComplemento.Name = "labelComplemento";
+            this.labelComplemento.Size = new System.Drawing.Size(100, 19);
+            this.labelComplemento.TabIndex = 60;
+            this.labelComplemento.Text = "Complemento:";
+            // 
+            // textBoxNumero
+            // 
+            this.textBoxNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNumero.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxNumero.Location = new System.Drawing.Point(127, 140);
+            this.textBoxNumero.Name = "textBoxNumero";
+            this.textBoxNumero.Size = new System.Drawing.Size(159, 17);
+            this.textBoxNumero.TabIndex = 59;
+            // 
+            // pictureNumero
+            // 
+            this.pictureNumero.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureNumero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureNumero.Location = new System.Drawing.Point(122, 136);
+            this.pictureNumero.Name = "pictureNumero";
+            this.pictureNumero.Size = new System.Drawing.Size(168, 24);
+            this.pictureNumero.TabIndex = 58;
+            this.pictureNumero.TabStop = false;
+            // 
+            // labelNumero
+            // 
+            this.labelNumero.AutoSize = true;
+            this.labelNumero.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelNumero.Location = new System.Drawing.Point(54, 138);
+            this.labelNumero.Name = "labelNumero";
+            this.labelNumero.Size = new System.Drawing.Size(67, 19);
+            this.labelNumero.TabIndex = 57;
+            this.labelNumero.Text = " Número:";
+            // 
+            // textBoxEndereco
+            // 
+            this.textBoxEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxEndereco.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxEndereco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxEndereco.Location = new System.Drawing.Point(372, 108);
+            this.textBoxEndereco.Name = "textBoxEndereco";
+            this.textBoxEndereco.Size = new System.Drawing.Size(813, 17);
+            this.textBoxEndereco.TabIndex = 56;
+            // 
+            // pictureEndereco
+            // 
+            this.pictureEndereco.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureEndereco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureEndereco.Location = new System.Drawing.Point(367, 104);
+            this.pictureEndereco.Name = "pictureEndereco";
+            this.pictureEndereco.Size = new System.Drawing.Size(822, 24);
+            this.pictureEndereco.TabIndex = 55;
+            this.pictureEndereco.TabStop = false;
+            // 
+            // labelEndereco
+            // 
+            this.labelEndereco.AutoSize = true;
+            this.labelEndereco.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelEndereco.Location = new System.Drawing.Point(295, 105);
+            this.labelEndereco.Name = "labelEndereco";
+            this.labelEndereco.Size = new System.Drawing.Size(71, 19);
+            this.labelEndereco.TabIndex = 54;
+            this.labelEndereco.Text = "Endereço:";
+            // 
+            // textBoxCep
+            // 
+            this.textBoxCep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxCep.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCep.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxCep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxCep.Location = new System.Drawing.Point(126, 108);
+            this.textBoxCep.Name = "textBoxCep";
+            this.textBoxCep.Size = new System.Drawing.Size(159, 17);
+            this.textBoxCep.TabIndex = 53;
+            // 
+            // pictureCep
+            // 
+            this.pictureCep.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureCep.Location = new System.Drawing.Point(121, 104);
+            this.pictureCep.Name = "pictureCep";
+            this.pictureCep.Size = new System.Drawing.Size(168, 24);
+            this.pictureCep.TabIndex = 52;
+            this.pictureCep.TabStop = false;
+            // 
+            // labelCep
+            // 
+            this.labelCep.AutoSize = true;
+            this.labelCep.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelCep.Location = new System.Drawing.Point(80, 105);
+            this.labelCep.Name = "labelCep";
+            this.labelCep.Size = new System.Drawing.Size(42, 19);
+            this.labelCep.TabIndex = 51;
+            this.labelCep.Text = " CEP:";
+            // 
             // textBoxNomeNomeFantasia
             // 
             this.textBoxNomeNomeFantasia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
@@ -251,11 +623,11 @@
             // 
             this.labelNomeNomeFantasia.AutoSize = true;
             this.labelNomeNomeFantasia.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelNomeNomeFantasia.Location = new System.Drawing.Point(34, 76);
+            this.labelNomeNomeFantasia.Location = new System.Drawing.Point(70, 76);
             this.labelNomeNomeFantasia.Name = "labelNomeNomeFantasia";
-            this.labelNomeNomeFantasia.Size = new System.Drawing.Size(87, 19);
+            this.labelNomeNomeFantasia.Size = new System.Drawing.Size(51, 19);
             this.labelNomeNomeFantasia.TabIndex = 48;
-            this.labelNomeNomeFantasia.Text = "         Nome:";
+            this.labelNomeNomeFantasia.Text = "Nome:";
             // 
             // groupBoxRadioBtnStatus
             // 
@@ -438,378 +810,6 @@
             this.label1.TabIndex = 58;
             this.label1.Text = "Parâmetros";
             // 
-            // textBoxCep
-            // 
-            this.textBoxCep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxCep.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCep.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxCep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxCep.Location = new System.Drawing.Point(126, 108);
-            this.textBoxCep.Name = "textBoxCep";
-            this.textBoxCep.Size = new System.Drawing.Size(159, 17);
-            this.textBoxCep.TabIndex = 53;
-            // 
-            // pictureCep
-            // 
-            this.pictureCep.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
-            this.pictureCep.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureCep.Location = new System.Drawing.Point(121, 104);
-            this.pictureCep.Name = "pictureCep";
-            this.pictureCep.Size = new System.Drawing.Size(168, 24);
-            this.pictureCep.TabIndex = 52;
-            this.pictureCep.TabStop = false;
-            // 
-            // labelCep
-            // 
-            this.labelCep.AutoSize = true;
-            this.labelCep.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelCep.Location = new System.Drawing.Point(80, 105);
-            this.labelCep.Name = "labelCep";
-            this.labelCep.Size = new System.Drawing.Size(42, 19);
-            this.labelCep.TabIndex = 51;
-            this.labelCep.Text = " CEP:";
-            // 
-            // textBoxEndereco
-            // 
-            this.textBoxEndereco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxEndereco.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxEndereco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxEndereco.Location = new System.Drawing.Point(372, 108);
-            this.textBoxEndereco.Name = "textBoxEndereco";
-            this.textBoxEndereco.Size = new System.Drawing.Size(813, 17);
-            this.textBoxEndereco.TabIndex = 56;
-            // 
-            // pictureEndereco
-            // 
-            this.pictureEndereco.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
-            this.pictureEndereco.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureEndereco.Location = new System.Drawing.Point(367, 104);
-            this.pictureEndereco.Name = "pictureEndereco";
-            this.pictureEndereco.Size = new System.Drawing.Size(822, 24);
-            this.pictureEndereco.TabIndex = 55;
-            this.pictureEndereco.TabStop = false;
-            // 
-            // labelEndereco
-            // 
-            this.labelEndereco.AutoSize = true;
-            this.labelEndereco.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelEndereco.Location = new System.Drawing.Point(295, 105);
-            this.labelEndereco.Name = "labelEndereco";
-            this.labelEndereco.Size = new System.Drawing.Size(71, 19);
-            this.labelEndereco.TabIndex = 54;
-            this.labelEndereco.Text = "Endereço:";
-            // 
-            // textBoxNumero
-            // 
-            this.textBoxNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNumero.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxNumero.Location = new System.Drawing.Point(127, 140);
-            this.textBoxNumero.Name = "textBoxNumero";
-            this.textBoxNumero.Size = new System.Drawing.Size(159, 17);
-            this.textBoxNumero.TabIndex = 59;
-            // 
-            // pictureNumero
-            // 
-            this.pictureNumero.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
-            this.pictureNumero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureNumero.Location = new System.Drawing.Point(122, 136);
-            this.pictureNumero.Name = "pictureNumero";
-            this.pictureNumero.Size = new System.Drawing.Size(168, 24);
-            this.pictureNumero.TabIndex = 58;
-            this.pictureNumero.TabStop = false;
-            // 
-            // labelNumero
-            // 
-            this.labelNumero.AutoSize = true;
-            this.labelNumero.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelNumero.Location = new System.Drawing.Point(54, 138);
-            this.labelNumero.Name = "labelNumero";
-            this.labelNumero.Size = new System.Drawing.Size(67, 19);
-            this.labelNumero.TabIndex = 57;
-            this.labelNumero.Text = " Número:";
-            // 
-            // textBoxComplemento
-            // 
-            this.textBoxComplemento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxComplemento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxComplemento.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxComplemento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxComplemento.Location = new System.Drawing.Point(404, 138);
-            this.textBoxComplemento.Name = "textBoxComplemento";
-            this.textBoxComplemento.Size = new System.Drawing.Size(781, 17);
-            this.textBoxComplemento.TabIndex = 62;
-            // 
-            // pictureComplemento
-            // 
-            this.pictureComplemento.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
-            this.pictureComplemento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureComplemento.Location = new System.Drawing.Point(399, 134);
-            this.pictureComplemento.Name = "pictureComplemento";
-            this.pictureComplemento.Size = new System.Drawing.Size(790, 24);
-            this.pictureComplemento.TabIndex = 61;
-            this.pictureComplemento.TabStop = false;
-            // 
-            // labelComplemento
-            // 
-            this.labelComplemento.AutoSize = true;
-            this.labelComplemento.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelComplemento.Location = new System.Drawing.Point(298, 135);
-            this.labelComplemento.Name = "labelComplemento";
-            this.labelComplemento.Size = new System.Drawing.Size(100, 19);
-            this.labelComplemento.TabIndex = 60;
-            this.labelComplemento.Text = "Complemento:";
-            // 
-            // textBoxBairro
-            // 
-            this.textBoxBairro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxBairro.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxBairro.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxBairro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxBairro.Location = new System.Drawing.Point(126, 170);
-            this.textBoxBairro.Name = "textBoxBairro";
-            this.textBoxBairro.Size = new System.Drawing.Size(365, 17);
-            this.textBoxBairro.TabIndex = 65;
-            // 
-            // pictureBairro
-            // 
-            this.pictureBairro.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
-            this.pictureBairro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBairro.Location = new System.Drawing.Point(121, 166);
-            this.pictureBairro.Name = "pictureBairro";
-            this.pictureBairro.Size = new System.Drawing.Size(374, 24);
-            this.pictureBairro.TabIndex = 64;
-            this.pictureBairro.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.label2.Location = new System.Drawing.Point(65, 168);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 19);
-            this.label2.TabIndex = 63;
-            this.label2.Text = " Bairro:";
-            // 
-            // textBoxCidade
-            // 
-            this.textBoxCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxCidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCidade.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxCidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxCidade.Location = new System.Drawing.Point(570, 169);
-            this.textBoxCidade.Name = "textBoxCidade";
-            this.textBoxCidade.Size = new System.Drawing.Size(357, 17);
-            this.textBoxCidade.TabIndex = 68;
-            // 
-            // pictureCidade
-            // 
-            this.pictureCidade.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
-            this.pictureCidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureCidade.Location = new System.Drawing.Point(565, 165);
-            this.pictureCidade.Name = "pictureCidade";
-            this.pictureCidade.Size = new System.Drawing.Size(366, 24);
-            this.pictureCidade.TabIndex = 67;
-            this.pictureCidade.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.label3.Location = new System.Drawing.Point(500, 167);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 19);
-            this.label3.TabIndex = 66;
-            this.label3.Text = " Cidade:";
-            // 
-            // textBoxUf
-            // 
-            this.textBoxUf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxUf.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxUf.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxUf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxUf.Location = new System.Drawing.Point(996, 169);
-            this.textBoxUf.Name = "textBoxUf";
-            this.textBoxUf.Size = new System.Drawing.Size(189, 17);
-            this.textBoxUf.TabIndex = 71;
-            // 
-            // pictureUf
-            // 
-            this.pictureUf.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
-            this.pictureUf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureUf.Location = new System.Drawing.Point(991, 165);
-            this.pictureUf.Name = "pictureUf";
-            this.pictureUf.Size = new System.Drawing.Size(198, 24);
-            this.pictureUf.TabIndex = 70;
-            this.pictureUf.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.label4.Location = new System.Drawing.Point(954, 167);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 19);
-            this.label4.TabIndex = 69;
-            this.label4.Text = " UF:";
-            // 
-            // textBoxTelefone
-            // 
-            this.textBoxTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTelefone.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxTelefone.Location = new System.Drawing.Point(126, 200);
-            this.textBoxTelefone.Name = "textBoxTelefone";
-            this.textBoxTelefone.Size = new System.Drawing.Size(365, 17);
-            this.textBoxTelefone.TabIndex = 74;
-            // 
-            // pictureTelefone
-            // 
-            this.pictureTelefone.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
-            this.pictureTelefone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureTelefone.Location = new System.Drawing.Point(121, 196);
-            this.pictureTelefone.Name = "pictureTelefone";
-            this.pictureTelefone.Size = new System.Drawing.Size(374, 24);
-            this.pictureTelefone.TabIndex = 73;
-            this.pictureTelefone.TabStop = false;
-            // 
-            // labelTelefone
-            // 
-            this.labelTelefone.AutoSize = true;
-            this.labelTelefone.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelTelefone.Location = new System.Drawing.Point(50, 198);
-            this.labelTelefone.Name = "labelTelefone";
-            this.labelTelefone.Size = new System.Drawing.Size(71, 19);
-            this.labelTelefone.TabIndex = 72;
-            this.labelTelefone.Text = " Telefone:";
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxEmail.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxEmail.Location = new System.Drawing.Point(570, 198);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(613, 17);
-            this.textBoxEmail.TabIndex = 77;
-            // 
-            // pictureEmail
-            // 
-            this.pictureEmail.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
-            this.pictureEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureEmail.Location = new System.Drawing.Point(565, 194);
-            this.pictureEmail.Name = "pictureEmail";
-            this.pictureEmail.Size = new System.Drawing.Size(622, 24);
-            this.pictureEmail.TabIndex = 76;
-            this.pictureEmail.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.label5.Location = new System.Drawing.Point(509, 196);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 19);
-            this.label5.TabIndex = 75;
-            this.label5.Text = " E-mail:";
-            // 
-            // textBoxAnexos
-            // 
-            this.textBoxAnexos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxAnexos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAnexos.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxAnexos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxAnexos.Location = new System.Drawing.Point(127, 314);
-            this.textBoxAnexos.Multiline = true;
-            this.textBoxAnexos.Name = "textBoxAnexos";
-            this.textBoxAnexos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxAnexos.Size = new System.Drawing.Size(1058, 70);
-            this.textBoxAnexos.TabIndex = 80;
-            // 
-            // pictureAnexos
-            // 
-            this.pictureAnexos.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fundo_anexos_obs;
-            this.pictureAnexos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureAnexos.Location = new System.Drawing.Point(122, 310);
-            this.pictureAnexos.Name = "pictureAnexos";
-            this.pictureAnexos.Size = new System.Drawing.Size(1067, 76);
-            this.pictureAnexos.TabIndex = 79;
-            this.pictureAnexos.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.label6.Location = new System.Drawing.Point(60, 310);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 19);
-            this.label6.TabIndex = 78;
-            this.label6.Text = "Anexos:";
-            // 
-            // textBoxFuncao
-            // 
-            this.textBoxFuncao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxFuncao.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxFuncao.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxFuncao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxFuncao.Location = new System.Drawing.Point(128, 415);
-            this.textBoxFuncao.Name = "textBoxFuncao";
-            this.textBoxFuncao.Size = new System.Drawing.Size(1058, 17);
-            this.textBoxFuncao.TabIndex = 83;
-            // 
-            // pictureFuncao
-            // 
-            this.pictureFuncao.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
-            this.pictureFuncao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureFuncao.Location = new System.Drawing.Point(123, 411);
-            this.pictureFuncao.Name = "pictureFuncao";
-            this.pictureFuncao.Size = new System.Drawing.Size(1067, 24);
-            this.pictureFuncao.TabIndex = 82;
-            this.pictureFuncao.TabStop = false;
-            // 
-            // labelFuncao
-            // 
-            this.labelFuncao.AutoSize = true;
-            this.labelFuncao.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelFuncao.Location = new System.Drawing.Point(63, 411);
-            this.labelFuncao.Name = "labelFuncao";
-            this.labelFuncao.Size = new System.Drawing.Size(57, 19);
-            this.labelFuncao.TabIndex = 81;
-            this.labelFuncao.Text = "Função:";
-            // 
-            // btnVoltar
-            // 
-            this.btnVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnVoltar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_voltar;
-            this.btnVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVoltar.FlatAppearance.BorderSize = 0;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Location = new System.Drawing.Point(942, 448);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(122, 31);
-            this.btnVoltar.TabIndex = 94;
-            this.btnVoltar.UseVisualStyleBackColor = true;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // btnConcluir
-            // 
-            this.btnConcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnConcluir.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_salvar;
-            this.btnConcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConcluir.FlatAppearance.BorderSize = 0;
-            this.btnConcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConcluir.Location = new System.Drawing.Point(1066, 448);
-            this.btnConcluir.Name = "btnConcluir";
-            this.btnConcluir.Size = new System.Drawing.Size(122, 31);
-            this.btnConcluir.TabIndex = 93;
-            this.btnConcluir.UseVisualStyleBackColor = true;
-            // 
             // TelaPessoasECredoresNovoCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,6 +835,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureObservacoes)).EndInit();
             this.panelCadastroDadosCompra.ResumeLayout(false);
             this.panelCadastroDadosCompra.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFuncao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAnexos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureTelefone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBairro)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureComplemento)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNumero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEndereco)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCep)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNomeNomeFantasia)).EndInit();
             this.groupBoxRadioBtnStatus.ResumeLayout(false);
             this.groupBoxRadioBtnStatus.PerformLayout();
@@ -842,17 +853,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCep)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEndereco)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureNumero)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureComplemento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBairro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCidade)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureUf)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureTelefone)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEmail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAnexos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFuncao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

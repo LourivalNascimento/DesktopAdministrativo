@@ -483,6 +483,7 @@
             this.btnNovo.Size = new System.Drawing.Size(140, 40);
             this.btnNovo.TabIndex = 88;
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnMenu
             // 
