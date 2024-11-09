@@ -30,7 +30,7 @@
         {
             this.textBoxObservacoes = new System.Windows.Forms.TextBox();
             this.pictureObservacoes = new System.Windows.Forms.PictureBox();
-            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.btnAnexarNotaFiscalPdf = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.textBoxCpfCnpj = new System.Windows.Forms.TextBox();
             this.panelCadastroDadosCompra = new System.Windows.Forms.Panel();
@@ -131,17 +131,17 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_add;
-            this.btnAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdicionar.FlatAppearance.BorderSize = 0;
-            this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionar.Location = new System.Drawing.Point(1163, 385);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(23, 21);
-            this.btnAdicionar.TabIndex = 39;
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+            this.btnAnexarNotaFiscalPdf.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_add;
+            this.btnAnexarNotaFiscalPdf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAnexarNotaFiscalPdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAnexarNotaFiscalPdf.FlatAppearance.BorderSize = 0;
+            this.btnAnexarNotaFiscalPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnexarNotaFiscalPdf.Location = new System.Drawing.Point(1163, 385);
+            this.btnAnexarNotaFiscalPdf.Name = "btnAnexarNotaFiscalPdf";
+            this.btnAnexarNotaFiscalPdf.Size = new System.Drawing.Size(23, 21);
+            this.btnAnexarNotaFiscalPdf.TabIndex = 39;
+            this.btnAnexarNotaFiscalPdf.UseVisualStyleBackColor = true;
+            this.btnAnexarNotaFiscalPdf.Click += new System.EventHandler(this.btnAnexarNotaFiscalPdf_Click);
             // 
             // btnExcluir
             // 
@@ -179,7 +179,7 @@
             this.panelCadastroDadosCompra.Controls.Add(this.textBoxFuncao);
             this.panelCadastroDadosCompra.Controls.Add(this.pictureFuncao);
             this.panelCadastroDadosCompra.Controls.Add(this.labelFuncao);
-            this.panelCadastroDadosCompra.Controls.Add(this.btnAdicionar);
+            this.panelCadastroDadosCompra.Controls.Add(this.btnAnexarNotaFiscalPdf);
             this.panelCadastroDadosCompra.Controls.Add(this.btnExcluir);
             this.panelCadastroDadosCompra.Controls.Add(this.label6);
             this.panelCadastroDadosCompra.Controls.Add(this.textBoxEmail);
@@ -849,7 +849,7 @@
         #endregion
         private System.Windows.Forms.TextBox textBoxObservacoes;
         private System.Windows.Forms.PictureBox pictureObservacoes;
-        private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.Button btnAnexarNotaFiscalPdf;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.TextBox textBoxCpfCnpj;
         private System.Windows.Forms.Panel panelCadastroDadosCompra;

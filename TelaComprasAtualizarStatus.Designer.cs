@@ -609,7 +609,7 @@
             this.btnAdicionar.FlatAppearance.BorderSize = 0;
             this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdicionar.Location = new System.Drawing.Point(1154, 35);
-            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Name = "btnAnexarNotaFiscalPdf";
             this.btnAdicionar.Size = new System.Drawing.Size(31, 30);
             this.btnAdicionar.TabIndex = 41;
             this.btnAdicionar.UseVisualStyleBackColor = true;
