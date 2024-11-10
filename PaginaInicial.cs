@@ -2,20 +2,72 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DesktopAdministrativo
 {
     public partial class TelaPaginaInicial : Form
     {
+        private string SqlStringDeConexao = @"Data Source=CYBERLOGRA\SQLSERVER2022;Initial Catalog=DBMorangolandia;Integrated Security=True";
+        private string numeroSerie;
         public TelaPaginaInicial()
         {
             InitializeComponent();
+            //labelNomeFuncionario.Text = "Olá, " +;
+            
+        }
+        private void codigoFuncionario()
+        {
+            // Query SQL que você deseja executar
+            string query = "SELECT usuario_log FROM TBLogin WHERE status_login = 1";
+
+            // Variável para salvar o valor lido do banco
+            string nomeUsuario = string.Empty;
+
+            // Cria a conexão com o banco de dados
+            using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+            {
+                // Cria o comando SQL
+                SqlCommand command = new SqlCommand(query, connection);
+
+                try
+                {
+                    // Abre a conexão
+                    connection.Open();
+
+                    // Executa o comando e lê o resultado
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    // Verifica se há linhas no resultado
+                    if (reader.HasRows)
+                    {
+                        // Lê a primeira linha do resultado
+                        while (reader.Read())
+                        {
+                            // Salva o valor da coluna "Nome" na variável
+                            nomeUsuario = reader["Nome"].ToString();
+                        }
+                    }
+
+                    // Fecha o reader
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    // Trata possíveis exceções
+                    Console.WriteLine("Erro: " + ex.Message);
+                }
+            }
+
+            // Exibe o valor lido
+            Console.WriteLine("Nome do usuário: " + nomeUsuario);
         }
         //Método que mostra um MessageBox perguntando se deseja fechar ou não o programa
         public void FecharPrograma()

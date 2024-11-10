@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DllConexaoBD, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\DllConexaoBD.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -55,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MudarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MudarSenha.Designer.cs">
+      <DependentUpon>MudarSenha.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaOrdemDeProducaoNovaOrdem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +139,9 @@
     <Compile Include="TelaPessoasECredoresNovoCadastro.Designer.cs">
       <DependentUpon>TelaPessoasECredoresNovoCadastro.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MudarSenha.resx">
+      <DependentUpon>MudarSenha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PaginaInicial.resx">
       <DependentUpon>PaginaInicial.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,6 +381,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Desktop ADM\fundo Estoque.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\liberado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Desktop ADM\escondido.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

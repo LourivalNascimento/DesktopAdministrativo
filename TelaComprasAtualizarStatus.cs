@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -357,6 +358,46 @@ namespace DesktopAdministrativo
         {
             //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
             AbrirFormAnterior<TelaComprasAcompanhamento>();
+        }
+
+        private void btnAnexarNotaFiscalPdf_Click(object sender, EventArgs e)
+        {
+            // Cria um OpenFileDialog para selecionar os arquivos PDF
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Arquivos PDF|*.pdf";
+            openFileDialog.Multiselect = true;  // Permite a seleção de múltiplos arquivos
+
+            // Verifica se o usuário selecionou um ou mais arquivos
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Itera sobre os arquivos selecionados
+                foreach (string caminhoPdf in openFileDialog.FileNames)
+                {
+                    string nomeArquivo = Path.GetFileName(caminhoPdf);
+
+                    // Verifica se o arquivo já está na lista
+                    if (!listBoxDocumentosPdf.Items.Contains(nomeArquivo))
+                    {
+                        // Adiciona o nome do arquivo no ListBox se ele ainda não estiver lá
+                        listBoxDocumentosPdf.Items.Add(nomeArquivo);
+                    }
+                }
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            // Verifica se algum item está selecionado no ListBox
+            if (listBoxDocumentosPdf.SelectedItem != null)
+            {
+                // Remove o item selecionado
+                listBoxDocumentosPdf.Items.Remove(listBoxDocumentosPdf.SelectedItem);
+            }
+            else
+            {
+                // Exibe uma mensagem se nenhum arquivo estiver selecionado
+                MessageBox.Show("Por favor, selecione um arquivo para remover.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

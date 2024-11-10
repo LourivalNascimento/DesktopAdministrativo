@@ -303,6 +303,16 @@ namespace DesktopAdministrativo.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap escondido {
+            get {
+                object obj = ResourceManager.GetObject("escondido", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fornecedor {
             get {
                 object obj = ResourceManager.GetObject("fornecedor", resourceCulture);
@@ -536,6 +546,16 @@ namespace DesktopAdministrativo.Properties {
         internal static System.Drawing.Bitmap icon_pessoas {
             get {
                 object obj = ResourceManager.GetObject("icon pessoas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap liberado {
+            get {
+                object obj = ResourceManager.GetObject("liberado", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
