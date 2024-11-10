@@ -13,6 +13,10 @@ namespace DesktopAdministrativo
 {
     public partial class TelaComprasAtualizarStatus : Form
     {
+        private string SqlStringDeConexao = @"Data Source=CYBERLOGRA\SQLSERVER2022;Initial Catalog=DBMorangolandia;Integrated Security=True";
+        private string nomeFuncionario;
+        private string codigoCompra;
+
         //Instancia os objetos dos controle
         Panel panelMenus = new Panel();
         Button btnMenuCompras = new Button();
@@ -22,10 +26,12 @@ namespace DesktopAdministrativo
         Button btnMenuPessoasECredores = new Button();
 
         private float vezesBtnMenuClicado = 0;
-        public TelaComprasAtualizarStatus()
+        public TelaComprasAtualizarStatus(string nomeFuncionario)
         {
             InitializeComponent();
             pictureTop.Width = int.MaxValue;
+            this.nomeFuncionario = nomeFuncionario;
+            labelNomeFuncionario.Text = "Olá, " + nomeFuncionario;
         }
         //Método que mostrar um MessageBox perguntando se deseja fechar ou não o programa
         public void FecharPrograma()
@@ -307,7 +313,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Compras" e fecha a atual
-            AbrirForm<TelaComprasAcompanhamento>();
+            //AbrirForm<TelaComprasAcompanhamento>();
         }
         private void btnMenuConsultas_Click(object sender, EventArgs e)
         {
@@ -357,7 +363,7 @@ namespace DesktopAdministrativo
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
-            AbrirFormAnterior<TelaComprasAcompanhamento>();
+            //AbrirFormAnterior<TelaComprasAcompanhamento>();
         }
 
         private void btnAnexarNotaFiscalPdf_Click(object sender, EventArgs e)

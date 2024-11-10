@@ -309,7 +309,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Compras" e fecha a atual
-            AbrirForm<TelaComprasAcompanhamento>();
+            //AbrirForm<TelaComprasAcompanhamento>();
         }
         private void btnMenuConsultas_Click(object sender, EventArgs e)
         {
@@ -359,7 +359,7 @@ namespace DesktopAdministrativo
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
-            AbrirFormAnterior<TelaComprasAcompanhamento>();
+            //AbrirFormAnterior<TelaComprasAcompanhamento>();
         }
 
         private void btnAnexarNotaFiscalPdf_Click(object sender, EventArgs e)

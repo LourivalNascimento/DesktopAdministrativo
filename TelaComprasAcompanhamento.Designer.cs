@@ -153,7 +153,7 @@
             this.labelAcompanhamentoCompras.AutoSize = true;
             this.labelAcompanhamentoCompras.Font = new System.Drawing.Font("Tw Cen MT Condensed", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAcompanhamentoCompras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
-            this.labelAcompanhamentoCompras.Location = new System.Drawing.Point(35, 96);
+            this.labelAcompanhamentoCompras.Location = new System.Drawing.Point(35, 70);
             this.labelAcompanhamentoCompras.Name = "labelAcompanhamentoCompras";
             this.labelAcompanhamentoCompras.Size = new System.Drawing.Size(437, 41);
             this.labelAcompanhamentoCompras.TabIndex = 16;

@@ -13,67 +13,129 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DesktopAdministrativo
 {
+
     public partial class TelaPaginaInicial : Form
     {
         private string SqlStringDeConexao = @"Data Source=CYBERLOGRA\SQLSERVER2022;Initial Catalog=DBMorangolandia;Integrated Security=True";
         private string numeroSerie;
-        public TelaPaginaInicial()
+        private string nomeFuncionario;
+
+        public TelaPaginaInicial(string numeroSerie)
         {
             InitializeComponent();
-            //labelNomeFuncionario.Text = "Olá, " +;
-            
+            this.numeroSerie = numeroSerie;
+            nomeFuncionario = obterNomeFuncionario();
+            labelNomeFuncionario.Text = "Olá, " + nomeFuncionario;
         }
-        private void codigoFuncionario()
+        private string obterCodigoFuncionario()
         {
-            // Query SQL que você deseja executar
-            string query = "SELECT usuario_log FROM TBLogin WHERE status_login = 1";
+            string codigoFuncionario = "";
 
-            // Variável para salvar o valor lido do banco
-            string nomeUsuario = string.Empty;
-
-            // Cria a conexão com o banco de dados
+            // Conectando ao banco de dados e executando a consulta
             using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
             {
-                // Cria o comando SQL
-                SqlCommand command = new SqlCommand(query, connection);
-
                 try
                 {
-                    // Abre a conexão
                     connection.Open();
-
-                    // Executa o comando e lê o resultado
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    // Verifica se há linhas no resultado
-                    if (reader.HasRows)
+                    // Definir a query para pegar o usuário logado
+                    string queryPegarCodigoFuncionario = @"SELECT usuario_log FROM TBLogin WHERE status_login = 1 AND NumeroSerie = @numeroSerie";
+                    using (SqlCommand command = new SqlCommand(queryPegarCodigoFuncionario, connection))
                     {
-                        // Lê a primeira linha do resultado
-                        while (reader.Read())
+                        // Adicionar o parâmetro de número de série
+                        command.Parameters.AddWithValue("@numeroSerie", numeroSerie);
+
+                        // Executar a consulta
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            // Salva o valor da coluna "Nome" na variável
-                            nomeUsuario = reader["Nome"].ToString();
+                            if (reader.Read())
+                            {
+                                // Verifica se a coluna existe e não é nula
+                                if (reader["usuario_log"] != DBNull.Value)
+                                {
+                                    codigoFuncionario = reader["usuario_log"].ToString();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Usuário logado não encontrado.");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Nenhum resultado encontrado com o número de série especificado.");
+                            }
                         }
                     }
-
-                    // Fecha o reader
-                    reader.Close();
+                }
+                catch (SqlException sqlEx)
+                {
+                    // Tratamento de erro específico para SQL
+                    MessageBox.Show("Erro SQL: " + sqlEx.Message);
                 }
                 catch (Exception ex)
                 {
-                    // Trata possíveis exceções
-                    Console.WriteLine("Erro: " + ex.Message);
+                    // Tratamento de outros tipos de exceções
+                    MessageBox.Show("Erro ao conectar com o banco de dados: " + ex.Message);
                 }
             }
+            return codigoFuncionario;
+        }
 
-            // Exibe o valor lido
-            Console.WriteLine("Nome do usuário: " + nomeUsuario);
+        private string obterNomeFuncionario()
+        {
+            string nomeFuncionario = "";
+            string codigo = obterCodigoFuncionario();
+            // Conectando ao banco de dados e executando a consulta
+            using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Definir a query para pegar o usuário logado
+                    string queryPegarNomeFuncionario = @"SELECT nome_func FROM TBFuncionario WHERE cod_func = @codigo";
+                    using (SqlCommand command = new SqlCommand(queryPegarNomeFuncionario, connection))
+                    {
+                        // Adicionar o parâmetro de número de série
+                        command.Parameters.AddWithValue("@codigo", codigo);
+                        // Executar a consulta
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Verifica se a coluna existe e não é nula
+                                if (reader["nome_func"] != DBNull.Value)
+                                {
+                                    nomeFuncionario = reader["nome_func"].ToString();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Usuário logado não encontrado.");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Nenhum resultado encontrado com o número de série especificado.");
+                            }
+                        }
+                    }
+                }
+                catch (SqlException sqlEx)
+                {
+                    // Tratamento de erro específico para SQL
+                    MessageBox.Show("Erro SQL: " + sqlEx.Message);
+                }
+                catch (Exception ex)
+                {
+                    // Tratamento de outros tipos de exceções
+                    MessageBox.Show("codigoErro ao conectar com o banco de dados: " + ex.Message);
+                }
+            }
+            return nomeFuncionario;
         }
         //Método que mostra um MessageBox perguntando se deseja fechar ou não o programa
         public void FecharPrograma()
         {
             DialogResult result = MessageBox.Show("Deseja fechar o programa Morangolandia?", "s a i r", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
             if (result == DialogResult.Yes)
             {
                 //Desloga da conta e fecha o programa
@@ -92,26 +154,7 @@ namespace DesktopAdministrativo
             }
             return null;
         }
-        //Método usado para abrir um form qualquer
-        private void AbrirForm<ClasseQualquer>(bool fecharFormAtual = true) where ClasseQualquer : Form, new()
-        {
-            // Cria uma nova instância da classe genérica
-            ClasseQualquer objetoDaClasseQualquer = new ClasseQualquer();
-            Form openForm1 = FormJaAberto(typeof(ClasseQualquer));
 
-            if (openForm1 != null)
-            {
-                openForm1.Focus();
-            }
-            else
-            {
-                objetoDaClasseQualquer.Show();
-                if (fecharFormAtual)
-                {
-                    Close();
-                }
-            }
-        }
         //Evento que ativa a interação do teclado com a tela
         private void PaginaInicial_KeyDown(object sender, KeyEventArgs e)
         {
@@ -131,27 +174,41 @@ namespace DesktopAdministrativo
         //Abre o form "Compras" principal e fecha a atual
         private void btnCompras_Click(object sender, EventArgs e)
         {
-            AbrirForm<TelaComprasAcompanhamento>();
+            TelaComprasAcompanhamento telaCompra = new TelaComprasAcompanhamento(nomeFuncionario);
+            telaCompra.Show();
+            Close();
         }
         //Abre tela "Consultas"
         private void btnConsultas_Click(object sender, EventArgs e)
         {
-            AbrirForm<TelaConsultas>();
+            //TelaConsultas telaConsultas = new TelaConsultas(nomeFuncionario);
+            //telaConsultas.Show();
+            //Close();
         }
         //Abre tela "Estoque"
         private void btnEstoque_Click(object sender, EventArgs e)
         {
-            AbrirForm<TelaEstoque>();
+            //TelaEstoque telaEstoque = new TelaEstoque(nomeFuncionario);
+            //telaEstoque.Show();
+            //Close();
         }
         //Abre tela "Ordem de Produção"
         private void btnOrdemDeProducao_Click(object sender, EventArgs e)
         {
-            AbrirForm<TelaOrdemDeProducao>();
+            //TelaOrdemDeProducao telaOrdemDeProducao = new TelaOrdemDeProducao(nomeFuncionario);
+            //telaOrdemDeProducao.Show();
+            //Close();
         }
         //Abre tela "Pessoas e Credores"
         private void btnPessoasECredores_Click(object sender, EventArgs e)
         {
-            AbrirForm<TelaPessoasECredoresConsulta>();
+            //TelaPessoasECredoresConsulta telaPessoasECredoresConsulta = new TelaPessoasECredoresConsulta(nomeFuncionario);
+            //telaPessoasECredoresConsulta.Show();
+            //Close();
+        }
+
+        private void TelaPaginaInicial_Load(object sender, EventArgs e)
+        {
         }
     }
 }

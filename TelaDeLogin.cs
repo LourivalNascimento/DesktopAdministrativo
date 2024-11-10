@@ -83,6 +83,7 @@ namespace DesktopAdministrativo
             else
             {
                 paginaInicial.Show();
+                textBoxSenha.Text = string.Empty;
             }
         }
         private bool VerificarLogin(string usuario, string senha)
@@ -208,14 +209,13 @@ namespace DesktopAdministrativo
             {
                 // Aqui você pode redirecionar para a próxima tela ou abrir o próximo form
                 // Exemplo: Abrir um novo formulário
-                AbrirForm<TelaPaginaInicial>();
+                
                 // Gerar um novo número de série único
-                string numeroSerie = Guid.NewGuid().ToString();
-
+                string numeroSerie1 = Guid.NewGuid().ToString();
                 // Atualizar o número de série no banco de dados
-                AtualizarNumeroDeSerie(numeroSerie);
-
-                LerCamposBD();
+                AtualizarNumeroDeSerie(numeroSerie1);
+                string numeroSerie = LerCamposBD();
+                AbrirForm(numeroSerie);
             }
             else
             {
@@ -241,34 +241,13 @@ namespace DesktopAdministrativo
             //Se a tecla "Enter" for pertada, chama o método "AbrirPaginaInicial()"
             if (e.KeyData == Keys.Enter)
             {
-                string usuario = textBoxCodUser.Text;
-                string senha = textBoxSenha.Text;
-
-                // Validações básicas de preenchimento dos campos
-                if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(senha))
-                {
-                    MessageBox.Show("Por favor, preencha ambos os campos de usuário e senha.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Verifica as credenciais no banco de dados
-                if (VerificarLogin(usuario, senha))
-                {
-                    // Aqui você pode redirecionar para a próxima tela ou abrir o próximo form
-                    // Exemplo: Abrir um novo formulário
-                    AbrirForm<TelaPaginaInicial>();
-                }
-                else
-                {
-                    MessageBox.Show("Usuário ou senha incorretos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                //Logar();
+                Logar();
             }
         }
 
         private void btnEsqueceuSenha_Click(object sender, EventArgs e)
         {
-            AbrirForm<MudarSenha>();
+            
         }
 
         private void btnVisualizacaoSenha_Click(object sender, EventArgs e)

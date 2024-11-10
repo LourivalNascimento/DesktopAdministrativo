@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,13 @@ namespace DesktopAdministrativo
 {
     public partial class TelaComprasAcompanhamento : Form
     {
-        //Instancia os objetos dos controle
+        private string SqlStringDeConexao = @"Data Source=CYBERLOGRA\SQLSERVER2022;Initial Catalog=DBMorangolandia;Integrated Security=True";
+        private string nomeFuncionario;
+        private string codigoNotaFiscal, numNotaFiscal, statusCompra, nomeFornecedor;
+        private DateTime dataEmissao;
+        private float valorUnitario;
+
+       //Instancia os objetos dos controle
         Panel panelMenus = new Panel();
         Button btnMenuCompras = new Button();
         Button btnMenuConsultas = new Button();
@@ -22,10 +29,14 @@ namespace DesktopAdministrativo
 
         private float vezesBtnMenuClicado = 0;
 
-        public TelaComprasAcompanhamento()
+        public TelaComprasAcompanhamento(string nomeFuncionario)
         {
             InitializeComponent();
             pictureTop.Width = int.MaxValue;
+            this.nomeFuncionario = nomeFuncionario;
+            labelNomeFuncionario.Text = "Olá, " + nomeFuncionario;
+            GerarLabelsClientes();
+
         }
         //Método que mostra um MessageBox perguntando se deseja fechar ou não o programa
         public void FecharPrograma()
@@ -289,7 +300,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Compras" e fecha a atual
-            AbrirForm <TelaComprasAcompanhamento>();
+            //AbrirForm <TelaComprasAcompanhamento>();
         }
         private void btnMenuConsultas_Click(object sender, EventArgs e)
         {
@@ -339,13 +350,123 @@ namespace DesktopAdministrativo
         private void btnEditar_Click(object sender, EventArgs e)
         {
             //Abre tela "ComprasAtualizarStatus" e fecha a atual
-            AbrirForm<TelaComprasAtualizarStatus>();
+            TelaComprasAtualizarStatus telaCompra = new TelaComprasAtualizarStatus(nomeFuncionario);
+            telaCompra.Show();
+            Close();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
             //Abre tela "ComprasNovaCompra" e fecha a atual
             AbrirForm<TelaComprasNovaCompra>();
+        }
+        private void lerBD(string query, SqlConnection connection, List<string>valoresImportados, string coluna)
+        {
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    // Ler os dados linha a linha e adicionar à lista
+                    while (reader.Read())
+                    {
+                        valoresImportados.Add(reader[coluna].ToString());
+                    }
+                }
+            }
+        }
+        private void GerarLabelsClientes()
+        {
+
+            // A consulta SQL para obter os dados
+            string queryNumNf = "SELECT nf FROM TBCompras";  // Ajuste conforme o nome correto da tabela e coluna
+            string queryCodigoCompra = "SELECT cod_compra FROM TBCompras";
+            string queryEmissaoCompra = "SELECT dt_emissao FROM TBCompras";
+            string queryValorCompra = "SELECT valor_unit FROM TBCompras";
+            string queryStatusCompra = "SELECT status_compras FROM TBCompras";
+
+            // Lista para armazenar os nomes dos clientes
+            List<string> numerosNotasFiscais = new List<string>();
+            List<string> codigosCompras = new List<string>();
+            List<string> datasDeEmissao = new List<string>();
+            List<string> valoresCompras = new List<string>();
+            List<string> statusCompras = new List<string>();
+
+            try
+            {
+                // Estabelecer conexão com o banco de dados
+                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+                {
+                    connection.Open();
+                    string coluna = "nf";
+                    // Executar a consulta SQL
+                    lerBD(queryNumNf, connection, numerosNotasFiscais, coluna);
+
+                }
+                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+                {
+                    connection.Open();
+                    string coluna = "cod_compra";
+
+                    // Executar a consulta SQL
+                    lerBD(queryCodigoCompra, connection, codigosCompras, coluna);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao conectar com o banco de dados: " + ex.Message);
+                return;
+            }
+
+            // Variáveis para controle de layout dos Labels
+            int posicaoY = 39;  // Posição inicial Y dos labels
+            int espacoEntreLabels = 35;  // Espaçamento vertical entre os labels
+            Panel panelLabels = new Panel();
+            panelLabels.Location = new System.Drawing.Point(42, 140);  // Posição inicial do Panel
+            panelLabels.Size = new System.Drawing.Size(1193, 70);  // Tamanho do Panel (ajustar conforme necessário)
+            this.Controls.Add(panelLabels);
+
+
+            // Gerar os Labels a partir dos dados da lista
+            foreach (string nome in numerosNotasFiscais)
+            {
+                // Criar um novo Label
+                Label labelExibirCodigoCompra = new Label();
+                labelExibirCodigoCompra.Text = nome;
+                labelExibirCodigoCompra.AutoSize = true;
+                labelExibirCodigoCompra.Font = new Font("Franklin Gothic Heavy", (float)12);
+                labelExibirCodigoCompra.ForeColor = Color.Black;
+                labelExibirCodigoCompra.BackColor = Color.FromArgb(247, 223, 255);
+                labelExibirCodigoCompra.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+                labelExibirCodigoCompra.Location = new System.Drawing.Point(22, posicaoY);
+            }
+                foreach (string nome in numerosNotasFiscais)
+            {
+                // Criar um novo Label
+                Label labelExubirNf = new Label();
+                labelExubirNf.Text = nome;
+                labelExubirNf.AutoSize = true;
+                labelExubirNf.Font = new Font("Franklin Gothic Heavy", (float)12);
+                labelExubirNf.ForeColor = Color.Black;
+                labelExubirNf.BackColor = Color.FromArgb(247, 223, 255);
+                labelExubirNf.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+                labelExubirNf.Location = new System.Drawing.Point(126, posicaoY);
+
+
+                panelLabels.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                panelLabels.BackColor = Color.FromArgb(252, 251, 231);
+                panelLabels.AutoSize = true;
+                panelLabels.BringToFront();
+                panelLabels.Controls.Add(labelExubirNf);
+                panelLabels.Controls.Add(labelExibirCodigoCompra);
+
+                // Atualizar a posição Y para o próximo Label
+                posicaoY += espacoEntreLabels;
+            }
+        }
+        private void TelaComprasAcompanhamento_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

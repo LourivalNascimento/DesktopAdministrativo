@@ -289,7 +289,7 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Compras" e fecha a atual
-            AbrirForm<TelaComprasAcompanhamento>();
+            //AbrirForm<TelaComprasAcompanhamento>();
         }
         private void btnMenuConsultas_Click(object sender, EventArgs e)
         {
