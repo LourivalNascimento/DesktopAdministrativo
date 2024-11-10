@@ -9,15 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace DesktopAdministrativo
 {
     public partial class TelaComprasAcompanhamento : Form
     {
-        private string SqlStringDeConexao = @"Data Source=CYBERLOGRA\SQLSERVER2022;Initial Catalog=DBMorangolandia;Integrated Security=True";
-        private string nomeFuncionario;
-        private string codigoNotaFiscal, numNotaFiscal, statusCompra, nomeFornecedor;
-        private DateTime dataEmissao;
-        private float valorUnitario;
+       
 
        //Instancia os objetos dos controle
         Panel panelMenus = new Panel();
@@ -300,7 +297,9 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Compras" e fecha a atual
-            //AbrirForm <TelaComprasAcompanhamento>();
+            TelaComprasAcompanhamento telaCompra = new TelaComprasAcompanhamento(nomeFuncionario);
+            telaCompra.Show();
+            Close();
         }
         private void btnMenuConsultas_Click(object sender, EventArgs e)
         {
@@ -358,8 +357,21 @@ namespace DesktopAdministrativo
         private void btnNovo_Click(object sender, EventArgs e)
         {
             //Abre tela "ComprasNovaCompra" e fecha a atual
-            AbrirForm<TelaComprasNovaCompra>();
+            TelaComprasNovaCompra telaCompra = new TelaComprasNovaCompra(nomeFuncionario);
+            telaCompra.Show();
+            Close();
         }
+        //----------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------
+        //--------------------------------------BANCO DE DADOS------------------------------------------
+        //----------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------
+        private string SqlStringDeConexao = @"Data Source=CYBERLOGRA\SQLSERVER2022;Initial Catalog=DBMorangolandia;Integrated Security=True";
+        private string nomeFuncionario;
+        private string codigoNotaFiscal, numNotaFiscal, statusCompra, nomeFornecedor;
+        private DateTime dataEmissao;
+        private float valorUnitario;
+
         private void lerBD(string query, SqlConnection connection, List<string>valoresImportados, string coluna)
         {
             using (SqlCommand command = new SqlCommand(query, connection))
@@ -374,20 +386,57 @@ namespace DesktopAdministrativo
                 }
             }
         }
+        private void GerarLabelsDeConsulta(List<string> valores, string nomeValores, int posicaoX, Panel panelLabels)
+        {
+            // Armazena o nome da variável e o valor
+            int posicaoY = 42;  // Posição inicial Y dos labels
+            int espacoEntreLabels = 45;  // Espaçamento vertical entre os labels
+
+            foreach (string nome in valores)
+            {
+                // Criar um novo Label
+                Label labelExubirNf = new Label();
+                if (nomeValores == "valoresCompras")
+                {
+                    labelExubirNf.Text = "R$ " + nome;
+                }else if(nomeValores == "datasDeEmissao")
+                {
+
+                    DateTime data = DateTime.Parse(nome);
+                    DateTime dataSomente = data.Date;
+                    labelExubirNf.Text = data.ToString("dd/MM/yyyy"); ;
+                }
+                else
+                {
+                    labelExubirNf.Text = nome;
+                }
+                labelExubirNf.AutoSize = true;
+                labelExubirNf.Font = new Font("Franklin Gothic Heavy", (float)12);
+                labelExubirNf.ForeColor = Color.Black;
+                labelExubirNf.BackColor = Color.FromArgb(247, 223, 255);
+                labelExubirNf.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+                labelExubirNf.Location = new System.Drawing.Point(posicaoX, posicaoY);
+                panelLabels.Controls.Add(labelExubirNf);
+                // Atualizar a posição Y para o próximo Label
+                posicaoY += espacoEntreLabels;
+            }
+        }
         private void GerarLabelsClientes()
         {
 
             // A consulta SQL para obter os dados
-            string queryNumNf = "SELECT nf FROM TBCompras";  // Ajuste conforme o nome correto da tabela e coluna
             string queryCodigoCompra = "SELECT cod_compra FROM TBCompras";
+            string queryNumNf = "SELECT nf FROM TBCompras"; 
             string queryEmissaoCompra = "SELECT dt_emissao FROM TBCompras";
+            string queryNomeFornecedor = "SELECT nome_fant FROM TBFornecedor";
             string queryValorCompra = "SELECT valor_unit FROM TBCompras";
             string queryStatusCompra = "SELECT status_compras FROM TBCompras";
 
             // Lista para armazenar os nomes dos clientes
-            List<string> numerosNotasFiscais = new List<string>();
             List<string> codigosCompras = new List<string>();
+            List<string> numerosNotasFiscais = new List<string>();
             List<string> datasDeEmissao = new List<string>();
+            List<string> nomesFornecedor = new List<string>();
             List<string> valoresCompras = new List<string>();
             List<string> statusCompras = new List<string>();
 
@@ -397,20 +446,47 @@ namespace DesktopAdministrativo
                 using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
                 {
                     connection.Open();
-                    string coluna = "nf";
-                    // Executar a consulta SQL
-                    lerBD(queryNumNf, connection, numerosNotasFiscais, coluna);
-
-                }
-                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
-                {
-                    connection.Open();
                     string coluna = "cod_compra";
 
                     // Executar a consulta SQL
                     lerBD(queryCodigoCompra, connection, codigosCompras, coluna);
-
                 }
+                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+                {
+                    connection.Open();
+                    string coluna = "nf";
+                    // Executar a consulta SQL
+                    lerBD(queryNumNf, connection, numerosNotasFiscais, coluna);
+                }
+                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+                {
+                    connection.Open();
+                    string coluna = "dt_emissao";
+                    // Executar a consulta SQL
+                    lerBD(queryEmissaoCompra, connection, datasDeEmissao, coluna);
+                }
+                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+                {
+                    connection.Open();
+                    string coluna = "nome_fant";
+                    // Executar a consulta SQL
+                    lerBD(queryNomeFornecedor, connection, nomesFornecedor, coluna);
+                }
+                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+                {
+                    connection.Open();
+                    string coluna = "valor_unit";
+                    // Executar a consulta SQL
+                    lerBD(queryValorCompra, connection, valoresCompras, coluna);
+                }
+                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+                {
+                    connection.Open();
+                    string coluna = "status_compras";
+                    // Executar a consulta SQL
+                    lerBD(queryStatusCompra, connection, statusCompras, coluna);
+                }
+
             }
             catch (Exception ex)
             {
@@ -419,50 +495,36 @@ namespace DesktopAdministrativo
             }
 
             // Variáveis para controle de layout dos Labels
-            int posicaoY = 39;  // Posição inicial Y dos labels
-            int espacoEntreLabels = 35;  // Espaçamento vertical entre os labels
+
             Panel panelLabels = new Panel();
-            panelLabels.Location = new System.Drawing.Point(42, 140);  // Posição inicial do Panel
+            panelLabels.Location = new System.Drawing.Point(40, 140);  // Posição inicial do Panel
             panelLabels.Size = new System.Drawing.Size(1193, 70);  // Tamanho do Panel (ajustar conforme necessário)
+            panelLabels.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left;
+            panelLabels.BackColor = Color.FromArgb(252, 251, 231);
+            panelLabels.AutoSize = true;
+            panelLabels.BringToFront();
+            panelLabels.Controls.Add(labelCodigo);
+            labelCodigo.Location = new Point(22, 20);
+            panelLabels.Controls.Add(labelNumNota);
+            labelNumNota.Location = new System.Drawing.Point(126, 20);
+            panelLabels.Controls.Add(labelEmissao);
+            labelEmissao.Location = new System.Drawing.Point(226, 20);
+            panelLabels.Controls.Add(labelFornecedor);
+            labelFornecedor.Location = new System.Drawing.Point(338, 20);
+            panelLabels.Controls.Add(labelValor);
+            labelValor.Location = new System.Drawing.Point(939, 20);
+            panelLabels.Controls.Add(labelStatus);
+            labelStatus.Location = new System.Drawing.Point(1060, 20);
+
             this.Controls.Add(panelLabels);
 
+            GerarLabelsDeConsulta(codigosCompras, "codigosCompras", 22, panelLabels);
+            GerarLabelsDeConsulta(numerosNotasFiscais, "numerosNotasFiscais", 126, panelLabels);
+            GerarLabelsDeConsulta(datasDeEmissao, "datasDeEmissao", 226, panelLabels);
+            GerarLabelsDeConsulta(nomesFornecedor, "nomesFornecedor", 338, panelLabels);
+            GerarLabelsDeConsulta(valoresCompras, "valoresCompras", 939, panelLabels);
+            GerarLabelsDeConsulta(statusCompras, "statusCompras", 1060, panelLabels);
 
-            // Gerar os Labels a partir dos dados da lista
-            foreach (string nome in numerosNotasFiscais)
-            {
-                // Criar um novo Label
-                Label labelExibirCodigoCompra = new Label();
-                labelExibirCodigoCompra.Text = nome;
-                labelExibirCodigoCompra.AutoSize = true;
-                labelExibirCodigoCompra.Font = new Font("Franklin Gothic Heavy", (float)12);
-                labelExibirCodigoCompra.ForeColor = Color.Black;
-                labelExibirCodigoCompra.BackColor = Color.FromArgb(247, 223, 255);
-                labelExibirCodigoCompra.Anchor = AnchorStyles.Left | AnchorStyles.Top;
-                labelExibirCodigoCompra.Location = new System.Drawing.Point(22, posicaoY);
-            }
-                foreach (string nome in numerosNotasFiscais)
-            {
-                // Criar um novo Label
-                Label labelExubirNf = new Label();
-                labelExubirNf.Text = nome;
-                labelExubirNf.AutoSize = true;
-                labelExubirNf.Font = new Font("Franklin Gothic Heavy", (float)12);
-                labelExubirNf.ForeColor = Color.Black;
-                labelExubirNf.BackColor = Color.FromArgb(247, 223, 255);
-                labelExubirNf.Anchor = AnchorStyles.Left | AnchorStyles.Top;
-                labelExubirNf.Location = new System.Drawing.Point(126, posicaoY);
-
-
-                panelLabels.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-                panelLabels.BackColor = Color.FromArgb(252, 251, 231);
-                panelLabels.AutoSize = true;
-                panelLabels.BringToFront();
-                panelLabels.Controls.Add(labelExubirNf);
-                panelLabels.Controls.Add(labelExibirCodigoCompra);
-
-                // Atualizar a posição Y para o próximo Label
-                posicaoY += espacoEntreLabels;
-            }
         }
         private void TelaComprasAcompanhamento_Load(object sender, EventArgs e)
         {

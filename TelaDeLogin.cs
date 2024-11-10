@@ -263,10 +263,10 @@ namespace DesktopAdministrativo
                 textBoxSenha.UseSystemPasswordChar = true;
             }
         }
-
         private void TelaDeLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             FecharPrograma();
         }
+
     }
 }

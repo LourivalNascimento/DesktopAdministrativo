@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 
 namespace DesktopAdministrativo
 {
+    
     public partial class TelaComprasNovaCompra : Form
     {
         //Instancia os objetos dos controle
@@ -23,10 +26,13 @@ namespace DesktopAdministrativo
         Button btnMenuPessoasECredores = new Button();
 
         private float vezesBtnMenuClicado = 0;
-        public TelaComprasNovaCompra()
+        public TelaComprasNovaCompra(string nomeFuncionario)
         {
             InitializeComponent();
             pictureTop.Width = int.MaxValue;
+            this.nomeFuncionario = nomeFuncionario;
+            labelNomeFuncionario.Text = "Olá, " + nomeFuncionario;
+            CarregarFornecedores();
         }
         //Método que mostrar um MessageBox perguntando se deseja fechar ou não o programa
         public void FecharPrograma()
@@ -309,7 +315,9 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Compras" e fecha a atual
-            //AbrirForm<TelaComprasAcompanhamento>();
+            TelaComprasAtualizarStatus telaCompra = new TelaComprasAtualizarStatus(nomeFuncionario);
+            telaCompra.Show();
+            Close();
         }
         private void btnMenuConsultas_Click(object sender, EventArgs e)
         {
@@ -359,51 +367,257 @@ namespace DesktopAdministrativo
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             //Chama método "AbrirFormAnterior()", responsável por fechar tela atual e abrir a anterior
-            //AbrirFormAnterior<TelaComprasAcompanhamento>();
+            TelaComprasAcompanhamento telaCompra = new TelaComprasAcompanhamento(nomeFuncionario);
+            telaCompra.Show();
+            Close();
         }
 
-        private void btnAnexarNotaFiscalPdf_Click(object sender, EventArgs e)
+        private void btnExcluir_Click(object sender, EventArgs e)
         {
-            // Cria um OpenFileDialog para selecionar os arquivos PDF
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Arquivos PDF|*.pdf";
-            openFileDialog.Multiselect = true;  // Permite a seleção de múltiplos arquivos
+            var result = MessageBox.Show("Você tem certeza que deseja remover o PDF?", "Confirmar remoção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Verifica se o usuário selecionou um ou mais arquivos
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (result == DialogResult.Yes)
             {
-                // Itera sobre os arquivos selecionados
-                foreach (string caminhoPdf in openFileDialog.FileNames)
-                {
-                    string nomeArquivo = Path.GetFileName(caminhoPdf);
+                // Limpa o campo de texto
+                textBoxAnexarPDF.Clear();
+            }
+        }
 
-                    // Verifica se o arquivo já está na lista
-                    if (!listBoxDocumentosPdf.Items.Contains(nomeArquivo))
+
+        //----------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------
+        //--------------------------------------BANCO DE DADOS------------------------------------------
+        //----------------------------------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------
+        private string SqlStringDeConexao = @"Data Source=CYBERLOGRA\SQLSERVER2022;Initial Catalog=DBMorangolandia;Integrated Security=True";
+        private string nomeFuncionario;
+        private string codigoNotaFiscal, numNotaFiscal, statusCompra, nomeFornecedor;
+        private DateTime dataEmissao;
+        private float valorUnitario;
+
+        // Carregar os fornecedores no ComboBox
+        private void CarregarFornecedores()
+        {
+            using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+            {
+                connection.Open();
+
+                string query = "SELECT id_forn, nome_fant FROM TBFornecedor";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                comboBoxFornecedor.DisplayMember = "nome_fant"; // Nome que será mostrado na ComboBox
+                comboBoxFornecedor.ValueMember = "id_forn";     // Valor que será passado ao selecionar
+                comboBoxFornecedor.DataSource = dataTable;
+            }
+        }
+        public class Produto
+        {
+            public int Codigo { get; set; }
+            public string Nome { get; set; }
+            public int Quantidade { get; set; }
+            public float Valor { get; set; }
+        }
+        private List<Produto> listaProdutos = new List<Produto>();
+        // Evento de salvar a compra
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            // Coletando as informações do formulário
+            int fornecedorId = int.Parse(comboBoxFornecedor.SelectedValue.ToString());
+            string numeroNota = textBoxNumNota.Text;
+            string codigoCompra = textBoxCodigoCompra.Text;
+            DateTime emissaoNota = dtpEmissaoNota.Value;
+            string observacoes = textBoxObservacoes.Text;
+            string status = GetStatus();
+            byte[] anexoNota = null;
+
+            // Verifica se o campo do anexo não está vazio e converte para byte[]
+            if (string.IsNullOrEmpty(textBoxAnexarPDF.Text))
+            {
+                MessageBox.Show("É obrigatório anexar o arquivo da Nota Fiscal em PDF.", "Anexo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Interrompe o fluxo para permitir que o usuário faça o anexo
+            }
+
+            // Converte o arquivo PDF em byte[]
+            string arquivoNotaPath = textBoxAnexarPDF.Text;
+            anexoNota = File.ReadAllBytes(arquivoNotaPath);
+
+            try
+            {
+                // Verificar duplicidade antes de tentar inserir
+                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+                {
+                    connection.Open();
+
+                    string verificaDuplicidadeQuery = @"
+                SELECT COUNT(1) FROM TBCompras WHERE nf = @nf";
+
+                    using (SqlCommand cmdVerifica = new SqlCommand(verificaDuplicidadeQuery, connection))
                     {
-                        // Adiciona o nome do arquivo no ListBox se ele ainda não estiver lá
-                        listBoxDocumentosPdf.Items.Add(nomeArquivo);
+                        cmdVerifica.Parameters.AddWithValue("@nf", numeroNota);
+                        int duplicidade = (int)cmdVerifica.ExecuteScalar();
+
+                        if (duplicidade > 0)
+                        {
+                            MessageBox.Show("O número da nota já existe. Por favor, insira um número de nota diferente.",
+                                            "Erro de duplicidade", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                            // Reseta o campo do número da nota
+                            textBoxNumNota.Clear();
+                            textBoxNumNota.Focus(); // Coloca o cursor diretamente no campo para que o usuário insira um novo valor
+                            return; // Interrompe o fluxo para permitir que o usuário insira um novo número de nota
+                        }
+                    }
+
+                    // Inserir a compra no banco
+                    string insertCompraQuery = @"
+                INSERT INTO TBCompras (fk_forn, nf, anexo_nf, dt_emissao, status_compras, obs_compras, cod_compra)
+                VALUES (@fk_forn, @nf, @anexo_nf, @dt_emissao, @status_compras, @obs_compras, @cod_compra);
+                SELECT SCOPE_IDENTITY();";
+
+                    using (SqlCommand cmd = new SqlCommand(insertCompraQuery, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@fk_forn", fornecedorId);
+                        cmd.Parameters.AddWithValue("@nf", numeroNota);
+                        cmd.Parameters.AddWithValue("@anexo_nf", anexoNota);
+                        cmd.Parameters.AddWithValue("@dt_emissao", emissaoNota);
+                        cmd.Parameters.AddWithValue("@status_compras", status);
+                        cmd.Parameters.AddWithValue("@obs_compras", observacoes);
+                        cmd.Parameters.AddWithValue("@cod_compra", codigoCompra);
+
+                        // Tentar executar a inserção e obter o ID da compra
+                        int compraId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (compraId != 0)
+                        {
+                            // Inserir os produtos relacionados à compra
+                            foreach (Produto produto in listaProdutos)
+                            {
+                                string insertProdutoQuery = @"
+                            INSERT INTO TBCompras_Inumos (fk_compras, cod_produto, nome_produto, qtd_produto, valor_unit)
+                            VALUES (@fk_compras, @cod_produto, @nome_produto, @qtd_produto, @valor_unit);";
+
+                                using (SqlCommand cmdProduto = new SqlCommand(insertProdutoQuery, connection))
+                                {
+                                    cmdProduto.Parameters.AddWithValue("@fk_compras", compraId);
+                                    cmdProduto.Parameters.AddWithValue("@cod_produto", produto.Codigo);
+                                    cmdProduto.Parameters.AddWithValue("@nome_produto", produto.Nome);
+                                    cmdProduto.Parameters.AddWithValue("@qtd_produto", produto.Quantidade);
+                                    cmdProduto.Parameters.AddWithValue("@valor_unit", produto.Valor);
+
+                                    cmdProduto.ExecuteNonQuery();
+                                }
+                            }
+
+                            MessageBox.Show("Compra registrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            textBoxNumNota.Clear();
+                            textBoxNumNota.Focus();
+                            textBoxAnexarPDF.Clear();
+                            textBoxObservacoes.Clear();
+                            textBoxCodigoCompra.Clear();                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao registrar a compra. Por favor, tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
-        }
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-            // Verifica se algum item está selecionado no ListBox
-            if (listBoxDocumentosPdf.SelectedItem != null)
+            catch (SqlException ex)
             {
-                // Remove o item selecionado
-                listBoxDocumentosPdf.Items.Remove(listBoxDocumentosPdf.SelectedItem);
-            }
-            else
-            {
-                // Exibe uma mensagem se nenhum arquivo estiver selecionado
-                MessageBox.Show("Por favor, selecione um arquivo para remover.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex.Number == 2627 || ex.Number == 2601) // Erro de violação de chave única (duplicidade)
+                {
+                    MessageBox.Show("O número da nota já existe. Por favor, insira um número de nota diferente.", "Erro de duplicidade", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    // Reseta o campo do número da nota
+                    textBoxNumNota.Clear();
+                    textBoxNumNota.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Ocorreu um erro ao salvar a compra: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void btnAdicionarProduto_Click(object sender, EventArgs e)
         {
+            // Verificar se os campos de produto estão preenchidos corretamente
+            if (string.IsNullOrEmpty(textBoxCodigo.Text) || string.IsNullOrEmpty(textBoxNomeDoProduto.Text) ||
+                string.IsNullOrEmpty(textBoxQuantidade.Text) || string.IsNullOrEmpty(textBoxValor.Text))
+            {
+                MessageBox.Show("Por favor, preencha todos os campos do produto.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            // Criar um novo objeto Produto com os dados fornecidos
+            Produto produto = new Produto
+            {
+                Codigo = int.Parse(textBoxCodigo.Text),
+                Nome = textBoxNomeDoProduto.Text,
+                Quantidade = int.Parse(textBoxQuantidade.Text),
+                Valor = float.Parse(textBoxValor.Text)
+            };
+
+            // Adicionar o produto à lista
+            listaProdutos.Add(produto);
+
+            // Limpar os campos de entrada para novos produtos
+            textBoxCodigo.Clear();
+            textBoxNomeDoProduto.Clear();
+            textBoxQuantidade.Clear();
+            textBoxValor.Clear();
+        }
+        private void btnAnexarNotaFiscalPdf_Click(object sender, EventArgs e)
+        {
+            // Abrir o seletor de arquivos para anexar o PDF
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                textBoxAnexarPDF.Text = openFileDialog.FileName;
+            }
+        }
+
+        // Método para obter o status da compra
+        private string GetStatus()
+        {
+            if (radioBtnEmAberto.Checked) return "Em Aberto";
+            if (radioBtnDespachado.Checked) return "Despachado";
+            if (radioBtnConcluido.Checked) return "Concluído";
+            return string.Empty;
+        }
+
+        // Carregar os dados no formulário quando ele for carregado
+        private void FormCompra_Load(object sender, EventArgs e)
+        {
+            CarregarFornecedores();
+        }
+    }
+    public static class Prompt
+    {
+        public static string ShowDialog(string text, string caption)
+        {
+            Form prompt = new Form()
+            {
+                Width = 500,
+                Height = 150,
+                Text = caption
+            };
+
+            Label textLabel = new Label() { Left = 50, Top = 20, Text = text };
+            TextBox inputBox = new TextBox() { Left = 50, Top = 50, Width = 400 };
+
+            Button confirmation = new Button() { Text = "Ok", Left = 350, Width = 100, Top = 70 };
+            confirmation.Click += (sender, e) => { prompt.Close(); };
+
+            prompt.Controls.Add(textLabel);
+            prompt.Controls.Add(inputBox);
+            prompt.Controls.Add(confirmation);
+            prompt.AcceptButton = confirmation;
+
+            prompt.ShowDialog();
+            return inputBox.Text;
         }
     }
 }
