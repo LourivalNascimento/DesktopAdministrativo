@@ -32,8 +32,8 @@
             this.radioBtnProdutos = new System.Windows.Forms.RadioButton();
             this.radioBtnInsumos = new System.Windows.Forms.RadioButton();
             this.labelNovaCadastro = new System.Windows.Forms.Label();
-            this.labelNomeProduto = new System.Windows.Forms.Label();
-            this.textBoxNomeProduto = new System.Windows.Forms.TextBox();
+            this.labelCodigoProduto = new System.Windows.Forms.Label();
+            this.textBoxCodigoProduto = new System.Windows.Forms.TextBox();
             this.pictureNomeProduto = new System.Windows.Forms.PictureBox();
             this.radioBtnLegume = new System.Windows.Forms.RadioButton();
             this.radioBtnFruta = new System.Windows.Forms.RadioButton();
@@ -93,27 +93,27 @@
             this.labelNovaCadastro.TabIndex = 27;
             this.labelNovaCadastro.Text = "NOVA CADASTRO";
             // 
-            // labelNomeProduto
+            // labelCodigoProduto
             // 
-            this.labelNomeProduto.AutoSize = true;
-            this.labelNomeProduto.Font = new System.Drawing.Font("Tw Cen MT", 15.75F);
-            this.labelNomeProduto.Location = new System.Drawing.Point(12, 65);
-            this.labelNomeProduto.Name = "labelNomeProduto";
-            this.labelNomeProduto.Size = new System.Drawing.Size(162, 24);
-            this.labelNomeProduto.TabIndex = 28;
-            this.labelNomeProduto.Text = "Nome do Produto";
+            this.labelCodigoProduto.AutoSize = true;
+            this.labelCodigoProduto.Font = new System.Drawing.Font("Tw Cen MT", 15.75F);
+            this.labelCodigoProduto.Location = new System.Drawing.Point(12, 65);
+            this.labelCodigoProduto.Name = "labelCodigoProduto";
+            this.labelCodigoProduto.Size = new System.Drawing.Size(176, 24);
+            this.labelCodigoProduto.TabIndex = 28;
+            this.labelCodigoProduto.Text = "Codigo do Produto";
             // 
-            // textBoxNomeProduto
+            // textBoxCodigoProduto
             // 
-            this.textBoxNomeProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(232)))));
-            this.textBoxNomeProduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNomeProduto.Font = new System.Drawing.Font("Tw Cen MT", 10F);
-            this.textBoxNomeProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxNomeProduto.Location = new System.Drawing.Point(17, 100);
-            this.textBoxNomeProduto.Name = "textBoxNomeProduto";
-            this.textBoxNomeProduto.Size = new System.Drawing.Size(382, 15);
-            this.textBoxNomeProduto.TabIndex = 29;
-            this.textBoxNomeProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxCodigoProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(232)))));
+            this.textBoxCodigoProduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCodigoProduto.Font = new System.Drawing.Font("Tw Cen MT", 10F);
+            this.textBoxCodigoProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxCodigoProduto.Location = new System.Drawing.Point(17, 100);
+            this.textBoxCodigoProduto.Name = "textBoxCodigoProduto";
+            this.textBoxCodigoProduto.Size = new System.Drawing.Size(382, 15);
+            this.textBoxCodigoProduto.TabIndex = 29;
+            this.textBoxCodigoProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureNomeProduto
             // 
@@ -214,6 +214,7 @@
             this.btnSalvar.Size = new System.Drawing.Size(121, 32);
             this.btnSalvar.TabIndex = 31;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // TelaEstoqueNovoCadastro
             // 
@@ -225,8 +226,8 @@
             this.ClientSize = new System.Drawing.Size(417, 215);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.textBoxNomeProduto);
-            this.Controls.Add(this.labelNomeProduto);
+            this.Controls.Add(this.textBoxCodigoProduto);
+            this.Controls.Add(this.labelCodigoProduto);
             this.Controls.Add(this.labelNovaCadastro);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureNomeProduto);
@@ -255,8 +256,8 @@
         private System.Windows.Forms.RadioButton radioBtnProdutos;
         private System.Windows.Forms.RadioButton radioBtnInsumos;
         private System.Windows.Forms.Label labelNovaCadastro;
-        private System.Windows.Forms.Label labelNomeProduto;
-        private System.Windows.Forms.TextBox textBoxNomeProduto;
+        private System.Windows.Forms.Label labelCodigoProduto;
+        private System.Windows.Forms.TextBox textBoxCodigoProduto;
         private System.Windows.Forms.PictureBox pictureNomeProduto;
         private System.Windows.Forms.RadioButton radioBtnLegume;
         private System.Windows.Forms.RadioButton radioBtnFruta;

@@ -35,14 +35,7 @@
             this.pictureTop = new System.Windows.Forms.PictureBox();
             this.labelNomeFuncionario = new System.Windows.Forms.Label();
             this.labelAcompanhamentoCompras = new System.Windows.Forms.Label();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.labelStatus = new System.Windows.Forms.Label();
-            this.labelValor = new System.Windows.Forms.Label();
-            this.labelFornecedor = new System.Windows.Forms.Label();
-            this.labelEmissao = new System.Windows.Forms.Label();
-            this.labelNumNota = new System.Windows.Forms.Label();
-            this.labelCodigo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
@@ -139,20 +132,6 @@
             this.labelAcompanhamentoCompras.TabIndex = 16;
             this.labelAcompanhamentoCompras.Text = "ACOMPANHAMENTO DE COMPRAS";
             // 
-            // btnEditar
-            // 
-            this.btnEditar.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_editar;
-            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Location = new System.Drawing.Point(1201, 230);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(34, 34);
-            this.btnEditar.TabIndex = 17;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
             // btnNovo
             // 
             this.btnNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -170,78 +149,12 @@
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
-            // labelStatus
-            // 
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.Location = new System.Drawing.Point(1098, 134);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(54, 22);
-            this.labelStatus.TabIndex = 30;
-            this.labelStatus.Text = "Status";
-            // 
-            // labelValor
-            // 
-            this.labelValor.AutoSize = true;
-            this.labelValor.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelValor.Location = new System.Drawing.Point(985, 134);
-            this.labelValor.Name = "labelValor";
-            this.labelValor.Size = new System.Drawing.Size(51, 22);
-            this.labelValor.TabIndex = 32;
-            this.labelValor.Text = "Valor";
-            // 
-            // labelFornecedor
-            // 
-            this.labelFornecedor.AutoSize = true;
-            this.labelFornecedor.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFornecedor.Location = new System.Drawing.Point(375, 134);
-            this.labelFornecedor.Name = "labelFornecedor";
-            this.labelFornecedor.Size = new System.Drawing.Size(95, 22);
-            this.labelFornecedor.TabIndex = 31;
-            this.labelFornecedor.Text = "Fornecedor";
-            // 
-            // labelEmissao
-            // 
-            this.labelEmissao.AutoSize = true;
-            this.labelEmissao.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmissao.Location = new System.Drawing.Point(263, 134);
-            this.labelEmissao.Name = "labelEmissao";
-            this.labelEmissao.Size = new System.Drawing.Size(67, 22);
-            this.labelEmissao.TabIndex = 29;
-            this.labelEmissao.Text = "Emissão";
-            // 
-            // labelNumNota
-            // 
-            this.labelNumNota.AutoSize = true;
-            this.labelNumNota.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNumNota.Location = new System.Drawing.Point(162, 134);
-            this.labelNumNota.Name = "labelNumNota";
-            this.labelNumNota.Size = new System.Drawing.Size(72, 22);
-            this.labelNumNota.TabIndex = 28;
-            this.labelNumNota.Text = "Nº Nota";
-            // 
-            // labelCodigo
-            // 
-            this.labelCodigo.AutoSize = true;
-            this.labelCodigo.Font = new System.Drawing.Font("Tw Cen MT", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCodigo.Location = new System.Drawing.Point(66, 134);
-            this.labelCodigo.Name = "labelCodigo";
-            this.labelCodigo.Size = new System.Drawing.Size(65, 22);
-            this.labelCodigo.TabIndex = 27;
-            this.labelCodigo.Text = "Código";
-            // 
             // TelaComprasAcompanhamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.labelStatus);
-            this.Controls.Add(this.labelValor);
-            this.Controls.Add(this.labelFornecedor);
-            this.Controls.Add(this.labelEmissao);
-            this.Controls.Add(this.labelNumNota);
-            this.Controls.Add(this.labelCodigo);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.labelAcompanhamentoCompras);
             this.Controls.Add(this.labelNomeFuncionario);
@@ -250,7 +163,6 @@
             this.Controls.Add(this.pictureLogoMorangolandia);
             this.Controls.Add(this.btnEsc);
             this.Controls.Add(this.pictureTop);
-            this.Controls.Add(this.btnEditar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "TelaComprasAcompanhamento";
@@ -275,13 +187,6 @@
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Label labelNomeFuncionario;
         private System.Windows.Forms.Label labelAcompanhamentoCompras;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.Label labelStatus;
-        private System.Windows.Forms.Label labelValor;
-        private System.Windows.Forms.Label labelFornecedor;
-        private System.Windows.Forms.Label labelEmissao;
-        private System.Windows.Forms.Label labelNumNota;
-        private System.Windows.Forms.Label labelCodigo;
     }
 }

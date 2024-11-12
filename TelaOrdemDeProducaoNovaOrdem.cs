@@ -12,6 +12,7 @@ namespace DesktopAdministrativo
 {
     public partial class TelaOrdemDeProducaoNovaOrdem : Form
     {
+        private string nomeFuncionario;
         public TelaOrdemDeProducaoNovaOrdem()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace DesktopAdministrativo
 
         private void TelaOrdemDeProducaoNovaOrdem_Deactivate(object sender, EventArgs e)
         {
-            TelaEstoque telaEstoque = new TelaEstoque();
+            TelaEstoque telaEstoque = new TelaEstoque(nomeFuncionario);
             telaEstoque.Activate();
             this.Close();
         }

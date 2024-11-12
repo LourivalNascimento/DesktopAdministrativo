@@ -121,115 +121,91 @@ namespace DesktopAdministrativo
 
             //Adiciona o controle botão
             Controls.Add(btnMenuCompras);
-            Controls.Add(btnMenuConsultas);
             Controls.Add(btnMenuEstoque);
             Controls.Add(btnMenuOrdemDeProducao);
             Controls.Add(btnMenuPessoasECredores);
             //Coloca os botões e panel para a frente
             btnMenuCompras.BringToFront();
-            btnMenuConsultas.BringToFront();
             btnMenuEstoque.BringToFront();
             btnMenuOrdemDeProducao.BringToFront();
             btnMenuPessoasECredores.BringToFront();
             //Escolhe cursor "Hand" para interação com o mouse
             btnMenuCompras.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnMenuConsultas.Cursor = System.Windows.Forms.Cursors.Hand;
             btnMenuEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
             btnMenuOrdemDeProducao.Cursor = System.Windows.Forms.Cursors.Hand;
             btnMenuPessoasECredores.Cursor = System.Windows.Forms.Cursors.Hand;
             //Escolhe a posição que o botão irá ficar
-            btnMenuCompras.Location = new Point(33, 89);
-            btnMenuConsultas.Location = new Point(33, 158);
+            btnMenuCompras.Location = new Point(33, 158);
             btnMenuEstoque.Location = new Point(33, 227);
             btnMenuOrdemDeProducao.Location = new Point(33, 296);
             btnMenuPessoasECredores.Location = new Point(33, 365);
             //Torna a visibilidade do botão verdadeira
             btnMenuCompras.Visible = true;
-            btnMenuConsultas.Visible = true;
             btnMenuEstoque.Visible = true;
             btnMenuOrdemDeProducao.Visible = true;
             btnMenuPessoasECredores.Visible = true;
             //Escolhe a fonte utilizada para o nome no botão
             btnMenuCompras.Font = new Font("Franklin Gothic Heavy", (float)15.75);
-            btnMenuConsultas.Font = new Font("Franklin Gothic Heavy", (float)15.75);
             btnMenuEstoque.Font = new Font("Franklin Gothic Heavy", (float)15.75);
             btnMenuOrdemDeProducao.Font = new Font("Franklin Gothic Heavy", (float)15.75);
             btnMenuPessoasECredores.Font = new Font("Franklin Gothic Heavy", (float)15.75);
             //Escolhe a cor da fonte do botão
             btnMenuCompras.ForeColor = Color.White;
-            btnMenuConsultas.ForeColor = Color.White;
             btnMenuEstoque.ForeColor = Color.White;
             btnMenuOrdemDeProducao.ForeColor = Color.White;
             btnMenuPessoasECredores.ForeColor = Color.White;
             //Escolhe a cor de fundo do botão
             btnMenuCompras.BackColor = Color.FromArgb(221, 139, 249);
-            btnMenuConsultas.BackColor = Color.FromArgb(221, 139, 249);
             btnMenuEstoque.BackColor = Color.FromArgb(221, 139, 249);
             btnMenuOrdemDeProducao.BackColor = Color.FromArgb(221, 139, 249);
             btnMenuPessoasECredores.BackColor = Color.FromArgb(221, 139, 249);
             //Ancora o botão á direita superior da tela
             btnMenuCompras.Anchor = AnchorStyles.Left | AnchorStyles.Top;
-            btnMenuConsultas.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             btnMenuEstoque.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             btnMenuOrdemDeProducao.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             btnMenuPessoasECredores.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             //Redimenciona o botão automaticamente
             btnMenuCompras.AutoSize = true;
-            btnMenuConsultas.AutoSize = true;
             btnMenuEstoque.AutoSize = true;
             btnMenuOrdemDeProducao.AutoSize = true;
             btnMenuPessoasECredores.AutoSize = true;
             //Indica se o controle pode interagir com o usuário
             btnMenuCompras.Enabled = true;
-            btnMenuConsultas.Enabled = true;
             btnMenuEstoque.Enabled = true;
             btnMenuOrdemDeProducao.Enabled = true;
             btnMenuPessoasECredores.Enabled = true;
             //Escolhe o estilo do botão
             btnMenuCompras.FlatStyle = FlatStyle.Flat;
-            btnMenuConsultas.FlatStyle = FlatStyle.Flat;
             btnMenuEstoque.FlatStyle = FlatStyle.Flat;
             btnMenuOrdemDeProducao.FlatStyle = FlatStyle.Flat;
             btnMenuPessoasECredores.FlatStyle = FlatStyle.Flat;
-            //Traz o controle botão para frente dos componentes da tela
-            btnMenuCompras.BringToFront();
-            btnMenuConsultas.BringToFront();
-            btnMenuEstoque.BringToFront();
-            btnMenuOrdemDeProducao.BringToFront();
-            btnMenuPessoasECredores.BringToFront();
             //Tira a borda do botão
             btnMenuCompras.FlatAppearance.BorderSize = 0;
-            btnMenuConsultas.FlatAppearance.BorderSize = 0;
             btnMenuEstoque.FlatAppearance.BorderSize = 0;
             btnMenuOrdemDeProducao.FlatAppearance.BorderSize = 0;
             btnMenuPessoasECredores.FlatAppearance.BorderSize = 0;
             //Escolhe a cor de fundo do botão ao deixar o mouse dentro dos limites do botão
             btnMenuCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(221, 139, 249);
-            btnMenuConsultas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(221, 139, 249);
             btnMenuEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(221, 139, 249);
             btnMenuOrdemDeProducao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(221, 139, 249);
             btnMenuPessoasECredores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(221, 139, 249);
             //Instancia o evento de interação quando o mouse passa por cima do botão
             btnMenuCompras.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnMenuCompras_MouseMove);
-            btnMenuConsultas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnMenuConsultas_MouseMove);
             btnMenuEstoque.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnMenuEstoque_MouseMove);
             btnMenuOrdemDeProducao.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnMenuOrdemDeProducao_MouseMove);
             btnMenuPessoasECredores.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnMenuPessoasECredores_MouseMove);
             //Instancia o evento de interação quando o mouse sai de cima do botão
             btnMenuCompras.MouseLeave += new System.EventHandler(this.btnMenuCompras_MouseLeave);
-            btnMenuConsultas.MouseLeave += new System.EventHandler(this.btnMenuConsultas_MouseLeave);
             btnMenuEstoque.MouseLeave += new System.EventHandler(this.btnMenuEstoque_MouseLeave);
             btnMenuOrdemDeProducao.MouseLeave += new System.EventHandler(this.btnMenuOrdemDeProducao_MouseLeave);
             btnMenuPessoasECredores.MouseLeave += new System.EventHandler(this.btnMenuPessoasECredores_MouseLeave);
             //Instancia o evento de interação quando o usuário clica com o mouse no botão
             btnMenuCompras.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnMenuCompras_Click);
-            btnMenuConsultas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnMenuConsultas_Click);
             btnMenuEstoque.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnMenuEstoque_Click);
             btnMenuOrdemDeProducao.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnMenuOrdemDeProducao_Click);
             btnMenuPessoasECredores.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnMenuPessoasECredores_Click);
             //Define o texto exibido no botão
             btnMenuCompras.Text = "Compras";
-            btnMenuConsultas.Text = "Consultas";
             btnMenuEstoque.Text = "Estoque";
             btnMenuOrdemDeProducao.Text = "Ordem de Produção";
             btnMenuPessoasECredores.Text = "Pessoas e Credores";
@@ -243,7 +219,6 @@ namespace DesktopAdministrativo
             pictureLogoMorangolandia.Location = new Point(118, 3);
             btnMenu.BackColor = Color.FromArgb(162, 66, 195);
             btnMenuCompras.Visible = false;
-            btnMenuConsultas.Visible = false;
             btnMenuEstoque.Visible = false;
             btnMenuOrdemDeProducao.Visible = false;
             btnMenuPessoasECredores.Visible = false;
@@ -274,14 +249,6 @@ namespace DesktopAdministrativo
         {
             //"Retira" sublianhado do botão
             btnMenuCompras.Font = new Font("Franklin Gothic Heavy", (float)15.75);
-        }
-        private void btnMenuConsultas_MouseMove(object sender, MouseEventArgs e)
-        {
-            btnMenuConsultas.Font = new Font("Franklin Gothic Heavy", (float)15.75, FontStyle.Underline);
-        }
-        private void btnMenuConsultas_MouseLeave(object sender, EventArgs e)
-        {
-            btnMenuConsultas.Font = new Font("Franklin Gothic Heavy", (float)15.75);
         }
         private void btnMenuEstoque_MouseMove(object sender, MouseEventArgs e)
         {
@@ -315,29 +282,28 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Compras" e fecha a atual
-            TelaComprasAtualizarStatus telaCompra = new TelaComprasAtualizarStatus(nomeFuncionario);
-            telaCompra.Show();
+            TelaComprasAcompanhamento tela = new TelaComprasAcompanhamento(nomeFuncionario);
+            tela.Show();
             Close();
-        }
-        private void btnMenuConsultas_Click(object sender, EventArgs e)
-        {
-            //Abre tela "Consultas" e fecha a atual
-            AbrirForm<TelaConsultas>();
         }
         private void btnMenuEstoque_Click(object sender, EventArgs e)
         {
             //Abre tela "Estoque de Insumos" e fecha a atual
-            AbrirForm<TelaEstoque>();
+            TelaEstoque tela = new TelaEstoque(nomeFuncionario);
+            tela.Show();
+            Close();
         }
         private void btnMenuOrdemDeProducao_Click(object sender, EventArgs e)
         {
             //Abre tela "Ordem de Produção" e fecha a atual
-            AbrirForm<TelaOrdemDeProducao>();
+            TelaOrdemDeProducao tela = new TelaOrdemDeProducao(nomeFuncionario);
+            tela.Show();
         }
         private void btnMenuPessoasECredores_Click(object sender, EventArgs e)
         {
             //Abre tela "Pessoas e Credores" e fecha a atual
-            AbrirForm<TelaPessoasECredoresConsulta>();
+            TelaPessoasECredoresConsulta tela = new TelaPessoasECredoresConsulta(nomeFuncionario);
+            tela.Show();
         }
         //----------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------
@@ -450,8 +416,7 @@ namespace DesktopAdministrativo
                 {
                     connection.Open();
 
-                    string verificaDuplicidadeQuery = @"
-                SELECT COUNT(1) FROM TBCompras WHERE nf = @nf";
+                    string verificaDuplicidadeQuery = @" SELECT COUNT(1) FROM TBCompras WHERE nf = @nf";
 
                     using (SqlCommand cmdVerifica = new SqlCommand(verificaDuplicidadeQuery, connection))
                     {
@@ -515,7 +480,8 @@ namespace DesktopAdministrativo
                             textBoxNumNota.Focus();
                             textBoxAnexarPDF.Clear();
                             textBoxObservacoes.Clear();
-                            textBoxCodigoCompra.Clear();                        }
+                            textBoxCodigoCompra.Clear();                       
+                        }
                         else
                         {
                             MessageBox.Show("Erro ao registrar a compra. Por favor, tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -549,6 +515,18 @@ namespace DesktopAdministrativo
                 MessageBox.Show("Por favor, preencha todos os campos do produto.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            //--------------------------------------------------------------------------------------------
+            //--------------------------------------------------------------------------------------------
+            //--------------------------------------------------------------------------------------------
+            //--------------------------------------------------------------------------------------------
+            //--------------------------------------------------------------------------------------------
+            //--------------------TRATAMENTO DE ERRO TIPO DA VARIÁVEL-------------------------------------
+            //--------------------------------------------------------------------------------------------
+            //--------------------------------------------------------------------------------------------
+            //--------------------------------------------------------------------------------------------
+            //--------------------------------------------------------------------------------------------
+            //--------------------------------------------------------------------------------------------
 
             // Criar um novo objeto Produto com os dados fornecidos
             Produto produto = new Produto

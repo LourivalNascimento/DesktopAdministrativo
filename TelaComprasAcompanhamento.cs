@@ -14,9 +14,7 @@ namespace DesktopAdministrativo
 {
     public partial class TelaComprasAcompanhamento : Form
     {
-       
-
-       //Instancia os objetos dos controle
+        //Instancia os objetos dos controle
         Panel panelMenus = new Panel();
         Button btnMenuCompras = new Button();
         Button btnMenuConsultas = new Button();
@@ -104,115 +102,91 @@ namespace DesktopAdministrativo
 
             //Adiciona o controle botão
             Controls.Add(btnMenuCompras);
-            Controls.Add(btnMenuConsultas);
             Controls.Add(btnMenuEstoque);
             Controls.Add(btnMenuOrdemDeProducao);
             Controls.Add(btnMenuPessoasECredores);
             //Coloca os botões e panel para a frente
             btnMenuCompras.BringToFront();
-            btnMenuConsultas.BringToFront();
             btnMenuEstoque.BringToFront();
             btnMenuOrdemDeProducao.BringToFront();
             btnMenuPessoasECredores.BringToFront();
             //Escolhe cursor "Hand" para interação com o mouse
             btnMenuCompras.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnMenuConsultas.Cursor = System.Windows.Forms.Cursors.Hand;
             btnMenuEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
             btnMenuOrdemDeProducao.Cursor = System.Windows.Forms.Cursors.Hand;
             btnMenuPessoasECredores.Cursor = System.Windows.Forms.Cursors.Hand;
             //Escolhe a posição que o botão irá ficar
-            btnMenuCompras.Location = new Point(33, 89);
-            btnMenuConsultas.Location = new Point(33, 158);
+            btnMenuCompras.Location = new Point(33, 158);
             btnMenuEstoque.Location = new Point(33, 227);
             btnMenuOrdemDeProducao.Location = new Point(33, 296);
             btnMenuPessoasECredores.Location = new Point(33, 365);
             //Torna a visibilidade do botão verdadeira
             btnMenuCompras.Visible = true;
-            btnMenuConsultas.Visible = true;
             btnMenuEstoque.Visible = true;
             btnMenuOrdemDeProducao.Visible = true;
             btnMenuPessoasECredores.Visible = true;
             //Escolhe a fonte utilizada para o nome no botão
             btnMenuCompras.Font = new Font("Franklin Gothic Heavy", (float)15.75);
-            btnMenuConsultas.Font = new Font("Franklin Gothic Heavy", (float)15.75);
             btnMenuEstoque.Font = new Font("Franklin Gothic Heavy", (float)15.75);
             btnMenuOrdemDeProducao.Font = new Font("Franklin Gothic Heavy", (float)15.75);
             btnMenuPessoasECredores.Font = new Font("Franklin Gothic Heavy", (float)15.75);
             //Escolhe a cor da fonte do botão
             btnMenuCompras.ForeColor = Color.White;
-            btnMenuConsultas.ForeColor = Color.White;
             btnMenuEstoque.ForeColor = Color.White;
             btnMenuOrdemDeProducao.ForeColor = Color.White;
             btnMenuPessoasECredores.ForeColor = Color.White;
             //Escolhe a cor de fundo do botão
             btnMenuCompras.BackColor = Color.FromArgb(221, 139, 249);
-            btnMenuConsultas.BackColor = Color.FromArgb(221, 139, 249);
             btnMenuEstoque.BackColor = Color.FromArgb(221, 139, 249);
             btnMenuOrdemDeProducao.BackColor = Color.FromArgb(221, 139, 249);
             btnMenuPessoasECredores.BackColor = Color.FromArgb(221, 139, 249);
             //Ancora o botão á direita superior da tela
             btnMenuCompras.Anchor = AnchorStyles.Left | AnchorStyles.Top;
-            btnMenuConsultas.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             btnMenuEstoque.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             btnMenuOrdemDeProducao.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             btnMenuPessoasECredores.Anchor = AnchorStyles.Left | AnchorStyles.Top;
             //Redimenciona o botão automaticamente
             btnMenuCompras.AutoSize = true;
-            btnMenuConsultas.AutoSize = true;
             btnMenuEstoque.AutoSize = true;
             btnMenuOrdemDeProducao.AutoSize = true;
             btnMenuPessoasECredores.AutoSize = true;
             //Indica se o controle pode interagir com o usuário
             btnMenuCompras.Enabled = true;
-            btnMenuConsultas.Enabled = true;
             btnMenuEstoque.Enabled = true;
             btnMenuOrdemDeProducao.Enabled = true;
             btnMenuPessoasECredores.Enabled = true;
             //Escolhe o estilo do botão
             btnMenuCompras.FlatStyle = FlatStyle.Flat;
-            btnMenuConsultas.FlatStyle = FlatStyle.Flat;
             btnMenuEstoque.FlatStyle = FlatStyle.Flat;
             btnMenuOrdemDeProducao.FlatStyle = FlatStyle.Flat;
             btnMenuPessoasECredores.FlatStyle = FlatStyle.Flat;
-            //Traz o controle botão para frente dos componentes da tela
-            btnMenuCompras.BringToFront();
-            btnMenuConsultas.BringToFront();
-            btnMenuEstoque.BringToFront();
-            btnMenuOrdemDeProducao.BringToFront();
-            btnMenuPessoasECredores.BringToFront();
             //Tira a borda do botão
             btnMenuCompras.FlatAppearance.BorderSize = 0;
-            btnMenuConsultas.FlatAppearance.BorderSize = 0;
             btnMenuEstoque.FlatAppearance.BorderSize = 0;
             btnMenuOrdemDeProducao.FlatAppearance.BorderSize = 0;
             btnMenuPessoasECredores.FlatAppearance.BorderSize = 0;
             //Escolhe a cor de fundo do botão ao deixar o mouse dentro dos limites do botão
             btnMenuCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(221, 139, 249);
-            btnMenuConsultas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(221, 139, 249);
             btnMenuEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(221, 139, 249);
             btnMenuOrdemDeProducao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(221, 139, 249);
             btnMenuPessoasECredores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(221, 139, 249);
             //Instancia o evento de interação quando o mouse passa por cima do botão
             btnMenuCompras.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnMenuCompras_MouseMove);
-            btnMenuConsultas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnMenuConsultas_MouseMove);
             btnMenuEstoque.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnMenuEstoque_MouseMove);
             btnMenuOrdemDeProducao.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnMenuOrdemDeProducao_MouseMove);
             btnMenuPessoasECredores.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnMenuPessoasECredores_MouseMove);
             //Instancia o evento de interação quando o mouse sai de cima do botão
             btnMenuCompras.MouseLeave += new System.EventHandler(this.btnMenuCompras_MouseLeave);
-            btnMenuConsultas.MouseLeave += new System.EventHandler(this.btnMenuConsultas_MouseLeave);
             btnMenuEstoque.MouseLeave += new System.EventHandler(this.btnMenuEstoque_MouseLeave);
             btnMenuOrdemDeProducao.MouseLeave += new System.EventHandler(this.btnMenuOrdemDeProducao_MouseLeave);
             btnMenuPessoasECredores.MouseLeave += new System.EventHandler(this.btnMenuPessoasECredores_MouseLeave);
             //Instancia o evento de interação quando o usuário clica com o mouse no botão
             btnMenuCompras.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnMenuCompras_Click);
-            btnMenuConsultas.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnMenuConsultas_Click);
             btnMenuEstoque.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnMenuEstoque_Click);
             btnMenuOrdemDeProducao.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnMenuOrdemDeProducao_Click);
             btnMenuPessoasECredores.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnMenuPessoasECredores_Click);
             //Define o texto exibido no botão
             btnMenuCompras.Text = "Compras";
-            btnMenuConsultas.Text = "Consultas";
             btnMenuEstoque.Text = "Estoque";
             btnMenuOrdemDeProducao.Text = "Ordem de Produção";
             btnMenuPessoasECredores.Text = "Pessoas e Credores";
@@ -226,7 +200,6 @@ namespace DesktopAdministrativo
             pictureLogoMorangolandia.Location = new Point(118, 3);
             btnMenu.BackColor = Color.FromArgb(162, 66, 195);
             btnMenuCompras.Visible = false;
-            btnMenuConsultas.Visible = false;
             btnMenuEstoque.Visible = false;
             btnMenuOrdemDeProducao.Visible = false;
             btnMenuPessoasECredores.Visible = false;
@@ -236,10 +209,11 @@ namespace DesktopAdministrativo
         {
             //Se a quantidade de click for par, abre o menu
             //Se a quantidade de click for impar, fecha o menu
-            if(vezesBtnMenuClicado % 2 == 0)
+            if (vezesBtnMenuClicado % 2 == 0)
             {
                 ExibirMenu();
-            }else
+            }
+            else
             {
                 OcultarMenu();
             }
@@ -256,14 +230,6 @@ namespace DesktopAdministrativo
         {
             //"Retira" sublianhado do botão
             btnMenuCompras.Font = new Font("Franklin Gothic Heavy", (float)15.75);
-        }
-        private void btnMenuConsultas_MouseMove(object sender, MouseEventArgs e)
-        {
-            btnMenuConsultas.Font = new Font("Franklin Gothic Heavy", (float)15.75, FontStyle.Underline);
-        }
-        private void btnMenuConsultas_MouseLeave(object sender, EventArgs e)
-        {
-            btnMenuConsultas.Font = new Font("Franklin Gothic Heavy", (float)15.75);
         }
         private void btnMenuEstoque_MouseMove(object sender, MouseEventArgs e)
         {
@@ -297,29 +263,28 @@ namespace DesktopAdministrativo
             OcultarMenu();
             vezesBtnMenuClicado = 0;
             //Abre tela "Compras" e fecha a atual
-            TelaComprasAcompanhamento telaCompra = new TelaComprasAcompanhamento(nomeFuncionario);
-            telaCompra.Show();
+            TelaComprasAcompanhamento tela = new TelaComprasAcompanhamento(nomeFuncionario);
+            tela.Show();
             Close();
-        }
-        private void btnMenuConsultas_Click(object sender, EventArgs e)
-        {
-            //Abre tela "Consultas" e fecha a atual
-            AbrirForm<TelaConsultas>();
         }
         private void btnMenuEstoque_Click(object sender, EventArgs e)
         {
             //Abre tela "Estoque de Insumos" e fecha a atual
-            AbrirForm<TelaEstoque>();
+            TelaEstoque tela = new TelaEstoque(nomeFuncionario);
+            tela.Show();
+            Close();
         }
         private void btnMenuOrdemDeProducao_Click(object sender, EventArgs e)
         {
             //Abre tela "Ordem de Produção" e fecha a atual
-            AbrirForm<TelaOrdemDeProducao>();
+            TelaOrdemDeProducao tela = new TelaOrdemDeProducao(nomeFuncionario);
+            tela.Show();
         }
         private void btnMenuPessoasECredores_Click(object sender, EventArgs e)
         {
             //Abre tela "Pessoas e Credores" e fecha a atual
-            AbrirForm<TelaPessoasECredoresConsulta>();
+            TelaPessoasECredoresConsulta tela = new TelaPessoasECredoresConsulta(nomeFuncionario);
+            tela.Show();
         }
         //----------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------
@@ -346,14 +311,6 @@ namespace DesktopAdministrativo
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            //Abre tela "ComprasAtualizarStatus" e fecha a atual
-            TelaComprasAtualizarStatus telaCompra = new TelaComprasAtualizarStatus(nomeFuncionario);
-            telaCompra.Show();
-            Close();
-        }
-
         private void btnNovo_Click(object sender, EventArgs e)
         {
             //Abre tela "ComprasNovaCompra" e fecha a atual
@@ -372,7 +329,7 @@ namespace DesktopAdministrativo
         private DateTime dataEmissao;
         private float valorUnitario;
 
-        private void lerBD(string query, SqlConnection connection, List<string>valoresImportados, string coluna)
+        private void lerBD(string query, SqlConnection connection, List<string> valoresImportados, string coluna)
         {
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -386,107 +343,74 @@ namespace DesktopAdministrativo
                 }
             }
         }
-        private void GerarLabelsDeConsulta(List<string> valores, string nomeValores, int posicaoX, Panel panelLabels)
+        private void GerarLabelsDeConsulta(List<string> valores, string nomeValores, TableLayoutPanel tablePanel)
         {
-            // Armazena o nome da variável e o valor
-            int posicaoY = 42;  // Posição inicial Y dos labels
-            int espacoEntreLabels = 45;  // Espaçamento vertical entre os labels
-
+            int row = 1; // Começamos a partir da segunda linha, pois a primeira será para os cabeçalhos
             foreach (string nome in valores)
             {
-                // Criar um novo Label
-                Label labelExubirNf = new Label();
+                Label labelExibicao = new Label();
+
+                // Formatação condicional do texto
                 if (nomeValores == "valoresCompras")
                 {
-                    labelExubirNf.Text = "R$ " + nome;
-                }else if(nomeValores == "datasDeEmissao")
+                    labelExibicao.Text = "R$ " + nome;
+                }
+                else if (nomeValores == "datasDeEmissao")
                 {
-
                     DateTime data = DateTime.Parse(nome);
-                    DateTime dataSomente = data.Date;
-                    labelExubirNf.Text = data.ToString("dd/MM/yyyy"); ;
+                    labelExibicao.Text = data.ToString("dd/MM/yyyy");
                 }
                 else
                 {
-                    labelExubirNf.Text = nome;
+                    labelExibicao.Text = nome;
                 }
-                labelExubirNf.AutoSize = true;
-                labelExubirNf.Font = new Font("Franklin Gothic Heavy", (float)12);
-                labelExubirNf.ForeColor = Color.Black;
-                labelExubirNf.BackColor = Color.FromArgb(247, 223, 255);
-                labelExubirNf.Anchor = AnchorStyles.Left | AnchorStyles.Top;
-                labelExubirNf.Location = new System.Drawing.Point(posicaoX, posicaoY);
-                panelLabels.Controls.Add(labelExubirNf);
-                // Atualizar a posição Y para o próximo Label
-                posicaoY += espacoEntreLabels;
+
+                // Ajustar a aparência do label
+                labelExibicao.AutoSize = true;
+                labelExibicao.Font = new Font("Arial", 14);  // Tamanho maior para melhor visualização
+                labelExibicao.ForeColor = Color.Black;
+                labelExibicao.BackColor = Color.FromArgb(247, 223, 255);  // Fundo suave
+                labelExibicao.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+                labelExibicao.TextAlign = ContentAlignment.MiddleCenter;
+                labelExibicao.Padding = new Padding(10);  // Adiciona espaçamento interno
+
+                // Adicionando o label à linha da tabela
+                tablePanel.Controls.Add(labelExibicao, tablePanel.ColumnCount - 1, row); // Coloca na última coluna
+                row++; // Incrementa a linha
             }
         }
+
         private void GerarLabelsClientes()
         {
+            // Consulta SQL otimizada com JOIN
+            string query = @"SELECT cod_compra, nf, dt_emissao, nome_fant, valor_unit, status_compras  FROM TBCompras JOIN TBFornecedor ON TBCompras.fk_forn = TBFornecedor.id_forn";
 
-            // A consulta SQL para obter os dados
-            string queryCodigoCompra = "SELECT cod_compra FROM TBCompras";
-            string queryNumNf = "SELECT nf FROM TBCompras"; 
-            string queryEmissaoCompra = "SELECT dt_emissao FROM TBCompras";
-            string queryNomeFornecedor = "SELECT nome_fant FROM TBFornecedor";
-            string queryValorCompra = "SELECT valor_unit FROM TBCompras";
-            string queryStatusCompra = "SELECT status_compras FROM TBCompras";
-
-            // Lista para armazenar os nomes dos clientes
+            // Listas para armazenar os dados
             List<string> codigosCompras = new List<string>();
             List<string> numerosNotasFiscais = new List<string>();
             List<string> datasDeEmissao = new List<string>();
             List<string> nomesFornecedor = new List<string>();
-            List<string> valoresCompras = new List<string>();
+           // List<string> valoresCompras = new List<string>();
             List<string> statusCompras = new List<string>();
 
             try
             {
-                // Estabelecer conexão com o banco de dados
                 using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
                 {
                     connection.Open();
-                    string coluna = "cod_compra";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataReader reader = command.ExecuteReader();
 
-                    // Executar a consulta SQL
-                    lerBD(queryCodigoCompra, connection, codigosCompras, coluna);
+                    while (reader.Read())
+                    {
+                        codigosCompras.Add(reader["cod_compra"].ToString());
+                        numerosNotasFiscais.Add(reader["nf"].ToString());
+                        datasDeEmissao.Add(reader["dt_emissao"].ToString());
+                        nomesFornecedor.Add(reader["nome_fant"].ToString());
+                       // valoresCompras.Add(reader["valor_unit"].ToString());
+                        statusCompras.Add(reader["status_compras"].ToString());
+                    }
                 }
-                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
-                {
-                    connection.Open();
-                    string coluna = "nf";
-                    // Executar a consulta SQL
-                    lerBD(queryNumNf, connection, numerosNotasFiscais, coluna);
-                }
-                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
-                {
-                    connection.Open();
-                    string coluna = "dt_emissao";
-                    // Executar a consulta SQL
-                    lerBD(queryEmissaoCompra, connection, datasDeEmissao, coluna);
-                }
-                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
-                {
-                    connection.Open();
-                    string coluna = "nome_fant";
-                    // Executar a consulta SQL
-                    lerBD(queryNomeFornecedor, connection, nomesFornecedor, coluna);
-                }
-                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
-                {
-                    connection.Open();
-                    string coluna = "valor_unit";
-                    // Executar a consulta SQL
-                    lerBD(queryValorCompra, connection, valoresCompras, coluna);
-                }
-                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
-                {
-                    connection.Open();
-                    string coluna = "status_compras";
-                    // Executar a consulta SQL
-                    lerBD(queryStatusCompra, connection, statusCompras, coluna);
-                }
-
             }
             catch (Exception ex)
             {
@@ -494,41 +418,44 @@ namespace DesktopAdministrativo
                 return;
             }
 
-            // Variáveis para controle de layout dos Labels
+            // Criar o TableLayoutPanel para a organização dos dados
+            TableLayoutPanel tablePanel = new TableLayoutPanel();
+            tablePanel.Location = new System.Drawing.Point(40, 140);  // Posição inicial
+            tablePanel.Size = new System.Drawing.Size(this.Width - 80, this.Height - 180);  // Preenche a tela
+            tablePanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;  // Ajuste para crescer
+            tablePanel.BackColor = Color.FromArgb(252, 251, 231);
+            tablePanel.ColumnCount = 6;  // Uma coluna para cada campo
+            tablePanel.RowCount = codigosCompras.Count + 1;  // Uma linha extra para os cabeçalhos
+            tablePanel.AutoSize = true;
+            tablePanel.ColumnStyles.Clear();
 
-            Panel panelLabels = new Panel();
-            panelLabels.Location = new System.Drawing.Point(40, 140);  // Posição inicial do Panel
-            panelLabels.Size = new System.Drawing.Size(1193, 70);  // Tamanho do Panel (ajustar conforme necessário)
-            panelLabels.Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left;
-            panelLabels.BackColor = Color.FromArgb(252, 251, 231);
-            panelLabels.AutoSize = true;
-            panelLabels.BringToFront();
-            panelLabels.Controls.Add(labelCodigo);
-            labelCodigo.Location = new Point(22, 20);
-            panelLabels.Controls.Add(labelNumNota);
-            labelNumNota.Location = new System.Drawing.Point(126, 20);
-            panelLabels.Controls.Add(labelEmissao);
-            labelEmissao.Location = new System.Drawing.Point(226, 20);
-            panelLabels.Controls.Add(labelFornecedor);
-            labelFornecedor.Location = new System.Drawing.Point(338, 20);
-            panelLabels.Controls.Add(labelValor);
-            labelValor.Location = new System.Drawing.Point(939, 20);
-            panelLabels.Controls.Add(labelStatus);
-            labelStatus.Location = new System.Drawing.Point(1060, 20);
+            // Definir os cabeçalhos da tabela
+            tablePanel.Controls.Add(new Label() { Text = "Código Compra", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 0, 0);
+            tablePanel.Controls.Add(new Label() { Text = "Nota Fiscal", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 1, 0);
+            tablePanel.Controls.Add(new Label() { Text = "Data Emissão", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 2, 0);
+            tablePanel.Controls.Add(new Label() { Text = "Fornecedor", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 3, 0);
+            //tablePanel.Controls.Add(new Label() { Text = "Valor Unitário", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 4, 0);
+            tablePanel.Controls.Add(new Label() { Text = "Status", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 5, 0);
 
-            this.Controls.Add(panelLabels);
+            // Ajuste das larguras das colunas
+            for (int i = 0; i < tablePanel.ColumnCount; i++)
+            {
+                tablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66f)); // Coloca cada coluna com tamanho proporcional
+            }
 
-            GerarLabelsDeConsulta(codigosCompras, "codigosCompras", 22, panelLabels);
-            GerarLabelsDeConsulta(numerosNotasFiscais, "numerosNotasFiscais", 126, panelLabels);
-            GerarLabelsDeConsulta(datasDeEmissao, "datasDeEmissao", 226, panelLabels);
-            GerarLabelsDeConsulta(nomesFornecedor, "nomesFornecedor", 338, panelLabels);
-            GerarLabelsDeConsulta(valoresCompras, "valoresCompras", 939, panelLabels);
-            GerarLabelsDeConsulta(statusCompras, "statusCompras", 1060, panelLabels);
+            // Gerar as linhas de dados
+            for (int i = 0; i < codigosCompras.Count; i++)
+            {
+                tablePanel.Controls.Add(new Label() { Text = codigosCompras[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 0, i + 1);
+                tablePanel.Controls.Add(new Label() { Text = numerosNotasFiscais[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 1, i + 1);
+                tablePanel.Controls.Add(new Label() { Text = DateTime.Parse(datasDeEmissao[i]).ToString("dd/MM/yyyy"), Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 2, i + 1);
+                tablePanel.Controls.Add(new Label() { Text = nomesFornecedor[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 3, i + 1);
+               // tablePanel.Controls.Add(new Label() { Text = "R$ " + valoresCompras[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 4, i + 1);
+                tablePanel.Controls.Add(new Label() { Text = statusCompras[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 5, i + 1);
+            }
 
-        }
-        private void TelaComprasAcompanhamento_Load(object sender, EventArgs e)
-        {
-            
+            // Adicionar o painel com os dados ao formulário
+            this.Controls.Add(tablePanel);
         }
     }
 }

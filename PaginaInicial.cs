@@ -142,18 +142,6 @@ namespace DesktopAdministrativo
                 Close();
             }
         }
-        //Métódo usado para saber que um form foi aberto
-        private Form FormJaAberto(Type formType)
-        {
-            foreach (Form openForm in Application.OpenForms)
-            {
-                if (openForm.GetType() == formType)
-                {
-                    return openForm;
-                }
-            }
-            return null;
-        }
 
         //Evento que ativa a interação do teclado com a tela
         private void PaginaInicial_KeyDown(object sender, KeyEventArgs e)
@@ -178,33 +166,26 @@ namespace DesktopAdministrativo
             telaCompra.Show();
             Close();
         }
-        //Abre tela "Consultas"
-        private void btnConsultas_Click(object sender, EventArgs e)
-        {
-            //TelaConsultas telaConsultas = new TelaConsultas(nomeFuncionario);
-            //telaConsultas.Show();
-            //Close();
-        }
         //Abre tela "Estoque"
         private void btnEstoque_Click(object sender, EventArgs e)
         {
-            //TelaEstoque telaEstoque = new TelaEstoque(nomeFuncionario);
-            //telaEstoque.Show();
-            //Close();
+            TelaEstoque telaEstoque = new TelaEstoque(nomeFuncionario);
+            telaEstoque.Show();
+            Close();
         }
         //Abre tela "Ordem de Produção"
         private void btnOrdemDeProducao_Click(object sender, EventArgs e)
         {
-            //TelaOrdemDeProducao telaOrdemDeProducao = new TelaOrdemDeProducao(nomeFuncionario);
-            //telaOrdemDeProducao.Show();
-            //Close();
+            TelaOrdemDeProducao telaOrdemDeProducao = new TelaOrdemDeProducao(nomeFuncionario);
+            telaOrdemDeProducao.Show();
+            Close();
         }
         //Abre tela "Pessoas e Credores"
         private void btnPessoasECredores_Click(object sender, EventArgs e)
         {
-            //TelaPessoasECredoresConsulta telaPessoasECredoresConsulta = new TelaPessoasECredoresConsulta(nomeFuncionario);
-            //telaPessoasECredoresConsulta.Show();
-            //Close();
+            TelaPessoasECredoresConsulta telaPessoasECredoresConsulta = new TelaPessoasECredoresConsulta(nomeFuncionario);
+            telaPessoasECredoresConsulta.Show();
+            Close();
         }
 
         private void TelaPaginaInicial_Load(object sender, EventArgs e)

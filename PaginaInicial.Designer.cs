@@ -37,7 +37,6 @@
             this.btnEstoque = new System.Windows.Forms.Button();
             this.btnOrdemDeProducao = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
-            this.btnConsultas = new System.Windows.Forms.Button();
             this.labelNomeFuncionario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
@@ -106,7 +105,6 @@
             this.panel1.Controls.Add(this.btnEstoque);
             this.panel1.Controls.Add(this.btnOrdemDeProducao);
             this.panel1.Controls.Add(this.btnCompras);
-            this.panel1.Controls.Add(this.btnConsultas);
             this.panel1.Location = new System.Drawing.Point(19, 63);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1198, 658);
@@ -139,7 +137,7 @@
             this.btnEstoque.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstoque.ForeColor = System.Drawing.Color.Transparent;
-            this.btnEstoque.Location = new System.Drawing.Point(848, 104);
+            this.btnEstoque.Location = new System.Drawing.Point(751, 104);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(216, 182);
             this.btnEstoque.TabIndex = 5;
@@ -173,29 +171,12 @@
             this.btnCompras.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCompras.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCompras.Location = new System.Drawing.Point(202, 104);
+            this.btnCompras.Location = new System.Drawing.Point(313, 104);
             this.btnCompras.Name = "btnCompras";
             this.btnCompras.Size = new System.Drawing.Size(216, 182);
             this.btnCompras.TabIndex = 3;
             this.btnCompras.UseVisualStyleBackColor = false;
             this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
-            // 
-            // btnConsultas
-            // 
-            this.btnConsultas.BackColor = System.Drawing.Color.Transparent;
-            this.btnConsultas.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.icon_consultas;
-            this.btnConsultas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConsultas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultas.FlatAppearance.BorderSize = 0;
-            this.btnConsultas.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
-            this.btnConsultas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultas.ForeColor = System.Drawing.Color.Transparent;
-            this.btnConsultas.Location = new System.Drawing.Point(530, 104);
-            this.btnConsultas.Name = "btnConsultas";
-            this.btnConsultas.Size = new System.Drawing.Size(216, 182);
-            this.btnConsultas.TabIndex = 4;
-            this.btnConsultas.UseVisualStyleBackColor = false;
-            this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
             // 
             // labelNomeFuncionario
             // 
@@ -249,7 +230,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureLogoMorangolandia;
         private System.Windows.Forms.Button btnCompras;
-        private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnEstoque;
         private System.Windows.Forms.Button btnOrdemDeProducao;
         private System.Windows.Forms.Button btnPessoasECredores;
