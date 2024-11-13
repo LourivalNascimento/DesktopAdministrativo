@@ -42,9 +42,13 @@
             this.radioBtnGrao = new System.Windows.Forms.RadioButton();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.textBoxValorProduto = new System.Windows.Forms.TextBox();
+            this.labelValorProduto = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNomeProduto)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -194,7 +198,7 @@
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Location = new System.Drawing.Point(153, 171);
+            this.btnCancelar.Location = new System.Drawing.Point(153, 264);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(121, 32);
             this.btnCancelar.TabIndex = 32;
@@ -209,12 +213,44 @@
             this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalvar.Location = new System.Drawing.Point(278, 171);
+            this.btnSalvar.Location = new System.Drawing.Point(278, 264);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(121, 32);
             this.btnSalvar.TabIndex = 31;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // textBoxValorProduto
+            // 
+            this.textBoxValorProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(232)))));
+            this.textBoxValorProduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxValorProduto.Font = new System.Drawing.Font("Tw Cen MT", 10F);
+            this.textBoxValorProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxValorProduto.Location = new System.Drawing.Point(18, 205);
+            this.textBoxValorProduto.Name = "textBoxValorProduto";
+            this.textBoxValorProduto.Size = new System.Drawing.Size(382, 15);
+            this.textBoxValorProduto.TabIndex = 34;
+            this.textBoxValorProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelValorProduto
+            // 
+            this.labelValorProduto.AutoSize = true;
+            this.labelValorProduto.Font = new System.Drawing.Font("Tw Cen MT", 15.75F);
+            this.labelValorProduto.Location = new System.Drawing.Point(13, 170);
+            this.labelValorProduto.Name = "labelValorProduto";
+            this.labelValorProduto.Size = new System.Drawing.Size(160, 24);
+            this.labelValorProduto.TabIndex = 33;
+            this.labelValorProduto.Text = "Valor do Produto";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fundo_branco;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 197);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(393, 30);
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
             // 
             // TelaEstoqueNovoCadastro
             // 
@@ -223,7 +259,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
             this.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fundo_Estoque;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(417, 215);
+            this.ClientSize = new System.Drawing.Size(417, 308);
+            this.Controls.Add(this.textBoxValorProduto);
+            this.Controls.Add(this.labelValorProduto);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.textBoxCodigoProduto);
@@ -245,6 +284,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureNomeProduto)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,5 +306,8 @@
         private System.Windows.Forms.RadioButton radioBtnGrao;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.TextBox textBoxValorProduto;
+        private System.Windows.Forms.Label labelValorProduto;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

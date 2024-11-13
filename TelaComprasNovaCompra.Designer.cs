@@ -36,6 +36,9 @@
             this.pictureTop = new System.Windows.Forms.PictureBox();
             this.labelNovaCompra = new System.Windows.Forms.Label();
             this.panelCadastroDadosCompra = new System.Windows.Forms.Panel();
+            this.textBoxCodigoCompra = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.dtpEmissaoNota = new System.Windows.Forms.DateTimePicker();
             this.textBoxAnexarPDF = new System.Windows.Forms.TextBox();
             this.comboBoxFornecedor = new System.Windows.Forms.ComboBox();
@@ -76,13 +79,12 @@
             this.pictureValor = new System.Windows.Forms.PictureBox();
             this.pictureProduto = new System.Windows.Forms.PictureBox();
             this.pictureCodigo = new System.Windows.Forms.PictureBox();
-            this.textBoxCodigoCompra = new System.Windows.Forms.TextBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelListaProdutos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
             this.panelCadastroDadosCompra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBoxRadioBtnStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureObservacoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNumNota)).BeginInit();
@@ -93,7 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCodigo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNomeFuncionario
@@ -216,6 +217,37 @@
             this.panelCadastroDadosCompra.Name = "panelCadastroDadosCompra";
             this.panelCadastroDadosCompra.Size = new System.Drawing.Size(1193, 241);
             this.panelCadastroDadosCompra.TabIndex = 23;
+            // 
+            // textBoxCodigoCompra
+            // 
+            this.textBoxCodigoCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxCodigoCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCodigoCompra.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxCodigoCompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxCodigoCompra.Location = new System.Drawing.Point(416, 42);
+            this.textBoxCodigoCompra.Name = "textBoxCodigoCompra";
+            this.textBoxCodigoCompra.Size = new System.Drawing.Size(143, 17);
+            this.textBoxCodigoCompra.TabIndex = 54;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(411, 38);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(152, 24);
+            this.pictureBox3.TabIndex = 53;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.label3.Location = new System.Drawing.Point(294, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 19);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Código Compra:";
             // 
             // dtpEmissaoNota
             // 
@@ -447,6 +479,7 @@
             this.panelCadastroDeInsumos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelCadastroDeInsumos.Controls.Add(this.labelListaProdutos);
             this.panelCadastroDeInsumos.Controls.Add(this.label1);
             this.panelCadastroDeInsumos.Controls.Add(this.btnAdicionarProduto);
             this.panelCadastroDeInsumos.Controls.Add(this.btnCancelar);
@@ -476,7 +509,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tw Cen MT Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(66)))), ((int)(((byte)(195)))));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(3, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 34);
             this.label1.TabIndex = 53;
@@ -685,36 +718,14 @@
             this.pictureCodigo.TabIndex = 27;
             this.pictureCodigo.TabStop = false;
             // 
-            // textBoxCodigoCompra
+            // labelListaProdutos
             // 
-            this.textBoxCodigoCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.textBoxCodigoCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCodigoCompra.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.textBoxCodigoCompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxCodigoCompra.Location = new System.Drawing.Point(416, 42);
-            this.textBoxCodigoCompra.Name = "textBoxCodigoCompra";
-            this.textBoxCodigoCompra.Size = new System.Drawing.Size(143, 17);
-            this.textBoxCodigoCompra.TabIndex = 54;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.n_nota;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(411, 38);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(152, 24);
-            this.pictureBox3.TabIndex = 53;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.label3.Location = new System.Drawing.Point(294, 38);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 19);
-            this.label3.TabIndex = 52;
-            this.label3.Text = "Código Compra:";
+            this.labelListaProdutos.AutoSize = true;
+            this.labelListaProdutos.Location = new System.Drawing.Point(3, 98);
+            this.labelListaProdutos.Name = "labelListaProdutos";
+            this.labelListaProdutos.Size = new System.Drawing.Size(35, 13);
+            this.labelListaProdutos.TabIndex = 54;
+            this.labelListaProdutos.Text = "label4";
             // 
             // TelaComprasNovaCompra
             // 
@@ -743,6 +754,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).EndInit();
             this.panelCadastroDadosCompra.ResumeLayout(false);
             this.panelCadastroDadosCompra.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBoxRadioBtnStatus.ResumeLayout(false);
             this.groupBoxRadioBtnStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureObservacoes)).EndInit();
@@ -755,7 +767,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCodigo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -814,5 +825,6 @@
         private System.Windows.Forms.TextBox textBoxCodigoCompra;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelListaProdutos;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PdfSharp.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,48 +42,36 @@ namespace DesktopAdministrativo
         // Evento do botão de salvar
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            // Verifica se o código do produto/insumo está preenchido
+            // Verifica se o campo de código do produto/insumo foi preenchido
             if (string.IsNullOrWhiteSpace(textBoxCodigoProduto.Text))
             {
                 MessageBox.Show("O campo de código do produto/insumo é obrigatório.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Variáveis para armazenar o ID do produto/insumo e a categoria selecionada
-            int idSelecionado = 0;
             bool isProduto = radioBtnProdutos.Checked;
             string codigo = textBoxCodigoProduto.Text;
             string categoria = GetCategoriaSelecionada();
 
-            // Verifica se uma categoria foi selecionada
             if (string.IsNullOrEmpty(categoria))
             {
                 MessageBox.Show("Selecione uma categoria (Fruta, Legume, Grão ou Verdura).", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Busca o ID do produto/insumo com base no código fornecido
-            if (isProduto)
+            // Se não for um produto, então é um insumo e tentamos importar da tabela de compras
+            if (!isProduto)
             {
-                idSelecionado = ObterIdProdutoPorCodigo(codigo);
+                ImportarInsumoDaCompra(codigo, categoria);
+
             }
             else
             {
-                idSelecionado = ObterIdInsumoPorCodigo(codigo);
+                MessageBox.Show("Essa funcionalidade é exclusiva para insumos.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            // Se o ID não for encontrado, exibe uma mensagem e encerra
-            if (idSelecionado == 0)
-            {
-                MessageBox.Show("Produto ou insumo não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Salva o registro no estoque
-            SalvarRegistroEstoque(idSelecionado, isProduto);
         }
 
-        // Método para identificar a categoria selecionada
+        // Método para obter a categoria selecionada (Fruta, Legume, Grão ou Verdura)
         private string GetCategoriaSelecionada()
         {
             if (radioBtnFruta.Checked) return "Fruta";
@@ -92,11 +81,10 @@ namespace DesktopAdministrativo
             return null;
         }
 
-        // Método para obter o ID do produto pelo código
-        private int ObterIdProdutoPorCodigo(string codigo)
+        // Método para importar dados de insumo da tabela de compras para a tabela de insumos
+        private void ImportarInsumoDaCompra(string codigo, string categoria)
         {
-            int id = 0;
-            string query = "SELECT [id_prod] FROM [DBMorangolandia].[dbo].[TBProdutos] WHERE [cod_prod] = @codigo";
+            string query = "SELECT [cod_produto], [nome_produto], [qtd_produto], [valor_unit] FROM [DBMorangolandia].[dbo].[TBCompras_Inumos] WHERE [cod_produto] = @codigo";
 
             using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
             {
@@ -105,79 +93,50 @@ namespace DesktopAdministrativo
 
                 try
                 {
-                    connection.Open();
-                    object result = command.ExecuteScalar();
-                    if (result != null)
+                    connection.Open(); // Tenta abrir a conexão
+
+                    SqlDataReader reader = command.ExecuteReader(); // Executa a consulta
+
+                    if (reader.Read()) // Verifica se há dados retornados
                     {
-                        id = Convert.ToInt32(result);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao buscar o produto: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            return id;
-        }
+                        string nomeInsumo = reader["nome_produto"].ToString();
+                        decimal valorInsumo = Convert.ToDecimal(reader["valor_unit"]);
+                        int quantidadeInsumo = Convert.ToInt32(reader["qtd_produto"]);
 
-        // Método para obter o ID do insumo pelo código
-        private int ObterIdInsumoPorCodigo(string codigo)
-        {
-            int id = 0;
-            string query = "SELECT [id_insum] FROM [DBMorangolandia].[dbo].[TBInsumos] WHERE [cod_insum] = @codigo";
+                        reader.Close(); // Fecha o leitor antes de continuar
 
-            using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@codigo", codigo);
+                        string insertQuery = "INSERT INTO [DBMorangolandia].[dbo].[TBInsumos] (cod_insum, nome_insum, qtd_insum, valor_insum, cat_insum) VALUES (@codInsum, @nomeInsum, @qtdInsum, @valorInsum, @categoria)";
 
-                try
-                {
-                    connection.Open();
-                    object result = command.ExecuteScalar();
-                    if (result != null)
-                    {
-                        id = Convert.ToInt32(result);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao buscar o insumo: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            return id;
-        }
+                        using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
+                        {
+                            insertCommand.Parameters.AddWithValue("@codInsum", codigo);
+                            insertCommand.Parameters.AddWithValue("@nomeInsum", nomeInsumo);
+                            insertCommand.Parameters.AddWithValue("@qtdInsum", quantidadeInsumo);
+                            insertCommand.Parameters.AddWithValue("@valorInsum", valorInsumo);
+                            insertCommand.Parameters.AddWithValue("@categoria", categoria);
 
-        // Método para salvar o registro no estoque
-        private void SalvarRegistroEstoque(int idSelecionado, bool isProduto)
-        {
-            string query = "INSERT INTO [DBMorangolandia].[dbo].[TBEstoque] (fk_prod, fk_insum, dt_entra_estoq) VALUES (@idProd, @idInsum, @dataEntrada)";
+                            insertCommand.ExecuteNonQuery(); // Executa a inserção
+                        }
 
-            using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
-            {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@idProd", isProduto ? idSelecionado : (object)DBNull.Value);
-                command.Parameters.AddWithValue("@idInsum", isProduto ? (object)DBNull.Value : idSelecionado);
-                command.Parameters.AddWithValue("@dataEntrada", DateTime.Now);
-
-                try
-                {
-                    connection.Open();
-                    int rowsAffected = command.ExecuteNonQuery();
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Registro salvo com sucesso no estoque.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Insumo registrado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Falha ao salvar o registro no estoque.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Insumo não encontrado na tabela de compras.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Erro ao salvar no estoque: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Exibe a mensagem completa do erro para diagnóstico
+                    MessageBox.Show("Erro ao importar insumo da compra: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
+
+
+
+
+
     }
 }

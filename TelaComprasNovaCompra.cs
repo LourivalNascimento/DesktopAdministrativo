@@ -25,6 +25,7 @@ namespace DesktopAdministrativo
         Button btnMenuOrdemDeProducao = new Button();
         Button btnMenuPessoasECredores = new Button();
 
+
         private float vezesBtnMenuClicado = 0;
         public TelaComprasNovaCompra(string nomeFuncionario)
         {
@@ -32,6 +33,14 @@ namespace DesktopAdministrativo
             pictureTop.Width = int.MaxValue;
             this.nomeFuncionario = nomeFuncionario;
             labelNomeFuncionario.Text = "Olá, " + nomeFuncionario;
+
+            labelListaProdutos.AutoSize = true;
+            labelListaProdutos.Name = "labelListaProdutos";
+            labelListaProdutos.Size = new System.Drawing.Size(0, 13);
+            labelListaProdutos.ForeColor = System.Drawing.Color.Purple; // Cor do texto combinando com o estilo da interface
+            labelListaProdutos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            labelListaProdutos.Text = "Produtos Adicionados:"; // Texto inicial
+            panelCadastroDeInsumos.Controls.Add(labelListaProdutos);
             CarregarFornecedores();
         }
         //Método que mostrar um MessageBox perguntando se deseja fechar ou não o programa
@@ -378,18 +387,23 @@ namespace DesktopAdministrativo
                 comboBoxFornecedor.DataSource = dataTable;
             }
         }
+
         public class Produto
         {
             public int Codigo { get; set; }
             public string Nome { get; set; }
             public int Quantidade { get; set; }
             public float Valor { get; set; }
+            public int FkInsumos { get; set; } // FK de insumos
         }
-        private List<Produto> listaProdutos = new List<Produto>();
-        // Evento de salvar a compra
+
+        private List<Produto> listaProdutos = new List<Produto>(); // Lista para armazenar os produtos adicionados
+        private float valorTotal = 0; // Armazena o valor total de todos os produtos adicionados
+
+        // Evento de clique do botão "Salvar Compra"
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            // Coletando as informações do formulário
+            // Coleta os dados da compra do formulário
             int fornecedorId = int.Parse(comboBoxFornecedor.SelectedValue.ToString());
             string numeroNota = textBoxNumNota.Text;
             string codigoCompra = textBoxCodigoCompra.Text;
@@ -398,48 +412,43 @@ namespace DesktopAdministrativo
             string status = GetStatus();
             byte[] anexoNota = null;
 
-            // Verifica se o campo do anexo não está vazio e converte para byte[]
+            // Verifica se o campo de anexo está vazio
             if (string.IsNullOrEmpty(textBoxAnexarPDF.Text))
             {
                 MessageBox.Show("É obrigatório anexar o arquivo da Nota Fiscal em PDF.", "Anexo obrigatório", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Interrompe o fluxo para permitir que o usuário faça o anexo
+                return;
             }
 
-            // Converte o arquivo PDF em byte[]
+            // Converte o arquivo PDF anexado em um array de bytes
             string arquivoNotaPath = textBoxAnexarPDF.Text;
             anexoNota = File.ReadAllBytes(arquivoNotaPath);
 
             try
             {
-                // Verificar duplicidade antes de tentar inserir
                 using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
                 {
                     connection.Open();
 
-                    string verificaDuplicidadeQuery = @" SELECT COUNT(1) FROM TBCompras WHERE nf = @nf";
-
+                    // Verifica se já existe uma compra com o mesmo número de nota
+                    string verificaDuplicidadeQuery = @"SELECT COUNT(1) FROM TBCompras WHERE nf = @nf";
                     using (SqlCommand cmdVerifica = new SqlCommand(verificaDuplicidadeQuery, connection))
                     {
                         cmdVerifica.Parameters.AddWithValue("@nf", numeroNota);
                         int duplicidade = (int)cmdVerifica.ExecuteScalar();
-
                         if (duplicidade > 0)
                         {
-                            MessageBox.Show("O número da nota já existe. Por favor, insira um número de nota diferente.",
-                                            "Erro de duplicidade", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                            // Reseta o campo do número da nota
+                            MessageBox.Show("O número da nota já existe. Por favor, insira um número de nota diferente.", "Erro de duplicidade", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             textBoxNumNota.Clear();
-                            textBoxNumNota.Focus(); // Coloca o cursor diretamente no campo para que o usuário insira um novo valor
-                            return; // Interrompe o fluxo para permitir que o usuário insira um novo número de nota
+                            textBoxNumNota.Focus();
+                            return;
                         }
                     }
 
-                    // Inserir a compra no banco
+                    // Insere a compra na tabela TBCompras e retorna o ID da compra inserida
                     string insertCompraQuery = @"
-                INSERT INTO TBCompras (fk_forn, nf, anexo_nf, dt_emissao, status_compras, obs_compras, cod_compra)
-                VALUES (@fk_forn, @nf, @anexo_nf, @dt_emissao, @status_compras, @obs_compras, @cod_compra);
-                SELECT SCOPE_IDENTITY();";
+        INSERT INTO TBCompras (fk_forn, nf, anexo_nf, dt_emissao, status_compras, obs_compras, cod_compra)
+        VALUES (@fk_forn, @nf, @anexo_nf, @dt_emissao, @status_compras, @obs_compras, @cod_compra);
+        SELECT SCOPE_IDENTITY();";
 
                     using (SqlCommand cmd = new SqlCommand(insertCompraQuery, connection))
                     {
@@ -451,8 +460,7 @@ namespace DesktopAdministrativo
                         cmd.Parameters.AddWithValue("@obs_compras", observacoes);
                         cmd.Parameters.AddWithValue("@cod_compra", codigoCompra);
 
-                        // Tentar executar a inserção e obter o ID da compra
-                        int compraId = Convert.ToInt32(cmd.ExecuteScalar());
+                        int compraId = Convert.ToInt32(cmd.ExecuteScalar()); // ID da compra inserida
 
                         if (compraId != 0)
                         {
@@ -460,27 +468,28 @@ namespace DesktopAdministrativo
                             foreach (Produto produto in listaProdutos)
                             {
                                 string insertProdutoQuery = @"
-                            INSERT INTO TBCompras_Inumos (fk_compras, cod_produto, nome_produto, qtd_produto, valor_unit)
-                            VALUES (@fk_compras, @cod_produto, @nome_produto, @qtd_produto, @valor_unit);";
+                        INSERT INTO TBCompras_Inumos (fk_compras, cod_produto, nome_produto, qtd_produto, valor_unit)
+                        VALUES (@fk_compras, @cod_produto, @nome_produto, @qtd_produto, @valor_unit);";
 
                                 using (SqlCommand cmdProduto = new SqlCommand(insertProdutoQuery, connection))
                                 {
                                     cmdProduto.Parameters.AddWithValue("@fk_compras", compraId);
-                                    cmdProduto.Parameters.AddWithValue("@cod_produto", produto.Codigo);
-                                    cmdProduto.Parameters.AddWithValue("@nome_produto", produto.Nome);
-                                    cmdProduto.Parameters.AddWithValue("@qtd_produto", produto.Quantidade);
-                                    cmdProduto.Parameters.AddWithValue("@valor_unit", produto.Valor);
+                                    cmdProduto.Parameters.AddWithValue("@cod_produto", produto.Codigo);  // Usamos o código do produto
+                                    cmdProduto.Parameters.AddWithValue("@nome_produto", produto.Nome);  // Nome do produto
+                                    cmdProduto.Parameters.AddWithValue("@qtd_produto", produto.Quantidade);  // Quantidade informada
+                                    cmdProduto.Parameters.AddWithValue("@valor_unit", produto.Valor);  // Valor unitário do produto
 
                                     cmdProduto.ExecuteNonQuery();
                                 }
                             }
 
+                            // Mensagem de sucesso e limpeza dos dados da tela
                             MessageBox.Show("Compra registrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            textBoxNumNota.Clear();
-                            textBoxNumNota.Focus();
-                            textBoxAnexarPDF.Clear();
-                            textBoxObservacoes.Clear();
-                            textBoxCodigoCompra.Clear();                       
+                            listaProdutos.Clear(); // Limpa a lista de produtos adicionados
+                            valorTotal = 0; // Reseta o valor total
+                            AtualizarValorTotal(); // Atualiza o label do valor total
+                            AtualizarLabelListaProdutos(); // Atualiza a lista de produtos exibida
+                            LimparCamposFormulario(); // Limpa os campos do formulário
                         }
                         else
                         {
@@ -491,11 +500,9 @@ namespace DesktopAdministrativo
             }
             catch (SqlException ex)
             {
-                if (ex.Number == 2627 || ex.Number == 2601) // Erro de violação de chave única (duplicidade)
+                if (ex.Number == 2627 || ex.Number == 2601) // Erro de duplicidade no banco de dados
                 {
                     MessageBox.Show("O número da nota já existe. Por favor, insira um número de nota diferente.", "Erro de duplicidade", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    // Reseta o campo do número da nota
                     textBoxNumNota.Clear();
                     textBoxNumNota.Focus();
                 }
@@ -503,6 +510,18 @@ namespace DesktopAdministrativo
                 {
                     MessageBox.Show("Ocorreu um erro ao salvar a compra: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+
+        // Atualiza o texto da label com a lista de produtos adicionados
+        private void AtualizarLabelListaProdutos()
+        {
+            labelListaProdutos.Text = "Produtos Adicionados:\n";
+
+            foreach (Produto produto in listaProdutos)
+            {
+                labelListaProdutos.Text += $"{produto.Codigo} - {produto.Nome} - Qtd: {produto.Quantidade} - Valor: {produto.Valor:C}\n";
             }
         }
 
@@ -516,22 +535,13 @@ namespace DesktopAdministrativo
                 return;
             }
 
-            //--------------------------------------------------------------------------------------------
-            //--------------------------------------------------------------------------------------------
-            //--------------------------------------------------------------------------------------------
-            //--------------------------------------------------------------------------------------------
-            //--------------------------------------------------------------------------------------------
-            //--------------------TRATAMENTO DE ERRO TIPO DA VARIÁVEL-------------------------------------
-            //--------------------------------------------------------------------------------------------
-            //--------------------------------------------------------------------------------------------
-            //--------------------------------------------------------------------------------------------
-            //--------------------------------------------------------------------------------------------
-            //--------------------------------------------------------------------------------------------
+            // Coletando os dados do produto
+            int codigoProduto = int.Parse(textBoxCodigo.Text);
 
             // Criar um novo objeto Produto com os dados fornecidos
             Produto produto = new Produto
             {
-                Codigo = int.Parse(textBoxCodigo.Text),
+                Codigo = codigoProduto,
                 Nome = textBoxNomeDoProduto.Text,
                 Quantidade = int.Parse(textBoxQuantidade.Text),
                 Valor = float.Parse(textBoxValor.Text)
@@ -540,12 +550,44 @@ namespace DesktopAdministrativo
             // Adicionar o produto à lista
             listaProdutos.Add(produto);
 
+            // Atualiza a label com os produtos adicionados
+            AtualizarLabelListaProdutos();
+
             // Limpar os campos de entrada para novos produtos
             textBoxCodigo.Clear();
             textBoxNomeDoProduto.Clear();
             textBoxQuantidade.Clear();
             textBoxValor.Clear();
         }
+
+
+
+
+        // Atualiza o label `labelValorTotal` com o valor total das compras
+        private void AtualizarValorTotal()
+        {
+            labelValorTotal.Text = $"R$ {valorTotal:F2}";
+        }
+
+        // Limpa os campos de entrada do formulário após salvar uma compra
+        private void LimparCamposFormulario()
+        {
+            textBoxNumNota.Clear();
+            textBoxCodigoCompra.Clear();
+            textBoxAnexarPDF.Clear();
+            textBoxObservacoes.Clear();
+            textBoxNumNota.Focus();
+        }
+
+        // Limpa os campos de entrada do produto após adicioná-lo à lista
+        private void LimparCamposProduto()
+        {
+            textBoxCodigo.Clear();
+            textBoxNomeDoProduto.Clear();
+            textBoxQuantidade.Clear();
+            textBoxValor.Clear();
+        }
+
         private void btnAnexarNotaFiscalPdf_Click(object sender, EventArgs e)
         {
             // Abrir o seletor de arquivos para anexar o PDF
@@ -556,7 +598,6 @@ namespace DesktopAdministrativo
                 textBoxAnexarPDF.Text = openFileDialog.FileName;
             }
         }
-
         // Método para obter o status da compra
         private string GetStatus()
         {

@@ -331,27 +331,27 @@ namespace DesktopAdministrativo
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            // Verifica se o campo de código está preenchido
+            // Verifica se o campo de código foi preenchido
             if (string.IsNullOrWhiteSpace(textBoxCodigo.Text))
             {
-                // Se o campo de código estiver vazio, exibe uma mensagem e interrompe a execução
+                // Se o campo estiver vazio, exibe uma mensagem e interrompe a execução
                 MessageBox.Show("O campo de código é obrigatório.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return; // Sai da função, não continua a execução
             }
 
             // Armazena o valor digitado no campo de código
             string codigo = textBoxCodigo.Text;
-            string query = "";  // Variável para armazenar a consulta SQL que será usada
+            string query = "";  // Variável que armazenará a consulta SQL a ser executada
 
-            // Determina qual tabela consultar, com base no RadioButton selecionado
+            // Verifica se o tipo selecionado é Insumo ou Produto
             if (radioBtnInsumos.Checked)
             {
-                // Consulta para a tabela TBInsumos
-                query = "SELECT TOP (1) [cod_insum], [nome_insum], [qtd_insum] " +
+                // Se for Insumo, cria uma consulta para a tabela TBInsumos
+                query = "SELECT TOP (1) [cod_insum], [nome_insum], [qtd_insum], [valor_insum], [cat_insum] " +
                         "FROM [DBMorangolandia].[dbo].[TBInsumos] " +
-                        "WHERE [cod_insum] = @codigo";
+                        "WHERE [cod_insum] = @codigo"; // Busca o insumo pelo código
 
-                // Adiciona ordenação alfabética se selecionado
+                // Se o campo "Sim" para ordenação alfabética estiver selecionado, ordena pelo nome
                 if (radioBtnSim.Checked)
                 {
                     query += " ORDER BY [nome_insum]";
@@ -359,12 +359,12 @@ namespace DesktopAdministrativo
             }
             else if (radioBtnProdutos.Checked)
             {
-                // Consulta para a tabela TBProdutos
-                query = "SELECT TOP (1) [cod_prod], [nome_prod], [qtd_prod] " +
+                // Se for Produto, cria uma consulta para a tabela TBProdutos
+                query = "SELECT TOP (1) [cod_prod], [nome_prod], [qtd_prod], [valor_prod] " +
                         "FROM [DBMorangolandia].[dbo].[TBProdutos] " +
-                        "WHERE [cod_prod] = @codigo";
+                        "WHERE [cod_prod] = @codigo"; // Busca o produto pelo código
 
-                // Adiciona ordenação alfabética se selecionado
+                // Se o campo "Não" para ordenação alfabética estiver selecionado, ordena pelo nome
                 if (radioBtnNao.Checked)
                 {
                     query += " ORDER BY [nome_prod]";
@@ -372,53 +372,60 @@ namespace DesktopAdministrativo
             }
             else
             {
-                // Caso nenhum RadioButton esteja selecionado
+                // Caso nenhum RadioButton tenha sido selecionado (nem Insumo nem Produto)
                 MessageBox.Show("Selecione Insumos ou Produtos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                return; // Interrompe a execução caso nenhum tipo seja selecionado
             }
 
-            // Executa a consulta e exibe os resultados nos Labels
+            // Executa a consulta e armazena o resultado
             DataTable resultados = ConsultarDados(SqlStringDeConexao, query, codigo);
 
-            // Limpa os Labels antes de exibir os novos resultados
+            // Limpa as labels antes de exibir novos resultados
             labelExibirCodigo.Text = "";
             labelExibirNome.Text = "";
             labelExibirQuantidade.Text = "";
+            labelExibirValor.Text = ""; // Limpa o campo de valor também
+            labelExibirCategoria.Text = ""; // Limpa o campo de categoria
 
-            // Verifica se há registros na consulta
+            // Verifica se a consulta retornou algum resultado
             if (resultados.Rows.Count > 0)
             {
-                // Obtém os valores do primeiro registro retornado
+                // Obtém o primeiro registro retornado
                 DataRow row = resultados.Rows[0];
 
-                // Atualiza os Labels com o código, nome e quantidade
+                // Se for Insumo, exibe as informações específicas para insumos
                 if (radioBtnInsumos.Checked)
                 {
                     labelExibirCodigo.Text += row["cod_insum"].ToString();
                     labelExibirNome.Text += row["nome_insum"].ToString();
                     labelExibirQuantidade.Text += row["qtd_insum"].ToString();
+                    labelExibirValor.Text += "R$" + row["valor_insum"].ToString();
+                    labelExibirCategoria.Text += row["cat_insum"].ToString(); // Exibe a categoria do insumo
                 }
+                // Se for Produto, exibe as informações específicas para produtos
                 else if (radioBtnProdutos.Checked)
                 {
                     labelExibirCodigo.Text += row["cod_prod"].ToString();
                     labelExibirNome.Text += row["nome_prod"].ToString();
                     labelExibirQuantidade.Text += row["qtd_prod"].ToString();
+                    labelExibirValor.Text += row["valor_prod"].ToString(); // Exibe o valor do produto
                 }
             }
             else
             {
-                // Se não há resultados, exibe uma mensagem nos Labels
-                labelExibirCodigo.Text += "";
+                // Se não encontrar nenhum registro, exibe mensagem de erro
+                labelExibirCodigo.Text = "";
                 labelExibirNome.Text = "Nenhum registro encontrado";
                 labelExibirQuantidade.Text = "";
+                labelExibirValor.Text = "";
+                labelExibirCategoria.Text = "";
             }
         }
-
 
         // Método que executa a consulta no banco de dados com base na string de consulta e código
         private DataTable ConsultarDados(string connectionString, string query, string codigo)
         {
-            // Cria um DataTable para armazenar os dados retornados da consulta
+            // Cria um DataTable para armazenar os dados retornados pela consulta
             DataTable dataTable = new DataTable();
 
             try
@@ -436,21 +443,22 @@ namespace DesktopAdministrativo
                         // Executa a consulta e carrega os dados no DataTable usando SqlDataReader
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            dataTable.Load(reader);
+                            dataTable.Load(reader); // Carrega os resultados da consulta
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Em caso de erro, exibe uma mensagem com detalhes para ajudar a entender o problema
+                // Exibe uma mensagem de erro em caso de falha na consulta
                 MessageBox.Show("Erro ao consultar o banco de dados. Verifique a conexão e tente novamente.\nErro: " + ex.Message,
                                 "Erro de Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            // Retorna o DataTable preenchido com os dados ou vazio caso tenha ocorrido algum erro
+            // Retorna o DataTable preenchido com os dados ou vazio se ocorreu erro
             return dataTable;
         }
+
 
 
     }
