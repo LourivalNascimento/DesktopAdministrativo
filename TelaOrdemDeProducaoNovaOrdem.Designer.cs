@@ -142,9 +142,9 @@
             this.labelNomeProduto.Font = new System.Drawing.Font("Tw Cen MT", 15.75F);
             this.labelNomeProduto.Location = new System.Drawing.Point(12, 134);
             this.labelNomeProduto.Name = "labelNomeProduto";
-            this.labelNomeProduto.Size = new System.Drawing.Size(162, 24);
+            this.labelNomeProduto.Size = new System.Drawing.Size(69, 24);
             this.labelNomeProduto.TabIndex = 41;
-            this.labelNomeProduto.Text = "Nome do Produto";
+            this.labelNomeProduto.Text = "codigo";
             // 
             // pictureNomeProduto
             // 

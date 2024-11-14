@@ -73,6 +73,7 @@
             this.radioBtnProdutos.TabStop = true;
             this.radioBtnProdutos.Text = "Produtos";
             this.radioBtnProdutos.UseVisualStyleBackColor = true;
+            this.radioBtnProdutos.CheckedChanged += new System.EventHandler(this.radioBtnProdutos_CheckedChanged);
             // 
             // radioBtnInsumos
             // 
@@ -231,6 +232,7 @@
             this.textBoxValorProduto.Size = new System.Drawing.Size(382, 15);
             this.textBoxValorProduto.TabIndex = 34;
             this.textBoxValorProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxValorProduto.Visible = false;
             // 
             // labelValorProduto
             // 
@@ -241,6 +243,7 @@
             this.labelValorProduto.Size = new System.Drawing.Size(160, 24);
             this.labelValorProduto.TabIndex = 33;
             this.labelValorProduto.Text = "Valor do Produto";
+            this.labelValorProduto.Visible = false;
             // 
             // pictureBox1
             // 
@@ -251,6 +254,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(393, 30);
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // TelaEstoqueNovoCadastro
             // 

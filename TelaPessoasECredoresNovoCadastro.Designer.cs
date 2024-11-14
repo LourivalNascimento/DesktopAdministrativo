@@ -34,6 +34,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.textBoxCpfCnpj = new System.Windows.Forms.TextBox();
             this.panelCadastroDadosCompra = new System.Windows.Forms.Panel();
+            this.listBoxDocumentosPdf = new System.Windows.Forms.ListBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnConcluir = new System.Windows.Forms.Button();
             this.textBoxFuncao = new System.Windows.Forms.TextBox();
@@ -85,7 +86,6 @@
             this.btnEsc = new System.Windows.Forms.Button();
             this.pictureTop = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBoxDocumentosPdf = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureObservacoes)).BeginInit();
             this.panelCadastroDadosCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFuncao)).BeginInit();
@@ -129,7 +129,7 @@
             this.pictureObservacoes.TabIndex = 42;
             this.pictureObservacoes.TabStop = false;
             // 
-            // btnAdicionar
+            // btnAnexarNotaFiscalPdf
             // 
             this.btnAnexarNotaFiscalPdf.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.botão_add;
             this.btnAnexarNotaFiscalPdf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -224,6 +224,19 @@
             this.panelCadastroDadosCompra.Name = "panelCadastroDadosCompra";
             this.panelCadastroDadosCompra.Size = new System.Drawing.Size(1196, 489);
             this.panelCadastroDadosCompra.TabIndex = 32;
+            // 
+            // listBoxDocumentosPdf
+            // 
+            this.listBoxDocumentosPdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.listBoxDocumentosPdf.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxDocumentosPdf.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.listBoxDocumentosPdf.FormattingEnabled = true;
+            this.listBoxDocumentosPdf.ItemHeight = 17;
+            this.listBoxDocumentosPdf.Location = new System.Drawing.Point(121, 310);
+            this.listBoxDocumentosPdf.Name = "listBoxDocumentosPdf";
+            this.listBoxDocumentosPdf.ScrollAlwaysVisible = true;
+            this.listBoxDocumentosPdf.Size = new System.Drawing.Size(1066, 34);
+            this.listBoxDocumentosPdf.TabIndex = 95;
             // 
             // btnVoltar
             // 
@@ -785,19 +798,6 @@
             this.label1.Size = new System.Drawing.Size(111, 28);
             this.label1.TabIndex = 58;
             this.label1.Text = "Parâmetros";
-            // 
-            // listBoxDocumentosPdf
-            // 
-            this.listBoxDocumentosPdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.listBoxDocumentosPdf.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxDocumentosPdf.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.listBoxDocumentosPdf.FormattingEnabled = true;
-            this.listBoxDocumentosPdf.ItemHeight = 17;
-            this.listBoxDocumentosPdf.Location = new System.Drawing.Point(121, 310);
-            this.listBoxDocumentosPdf.Name = "listBoxDocumentosPdf";
-            this.listBoxDocumentosPdf.ScrollAlwaysVisible = true;
-            this.listBoxDocumentosPdf.Size = new System.Drawing.Size(1066, 68);
-            this.listBoxDocumentosPdf.TabIndex = 95;
             // 
             // TelaPessoasECredoresNovoCadastro
             // 

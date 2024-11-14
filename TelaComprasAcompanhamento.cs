@@ -56,26 +56,6 @@ namespace DesktopAdministrativo
             }
             return null;
         }
-        //Método usado para abrir um form qualquer
-        private void AbrirForm<ClasseQualquer>(bool fecharFormAtual = true) where ClasseQualquer : Form, new()
-        {
-            // Cria uma nova instância da classe genérica
-            ClasseQualquer objetoDaClasseQualquer = new ClasseQualquer();
-            Form openForm1 = FormJaAberto(typeof(ClasseQualquer));
-
-            if (openForm1 != null)
-            {
-                openForm1.Focus();
-            }
-            else
-            {
-                objetoDaClasseQualquer.Show();
-                if (fecharFormAtual)
-                {
-                    Close();
-                }
-            }
-        }
         //----------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------
         //MANIPULAÇÃO DO MENU

@@ -133,10 +133,11 @@ namespace DesktopAdministrativo
             }
         }
 
-
-
-
-
-
+        private void radioBtnProdutos_CheckedChanged(object sender, EventArgs e)
+        {
+            labelValorProduto.Visible = true;
+            textBoxValorProduto.Visible = true;
+            pictureBox1.Visible = true;
+        }
     }
 }
