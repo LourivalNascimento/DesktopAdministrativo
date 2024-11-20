@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace DesktopAdministrativo
         Button btnMenuPessoasECredores = new Button();
 
         private int vezesBtnMenuClicado = 0;
+        private string caminhoArquivoAnexo = "";
         public TelaPessoasECredoresNovoCadastro(string nomeFuncionario)
         {
             InitializeComponent();
@@ -315,6 +317,12 @@ namespace DesktopAdministrativo
             labelFuncao.Visible = true;
             pictureFuncao.Visible = true;
             textBoxFuncao.Visible = true;
+            labelUser.Visible = true;
+            labelSenha.Visible = true;
+            pictureNickName.Visible = true;
+            pictureSenha.Visible = true;
+            textBoxNickName.Visible = true;
+            textBoxSenha.Visible = true;
         }
 
         private void radioBtnFornecedor_CheckedChanged(object sender, EventArgs e)
@@ -326,6 +334,12 @@ namespace DesktopAdministrativo
             labelFuncao.Visible = false;
             pictureFuncao.Visible = false;
             textBoxFuncao.Visible = false;
+            labelUser.Visible = false;
+            labelSenha.Visible = false;
+            pictureNickName.Visible = false;
+            pictureSenha.Visible = false;
+            textBoxNickName.Visible = false;
+            textBoxSenha.Visible = false;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -336,41 +350,26 @@ namespace DesktopAdministrativo
         }
         private void btnAnexarNotaFiscalPdf_Click(object sender, EventArgs e)
         {
-            // Cria um OpenFileDialog para selecionar os arquivos PDF
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Arquivos PDF|*.pdf";
-            openFileDialog.Multiselect = true;  // Permite a seleção de múltiplos arquivos
-
-            // Verifica se o usuário selecionou um ou mais arquivos
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            // Configura a caixa de diálogo para selecionar um arquivo PDF
+            OpenFileDialog dialog = new OpenFileDialog
             {
-                // Itera sobre os arquivos selecionados
-                foreach (string caminhoPdf in openFileDialog.FileNames)
-                {
-                    string nomeArquivo = Path.GetFileName(caminhoPdf);
+                Filter = "Arquivos PDF (*.pdf)|*.pdf", // Apenas PDFs podem ser selecionados
+                Title = "Selecione um arquivo PDF"
+            };
 
-                    // Verifica se o arquivo já está na lista
-                    if (!listBoxDocumentosPdf.Items.Contains(nomeArquivo))
-                    {
-                        // Adiciona o nome do arquivo no ListBox se ele ainda não estiver lá
-                        listBoxDocumentosPdf.Items.Add(nomeArquivo);
-                    }
-                }
+            // Se o usuário selecionar um arquivo, armazena o caminho e exibe o nome do arquivo
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                caminhoArquivoAnexo = dialog.FileName;
+                labelAnexar.Text = Path.GetFileName(caminhoArquivoAnexo); // Exibe apenas o nome do arquivo
+                MessageBox.Show($"Arquivo anexado: {labelAnexar.Text}", "Debug"); // Debug para exibir o nome do arquivo
             }
         }
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            // Verifica se algum item está selecionado no ListBox
-            if (listBoxDocumentosPdf.SelectedItem != null)
-            {
-                // Remove o item selecionado
-                listBoxDocumentosPdf.Items.Remove(listBoxDocumentosPdf.SelectedItem);
-            }
-            else
-            {
-                // Exibe uma mensagem se nenhum arquivo estiver selecionado
-                MessageBox.Show("Por favor, selecione um arquivo para remover.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            // Limpa o caminho do arquivo e o rótulo que exibe o nome
+            caminhoArquivoAnexo = "";
+            labelAnexar.Text = ""; // Limpa o nome do arquivo exibido
         }
         //----------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------
@@ -380,6 +379,199 @@ namespace DesktopAdministrativo
         private string SqlStringDeConexao = @"Data Source=CYBERLOGRA\SQLSERVER2022;Initial Catalog=DBMorangolandia;Integrated Security=True";
         private string nomeFuncionario;
         private string codigoNotaFiscal, numNotaFiscal, statusCompra, nomeFornecedor;
+
+        private void btnConcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+                {
+                    connection.Open(); // Abre a conexão com o banco de dados
+                    MessageBox.Show("Conexão com o banco de dados aberta", "Debug"); // Confirmação de conexão
+
+                    // Validação dos dados
+                    if (!ValidarDados(out string mensagemErro))
+                    {
+                        MessageBox.Show($"Erro ao salvar os dados:\n\n{mensagemErro}", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return; // Cancela a operação se houver erros
+                    }
+
+                    // Verifica qual RadioButton está selecionado
+                    if (radioBtnFuncionario.Checked)
+                    {
+                        SalvarFuncionario(connection); // Salva os dados do funcionário
+                    }
+                    else if (radioBtnFornecedor.Checked)
+                    {
+                        SalvarFornecedor(connection); // Salva os dados do fornecedor
+                    }
+
+                    // Mensagem de sucesso
+                    MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Limpar os campos após salvar
+                    LimparCampos();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Exibe mensagem de erro em caso de falha
+                MessageBox.Show("Erro ao salvar os dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private bool ValidarDados(out string mensagemErro)
+        {
+            mensagemErro = "";
+
+            if (radioBtnFuncionario.Checked)
+            {
+                // Validação de Funcionário
+                if (string.IsNullOrWhiteSpace(textBoxNickName.Text))
+                    mensagemErro += "O campo 'Usuário' é obrigatório.\n";
+                if (string.IsNullOrWhiteSpace(textBoxSenha.Text))
+                    mensagemErro += "O campo 'Senha' é obrigatório.\n";
+                if (string.IsNullOrWhiteSpace(textBoxNomeNomeFantasia.Text))
+                    mensagemErro += "O campo 'Nome' é obrigatório.\n";
+                if (!ValidarCPF(textBoxCpfCnpj.Text))
+                    mensagemErro += "O CPF informado é inválido.\n";
+                if (string.IsNullOrWhiteSpace(textBoxFuncao.Text))
+                    mensagemErro += "O campo 'Função' é obrigatório.\n";
+                if (string.IsNullOrWhiteSpace(textBoxEmail.Text) || !ValidarEmail(textBoxEmail.Text))
+                    mensagemErro += "O e-mail informado é inválido.\n";
+            }
+            else if (radioBtnFornecedor.Checked)
+            {
+                // Validação de Fornecedor
+                if (string.IsNullOrWhiteSpace(textBoxCpfCnpj.Text))
+                    mensagemErro += "O campo 'CNPJ' é obrigatório.\n";
+                if (!ValidarCNPJ(textBoxCpfCnpj.Text))
+                    mensagemErro += "O CNPJ informado é inválido.\n";
+                if (string.IsNullOrWhiteSpace(textBoxNomeNomeFantasia.Text))
+                    mensagemErro += "O campo 'Nome Fantasia' é obrigatório.\n";
+            }
+
+            return string.IsNullOrWhiteSpace(mensagemErro);
+        }
+
+        private bool ValidarCPF(string cpf)
+        {
+            // Placeholder para validação de CPF
+            return cpf.Length == 11 && long.TryParse(cpf, out _);
+        }
+
+        private bool ValidarCNPJ(string cnpj)
+        {
+            // Placeholder para validação de CNPJ
+            return cnpj.Length == 14 && long.TryParse(cnpj, out _);
+        }
+
+        private bool ValidarEmail(string email)
+        {
+            try
+            {
+                var endereco = new System.Net.Mail.MailAddress(email);
+                return endereco.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        private void LimparCampos()
+        {
+            // Limpar campos de Funcionário e Fornecedor
+            textBoxNickName.Clear();
+            textBoxSenha.Clear();
+            textBoxNomeNomeFantasia.Clear();
+            textBoxCpfCnpj.Clear();
+            textBoxFuncao.Clear();
+            textBoxEmail.Clear();
+            textBoxTelefone.Clear();
+            textBoxObservacoes.Clear();
+
+            // Limpar anexos
+            caminhoArquivoAnexo = string.Empty;
+        }
+
+        private void AtualizarNumeroDeSerie(Guid numeroSerie)
+        {
+            using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+            {
+                string query = "UPDATE TBLogin SET NumeroSerie = @numeroSerie WHERE usuario_log = @usuario_log";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@numeroSerie", numeroSerie);
+                command.Parameters.AddWithValue("@usuario_log", textBoxNickName.Text);
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();  // Executa a atualização
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao atualizar o número de série: " + ex.Message);
+                }
+            }
+        }
+        // Método para salvar os dados de um funcionário
+        private void SalvarFuncionario(SqlConnection connection)
+        {
+            // Gerar um GUID válido (uniqueidentifier)
+            Guid numeroSerie = Guid.NewGuid();
+            MessageBox.Show($"Número de série gerado: {numeroSerie}", "Debug");
+            string nomeArquivoFuncionario = Path.GetFileName(caminhoArquivoAnexo); // Extrai o nome do arquivo para funcionário
+            // Query para inserir os dados na tabela de login
+            string queryLogin = "INSERT INTO TBLogin (usuario_log, senha_log, status_login, NumeroSerie) OUTPUT INSERTED.id_login VALUES (@usuario, @senha, 1, @numeroSerie)";
+            SqlCommand commandLogin = new SqlCommand(queryLogin, connection);
+            commandLogin.Parameters.AddWithValue("@usuario", textBoxNickName.Text); // Parâmetro para o usuário (nickname)
+            commandLogin.Parameters.AddWithValue("@senha", textBoxSenha.Text); // Parâmetro para a senha
+            commandLogin.Parameters.AddWithValue("@numeroSerie", numeroSerie); // Parâmetro para o número único
+
+
+
+            // Executa o comando e obtém o ID do login recém-criado
+            int idLogin = (int)commandLogin.ExecuteScalar();
+            MessageBox.Show($"Login salvo com ID: {idLogin}", "Debug"); // Exibe o ID gerado para o login
+
+            // Query para inserir os dados na tabela de funcionário
+            string queryFuncionario = "INSERT INTO TBFuncionario (cod_func, fk_login, nome_func, email_func, telefone_func, cargo_func, status_func, obs_func, anexo_func, cpf_func) VALUES (@cod_func, @fk_login, @nome, @email, @telefone, @cargo, 1, @obs, @anexo, @cpf)";
+            SqlCommand commandFuncionario = new SqlCommand(queryFuncionario, connection);
+            commandFuncionario.Parameters.AddWithValue("@cod_func", textBoxNickName.Text); // Parâmetro para o usuário (nickname)
+            commandFuncionario.Parameters.AddWithValue("@fk_login", idLogin); // FK do login recém-criado
+            commandFuncionario.Parameters.AddWithValue("@nome", textBoxNomeNomeFantasia.Text); // Nome do funcionário
+            commandFuncionario.Parameters.AddWithValue("@email", textBoxEmail.Text); // Email
+            commandFuncionario.Parameters.AddWithValue("@telefone", textBoxTelefone.Text); // Telefone
+            commandFuncionario.Parameters.AddWithValue("@cargo", textBoxFuncao.Text); // Cargo
+            commandFuncionario.Parameters.AddWithValue("@obs", textBoxObservacoes.Text); // Observações
+            commandFuncionario.Parameters.AddWithValue("@anexo", caminhoArquivoAnexo); // Caminho do anexo
+            commandFuncionario.Parameters.AddWithValue("@cpf", textBoxCpfCnpj.Text); // CPF do funcionário
+
+            AtualizarNumeroDeSerie(numeroSerie);
+
+            // Executa o comando para inserir o funcionário
+            commandFuncionario.ExecuteNonQuery();
+            MessageBox.Show("Funcionário salvo com sucesso!", "Debug"); // Confirmação de salvamento
+        }
+        // Método para salvar os dados de um fornecedor
+        private void SalvarFornecedor(SqlConnection connection)
+        {
+            MessageBox.Show("Iniciando salvamento de fornecedor", "Debug"); // Con
+            string nomeArquivoFornecedor = Path.GetFileName(caminhoArquivoAnexo); // Extrai o nome do arquivo para fornecedor
+
+            // Query para inserir os dados na tabela de fornecedor
+            string queryFornecedor = "INSERT INTO TBFornecedor (cnpj_forn, nome_fant, email_forn, telefone_forn, obs_forn, anexo_forn) VALUES (@cnpj, @fantasia, @email, @telefone, @obs, @anexo)";
+            SqlCommand commandFornecedor = new SqlCommand(queryFornecedor, connection);
+            commandFornecedor.Parameters.AddWithValue("@cnpj", textBoxCpfCnpj.Text); // CNPJ
+            commandFornecedor.Parameters.AddWithValue("@fantasia", textBoxNomeNomeFantasia.Text); // Nome fantasia
+            commandFornecedor.Parameters.AddWithValue("@email", textBoxEmail.Text); // Email
+            commandFornecedor.Parameters.AddWithValue("@telefone", textBoxTelefone.Text); // Telefone
+            commandFornecedor.Parameters.AddWithValue("@obs", textBoxObservacoes.Text); // Observações
+            commandFornecedor.Parameters.AddWithValue("@anexo", caminhoArquivoAnexo); // Caminho do anexo
+
+            // Executa o comando para inserir o fornecedor
+            commandFornecedor.ExecuteNonQuery();
+            MessageBox.Show("Fornecedor salvo com sucesso!", "Debug"); // Confirmação de s
+        }
         private DateTime dataEmissao;
         private float valorUnitario;
     }

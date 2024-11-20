@@ -34,7 +34,6 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.textBoxCpfCnpj = new System.Windows.Forms.TextBox();
             this.panelCadastroDadosCompra = new System.Windows.Forms.Panel();
-            this.listBoxDocumentosPdf = new System.Windows.Forms.ListBox();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnConcluir = new System.Windows.Forms.Button();
             this.textBoxFuncao = new System.Windows.Forms.TextBox();
@@ -74,7 +73,6 @@
             this.groupBoxRadioBtnStatus = new System.Windows.Forms.GroupBox();
             this.radioBtnFornecedor = new System.Windows.Forms.RadioButton();
             this.radioBtnFuncionario = new System.Windows.Forms.RadioButton();
-            this.labelTipo = new System.Windows.Forms.Label();
             this.pictureCpfCnpj = new System.Windows.Forms.PictureBox();
             this.labelObservacoes = new System.Windows.Forms.Label();
             this.labelCpfCnpj = new System.Windows.Forms.Label();
@@ -86,6 +84,14 @@
             this.btnEsc = new System.Windows.Forms.Button();
             this.pictureTop = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBoxNickName = new System.Windows.Forms.TextBox();
+            this.pictureNickName = new System.Windows.Forms.PictureBox();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.textBoxSenha = new System.Windows.Forms.TextBox();
+            this.pictureSenha = new System.Windows.Forms.PictureBox();
+            this.labelSenha = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelAnexar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureObservacoes)).BeginInit();
             this.panelCadastroDadosCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFuncao)).BeginInit();
@@ -104,6 +110,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNickName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSenha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxObservacoes
@@ -136,7 +145,7 @@
             this.btnAnexarNotaFiscalPdf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnexarNotaFiscalPdf.FlatAppearance.BorderSize = 0;
             this.btnAnexarNotaFiscalPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnexarNotaFiscalPdf.Location = new System.Drawing.Point(1163, 385);
+            this.btnAnexarNotaFiscalPdf.Location = new System.Drawing.Point(440, 316);
             this.btnAnexarNotaFiscalPdf.Name = "btnAnexarNotaFiscalPdf";
             this.btnAnexarNotaFiscalPdf.Size = new System.Drawing.Size(23, 21);
             this.btnAnexarNotaFiscalPdf.TabIndex = 39;
@@ -150,7 +159,7 @@
             this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Location = new System.Drawing.Point(1136, 385);
+            this.btnExcluir.Location = new System.Drawing.Point(411, 316);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(23, 21);
             this.btnExcluir.TabIndex = 38;
@@ -173,7 +182,14 @@
             this.panelCadastroDadosCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCadastroDadosCompra.AutoSize = true;
-            this.panelCadastroDadosCompra.Controls.Add(this.listBoxDocumentosPdf);
+            this.panelCadastroDadosCompra.Controls.Add(this.labelAnexar);
+            this.panelCadastroDadosCompra.Controls.Add(this.pictureBox1);
+            this.panelCadastroDadosCompra.Controls.Add(this.textBoxSenha);
+            this.panelCadastroDadosCompra.Controls.Add(this.pictureSenha);
+            this.panelCadastroDadosCompra.Controls.Add(this.labelSenha);
+            this.panelCadastroDadosCompra.Controls.Add(this.textBoxNickName);
+            this.panelCadastroDadosCompra.Controls.Add(this.pictureNickName);
+            this.panelCadastroDadosCompra.Controls.Add(this.labelUser);
             this.panelCadastroDadosCompra.Controls.Add(this.btnVoltar);
             this.panelCadastroDadosCompra.Controls.Add(this.btnConcluir);
             this.panelCadastroDadosCompra.Controls.Add(this.textBoxFuncao);
@@ -213,7 +229,6 @@
             this.panelCadastroDadosCompra.Controls.Add(this.pictureNomeNomeFantasia);
             this.panelCadastroDadosCompra.Controls.Add(this.labelNomeNomeFantasia);
             this.panelCadastroDadosCompra.Controls.Add(this.groupBoxRadioBtnStatus);
-            this.panelCadastroDadosCompra.Controls.Add(this.labelTipo);
             this.panelCadastroDadosCompra.Controls.Add(this.textBoxObservacoes);
             this.panelCadastroDadosCompra.Controls.Add(this.pictureObservacoes);
             this.panelCadastroDadosCompra.Controls.Add(this.textBoxCpfCnpj);
@@ -224,19 +239,6 @@
             this.panelCadastroDadosCompra.Name = "panelCadastroDadosCompra";
             this.panelCadastroDadosCompra.Size = new System.Drawing.Size(1196, 489);
             this.panelCadastroDadosCompra.TabIndex = 32;
-            // 
-            // listBoxDocumentosPdf
-            // 
-            this.listBoxDocumentosPdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.listBoxDocumentosPdf.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxDocumentosPdf.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
-            this.listBoxDocumentosPdf.FormattingEnabled = true;
-            this.listBoxDocumentosPdf.ItemHeight = 17;
-            this.listBoxDocumentosPdf.Location = new System.Drawing.Point(121, 310);
-            this.listBoxDocumentosPdf.Name = "listBoxDocumentosPdf";
-            this.listBoxDocumentosPdf.ScrollAlwaysVisible = true;
-            this.listBoxDocumentosPdf.Size = new System.Drawing.Size(1066, 34);
-            this.listBoxDocumentosPdf.TabIndex = 95;
             // 
             // btnVoltar
             // 
@@ -266,6 +268,7 @@
             this.btnConcluir.Size = new System.Drawing.Size(122, 31);
             this.btnConcluir.TabIndex = 93;
             this.btnConcluir.UseVisualStyleBackColor = true;
+            this.btnConcluir.Click += new System.EventHandler(this.btnConcluir_Click);
             // 
             // textBoxFuncao
             // 
@@ -273,7 +276,7 @@
             this.textBoxFuncao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxFuncao.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
             this.textBoxFuncao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBoxFuncao.Location = new System.Drawing.Point(128, 415);
+            this.textBoxFuncao.Location = new System.Drawing.Point(128, 357);
             this.textBoxFuncao.Name = "textBoxFuncao";
             this.textBoxFuncao.Size = new System.Drawing.Size(1058, 17);
             this.textBoxFuncao.TabIndex = 83;
@@ -282,7 +285,7 @@
             // 
             this.pictureFuncao.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
             this.pictureFuncao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureFuncao.Location = new System.Drawing.Point(123, 411);
+            this.pictureFuncao.Location = new System.Drawing.Point(123, 353);
             this.pictureFuncao.Name = "pictureFuncao";
             this.pictureFuncao.Size = new System.Drawing.Size(1067, 24);
             this.pictureFuncao.TabIndex = 82;
@@ -292,7 +295,7 @@
             // 
             this.labelFuncao.AutoSize = true;
             this.labelFuncao.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelFuncao.Location = new System.Drawing.Point(63, 411);
+            this.labelFuncao.Location = new System.Drawing.Point(63, 353);
             this.labelFuncao.Name = "labelFuncao";
             this.labelFuncao.Size = new System.Drawing.Size(57, 19);
             this.labelFuncao.TabIndex = 81;
@@ -657,16 +660,6 @@
             this.radioBtnFuncionario.UseVisualStyleBackColor = true;
             this.radioBtnFuncionario.CheckedChanged += new System.EventHandler(this.radioBtnFuncionario_CheckedChanged);
             // 
-            // labelTipo
-            // 
-            this.labelTipo.AutoSize = true;
-            this.labelTipo.Font = new System.Drawing.Font("Tw Cen MT", 12F);
-            this.labelTipo.Location = new System.Drawing.Point(69, 11);
-            this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(50, 19);
-            this.labelTipo.TabIndex = 46;
-            this.labelTipo.Text = "Status:";
-            // 
             // pictureCpfCnpj
             // 
             this.pictureCpfCnpj.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
@@ -799,6 +792,88 @@
             this.label1.TabIndex = 58;
             this.label1.Text = "Parâmetros";
             // 
+            // textBoxNickName
+            // 
+            this.textBoxNickName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxNickName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNickName.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxNickName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxNickName.Location = new System.Drawing.Point(579, 318);
+            this.textBoxNickName.Name = "textBoxNickName";
+            this.textBoxNickName.Size = new System.Drawing.Size(275, 17);
+            this.textBoxNickName.TabIndex = 98;
+            // 
+            // pictureNickName
+            // 
+            this.pictureNickName.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureNickName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureNickName.Location = new System.Drawing.Point(574, 314);
+            this.pictureNickName.Name = "pictureNickName";
+            this.pictureNickName.Size = new System.Drawing.Size(284, 24);
+            this.pictureNickName.TabIndex = 97;
+            this.pictureNickName.TabStop = false;
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelUser.Location = new System.Drawing.Point(512, 316);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(64, 19);
+            this.labelUser.TabIndex = 96;
+            this.labelUser.Text = " Código:";
+            // 
+            // textBoxSenha
+            // 
+            this.textBoxSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.textBoxSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSenha.Font = new System.Drawing.Font("Tw Cen MT", 11.25F);
+            this.textBoxSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBoxSenha.Location = new System.Drawing.Point(954, 316);
+            this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.Size = new System.Drawing.Size(229, 17);
+            this.textBoxSenha.TabIndex = 101;
+            // 
+            // pictureSenha
+            // 
+            this.pictureSenha.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureSenha.Location = new System.Drawing.Point(949, 312);
+            this.pictureSenha.Name = "pictureSenha";
+            this.pictureSenha.Size = new System.Drawing.Size(238, 24);
+            this.pictureSenha.TabIndex = 100;
+            this.pictureSenha.TabStop = false;
+            // 
+            // labelSenha
+            // 
+            this.labelSenha.AutoSize = true;
+            this.labelSenha.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelSenha.Location = new System.Drawing.Point(893, 314);
+            this.labelSenha.Name = "labelSenha";
+            this.labelSenha.Size = new System.Drawing.Size(56, 19);
+            this.labelSenha.TabIndex = 99;
+            this.labelSenha.Text = " Senha:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fornecedor;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(121, 316);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(284, 24);
+            this.pictureBox1.TabIndex = 102;
+            this.pictureBox1.TabStop = false;
+            // 
+            // labelAnexar
+            // 
+            this.labelAnexar.AutoSize = true;
+            this.labelAnexar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelAnexar.Font = new System.Drawing.Font("Tw Cen MT", 12F);
+            this.labelAnexar.Location = new System.Drawing.Point(125, 319);
+            this.labelAnexar.Name = "labelAnexar";
+            this.labelAnexar.Size = new System.Drawing.Size(0, 19);
+            this.labelAnexar.TabIndex = 103;
+            // 
             // TelaPessoasECredoresNovoCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -841,6 +916,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNickName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSenha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -866,7 +944,6 @@
         private System.Windows.Forms.GroupBox groupBoxRadioBtnStatus;
         private System.Windows.Forms.RadioButton radioBtnFornecedor;
         private System.Windows.Forms.RadioButton radioBtnFuncionario;
-        private System.Windows.Forms.Label labelTipo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxNomeNomeFantasia;
         private System.Windows.Forms.PictureBox pictureNomeNomeFantasia;
@@ -904,6 +981,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnConcluir;
-        private System.Windows.Forms.ListBox listBoxDocumentosPdf;
+        private System.Windows.Forms.TextBox textBoxNickName;
+        private System.Windows.Forms.PictureBox pictureNickName;
+        private System.Windows.Forms.Label labelUser;
+        private System.Windows.Forms.TextBox textBoxSenha;
+        private System.Windows.Forms.PictureBox pictureSenha;
+        private System.Windows.Forms.Label labelSenha;
+        private System.Windows.Forms.Label labelAnexar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
