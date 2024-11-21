@@ -86,6 +86,7 @@
             this.radioBtnInsumos.TabStop = true;
             this.radioBtnInsumos.Text = "Insumos";
             this.radioBtnInsumos.UseVisualStyleBackColor = true;
+            this.radioBtnInsumos.CheckedChanged += new System.EventHandler(this.radioBtnInsumos_CheckedChanged);
             // 
             // labelNovaCadastro
             // 

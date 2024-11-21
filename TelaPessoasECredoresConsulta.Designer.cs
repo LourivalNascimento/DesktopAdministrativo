@@ -178,6 +178,7 @@
             this.btnLimpar.Size = new System.Drawing.Size(122, 31);
             this.btnLimpar.TabIndex = 93;
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnConcluir
             // 
@@ -348,6 +349,7 @@
             this.radioBtnFornecedor.TabIndex = 1;
             this.radioBtnFornecedor.Text = "Fornecedor";
             this.radioBtnFornecedor.UseVisualStyleBackColor = true;
+            this.radioBtnFornecedor.CheckedChanged += new System.EventHandler(this.radioBtnFornecedor_CheckedChanged);
             // 
             // radioBtnFuncionario
             // 
@@ -362,6 +364,7 @@
             this.radioBtnFuncionario.TabStop = true;
             this.radioBtnFuncionario.Text = "Funcionário";
             this.radioBtnFuncionario.UseVisualStyleBackColor = true;
+            this.radioBtnFuncionario.CheckedChanged += new System.EventHandler(this.radioBtnFuncionario_CheckedChanged_1);
             // 
             // labelEmail
             // 

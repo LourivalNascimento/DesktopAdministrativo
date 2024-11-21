@@ -487,7 +487,6 @@ namespace DesktopAdministrativo
                             MessageBox.Show("Compra registrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             listaProdutos.Clear(); // Limpa a lista de produtos adicionados
                             valorTotal = 0; // Reseta o valor total
-                            AtualizarValorTotal(); // Atualiza o label do valor total
                             AtualizarLabelListaProdutos(); // Atualiza a lista de produtos exibida
                             LimparCamposFormulario(); // Limpa os campos do formulário
                         }
@@ -558,15 +557,6 @@ namespace DesktopAdministrativo
             textBoxNomeDoProduto.Clear();
             textBoxQuantidade.Clear();
             textBoxValor.Clear();
-        }
-
-
-
-
-        // Atualiza o label `labelValorTotal` com o valor total das compras
-        private void AtualizarValorTotal()
-        {
-            labelValorTotal.Text = $"R$ {valorTotal:F2}";
         }
 
         // Limpa os campos de entrada do formulário após salvar uma compra

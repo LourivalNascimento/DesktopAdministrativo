@@ -40,7 +40,13 @@
             this.pictureCodigo = new System.Windows.Forms.PictureBox();
             this.labelQuantidade = new System.Windows.Forms.Label();
             this.textBoxCodigo = new System.Windows.Forms.TextBox();
-            this.panelCadastroDeInsumos = new System.Windows.Forms.Panel();
+            this.panelResultado = new System.Windows.Forms.Panel();
+            this.labelExibirCategoria = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.labelExibirValor = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNovoCadastro = new System.Windows.Forms.Button();
             this.labelResultados = new System.Windows.Forms.Label();
             this.labelExibirQuantidade = new System.Windows.Forms.Label();
@@ -65,26 +71,20 @@
             this.labelTipo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelEstoque = new System.Windows.Forms.Label();
-            this.labelExibirValor = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelExibirCategoria = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             this.groupBoxRadioBtnQuantidade.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCodigo)).BeginInit();
-            this.panelCadastroDeInsumos.SuspendLayout();
+            this.panelResultado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirDescricao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirCodigo)).BeginInit();
             this.panelCadastroDadosCompra.SuspendLayout();
             this.groupBoxOrdemAlfabetica.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureTop
@@ -177,6 +177,7 @@
             this.groupBoxRadioBtnQuantidade.Size = new System.Drawing.Size(319, 42);
             this.groupBoxRadioBtnQuantidade.TabIndex = 45;
             this.groupBoxRadioBtnQuantidade.TabStop = false;
+            this.groupBoxRadioBtnQuantidade.Visible = false;
             // 
             // radioBtnMenorParaMaior
             // 
@@ -223,6 +224,7 @@
             this.labelQuantidade.Size = new System.Drawing.Size(90, 19);
             this.labelQuantidade.TabIndex = 30;
             this.labelQuantidade.Text = "Quantidade:";
+            this.labelQuantidade.Visible = false;
             // 
             // textBoxCodigo
             // 
@@ -236,32 +238,95 @@
             this.textBoxCodigo.TabIndex = 34;
             this.textBoxCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // panelCadastroDeInsumos
+            // panelResultado
             // 
-            this.panelCadastroDeInsumos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelResultado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelCadastroDeInsumos.Controls.Add(this.labelExibirCategoria);
-            this.panelCadastroDeInsumos.Controls.Add(this.label4);
-            this.panelCadastroDeInsumos.Controls.Add(this.pictureBox3);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelExibirValor);
-            this.panelCadastroDeInsumos.Controls.Add(this.label3);
-            this.panelCadastroDeInsumos.Controls.Add(this.pictureBox1);
-            this.panelCadastroDeInsumos.Controls.Add(this.btnNovoCadastro);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelResultados);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelExibirQuantidade);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelExibirNome);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelExibirCodigo);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelQuantidadeResult);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelNomeResult);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelCodigoResult);
-            this.panelCadastroDeInsumos.Controls.Add(this.pictureExibirQuantidade);
-            this.panelCadastroDeInsumos.Controls.Add(this.pictureExibirDescricao);
-            this.panelCadastroDeInsumos.Controls.Add(this.pictureExibirCodigo);
-            this.panelCadastroDeInsumos.Location = new System.Drawing.Point(55, 385);
-            this.panelCadastroDeInsumos.Name = "panelCadastroDeInsumos";
-            this.panelCadastroDeInsumos.Size = new System.Drawing.Size(1193, 269);
-            this.panelCadastroDeInsumos.TabIndex = 35;
+            this.panelResultado.Controls.Add(this.labelExibirCategoria);
+            this.panelResultado.Controls.Add(this.label4);
+            this.panelResultado.Controls.Add(this.pictureBox3);
+            this.panelResultado.Controls.Add(this.labelExibirValor);
+            this.panelResultado.Controls.Add(this.label3);
+            this.panelResultado.Controls.Add(this.pictureBox1);
+            this.panelResultado.Controls.Add(this.labelResultados);
+            this.panelResultado.Controls.Add(this.labelExibirQuantidade);
+            this.panelResultado.Controls.Add(this.labelExibirNome);
+            this.panelResultado.Controls.Add(this.labelExibirCodigo);
+            this.panelResultado.Controls.Add(this.labelQuantidadeResult);
+            this.panelResultado.Controls.Add(this.labelNomeResult);
+            this.panelResultado.Controls.Add(this.labelCodigoResult);
+            this.panelResultado.Controls.Add(this.pictureExibirQuantidade);
+            this.panelResultado.Controls.Add(this.pictureExibirDescricao);
+            this.panelResultado.Controls.Add(this.pictureExibirCodigo);
+            this.panelResultado.Location = new System.Drawing.Point(55, 385);
+            this.panelResultado.Name = "panelResultado";
+            this.panelResultado.Size = new System.Drawing.Size(1193, 214);
+            this.panelResultado.TabIndex = 35;
+            // 
+            // labelExibirCategoria
+            // 
+            this.labelExibirCategoria.AutoSize = true;
+            this.labelExibirCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelExibirCategoria.Font = new System.Drawing.Font("Tw Cen MT", 10F);
+            this.labelExibirCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelExibirCategoria.Location = new System.Drawing.Point(1082, 66);
+            this.labelExibirCategoria.Name = "labelExibirCategoria";
+            this.labelExibirCategoria.Size = new System.Drawing.Size(15, 16);
+            this.labelExibirCategoria.TabIndex = 94;
+            this.labelExibirCategoria.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1058, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.TabIndex = 93;
+            this.label4.Text = "Categoria";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.emissão;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(1061, 63);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(66, 25);
+            this.pictureBox3.TabIndex = 92;
+            this.pictureBox3.TabStop = false;
+            // 
+            // labelExibirValor
+            // 
+            this.labelExibirValor.AutoSize = true;
+            this.labelExibirValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
+            this.labelExibirValor.Font = new System.Drawing.Font("Tw Cen MT", 10F);
+            this.labelExibirValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelExibirValor.Location = new System.Drawing.Point(1016, 66);
+            this.labelExibirValor.Name = "labelExibirValor";
+            this.labelExibirValor.Size = new System.Drawing.Size(15, 16);
+            this.labelExibirValor.TabIndex = 91;
+            this.labelExibirValor.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1000, 42);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 17);
+            this.label3.TabIndex = 90;
+            this.label3.Text = "Valor";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.emissão;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(989, 63);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(66, 25);
+            this.pictureBox1.TabIndex = 89;
+            this.pictureBox1.TabStop = false;
             // 
             // btnNovoCadastro
             // 
@@ -272,7 +337,7 @@
             this.btnNovoCadastro.FlatAppearance.BorderSize = 0;
             this.btnNovoCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovoCadastro.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNovoCadastro.Location = new System.Drawing.Point(995, 225);
+            this.btnNovoCadastro.Location = new System.Drawing.Point(1053, 628);
             this.btnNovoCadastro.Name = "btnNovoCadastro";
             this.btnNovoCadastro.Size = new System.Drawing.Size(195, 41);
             this.btnNovoCadastro.TabIndex = 88;
@@ -441,6 +506,7 @@
             this.groupBoxOrdemAlfabetica.Size = new System.Drawing.Size(127, 42);
             this.groupBoxOrdemAlfabetica.TabIndex = 47;
             this.groupBoxOrdemAlfabetica.TabStop = false;
+            this.groupBoxOrdemAlfabetica.Visible = false;
             // 
             // radioBtnNao
             // 
@@ -477,6 +543,7 @@
             this.labelOrdemAlfabetica.Size = new System.Drawing.Size(128, 19);
             this.labelOrdemAlfabetica.TabIndex = 46;
             this.labelOrdemAlfabetica.Text = "Ordem Alfabética:";
+            this.labelOrdemAlfabetica.Visible = false;
             // 
             // groupBox1
             // 
@@ -501,6 +568,7 @@
             this.radioBtnProdutos.TabIndex = 1;
             this.radioBtnProdutos.Text = "Produtos";
             this.radioBtnProdutos.UseVisualStyleBackColor = true;
+            this.radioBtnProdutos.CheckedChanged += new System.EventHandler(this.radioBtnProdutos_CheckedChanged);
             // 
             // radioBtnInsumos
             // 
@@ -515,6 +583,7 @@
             this.radioBtnInsumos.TabStop = true;
             this.radioBtnInsumos.Text = "Insumos";
             this.radioBtnInsumos.UseVisualStyleBackColor = true;
+            this.radioBtnInsumos.CheckedChanged += new System.EventHandler(this.radioBtnInsumos_CheckedChanged);
             // 
             // labelTipo
             // 
@@ -548,70 +617,6 @@
             this.labelEstoque.TabIndex = 52;
             this.labelEstoque.Text = "ESTOQUE";
             // 
-            // labelExibirValor
-            // 
-            this.labelExibirValor.AutoSize = true;
-            this.labelExibirValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirValor.Font = new System.Drawing.Font("Tw Cen MT", 10F);
-            this.labelExibirValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirValor.Location = new System.Drawing.Point(1016, 66);
-            this.labelExibirValor.Name = "labelExibirValor";
-            this.labelExibirValor.Size = new System.Drawing.Size(15, 16);
-            this.labelExibirValor.TabIndex = 91;
-            this.labelExibirValor.Text = "0";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1000, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 17);
-            this.label3.TabIndex = 90;
-            this.label3.Text = "Valor";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.emissão;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(989, 63);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(66, 25);
-            this.pictureBox1.TabIndex = 89;
-            this.pictureBox1.TabStop = false;
-            // 
-            // labelExibirCategoria
-            // 
-            this.labelExibirCategoria.AutoSize = true;
-            this.labelExibirCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirCategoria.Font = new System.Drawing.Font("Tw Cen MT", 10F);
-            this.labelExibirCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirCategoria.Location = new System.Drawing.Point(1082, 66);
-            this.labelExibirCategoria.Name = "labelExibirCategoria";
-            this.labelExibirCategoria.Size = new System.Drawing.Size(15, 16);
-            this.labelExibirCategoria.TabIndex = 94;
-            this.labelExibirCategoria.Text = "0";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1058, 42);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
-            this.label4.TabIndex = 93;
-            this.label4.Text = "Categoria";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.emissão;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(1061, 63);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(66, 25);
-            this.pictureBox3.TabIndex = 92;
-            this.pictureBox3.TabStop = false;
-            // 
             // TelaEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -619,11 +624,12 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panelCadastroDeInsumos);
+            this.Controls.Add(this.panelResultado);
             this.Controls.Add(this.labelEstoque);
             this.Controls.Add(this.panelCadastroDadosCompra);
             this.Controls.Add(this.labelNomeFuncionario);
             this.Controls.Add(this.btnMenu);
+            this.Controls.Add(this.btnNovoCadastro);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureLogoMorangolandia);
             this.Controls.Add(this.btnEsc);
@@ -641,8 +647,10 @@
             this.groupBoxRadioBtnQuantidade.ResumeLayout(false);
             this.groupBoxRadioBtnQuantidade.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCodigo)).EndInit();
-            this.panelCadastroDeInsumos.ResumeLayout(false);
-            this.panelCadastroDeInsumos.PerformLayout();
+            this.panelResultado.ResumeLayout(false);
+            this.panelResultado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirDescricao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExibirCodigo)).EndInit();
@@ -652,8 +660,6 @@
             this.groupBoxOrdemAlfabetica.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -673,7 +679,7 @@
         private System.Windows.Forms.PictureBox pictureCodigo;
         private System.Windows.Forms.Label labelQuantidade;
         private System.Windows.Forms.TextBox textBoxCodigo;
-        private System.Windows.Forms.Panel panelCadastroDeInsumos;
+        private System.Windows.Forms.Panel panelResultado;
         private System.Windows.Forms.Label labelCodigo;
         private System.Windows.Forms.Panel panelCadastroDadosCompra;
         private System.Windows.Forms.Label label1;

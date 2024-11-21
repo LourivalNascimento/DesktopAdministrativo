@@ -51,6 +51,7 @@ namespace DesktopAdministrativo
 
             bool isProduto = radioBtnProdutos.Checked;
             string codigo = textBoxCodigoProduto.Text;
+            string valorProduto = textBoxValorProduto.Text;
             string categoria = GetCategoriaSelecionada();
 
             if (string.IsNullOrEmpty(categoria))
@@ -67,7 +68,7 @@ namespace DesktopAdministrativo
             }
             else
             {
-                MessageBox.Show("Essa funcionalidade é exclusiva para insumos.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ImportarProdutosDaProducao(codigo, categoria, valorProduto);
             }
         }
 
@@ -80,7 +81,56 @@ namespace DesktopAdministrativo
             if (radioBtnVerdura.Checked) return "Verdura";
             return null;
         }
+        // Método para importar dados de produto da tabela de producao para a tabela de produtos
+        private void ImportarProdutosDaProducao(string codigo, string categoria, string valorProduto)
+        {
+            string query = "SELECT [cod_prod], [nome_prod], [qtd_prod] FROM [DBMorangolandia].[dbo].[TBProducao] WHERE [cod_prod] = @codigo";
 
+            using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@codigo", codigo);
+
+                try
+                {
+                    connection.Open(); // Tenta abrir a conexão
+
+                    SqlDataReader reader = command.ExecuteReader(); // Executa a consulta
+
+                    if (reader.Read()) // Verifica se há dados retornados
+                    {
+                        string nomeProduto = reader["nome_prod"].ToString();
+                        int quantidadeProduto = Convert.ToInt32(reader["qtd_prod"]);
+
+                        reader.Close(); // Fecha o leitor antes de continuar
+
+                        string insertQuery = "INSERT INTO [DBMorangolandia].[dbo].[TBProdutos] (cod_prod, nome_prod, qtd_prod, valor_prod, cat_prod) VALUES (@codProd, @nomeProd, @qtdProd, @valorProd, @codProd)";
+
+                        using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
+                        {
+                            insertCommand.Parameters.AddWithValue("@codProd", codigo);
+                            insertCommand.Parameters.AddWithValue("@nomeProd", nomeProduto);
+                            insertCommand.Parameters.AddWithValue("@qtdProd", quantidadeProduto);
+                            insertCommand.Parameters.AddWithValue("@valorProd", valorProduto);
+                            insertCommand.Parameters.AddWithValue("@categoria", categoria);
+
+                            insertCommand.ExecuteNonQuery(); // Executa a inserção
+                        }
+
+                        MessageBox.Show("Insumo registrado com sucesso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Insumo não encontrado na tabela de compras.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Exibe a mensagem completa do erro para diagnóstico
+                    MessageBox.Show("Erro ao importar insumo da compra: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
         // Método para importar dados de insumo da tabela de compras para a tabela de insumos
         private void ImportarInsumoDaCompra(string codigo, string categoria)
         {
@@ -138,6 +188,13 @@ namespace DesktopAdministrativo
             labelValorProduto.Visible = true;
             textBoxValorProduto.Visible = true;
             pictureBox1.Visible = true;
+        }
+
+        private void radioBtnInsumos_CheckedChanged(object sender, EventArgs e)
+        {
+            labelValorProduto.Visible = false;
+            textBoxValorProduto.Visible = false;
+            pictureBox1.Visible = false;
         }
     }
 }

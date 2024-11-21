@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,7 +31,8 @@ namespace DesktopAdministrativo
             pictureTop.Width = int.MaxValue;
             this.nomeFuncionario = nomeFuncionario;
             labelNomeFuncionario.Text = "Olá, " + nomeFuncionario;
-            GerarLabelsClientes();
+            //GerarLabelsClientes();
+            ConsultarBancoDadosEExibirResultados();
 
         }
         //Método que mostra um MessageBox perguntando se deseja fechar ou não o programa
@@ -309,133 +311,249 @@ namespace DesktopAdministrativo
         private DateTime dataEmissao;
         private float valorUnitario;
 
-        private void lerBD(string query, SqlConnection connection, List<string> valoresImportados, string coluna)
+        //private void lerBD(string query, SqlConnection connection, List<string> valoresImportados, string coluna)
+        //{
+        //    using (SqlCommand command = new SqlCommand(query, connection))
+        //    {
+        //        using (SqlDataReader reader = command.ExecuteReader())
+        //        {
+        //            // Ler os dados linha a linha e adicionar à lista
+        //            while (reader.Read())
+        //            {
+        //                valoresImportados.Add(reader[coluna].ToString());
+        //            }
+        //        }
+        //    }
+        //}
+        //private void GerarLabelsDeConsulta(List<string> valores, string nomeValores, TableLayoutPanel tablePanel)
+        //{
+        //    int row = 1; // Começamos a partir da segunda linha, pois a primeira será para os cabeçalhos
+        //    foreach (string nome in valores)
+        //    {
+        //        Label labelExibicao = new Label();
+
+        //        // Formatação condicional do texto
+        //        if (nomeValores == "valoresCompras")
+        //        {
+        //            labelExibicao.Text = "R$ " + nome;
+        //        }
+        //        else if (nomeValores == "datasDeEmissao")
+        //        {
+        //            DateTime data = DateTime.Parse(nome);
+        //            labelExibicao.Text = data.ToString("dd/MM/yyyy");
+        //        }
+        //        else
+        //        {
+        //            labelExibicao.Text = nome;
+        //        }
+
+        //        // Ajustar a aparência do label
+        //        labelExibicao.AutoSize = true;
+        //        labelExibicao.Font = new Font("Arial", 14);  // Tamanho maior para melhor visualização
+        //        labelExibicao.ForeColor = Color.Black;
+        //        labelExibicao.BackColor = Color.FromArgb(247, 223, 255);  // Fundo suave
+        //        labelExibicao.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+        //        labelExibicao.TextAlign = ContentAlignment.MiddleCenter;
+        //        labelExibicao.Padding = new Padding(10);  // Adiciona espaçamento interno
+
+        //        // Adicionando o label à linha da tabela
+        //        tablePanel.Controls.Add(labelExibicao, tablePanel.ColumnCount - 1, row); // Coloca na última coluna
+        //        row++; // Incrementa a linha
+        //    }
+        //}
+
+        //private void GerarLabelsClientes()
+        //{
+        //    // Consulta SQL otimizada com JOIN
+        //    string query = @"SELECT cod_compra, nf, dt_emissao, nome_fant, valor_unit, status_compras  FROM TBCompras JOIN TBFornecedor ON TBCompras.fk_forn = TBFornecedor.id_forn";
+
+        //    // Listas para armazenar os dados
+        //    List<string> codigosCompras = new List<string>();
+        //    List<string> numerosNotasFiscais = new List<string>();
+        //    List<string> datasDeEmissao = new List<string>();
+        //    List<string> nomesFornecedor = new List<string>();
+        //   // List<string> valoresCompras = new List<string>();
+        //    List<string> statusCompras = new List<string>();
+
+        //    try
+        //    {
+        //        using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+        //        {
+        //            connection.Open();
+        //            SqlCommand command = new SqlCommand(query, connection);
+        //            SqlDataReader reader = command.ExecuteReader();
+
+        //            while (reader.Read())
+        //            {
+        //                codigosCompras.Add(reader["cod_compra"].ToString());
+        //                numerosNotasFiscais.Add(reader["nf"].ToString());
+        //                datasDeEmissao.Add(reader["dt_emissao"].ToString());
+        //                nomesFornecedor.Add(reader["nome_fant"].ToString());
+        //               // valoresCompras.Add(reader["valor_unit"].ToString());
+        //                statusCompras.Add(reader["status_compras"].ToString());
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Erro ao conectar com o banco de dados: " + ex.Message);
+        //        return;
+        //    }
+
+        //    // Criar o TableLayoutPanel para a organização dos dados
+        //    TableLayoutPanel tablePanel = new TableLayoutPanel();
+        //    tablePanel.Location = new System.Drawing.Point(40, 140);  // Posição inicial
+        //    tablePanel.Size = new System.Drawing.Size(this.Width - 80, this.Height - 180);  // Preenche a tela
+        //    tablePanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;  // Ajuste para crescer
+        //    tablePanel.BackColor = Color.FromArgb(252, 251, 231);
+        //    tablePanel.ColumnCount = 6;  // Uma coluna para cada campo
+        //    tablePanel.RowCount = codigosCompras.Count + 1;  // Uma linha extra para os cabeçalhos
+        //    tablePanel.AutoSize = true;
+        //    tablePanel.ColumnStyles.Clear();
+
+        //    // Definir os cabeçalhos da tabela
+        //    tablePanel.Controls.Add(new Label() { Text = "Código Compra", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 0, 0);
+        //    tablePanel.Controls.Add(new Label() { Text = "Nota Fiscal", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 1, 0);
+        //    tablePanel.Controls.Add(new Label() { Text = "Data Emissão", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 2, 0);
+        //    tablePanel.Controls.Add(new Label() { Text = "Fornecedor", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 3, 0);
+        //    //tablePanel.Controls.Add(new Label() { Text = "Valor Unitário", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 4, 0);
+        //    tablePanel.Controls.Add(new Label() { Text = "Status", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 5, 0);
+
+        //    // Ajuste das larguras das colunas
+        //    for (int i = 0; i < tablePanel.ColumnCount; i++)
+        //    {
+        //        tablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66f)); // Coloca cada coluna com tamanho proporcional
+        //    }
+
+        //    // Gerar as linhas de dados
+        //    for (int i = 0; i < codigosCompras.Count; i++)
+        //    {
+        //        tablePanel.Controls.Add(new Label() { Text = codigosCompras[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 0, i + 1);
+        //        tablePanel.Controls.Add(new Label() { Text = numerosNotasFiscais[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 1, i + 1);
+        //        tablePanel.Controls.Add(new Label() { Text = DateTime.Parse(datasDeEmissao[i]).ToString("dd/MM/yyyy"), Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 2, i + 1);
+        //        tablePanel.Controls.Add(new Label() { Text = nomesFornecedor[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 3, i + 1);
+        //       // tablePanel.Controls.Add(new Label() { Text = "R$ " + valoresCompras[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 4, i + 1);
+        //        tablePanel.Controls.Add(new Label() { Text = statusCompras[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 5, i + 1);
+        //    }
+
+        //    // Adicionar o painel com os dados ao formulário
+        //    this.Controls.Add(tablePanel);
+        //}
+
+        /// <summary>
+        /// /////////////////////////
+        /// </summary>
+        private void ConsultarBancoDadosEExibirResultados()
         {
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlConnection conn = new SqlConnection(SqlStringDeConexao))
             {
-                using (SqlDataReader reader = command.ExecuteReader())
+                try
                 {
-                    // Ler os dados linha a linha e adicionar à lista
-                    while (reader.Read())
+                    conn.Open();
+
+                    // Inicia a consulta básica sem filtros
+                    string query = @"SELECT cod_compra, nf, dt_emissao, nome_fant, valor_unit, status_compras  FROM TBCompras JOIN TBFornecedor ON TBCompras.fk_forn = TBFornecedor.id_forn";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        valoresImportados.Add(reader[coluna].ToString());
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        CriarComponentesDinamicos(reader); // Cria os componentes gráficos com os resultados
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao consultar o banco: {ex.Message}");
                 }
             }
         }
-        private void GerarLabelsDeConsulta(List<string> valores, string nomeValores, TableLayoutPanel tablePanel)
+
+        /// <summary>
+        /// Cria os painéis e labels dinamicamente com base nos dados retornados do banco.
+        /// </summary>
+        private void CriarComponentesDinamicos(SqlDataReader reader)
         {
-            int row = 1; // Começamos a partir da segunda linha, pois a primeira será para os cabeçalhos
-            foreach (string nome in valores)
-            {
-                Label labelExibicao = new Label();
+            int yOffset = 0; // Controle da posição vertical
 
-                // Formatação condicional do texto
-                if (nomeValores == "valoresCompras")
+            while (reader.Read())
+            {
+                // Criar o painel principal
+                Panel panel = new Panel
                 {
-                    labelExibicao.Text = "R$ " + nome;
-                }
-                else if (nomeValores == "datasDeEmissao")
+                    Size = new Size(920, 50),
+                    BackColor = Color.LavenderBlush,
+                    Location = new Point(200, yOffset),
+                    BorderStyle = BorderStyle.FixedSingle
+                };
+
+                // Criar labels para as informações
+                Label codigosCompras = new Label
                 {
-                    DateTime data = DateTime.Parse(nome);
-                    labelExibicao.Text = data.ToString("dd/MM/yyyy");
-                }
-                else
+                    Text = $"Código Compra\n {reader["cod_compra"]}",
+                    Location = new Point(10, 15),
+                    Font = new Font("Arial", 10, FontStyle.Bold),
+                    AutoSize = true
+                };
+
+                Label numerosNotasFiscais = new Label
                 {
-                    labelExibicao.Text = nome;
-                }
+                    Text = $"Nota Fiscal\n{reader["nf"]}",
+                    Location = new Point(200, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
 
-                // Ajustar a aparência do label
-                labelExibicao.AutoSize = true;
-                labelExibicao.Font = new Font("Arial", 14);  // Tamanho maior para melhor visualização
-                labelExibicao.ForeColor = Color.Black;
-                labelExibicao.BackColor = Color.FromArgb(247, 223, 255);  // Fundo suave
-                labelExibicao.Anchor = AnchorStyles.Left | AnchorStyles.Top;
-                labelExibicao.TextAlign = ContentAlignment.MiddleCenter;
-                labelExibicao.Padding = new Padding(10);  // Adiciona espaçamento interno
-
-                // Adicionando o label à linha da tabela
-                tablePanel.Controls.Add(labelExibicao, tablePanel.ColumnCount - 1, row); // Coloca na última coluna
-                row++; // Incrementa a linha
-            }
-        }
-
-        private void GerarLabelsClientes()
-        {
-            // Consulta SQL otimizada com JOIN
-            string query = @"SELECT cod_compra, nf, dt_emissao, nome_fant, valor_unit, status_compras  FROM TBCompras JOIN TBFornecedor ON TBCompras.fk_forn = TBFornecedor.id_forn";
-
-            // Listas para armazenar os dados
-            List<string> codigosCompras = new List<string>();
-            List<string> numerosNotasFiscais = new List<string>();
-            List<string> datasDeEmissao = new List<string>();
-            List<string> nomesFornecedor = new List<string>();
-           // List<string> valoresCompras = new List<string>();
-            List<string> statusCompras = new List<string>();
-
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(SqlStringDeConexao))
+                Label nomesFornecedor = new Label
                 {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand(query, connection);
-                    SqlDataReader reader = command.ExecuteReader();
+                    Text = $"Fornecedor\n{reader["nome_fant"]}",
+                    Location = new Point(320, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
 
-                    while (reader.Read())
-                    {
-                        codigosCompras.Add(reader["cod_compra"].ToString());
-                        numerosNotasFiscais.Add(reader["nf"].ToString());
-                        datasDeEmissao.Add(reader["dt_emissao"].ToString());
-                        nomesFornecedor.Add(reader["nome_fant"].ToString());
-                       // valoresCompras.Add(reader["valor_unit"].ToString());
-                        statusCompras.Add(reader["status_compras"].ToString());
-                    }
-                }
+                Label datasDeEmissao = new Label
+                {
+                    // Verifica se a data é válida (não nula) e formata
+                    Text = reader["dt_emissao"] != DBNull.Value ?
+                           $"Data\n {Convert.ToDateTime(reader["dt_emissao"]).ToString("dd/MM/yyyy")}" :
+                           "Data\n Não disponível",
+                    Location = new Point(500, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+
+                Label statusCompras = new Label
+                {
+                    Text = $"Status\n {reader["status_compras"]}",
+                    Location = new Point(600, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+                Label valorCompras = new Label
+                {
+                    Text = $"Valor\n R$ {reader["valor_unit"]}",
+                    Location = new Point(700, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+
+                // Adicionar os labels ao painel
+                panel.Controls.Add(codigosCompras);
+                panel.Controls.Add(numerosNotasFiscais);
+                panel.Controls.Add(nomesFornecedor);
+                panel.Controls.Add(datasDeEmissao);
+                panel.Controls.Add(statusCompras);
+                panel.Controls.Add(valorCompras);
+
+                // Adicionar o painel ao painel principal
+                panelResultado.Controls.Add(panel);
+
+                // Incrementar a posição vertical para o próximo painel
+                yOffset += 60;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao conectar com o banco de dados: " + ex.Message);
-                return;
-            }
-
-            // Criar o TableLayoutPanel para a organização dos dados
-            TableLayoutPanel tablePanel = new TableLayoutPanel();
-            tablePanel.Location = new System.Drawing.Point(40, 140);  // Posição inicial
-            tablePanel.Size = new System.Drawing.Size(this.Width - 80, this.Height - 180);  // Preenche a tela
-            tablePanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;  // Ajuste para crescer
-            tablePanel.BackColor = Color.FromArgb(252, 251, 231);
-            tablePanel.ColumnCount = 6;  // Uma coluna para cada campo
-            tablePanel.RowCount = codigosCompras.Count + 1;  // Uma linha extra para os cabeçalhos
-            tablePanel.AutoSize = true;
-            tablePanel.ColumnStyles.Clear();
-
-            // Definir os cabeçalhos da tabela
-            tablePanel.Controls.Add(new Label() { Text = "Código Compra", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 0, 0);
-            tablePanel.Controls.Add(new Label() { Text = "Nota Fiscal", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 1, 0);
-            tablePanel.Controls.Add(new Label() { Text = "Data Emissão", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 2, 0);
-            tablePanel.Controls.Add(new Label() { Text = "Fornecedor", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 3, 0);
-            //tablePanel.Controls.Add(new Label() { Text = "Valor Unitário", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 4, 0);
-            tablePanel.Controls.Add(new Label() { Text = "Status", Font = new Font("Arial", 14, FontStyle.Bold), TextAlign = ContentAlignment.MiddleCenter }, 5, 0);
-
-            // Ajuste das larguras das colunas
-            for (int i = 0; i < tablePanel.ColumnCount; i++)
-            {
-                tablePanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66f)); // Coloca cada coluna com tamanho proporcional
-            }
-
-            // Gerar as linhas de dados
-            for (int i = 0; i < codigosCompras.Count; i++)
-            {
-                tablePanel.Controls.Add(new Label() { Text = codigosCompras[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 0, i + 1);
-                tablePanel.Controls.Add(new Label() { Text = numerosNotasFiscais[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 1, i + 1);
-                tablePanel.Controls.Add(new Label() { Text = DateTime.Parse(datasDeEmissao[i]).ToString("dd/MM/yyyy"), Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 2, i + 1);
-                tablePanel.Controls.Add(new Label() { Text = nomesFornecedor[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 3, i + 1);
-               // tablePanel.Controls.Add(new Label() { Text = "R$ " + valoresCompras[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 4, i + 1);
-                tablePanel.Controls.Add(new Label() { Text = statusCompras[i], Font = new Font("Arial", 12), TextAlign = ContentAlignment.MiddleCenter }, 5, i + 1);
-            }
-
-            // Adicionar o painel com os dados ao formulário
-            this.Controls.Add(tablePanel);
+            // Após adicionar todos os painéis, ajustar a altura do panelResultado
+            panelResultado.AutoScroll = true;  // Habilita a rolagem
+            panelResultado.VerticalScroll.Value = 0; // Define o valor inicial da rolagem como 0
+            panelResultado.AutoScrollMinSize = new Size(0, yOffset); // Ajusta a altura total com base no número de painéis
         }
     }
 }

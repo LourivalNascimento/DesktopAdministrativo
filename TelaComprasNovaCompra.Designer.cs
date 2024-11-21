@@ -60,13 +60,11 @@
             this.labelFornecedor = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelCadastroDeInsumos = new System.Windows.Forms.Panel();
+            this.labelListaProdutos = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdicionarProduto = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.labelExibirValorTotal = new System.Windows.Forms.Label();
-            this.labelValorTotal = new System.Windows.Forms.Label();
-            this.pictureBoxValorTotal = new System.Windows.Forms.PictureBox();
             this.textBoxValor = new System.Windows.Forms.TextBox();
             this.textBoxQuantidade = new System.Windows.Forms.TextBox();
             this.textBoxCodigo = new System.Windows.Forms.TextBox();
@@ -79,7 +77,6 @@
             this.pictureValor = new System.Windows.Forms.PictureBox();
             this.pictureProduto = new System.Windows.Forms.PictureBox();
             this.pictureCodigo = new System.Windows.Forms.PictureBox();
-            this.labelListaProdutos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
@@ -90,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureNumNota)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCadastroDeInsumos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValorTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureValor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProduto)).BeginInit();
@@ -484,9 +480,6 @@
             this.panelCadastroDeInsumos.Controls.Add(this.btnAdicionarProduto);
             this.panelCadastroDeInsumos.Controls.Add(this.btnCancelar);
             this.panelCadastroDeInsumos.Controls.Add(this.btnSalvar);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelExibirValorTotal);
-            this.panelCadastroDeInsumos.Controls.Add(this.labelValorTotal);
-            this.panelCadastroDeInsumos.Controls.Add(this.pictureBoxValorTotal);
             this.panelCadastroDeInsumos.Controls.Add(this.textBoxValor);
             this.panelCadastroDeInsumos.Controls.Add(this.textBoxQuantidade);
             this.panelCadastroDeInsumos.Controls.Add(this.textBoxCodigo);
@@ -503,6 +496,15 @@
             this.panelCadastroDeInsumos.Name = "panelCadastroDeInsumos";
             this.panelCadastroDeInsumos.Size = new System.Drawing.Size(1193, 282);
             this.panelCadastroDeInsumos.TabIndex = 24;
+            // 
+            // labelListaProdutos
+            // 
+            this.labelListaProdutos.AutoSize = true;
+            this.labelListaProdutos.Location = new System.Drawing.Point(3, 98);
+            this.labelListaProdutos.Name = "labelListaProdutos";
+            this.labelListaProdutos.Size = new System.Drawing.Size(35, 13);
+            this.labelListaProdutos.TabIndex = 54;
+            this.labelListaProdutos.Text = "label4";
             // 
             // label1
             // 
@@ -558,41 +560,6 @@
             this.btnSalvar.TabIndex = 25;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // labelExibirValorTotal
-            // 
-            this.labelExibirValorTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelExibirValorTotal.AutoSize = true;
-            this.labelExibirValorTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(223)))), ((int)(((byte)(255)))));
-            this.labelExibirValorTotal.Font = new System.Drawing.Font("Tw Cen MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExibirValorTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelExibirValorTotal.Location = new System.Drawing.Point(1115, 207);
-            this.labelExibirValorTotal.Name = "labelExibirValorTotal";
-            this.labelExibirValorTotal.Size = new System.Drawing.Size(63, 15);
-            this.labelExibirValorTotal.TabIndex = 51;
-            this.labelExibirValorTotal.Text = "R$ 666,66";
-            // 
-            // labelValorTotal
-            // 
-            this.labelValorTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.labelValorTotal.AutoSize = true;
-            this.labelValorTotal.Font = new System.Drawing.Font("Tw Cen MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelValorTotal.Location = new System.Drawing.Point(1030, 205);
-            this.labelValorTotal.Name = "labelValorTotal";
-            this.labelValorTotal.Size = new System.Drawing.Size(78, 17);
-            this.labelValorTotal.TabIndex = 50;
-            this.labelValorTotal.Text = "Valor Total:";
-            // 
-            // pictureBoxValorTotal
-            // 
-            this.pictureBoxValorTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBoxValorTotal.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.emissão;
-            this.pictureBoxValorTotal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxValorTotal.Location = new System.Drawing.Point(1109, 202);
-            this.pictureBoxValorTotal.Name = "pictureBoxValorTotal";
-            this.pictureBoxValorTotal.Size = new System.Drawing.Size(76, 25);
-            this.pictureBoxValorTotal.TabIndex = 49;
-            this.pictureBoxValorTotal.TabStop = false;
             // 
             // textBoxValor
             // 
@@ -718,15 +685,6 @@
             this.pictureCodigo.TabIndex = 27;
             this.pictureCodigo.TabStop = false;
             // 
-            // labelListaProdutos
-            // 
-            this.labelListaProdutos.AutoSize = true;
-            this.labelListaProdutos.Location = new System.Drawing.Point(3, 98);
-            this.labelListaProdutos.Name = "labelListaProdutos";
-            this.labelListaProdutos.Size = new System.Drawing.Size(35, 13);
-            this.labelListaProdutos.TabIndex = 54;
-            this.labelListaProdutos.Text = "label4";
-            // 
             // TelaComprasNovaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -762,7 +720,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelCadastroDeInsumos.ResumeLayout(false);
             this.panelCadastroDeInsumos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxValorTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureValor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureProduto)).EndInit();
@@ -810,10 +767,7 @@
         private System.Windows.Forms.TextBox textBoxQuantidade;
         private System.Windows.Forms.TextBox textBoxCodigo;
         private System.Windows.Forms.TextBox textBoxNomeDoProduto;
-        private System.Windows.Forms.Label labelValorTotal;
-        private System.Windows.Forms.PictureBox pictureBoxValorTotal;
         private System.Windows.Forms.TextBox textBoxValor;
-        private System.Windows.Forms.Label labelExibirValorTotal;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox comboBoxFornecedor;

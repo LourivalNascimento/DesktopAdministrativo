@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MetroFramework.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,6 +29,7 @@ namespace DesktopAdministrativo
             pictureTop.Width = int.MaxValue;
             this.nomeFuncionario = nomeFuncionario;
             labelNomeFuncionario.Text = "Olá, " + nomeFuncionario;
+            CarregarDados();
         }
         //Método que mostra um MessageBox perguntando se deseja fechar ou não o programa
         public void FecharPrograma()
@@ -303,27 +306,192 @@ namespace DesktopAdministrativo
             }
         }
 
-        private void radioBtnEmProducao_CheckedChanged(object sender, EventArgs e)
-        {
-            metroProgressBarStatusProducao.Value = 50;
-        }
 
-        private void radioBtnEmFila_CheckedChanged(object sender, EventArgs e)
-        {
-            metroProgressBarStatusProducao.Value = 0;
-        }
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
             AbrirForm<TelaOrdemDeProducaoNovaOrdem>(false);
         }
-        //----------------------------------------------------------------------------------------------
-        //----------------------------------------------------------------------------------------------
-        //--------------------------------------BANCO DE DADOS------------------------------------------
-        //----------------------------------------------------------------------------------------------
-        //----------------------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------------------
+        // -------------------------------------- BANCO DE DADOS --------------------------------------
+        // ---------------------------------------------------------------------------------------------
+        // ---------------------------------------------------------------------------------------------
         private string SqlStringDeConexao = @"Data Source=CYBERLOGRA\SQLSERVER2022;Initial Catalog=DBMorangolandia;Integrated Security=True";
         private string nomeFuncionario;
 
+        // Método para carregar os dados ao selecionar um radio button
+        private void CarregarDados()
+        {
+            // Limpa os resultados anteriores no painel
+            LimparResultados();
+
+            // Consulta ao banco de dados com base no filtro de status
+            ConsultarBancoDadosEExibirResultados();
+        }
+
+        /// <summary>
+        /// Limpa o painel de resultados.
+        /// </summary>
+        private void LimparResultados()
+        {
+            panelResultado.Controls.Clear();
+        }
+
+        private void radioBtnEmProducao_CheckedChanged(object sender, EventArgs e)
+        {
+            CarregarDados(); // Chama o método para carregar os dados ao selecionar o radio button "Em produção"
+        }
+
+        private void radioBtnEmFila_CheckedChanged(object sender, EventArgs e)
+        {
+            CarregarDados(); // Chama o método para carregar os dados ao selecionar o radio button "Em fila"
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            CarregarDados();
+        }
+        private void ConsultarBancoDadosEExibirResultados()
+        {
+            using (SqlConnection conn = new SqlConnection(SqlStringDeConexao))
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Inicia a consulta básica sem filtros
+                    string query = @"SELECT [dt_prod], [cod_prod], [nome_prod], [qtd_prod], [status_producao]
+                             FROM [DBMorangolandia].[dbo].[TBProducao]";
+
+                    // Adiciona filtros para o status conforme o radio button selecionado
+                    if (radioBtnEmFila.Checked)
+                    {
+                        query += " WHERE [status_producao] = 0"; // "Em fila"
+                    }
+                    else if (radioBtnEmProducao.Checked)
+                    {
+                        query += " WHERE [status_producao] IN (1, 2, 3)"; // "Em produção"
+                    }
+
+                    // Adiciona filtro de código de produção, se o usuário digitou algo no TextBox
+                    if (!string.IsNullOrWhiteSpace(textBoxNumOrdemProducao.Text))
+                    {
+                        // Verifica se a consulta já tem um filtro WHERE e ajusta a consulta
+                        query += query.Contains("WHERE") ? " AND" : " WHERE";
+                        query += " [cod_prod] = @codigo"; // Filtro pelo código de produção
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        // Se o código de produção foi fornecido, adiciona o parâmetro à consulta
+                        if (!string.IsNullOrWhiteSpace(textBoxNumOrdemProducao.Text))
+                        {
+                            cmd.Parameters.AddWithValue("@codigo", textBoxNumOrdemProducao.Text);
+                        }
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        CriarComponentesDinamicos(reader); // Cria os componentes gráficos com os resultados
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao consultar o banco: {ex.Message}");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Cria os painéis e labels dinamicamente com base nos dados retornados do banco.
+        /// </summary>
+        private void CriarComponentesDinamicos(SqlDataReader reader)
+        {
+            int yOffset = 0; // Controle da posição vertical
+
+            // Limpa os resultados anteriores
+            LimparResultados();
+
+            while (reader.Read())
+            {
+                // Criar o painel principal
+                Panel panel = new Panel
+                {
+                    Size = new Size(920, 50),
+                    BackColor = Color.LavenderBlush,
+                    Location = new Point(200, yOffset),
+                    BorderStyle = BorderStyle.FixedSingle
+                };
+
+                // Criar labels para as informações
+                Label lblOp = new Label
+                {
+                    Text = $"Nº {reader["cod_prod"]}",
+                    Location = new Point(10, 15),
+                    Font = new Font("Arial", 10, FontStyle.Bold),
+                    AutoSize = true
+                };
+
+                Label lblNome = new Label
+                {
+                    Text = $"{reader["nome_prod"]}",
+                    Location = new Point(100, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+
+                Label lblQuantidade = new Label
+                {
+                    Text = $"Quantidade: {reader["qtd_prod"]}",
+                    Location = new Point(170, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+
+                Label lblData = new Label
+                {
+                    // Verifica se a data é válida (não nula) e formata
+                    Text = reader["dt_prod"] != DBNull.Value ?
+                           $"Data: {Convert.ToDateTime(reader["dt_prod"]).ToString("dd/MM/yyyy")}" :
+                           "Data: Não disponível",
+                    Location = new Point(300, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+
+                Label lblStatus = new Label
+                {
+                    Text = $"Status: {reader["status_producao"]}",
+                    Location = new Point(470, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+
+                MetroProgressBar metroProgressBarStatus = new MetroProgressBar
+                {
+                    Value = 33 * Convert.ToInt32(reader["status_producao"]),
+                    Style = MetroFramework.MetroColorStyle.Purple,
+                    Location = new Point(570, 15),
+                    Size = new Size(350, 23)
+                };
+
+                // Adicionar os labels ao painel
+                panel.Controls.Add(lblOp);
+                panel.Controls.Add(lblNome);
+                panel.Controls.Add(lblQuantidade);
+                panel.Controls.Add(lblData);
+                panel.Controls.Add(lblStatus);
+                panel.Controls.Add(metroProgressBarStatus);
+
+                // Adicionar o painel ao painel principal
+                panelResultado.Controls.Add(panel);
+
+                // Incrementar a posição vertical para o próximo painel
+                yOffset += 60;
+            }
+            // Após adicionar todos os painéis, ajustar a altura do panelResultado
+            panelResultado.AutoScroll = true;  // Habilita a rolagem
+            panelResultado.VerticalScroll.Value = 0; // Define o valor inicial da rolagem como 0
+            panelResultado.AutoScrollMinSize = new Size(0, yOffset); // Ajusta a altura total com base no número de painéis
+        }
     }
 }

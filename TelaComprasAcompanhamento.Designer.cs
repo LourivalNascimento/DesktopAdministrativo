@@ -36,6 +36,7 @@
             this.labelNomeFuncionario = new System.Windows.Forms.Label();
             this.labelAcompanhamentoCompras = new System.Windows.Forms.Label();
             this.btnNovo = new System.Windows.Forms.Button();
+            this.panelResultado = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLogoMorangolandia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTop)).BeginInit();
@@ -149,12 +150,20 @@
             this.btnNovo.UseVisualStyleBackColor = false;
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
+            // panelResultado
+            // 
+            this.panelResultado.Location = new System.Drawing.Point(42, 156);
+            this.panelResultado.Name = "panelResultado";
+            this.panelResultado.Size = new System.Drawing.Size(1173, 442);
+            this.panelResultado.TabIndex = 19;
+            // 
             // TelaComprasAcompanhamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panelResultado);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.labelAcompanhamentoCompras);
             this.Controls.Add(this.labelNomeFuncionario);
@@ -188,5 +197,6 @@
         private System.Windows.Forms.Label labelNomeFuncionario;
         private System.Windows.Forms.Label labelAcompanhamentoCompras;
         private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.Panel panelResultado;
     }
 }

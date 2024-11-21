@@ -42,7 +42,7 @@
             this.pictureQuantidade = new System.Windows.Forms.PictureBox();
             this.labelData = new System.Windows.Forms.Label();
             this.pictureData = new System.Windows.Forms.PictureBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.dtpData = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNumOrdemDeProducao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureNomeProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureQuantidade)).BeginInit();
@@ -68,9 +68,9 @@
             this.labelNumOrdemDeProducao.Font = new System.Drawing.Font("Tw Cen MT", 15.75F);
             this.labelNumOrdemDeProducao.Location = new System.Drawing.Point(13, 69);
             this.labelNumOrdemDeProducao.Name = "labelNumOrdemDeProducao";
-            this.labelNumOrdemDeProducao.Size = new System.Drawing.Size(213, 24);
+            this.labelNumOrdemDeProducao.Size = new System.Drawing.Size(256, 24);
             this.labelNumOrdemDeProducao.TabIndex = 36;
-            this.labelNumOrdemDeProducao.Text = "Nº Ordem de Produção";
+            this.labelNumOrdemDeProducao.Text = "Código Ordem de Produção";
             // 
             // labelNovaCadastro
             // 
@@ -122,6 +122,7 @@
             this.btnSalvar.Size = new System.Drawing.Size(121, 32);
             this.btnSalvar.TabIndex = 39;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // textBoxNomeProduto
             // 
@@ -142,9 +143,9 @@
             this.labelNomeProduto.Font = new System.Drawing.Font("Tw Cen MT", 15.75F);
             this.labelNomeProduto.Location = new System.Drawing.Point(12, 134);
             this.labelNomeProduto.Name = "labelNomeProduto";
-            this.labelNomeProduto.Size = new System.Drawing.Size(69, 24);
+            this.labelNomeProduto.Size = new System.Drawing.Size(162, 24);
             this.labelNomeProduto.TabIndex = 41;
-            this.labelNomeProduto.Text = "codigo";
+            this.labelNomeProduto.Text = "Nome do Produto";
             // 
             // pictureNomeProduto
             // 
@@ -210,17 +211,17 @@
             this.pictureData.TabIndex = 49;
             this.pictureData.TabStop = false;
             // 
-            // maskedTextBox1
+            // dtpData
             // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(232)))));
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(269, 232);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 17);
-            this.maskedTextBox1.TabIndex = 52;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.dtpData.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(232)))));
+            this.dtpData.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(251)))), ((int)(((byte)(232)))));
+            this.dtpData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpData.Location = new System.Drawing.Point(234, 230);
+            this.dtpData.Name = "dtpData";
+            this.dtpData.Size = new System.Drawing.Size(166, 20);
+            this.dtpData.TabIndex = 50;
+            this.dtpData.Value = new System.DateTime(2024, 11, 20, 0, 0, 0, 0);
             // 
             // TelaOrdemDeProducaoNovaOrdem
             // 
@@ -229,7 +230,7 @@
             this.BackgroundImage = global::DesktopAdministrativo.Properties.Resources.fundo_Estoque;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(417, 341);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.dtpData);
             this.Controls.Add(this.labelData);
             this.Controls.Add(this.pictureData);
             this.Controls.Add(this.textBoxQuantidade);
@@ -274,6 +275,6 @@
         private System.Windows.Forms.PictureBox pictureQuantidade;
         private System.Windows.Forms.Label labelData;
         private System.Windows.Forms.PictureBox pictureData;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.DateTimePicker dtpData;
     }
 }

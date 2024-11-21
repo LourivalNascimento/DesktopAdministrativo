@@ -29,6 +29,7 @@ namespace DesktopAdministrativo
             pictureTop.Width = int.MaxValue;
             this.nomeFuncionario = nomeFuncionario;
             labelNomeFuncionario.Text = "Olá, " + nomeFuncionario;
+            CarregarTodosOsDados();
         }
         //Método que mostra um MessageBox perguntando se deseja fechar ou não o programa
         public void FecharPrograma()
@@ -319,15 +320,14 @@ namespace DesktopAdministrativo
             btnNovoCadastro.Enabled = true;
 
         }
+        string nomeFuncionario;
         //----------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------
-        //--------------------------------------BANCO DE DADOS------------------------------------------
+        //-------------------------------------- BANCO DE DADOS --------------------------------------
         //----------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------
         private string SqlStringDeConexao = @"Data Source=CYBERLOGRA\SQLSERVER2022;Initial Catalog=DBMorangolandia;Integrated Security=True";
-        private string nomeFuncionario;
-        private string codigoNotaFiscal, numNotaFiscal, statusCompra, nomeFornecedor;
-
+        private string codigo, nome, quantidade, valor, categoria;  // Variáveis para armazenar os dados do banco
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -347,28 +347,188 @@ namespace DesktopAdministrativo
             if (radioBtnInsumos.Checked)
             {
                 // Se for Insumo, cria uma consulta para a tabela TBInsumos
-                query = "SELECT TOP (1) [cod_insum], [nome_insum], [qtd_insum], [valor_insum], [cat_insum] " +
+                query = "SELECT [cod_insum], [nome_insum], [qtd_insum], [valor_insum], [cat_insum] " +
                         "FROM [DBMorangolandia].[dbo].[TBInsumos] " +
                         "WHERE [cod_insum] = @codigo"; // Busca o insumo pelo código
-
-                // Se o campo "Sim" para ordenação alfabética estiver selecionado, ordena pelo nome
-                if (radioBtnSim.Checked)
-                {
-                    query += " ORDER BY [nome_insum]";
-                }
             }
             else if (radioBtnProdutos.Checked)
             {
                 // Se for Produto, cria uma consulta para a tabela TBProdutos
-                query = "SELECT TOP (1) [cod_prod], [nome_prod], [qtd_prod], [valor_prod] " +
+                query = "SELECT [cod_prod], [nome_prod], [qtd_prod], [valor_prod] " +
                         "FROM [DBMorangolandia].[dbo].[TBProdutos] " +
                         "WHERE [cod_prod] = @codigo"; // Busca o produto pelo código
+            }
+            else
+            {
+                // Caso nenhum RadioButton tenha sido selecionado (nem Insumo nem Produto)
+                MessageBox.Show("Selecione Insumos ou Produtos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Interrompe a execução caso nenhum tipo seja selecionado
+            }
 
-                // Se o campo "Não" para ordenação alfabética estiver selecionado, ordena pelo nome
-                if (radioBtnNao.Checked)
+            // Verifica se a opção de ordenação alfabética foi marcada
+            if (radioBtnSim.Checked)
+            {
+                // Ordena alfabeticamente pelo nome (se Insumo ou Produto)
+                if (radioBtnInsumos.Checked)
                 {
-                    query += " ORDER BY [nome_prod]";
+                    query += " ORDER BY [nome_insum]"; // Ordena os insumos pelo nome
                 }
+                else if (radioBtnProdutos.Checked)
+                {
+                    query += " ORDER BY [nome_prod]"; // Ordena os produtos pelo nome
+                }
+            }
+
+            // Executa a consulta e armazena o resultado
+            DataTable resultados = ConsultarDados(SqlStringDeConexao, query, codigo);
+
+            // Limpa as labels antes de exibir novos resultados
+            LimparResultados();
+
+            // Verifica se a consulta retornou algum resultado
+            if (resultados.Rows.Count > 0)
+            {
+                // Chama o método para exibir os resultados no painel
+                CriarComponentesDinamicos(resultados);
+            }
+            else
+            {
+                MessageBox.Show("Nenhum registro encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        // Método que executa a consulta no banco de dados com base na string de consulta e código
+        private DataTable ConsultarDados(string connectionString, string query, string codigo)
+        {
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@codigo", codigo);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            dataTable.Load(reader);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao consultar o banco de dados. Erro: " + ex.Message, "Erro de Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return dataTable;
+        }
+
+        private void radioBtnInsumos_CheckedChanged(object sender, EventArgs e)
+        {
+            CarregarTodosOsDados();  // Chama o método para carregar todos os dados de insumos ou produtos
+            LimparResultados();
+        }
+
+        private void radioBtnProdutos_CheckedChanged(object sender, EventArgs e)
+        {
+            CarregarTodosOsDados();  // Chama o método para carregar todos os dados de insumos ou produtos
+            LimparResultados();
+        }
+
+        // Método para limpar os resultados anteriores
+        private void LimparResultados()
+        {
+            panelResultado.Controls.Clear();  // Limpa o painel de resultados
+        }
+
+        // Método para criar os painéis dinâmicos para exibir os dados
+        private void CriarComponentesDinamicos(DataTable resultados)
+        {
+            int yOffset = 0;  // Controle de posição vertical
+
+            foreach (DataRow row in resultados.Rows)
+            {
+                // Criar o painel principal
+                Panel panel = new Panel
+                {
+                    Size = new Size(920, 60),
+                    BackColor = Color.LavenderBlush,
+                    Location = new Point(200, yOffset),
+                    BorderStyle = BorderStyle.FixedSingle
+                };
+
+                // Criar labels para as informações
+                Label lblCodigo = new Label
+                {
+                    Text = $"Código: {row["cod_insum"] ?? row["cod_prod"]}",
+                    Location = new Point(10, 15),
+                    Font = new Font("Arial", 10, FontStyle.Bold),
+                    AutoSize = true
+                };
+
+                Label lblNome = new Label
+                {
+                    Text = $"Nome: {row["nome_insum"] ?? row["nome_prod"]}",
+                    Location = new Point(80, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+
+                Label lblQuantidade = new Label
+                {
+                    Text = $"Quantidade: {row["qtd_insum"] ?? row["qtd_prod"]}",
+                    Location = new Point(300, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+
+                Label lblValor = new Label
+                {
+                    Text = $"Valor: R${row["valor_insum"] ?? row["valor_prod"]}",
+                    Location = new Point(450, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+
+                // Adiciona as labels ao painel
+                panel.Controls.Add(lblCodigo);
+                panel.Controls.Add(lblNome);
+                panel.Controls.Add(lblQuantidade);
+                panel.Controls.Add(lblValor);
+
+                // Adiciona o painel ao painel principal
+                panelResultado.Controls.Add(panel);
+
+                // Incrementa a posição vertical para o próximo painel
+                yOffset += 70;
+            }
+
+            // Ajusta a altura do painel principal após adicionar todos os painéis de dados
+            panelResultado.AutoScroll = true;
+            panelResultado.AutoScrollMinSize = new Size(0, yOffset);
+        }
+
+        // Novo método para carregar todos os dados
+        private void CarregarTodosOsDados()
+        {
+            // Verifica se o tipo selecionado é Insumo ou Produto
+            string query = "";
+
+            if (radioBtnInsumos.Checked)
+            {
+                // Se for Insumo, cria uma consulta para a tabela TBInsumos
+                query = "SELECT [cod_insum], [nome_insum], [qtd_insum], [valor_insum], [cat_insum] " +
+                        "FROM [DBMorangolandia].[dbo].[TBInsumos]";
+            }
+            else if (radioBtnProdutos.Checked)
+            {
+                // Se for Produto, cria uma consulta para a tabela TBProdutos
+                query = "SELECT [cod_prod], [nome_prod], [qtd_prod], [valor_prod] " +
+                        "FROM [DBMorangolandia].[dbo].[TBProdutos]";
             }
             else
             {
@@ -378,88 +538,88 @@ namespace DesktopAdministrativo
             }
 
             // Executa a consulta e armazena o resultado
-            DataTable resultados = ConsultarDados(SqlStringDeConexao, query, codigo);
+            DataTable resultados = ConsultarDados(SqlStringDeConexao, query, "");
 
             // Limpa as labels antes de exibir novos resultados
-            labelExibirCodigo.Text = "";
-            labelExibirNome.Text = "";
-            labelExibirQuantidade.Text = "";
-            labelExibirValor.Text = ""; // Limpa o campo de valor também
-            labelExibirCategoria.Text = ""; // Limpa o campo de categoria
+            LimparResultados();
 
             // Verifica se a consulta retornou algum resultado
             if (resultados.Rows.Count > 0)
             {
-                // Obtém o primeiro registro retornado
-                DataRow row = resultados.Rows[0];
-
-                // Se for Insumo, exibe as informações específicas para insumos
-                if (radioBtnInsumos.Checked)
-                {
-                    labelExibirCodigo.Text += row["cod_insum"].ToString();
-                    labelExibirNome.Text += row["nome_insum"].ToString();
-                    labelExibirQuantidade.Text += row["qtd_insum"].ToString();
-                    labelExibirValor.Text += "R$" + row["valor_insum"].ToString();
-                    labelExibirCategoria.Text += row["cat_insum"].ToString(); // Exibe a categoria do insumo
-                }
-                // Se for Produto, exibe as informações específicas para produtos
-                else if (radioBtnProdutos.Checked)
-                {
-                    labelExibirCodigo.Text += row["cod_prod"].ToString();
-                    labelExibirNome.Text += row["nome_prod"].ToString();
-                    labelExibirQuantidade.Text += row["qtd_prod"].ToString();
-                    labelExibirValor.Text += row["valor_prod"].ToString(); // Exibe o valor do produto
-                }
+                // Chama o método para exibir os resultados no painel
+                ExibirResultados(resultados);
             }
             else
             {
-                // Se não encontrar nenhum registro, exibe mensagem de erro
-                labelExibirCodigo.Text = "";
-                labelExibirNome.Text = "Nenhum registro encontrado";
-                labelExibirQuantidade.Text = "";
-                labelExibirValor.Text = "";
-                labelExibirCategoria.Text = "";
+                MessageBox.Show("Nenhum registro encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        // Método que executa a consulta no banco de dados com base na string de consulta e código
-        private DataTable ConsultarDados(string connectionString, string query, string codigo)
+        // Novo método para exibir os resultados sem alterar os já existentes
+        private void ExibirResultados(DataTable resultados)
         {
-            // Cria um DataTable para armazenar os dados retornados pela consulta
-            DataTable dataTable = new DataTable();
+            int yOffset = 0;  // Controle de posição vertical
 
-            try
+            foreach (DataRow row in resultados.Rows)
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                // Criar o painel principal
+                Panel panel = new Panel
                 {
-                    // Abre a conexão com o banco de dados
-                    connection.Open();
+                    Size = new Size(920, 60),
+                    BackColor = Color.LavenderBlush,
+                    Location = new Point(200, yOffset),
+                    BorderStyle = BorderStyle.FixedSingle
+                };
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        // Define o valor do parâmetro @codigo na consulta para evitar injeção de SQL
-                        command.Parameters.AddWithValue("@codigo", codigo);
+                // Criar labels para as informações
+                Label lblCodigo = new Label
+                {
+                    Text = $"Código: {row["cod_insum"] ?? row["cod_prod"]}",
+                    Location = new Point(10, 15),
+                    Font = new Font("Arial", 10, FontStyle.Bold),
+                    AutoSize = true
+                };
 
-                        // Executa a consulta e carrega os dados no DataTable usando SqlDataReader
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            dataTable.Load(reader); // Carrega os resultados da consulta
-                        }
-                    }
-                }
+                Label lblNome = new Label
+                {
+                    Text = $"Nome: {row["nome_insum"] ?? row["nome_prod"]}",
+                    Location = new Point(80, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+
+                Label lblQuantidade = new Label
+                {
+                    Text = $"Quantidade: {row["qtd_insum"] ?? row["qtd_prod"]}",
+                    Location = new Point(300, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+
+                Label lblValor = new Label
+                {
+                    Text = $"Valor: R${row["valor_insum"] ?? row["valor_prod"]}",
+                    Location = new Point(450, 15),
+                    Font = new Font("Arial", 10),
+                    AutoSize = true
+                };
+
+                // Adiciona as labels ao painel
+                panel.Controls.Add(lblCodigo);
+                panel.Controls.Add(lblNome);
+                panel.Controls.Add(lblQuantidade);
+                panel.Controls.Add(lblValor);
+
+                // Adiciona o painel ao painel principal
+                panelResultado.Controls.Add(panel);
+
+                // Incrementa a posição vertical para o próximo painel
+                yOffset += 70;
             }
-            catch (Exception ex)
-            {
-                // Exibe uma mensagem de erro em caso de falha na consulta
-                MessageBox.Show("Erro ao consultar o banco de dados. Verifique a conexão e tente novamente.\nErro: " + ex.Message,
-                                "Erro de Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
-            // Retorna o DataTable preenchido com os dados ou vazio se ocorreu erro
-            return dataTable;
+            // Ajusta a altura do painel principal após adicionar todos os painéis de dados
+            panelResultado.AutoScroll = true;
+            panelResultado.AutoScrollMinSize = new Size(0, yOffset);
         }
-
-
-
     }
 }

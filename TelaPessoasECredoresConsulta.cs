@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -312,10 +313,7 @@ namespace DesktopAdministrativo
             tela.Show();
             Close();
         }
-        private void btnConcluir_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         //----------------------------------------------------------------------------------------------
         //----------------------------------------------------------------------------------------------
         //--------------------------------------BANCO DE DADOS------------------------------------------
@@ -325,6 +323,109 @@ namespace DesktopAdministrativo
         private string nomeFuncionario;
         private string codigoNotaFiscal, numNotaFiscal, statusCompra, nomeFornecedor;
         private DateTime dataEmissao;
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+
+            // Limpar o campo CPF/CNPJ e os resultados
+            textBoxCnpjCpf.Clear();
+            LimparCamposResultado();
+        }
+
         private float valorUnitario;
+        private DataRow ConsultarBanco(string cpfCnpj, bool isFuncionario)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(SqlStringDeConexao))
+                {
+                    conn.Open();
+
+                    // Definir a query SQL com base no tipo (Funcionário ou Fornecedor)
+                    string query = isFuncionario
+                        ? @"SELECT cpf_func AS CPF, nome_func AS Nome, email_func AS Email, telefone_func AS Telefone
+                     FROM TBFuncionario
+                     WHERE cpf_func = @cpfCnpj"
+                        : @"SELECT cnpj_forn AS CNPJ, nome_fant AS Nome, email_forn AS Email, telefone_forn AS Telefone
+                     FROM TBFornecedor
+                     WHERE cnpj_forn = @cpfCnpj";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        // Adicionar parâmetro para evitar SQL Injection
+                        cmd.Parameters.AddWithValue("@cpfCnpj", cpfCnpj);
+
+                        // Executar a consulta
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            // Retornar a primeira linha, se houver resultados
+                            if (dt.Rows.Count > 0)
+                            {
+                                return dt.Rows[0];
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao consultar o banco de dados: " + ex.Message);
+            }
+
+            return null;
+        }
+        private void btnConcluir_Click(object sender, EventArgs e)
+        {
+            // Obter o valor digitado e a seleção do radio button
+            string cpfCnpj = textBoxCnpjCpf.Text.Trim();
+            bool isFuncionario = radioBtnFuncionario.Checked;
+
+            // Validação básica
+            if (string.IsNullOrEmpty(cpfCnpj))
+            {
+                MessageBox.Show("Por favor, insira um CPF ou CNPJ.");
+                return;
+            }
+
+            // Consultar o banco de dados
+            DataRow resultado = ConsultarBanco(cpfCnpj, isFuncionario);
+
+            // Atualizar os labels com os resultados
+            if (resultado != null)
+            {
+                labelExibirNome.Text = resultado["Nome"].ToString();
+                labelEmail.Text = resultado["Email"].ToString();
+                labelTelefone.Text = resultado["Telefone"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Nenhum resultado encontrado.");
+                LimparCamposResultado();
+            }
+        }
+        private void LimparCamposResultado()
+        {
+            // Limpar os labels de resultado
+            labelExibirNome.Text = "----------";
+            labelEmail.Text = "----------";
+            labelTelefone.Text = "----------";
+        }
+
+        private void radioBtnFornecedor_CheckedChanged(object sender, EventArgs e)
+        {
+            // Limpar campos ao alternar entre Funcionário e Fornecedor
+            LimparCamposResultado();
+            textBoxCnpjCpf.Clear();
+        }
+
+        private void radioBtnFuncionario_CheckedChanged_1(object sender, EventArgs e)
+        {
+            // Limpar campos ao alternar entre Funcionário e Fornecedor
+            LimparCamposResultado();
+            textBoxCnpjCpf.Clear();
+        }
     }
 }
